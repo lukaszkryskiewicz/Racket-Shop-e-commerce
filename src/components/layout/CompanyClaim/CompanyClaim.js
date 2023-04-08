@@ -24,7 +24,11 @@ const CompanyClaim = () => {
           </div>
           <div className='col px-0 text-center'>
             <a href='/#'>
-              <img className={styles.logoImage} src='/images/logo.png' alt='Bazar' />
+              <img
+                className={styles.logoImage}
+                src='/images/logo.png'
+                alt='RacketShop'
+              />
             </a>
           </div>
           <div className={`col pl-0 text-right ${styles.cart}`}>
