@@ -7,10 +7,12 @@ import { faWindowClose, faHeart } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { toggleProductCompare } from '../../../redux/productsRedux';
 import { useDispatch } from 'react-redux';
+import { getCurrency } from '../../../redux/currencyRedux';
 
 const CompareBar = () => {
   const dispatch = useDispatch();
   const compare = useSelector(state => getProductsToCompare(state));
+  const currency = useSelector(state => getCurrency(state));
 
   const handleClick = id => {
     dispatch(toggleProductCompare(id));
@@ -28,7 +30,9 @@ const CompareBar = () => {
               <div className={styles.comparedItem} onClick={() => handleClick(item.id)}>
                 <div className={styles.name}>{item.name}</div>
                 <img alt={item.name} src={item.source} />
-                <div className={styles.price}>{item.price}$</div>
+                <div className={styles.price}>
+                  {currency.sign} {(item.price * currency.multiplier).toFixed(2)}
+                </div>
                 {item.favourite ? (
                   <div className={styles.fav}>
                     <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>

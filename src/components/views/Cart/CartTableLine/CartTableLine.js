@@ -4,14 +4,16 @@ import { AiOutlineCloseCircle } from 'react-icons/ai';
 import styles from './CartTableLine.module.scss';
 import PropTypes from 'prop-types';
 import Button from '../../../common/Button/Button';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { removeProduct, updateProduct } from '../../../../redux/cartRedux';
+import { getCurrency } from '../../../../redux/currencyRedux';
 
 const CartTableLine = ({ id, name, price, source, amount }) => {
   const dispatch = useDispatch();
   const [itemAmount, setAmount] = useState(amount);
-
-  const totalForProduct = price * itemAmount;
+  const currency = useSelector(state => getCurrency(state));
+  price = (price * currency.multiplier).toFixed(2);
+  const totalForProduct = (price * itemAmount).toFixed(2);
 
   const handleClick = e => {
     e.preventDefault(e);
@@ -50,14 +52,16 @@ const CartTableLine = ({ id, name, price, source, amount }) => {
           <div className={`col-8  ps-4 ${styles.vertCenter}`}>{name}</div>
         </div>
       </div>
-      <div className={`col-1 text-center ${styles.price}`}>${price.toFixed(2)}</div>
+      <div className={`col-1 text-center ${styles.price}`}>
+        {currency.sign} {price}
+      </div>
       <div className='col-2 text-center'>
         <Button onClick={decrementAmount}>-</Button>
         {itemAmount}
         <Button onClick={incrementAmount}>+</Button>
       </div>
       <div className={`col-1 text-center ${styles.price}`}>
-        ${totalForProduct.toFixed(2)}
+        {currency.sign} {totalForProduct}
       </div>
     </div>
   );
