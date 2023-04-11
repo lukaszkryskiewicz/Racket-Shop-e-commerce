@@ -25,7 +25,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tenis/tenis-racket-1.jpg',
+      source: '/images/racket/tenis/tenis-racket-1.webp',
     },
     {
       id: 'tenis-racket-2',
@@ -45,7 +45,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tenis/tenis-racket-2.jpg',
+      source: '/images/racket/tenis/tenis-racket-2.webp',
     },
     {
       id: 'tenis-racket-3',
@@ -65,7 +65,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tenis/tenis-racket-3.jpg',
+      source: '/images/racket/tenis/tenis-racket-3.webp',
     },
     {
       id: 'tenis-racket-4',
@@ -85,7 +85,7 @@ const initialState = {
       featured: false,
       topSeller: true,
       saleOff: false,
-      source: '/images/racket/tenis/tenis-racket-4.jpg',
+      source: '/images/racket/tenis/tenis-racket-4.webp',
     },
     {
       id: 'tenis-racket-5',
@@ -105,7 +105,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tenis/tenis-racket-5.jpg',
+      source: '/images/racket/tenis/tenis-racket-5.webp',
     },
     {
       id: 'tenis-racket-6',
@@ -125,7 +125,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tenis/tenis-racket-6.jpg',
+      source: '/images/racket/tenis/tenis-racket-6.webp',
     },
     {
       id: 'tenis-racket-7',
@@ -145,7 +145,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: true,
-      source: '/images/racket/tenis/tenis-racket-7.jpg',
+      source: '/images/racket/tenis/tenis-racket-7.webp',
     },
     {
       id: 'tenis-racket-8',
@@ -165,7 +165,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tenis/tenis-racket-8.jpg',
+      source: '/images/racket/tenis/tenis-racket-8.webp',
     },
     {
       id: 'tenis-racket-9',
@@ -185,7 +185,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tenis/tenis-racket-9.jpg',
+      source: '/images/racket/tenis/tenis-racket-9.webp',
     },
     {
       id: 'tenis-racket-10',
@@ -205,7 +205,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: true,
-      source: '/images/racket/tenis/tenis-racket-10.jpg',
+      source: '/images/racket/tenis/tenis-racket-10.webp',
     },
     {
       id: 'tenis-racket-11',
@@ -225,7 +225,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tenis/tenis-racket-11.jpg',
+      source: '/images/racket/tenis/tenis-racket-11.webp',
     },
     {
       id: 'tenis-racket-12',
@@ -245,7 +245,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tenis/tenis-racket-12.jpg',
+      source: '/images/racket/tenis/tenis-racket-12.webp',
     },
     {
       id: 'tenis-racket-13',
@@ -265,7 +265,7 @@ const initialState = {
       featured: true,
       topSeller: false,
       saleOff: true,
-      source: '/images/racket/tenis/tenis-racket-13.jpg',
+      source: '/images/racket/tenis/tenis-racket-13.webp',
     },
     {
       id: 'tenis-racket-14',
@@ -285,7 +285,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tenis/tenis-racket-14.jpg',
+      source: '/images/racket/tenis/tenis-racket-14.webp',
     },
     {
       id: 'tenis-racket-15',
@@ -305,7 +305,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: true,
-      source: '/images/racket/tenis/tenis-racket-15.jpg',
+      source: '/images/racket/tenis/tenis-racket-15.webp',
     },
     {
       id: 'tenis-racket-16',
@@ -325,7 +325,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: true,
-      source: '/images/racket/tenis/tenis-racket-16.jpg',
+      source: '/images/racket/tenis/tenis-racket-16.webp',
     },
     {
       id: 'tenis-racket-17',
@@ -345,7 +345,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tenis/tenis-racket-17.jpg',
+      source: '/images/racket/tenis/tenis-racket-17.webp',
     },
     {
       id: 'tenis-racket-18',
@@ -365,7 +365,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tenis/tenis-racket-18.jpg',
+      source: '/images/racket/tenis/tenis-racket-18.webp',
     },
     {
       id: 'tenis-racket-19',
@@ -385,7 +385,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tenis/tenis-racket-19.jpg',
+      source: '/images/racket/tenis/tenis-racket-19.webp',
     },
     {
       id: 'tenis-racket-20',
@@ -405,11 +405,11 @@ const initialState = {
       featured: false,
       topSeller: true,
       saleOff: false,
-      source: '/images/racket/tenis/tenis-racket-20.jpg',
+      source: '/images/racket/tenis/tenis-racket-20.webp',
     },
     {
       id: 'tenis-racket-21',
-      name: 'Light Tenis Racket 1',
+      name: 'Light Tenis Racket 21',
       category: 'tenis',
       manufacturer: 'prince',
       price: 803,
@@ -425,11 +425,11 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tenis/tenis-racket-21.jpg',
+      source: '/images/racket/tenis/tenis-racket-21.webp',
     },
     {
       id: 'tenis-racket-22',
-      name: 'Amazing Tenis Racket 2',
+      name: 'Amazing Tenis Racket 22',
       category: 'tenis',
       manufacturer: 'wilson',
       price: 1115,
@@ -445,11 +445,11 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: true,
-      source: '/images/racket/tenis/tenis-racket-22.jpg',
+      source: '/images/racket/tenis/tenis-racket-22.webp',
     },
     {
       id: 'tenis-racket-23',
-      name: 'Light Tenis Racket 3',
+      name: 'Light Tenis Racket 23',
       category: 'tenis',
       manufacturer: 'head',
       price: 1032,
@@ -465,11 +465,11 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tenis/tenis-racket-23.jpg',
+      source: '/images/racket/tenis/tenis-racket-23.webp',
     },
     {
       id: 'tenis-racket-24',
-      name: 'Pro Tenis Racket 4',
+      name: 'Pro Tenis Racket 24',
       category: 'tenis',
       manufacturer: 'yonex',
       price: 1005,
@@ -485,11 +485,11 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tenis/tenis-racket-24.jpg',
+      source: '/images/racket/tenis/tenis-racket-24.webp',
     },
     {
       id: 'tenis-racket-25',
-      name: 'Heavy Tenis Racket 5',
+      name: 'Heavy Tenis Racket 25',
       category: 'tenis',
       manufacturer: 'prince',
       price: 1074,
@@ -505,7 +505,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tenis/tenis-racket-25.jpg',
+      source: '/images/racket/tenis/tenis-racket-25.webp',
     },
     {
       id: 'squash-racket-1',
@@ -525,7 +525,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/squash/squash-racket-1.jpg',
+      source: '/images/racket/squash/squash-racket-1.webp',
     },
     {
       id: 'squash-racket-2',
@@ -545,7 +545,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/squash/squash-racket-2.jpg',
+      source: '/images/racket/squash/squash-racket-2.webp',
     },
     {
       id: 'squash-racket-3',
@@ -565,7 +565,7 @@ const initialState = {
       featured: false,
       topSeller: true,
       saleOff: false,
-      source: '/images/racket/squash/squash-racket-3.jpg',
+      source: '/images/racket/squash/squash-racket-3.webp',
     },
     {
       id: 'squash-racket-4',
@@ -585,7 +585,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: true,
-      source: '/images/racket/squash/squash-racket-4.jpg',
+      source: '/images/racket/squash/squash-racket-4.webp',
     },
     {
       id: 'squash-racket-5',
@@ -605,7 +605,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/squash/squash-racket-5.jpg',
+      source: '/images/racket/squash/squash-racket-5.webp',
     },
     {
       id: 'squash-racket-6',
@@ -625,7 +625,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/squash/squash-racket-6.jpg',
+      source: '/images/racket/squash/squash-racket-6.webp',
     },
     {
       id: 'squash-racket-7',
@@ -645,7 +645,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/squash/squash-racket-7.jpg',
+      source: '/images/racket/squash/squash-racket-7.webp',
     },
     {
       id: 'squash-racket-8',
@@ -665,7 +665,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/squash/squash-racket-8.jpg',
+      source: '/images/racket/squash/squash-racket-8.webp',
     },
     {
       id: 'squash-racket-9',
@@ -685,7 +685,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/squash/squash-racket-9.jpg',
+      source: '/images/racket/squash/squash-racket-9.webp',
     },
     {
       id: 'squash-racket-10',
@@ -705,7 +705,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/squash/squash-racket-10.jpg',
+      source: '/images/racket/squash/squash-racket-10.webp',
     },
     {
       id: 'squash-racket-11',
@@ -725,7 +725,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/squash/squash-racket-11.jpg',
+      source: '/images/racket/squash/squash-racket-11.webp',
     },
     {
       id: 'squash-racket-12',
@@ -745,7 +745,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/squash/squash-racket-12.jpg',
+      source: '/images/racket/squash/squash-racket-12.webp',
     },
     {
       id: 'squash-racket-13',
@@ -765,7 +765,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/squash/squash-racket-13.jpg',
+      source: '/images/racket/squash/squash-racket-13.webp',
     },
     {
       id: 'squash-racket-14',
@@ -785,7 +785,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: true,
-      source: '/images/racket/squash/squash-racket-14.jpg',
+      source: '/images/racket/squash/squash-racket-14.webp',
     },
     {
       id: 'squash-racket-15',
@@ -805,7 +805,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: true,
-      source: '/images/racket/squash/squash-racket-15.jpg',
+      source: '/images/racket/squash/squash-racket-15.webp',
     },
     {
       id: 'squash-racket-16',
@@ -825,7 +825,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/squash/squash-racket-16.jpg',
+      source: '/images/racket/squash/squash-racket-16.webp',
     },
     {
       id: 'squash-racket-17',
@@ -845,7 +845,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/squash/squash-racket-17.jpg',
+      source: '/images/racket/squash/squash-racket-17.webp',
     },
     {
       id: 'squash-racket-18',
@@ -865,7 +865,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/squash/squash-racket-18.jpg',
+      source: '/images/racket/squash/squash-racket-18.webp',
     },
     {
       id: 'squash-racket-19',
@@ -885,7 +885,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/squash/squash-racket-19.jpg',
+      source: '/images/racket/squash/squash-racket-19.webp',
     },
     {
       id: 'squash-racket-20',
@@ -905,7 +905,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/squash/squash-racket-20.jpg',
+      source: '/images/racket/squash/squash-racket-20.webp',
     },
     {
       id: 'squash-racket-21',
@@ -925,7 +925,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/squash/squash-racket-21.jpg',
+      source: '/images/racket/squash/squash-racket-21.webp',
     },
     {
       id: 'squash-racket-22',
@@ -945,7 +945,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: true,
-      source: '/images/racket/squash/squash-racket-22.jpg',
+      source: '/images/racket/squash/squash-racket-22.webp',
     },
     {
       id: 'squash-racket-23',
@@ -965,7 +965,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/squash/squash-racket-23.jpg',
+      source: '/images/racket/squash/squash-racket-23.webp',
     },
     {
       id: 'squash-racket-24',
@@ -985,7 +985,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/squash/squash-racket-24.jpg',
+      source: '/images/racket/squash/squash-racket-24.webp',
     },
     {
       id: 'squash-racket-25',
@@ -1005,7 +1005,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/squash/squash-racket-25.jpg',
+      source: '/images/racket/squash/squash-racket-25.webp',
     },
     {
       id: 'padel-racket-1',
@@ -1025,7 +1025,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/padel/padel-racket-1.jpg',
+      source: '/images/racket/padel/padel-racket-1.webp',
     },
     {
       id: 'padel-racket-2',
@@ -1045,7 +1045,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/padel/padel-racket-2.jpg',
+      source: '/images/racket/padel/padel-racket-2.webp',
     },
     {
       id: 'padel-racket-3',
@@ -1065,7 +1065,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: true,
-      source: '/images/racket/padel/padel-racket-3.jpg',
+      source: '/images/racket/padel/padel-racket-3.webp',
     },
     {
       id: 'padel-racket-4',
@@ -1085,7 +1085,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/padel/padel-racket-4.jpg',
+      source: '/images/racket/padel/padel-racket-4.webp',
     },
     {
       id: 'padel-racket-5',
@@ -1105,7 +1105,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: true,
-      source: '/images/racket/padel/padel-racket-5.jpg',
+      source: '/images/racket/padel/padel-racket-5.webp',
     },
     {
       id: 'padel-racket-6',
@@ -1125,7 +1125,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/padel/padel-racket-6.jpg',
+      source: '/images/racket/padel/padel-racket-6.webp',
     },
     {
       id: 'padel-racket-7',
@@ -1145,7 +1145,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: true,
-      source: '/images/racket/padel/padel-racket-7.jpg',
+      source: '/images/racket/padel/padel-racket-7.webp',
     },
     {
       id: 'padel-racket-8',
@@ -1165,7 +1165,7 @@ const initialState = {
       featured: true,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/padel/padel-racket-8.jpg',
+      source: '/images/racket/padel/padel-racket-8.webp',
     },
     {
       id: 'padel-racket-9',
@@ -1185,7 +1185,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/padel/padel-racket-9.jpg',
+      source: '/images/racket/padel/padel-racket-9.webp',
     },
     {
       id: 'padel-racket-10',
@@ -1205,7 +1205,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/padel/padel-racket-10.jpg',
+      source: '/images/racket/padel/padel-racket-10.webp',
     },
     {
       id: 'padel-racket-11',
@@ -1225,7 +1225,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/padel/padel-racket-11.jpg',
+      source: '/images/racket/padel/padel-racket-11.webp',
     },
     {
       id: 'padel-racket-12',
@@ -1245,7 +1245,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: true,
-      source: '/images/racket/padel/padel-racket-12.jpg',
+      source: '/images/racket/padel/padel-racket-12.webp',
     },
     {
       id: 'padel-racket-13',
@@ -1265,7 +1265,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/padel/padel-racket-13.jpg',
+      source: '/images/racket/padel/padel-racket-13.webp',
     },
     {
       id: 'padel-racket-14',
@@ -1285,7 +1285,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: true,
-      source: '/images/racket/padel/padel-racket-14.jpg',
+      source: '/images/racket/padel/padel-racket-14.webp',
     },
     {
       id: 'padel-racket-15',
@@ -1305,7 +1305,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/padel/padel-racket-15.jpg',
+      source: '/images/racket/padel/padel-racket-15.webp',
     },
     {
       id: 'padel-racket-16',
@@ -1325,7 +1325,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/padel/padel-racket-16.jpg',
+      source: '/images/racket/padel/padel-racket-16.webp',
     },
     {
       id: 'padel-racket-17',
@@ -1345,7 +1345,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: true,
-      source: '/images/racket/padel/padel-racket-17.jpg',
+      source: '/images/racket/padel/padel-racket-17.webp',
     },
     {
       id: 'padel-racket-18',
@@ -1365,7 +1365,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: true,
-      source: '/images/racket/padel/padel-racket-18.jpg',
+      source: '/images/racket/padel/padel-racket-18.webp',
     },
     {
       id: 'padel-racket-19',
@@ -1385,7 +1385,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/padel/padel-racket-19.jpg',
+      source: '/images/racket/padel/padel-racket-19.webp',
     },
     {
       id: 'padel-racket-20',
@@ -1405,7 +1405,7 @@ const initialState = {
       featured: true,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/padel/padel-racket-20.jpg',
+      source: '/images/racket/padel/padel-racket-20.webp',
     },
     {
       id: 'padel-racket-21',
@@ -1425,7 +1425,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/padel/padel-racket-21.jpg',
+      source: '/images/racket/padel/padel-racket-21.webp',
     },
     {
       id: 'padel-racket-22',
@@ -1445,7 +1445,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/padel/padel-racket-22.jpg',
+      source: '/images/racket/padel/padel-racket-22.webp',
     },
     {
       id: 'padel-racket-23',
@@ -1465,7 +1465,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/padel/padel-racket-23.jpg',
+      source: '/images/racket/padel/padel-racket-23.webp',
     },
     {
       id: 'padel-racket-24',
@@ -1485,7 +1485,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/padel/padel-racket-24.jpg',
+      source: '/images/racket/padel/padel-racket-24.webp',
     },
     {
       id: 'padel-racket-25',
@@ -1505,7 +1505,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/padel/padel-racket-25.jpg',
+      source: '/images/racket/padel/padel-racket-25.webp',
     },
     {
       id: 'badminton-racket-1',
@@ -1525,7 +1525,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/badminton/badminton-racket-1.jpg',
+      source: '/images/racket/badminton/badminton-racket-1.webp',
     },
     {
       id: 'badminton-racket-2',
@@ -1545,7 +1545,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/badminton/badminton-racket-2.jpg',
+      source: '/images/racket/badminton/badminton-racket-2.webp',
     },
     {
       id: 'badminton-racket-3',
@@ -1565,7 +1565,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/badminton/badminton-racket-3.jpg',
+      source: '/images/racket/badminton/badminton-racket-3.webp',
     },
     {
       id: 'badminton-racket-4',
@@ -1585,7 +1585,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/badminton/badminton-racket-4.jpg',
+      source: '/images/racket/badminton/badminton-racket-4.webp',
     },
     {
       id: 'badminton-racket-5',
@@ -1605,7 +1605,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/badminton/badminton-racket-5.jpg',
+      source: '/images/racket/badminton/badminton-racket-5.webp',
     },
     {
       id: 'badminton-racket-6',
@@ -1625,7 +1625,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: true,
-      source: '/images/racket/badminton/badminton-racket-6.jpg',
+      source: '/images/racket/badminton/badminton-racket-6.webp',
     },
     {
       id: 'badminton-racket-7',
@@ -1645,7 +1645,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/badminton/badminton-racket-7.jpg',
+      source: '/images/racket/badminton/badminton-racket-7.webp',
     },
     {
       id: 'badminton-racket-8',
@@ -1665,7 +1665,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: true,
-      source: '/images/racket/badminton/badminton-racket-8.jpg',
+      source: '/images/racket/badminton/badminton-racket-8.webp',
     },
     {
       id: 'badminton-racket-9',
@@ -1685,7 +1685,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/badminton/badminton-racket-9.jpg',
+      source: '/images/racket/badminton/badminton-racket-9.webp',
     },
     {
       id: 'badminton-racket-10',
@@ -1705,7 +1705,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: true,
-      source: '/images/racket/badminton/badminton-racket-10.jpg',
+      source: '/images/racket/badminton/badminton-racket-10.webp',
     },
     {
       id: 'badminton-racket-11',
@@ -1725,7 +1725,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/badminton/badminton-racket-11.jpg',
+      source: '/images/racket/badminton/badminton-racket-11.webp',
     },
     {
       id: 'badminton-racket-12',
@@ -1745,7 +1745,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: true,
-      source: '/images/racket/badminton/badminton-racket-12.jpg',
+      source: '/images/racket/badminton/badminton-racket-12.webp',
     },
     {
       id: 'badminton-racket-13',
@@ -1765,7 +1765,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/badminton/badminton-racket-13.jpg',
+      source: '/images/racket/badminton/badminton-racket-13.webp',
     },
     {
       id: 'badminton-racket-14',
@@ -1785,7 +1785,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/badminton/badminton-racket-14.jpg',
+      source: '/images/racket/badminton/badminton-racket-14.webp',
     },
     {
       id: 'badminton-racket-15',
@@ -1805,7 +1805,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/badminton/badminton-racket-15.jpg',
+      source: '/images/racket/badminton/badminton-racket-15.webp',
     },
     {
       id: 'badminton-racket-16',
@@ -1825,7 +1825,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/badminton/badminton-racket-16.jpg',
+      source: '/images/racket/badminton/badminton-racket-16.webp',
     },
     {
       id: 'badminton-racket-17',
@@ -1845,7 +1845,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/badminton/badminton-racket-17.jpg',
+      source: '/images/racket/badminton/badminton-racket-17.webp',
     },
     {
       id: 'badminton-racket-18',
@@ -1865,7 +1865,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: true,
-      source: '/images/racket/badminton/badminton-racket-18.jpg',
+      source: '/images/racket/badminton/badminton-racket-18.webp',
     },
     {
       id: 'badminton-racket-19',
@@ -1885,7 +1885,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/badminton/badminton-racket-19.jpg',
+      source: '/images/racket/badminton/badminton-racket-19.webp',
     },
     {
       id: 'badminton-racket-20',
@@ -1905,7 +1905,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/badminton/badminton-racket-20.jpg',
+      source: '/images/racket/badminton/badminton-racket-20.webp',
     },
     {
       id: 'badminton-racket-21',
@@ -1925,7 +1925,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/badminton/badminton-racket-21.jpg',
+      source: '/images/racket/badminton/badminton-racket-21.webp',
     },
     {
       id: 'badminton-racket-22',
@@ -1945,7 +1945,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: true,
-      source: '/images/racket/badminton/badminton-racket-22.jpg',
+      source: '/images/racket/badminton/badminton-racket-22.webp',
     },
     {
       id: 'badminton-racket-23',
@@ -1965,7 +1965,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/badminton/badminton-racket-23.jpg',
+      source: '/images/racket/badminton/badminton-racket-23.webp',
     },
     {
       id: 'badminton-racket-24',
@@ -1985,7 +1985,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/badminton/badminton-racket-24.jpg',
+      source: '/images/racket/badminton/badminton-racket-24.webp',
     },
     {
       id: 'badminton-racket-25',
@@ -2005,7 +2005,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/badminton/badminton-racket-25.jpg',
+      source: '/images/racket/badminton/badminton-racket-25.webp',
     },
     {
       id: 'tableTenis-racket-1',
@@ -2025,7 +2025,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: true,
-      source: '/images/racket/tableTenis/tableTenis-racket-1.jpg',
+      source: '/images/racket/tableTenis/tableTenis-racket-1.webp',
     },
     {
       id: 'tableTenis-racket-2',
@@ -2045,7 +2045,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tableTenis/tableTenis-racket-2.jpg',
+      source: '/images/racket/tableTenis/tableTenis-racket-2.webp',
     },
     {
       id: 'tableTenis-racket-3',
@@ -2065,7 +2065,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: true,
-      source: '/images/racket/tableTenis/tableTenis-racket-3.jpg',
+      source: '/images/racket/tableTenis/tableTenis-racket-3.webp',
     },
     {
       id: 'tableTenis-racket-4',
@@ -2085,7 +2085,7 @@ const initialState = {
       featured: true,
       topSeller: true,
       saleOff: true,
-      source: '/images/racket/tableTenis/tableTenis-racket-4.jpg',
+      source: '/images/racket/tableTenis/tableTenis-racket-4.webp',
     },
     {
       id: 'tableTenis-racket-5',
@@ -2105,7 +2105,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tableTenis/tableTenis-racket-5.jpg',
+      source: '/images/racket/tableTenis/tableTenis-racket-5.webp',
     },
     {
       id: 'tableTenis-table-6',
@@ -2125,7 +2125,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/tableTenis/tableTenis-table-6.jpg',
+      source: '/images/tableTenis/tableTenis-table-6.webp',
     },
     {
       id: 'tableTenis-racket-7',
@@ -2145,7 +2145,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/tableTenis/tableTenis-racket-7.jpg',
+      source: '/images/tableTenis/tableTenis-racket-7.webp',
     },
     {
       id: 'tableTenis-ball-8',
@@ -2165,7 +2165,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/tableTenis/tableTenis-ball-8.jpg',
+      source: '/images/tableTenis/tableTenis-ball-8.webp',
     },
     {
       id: 'tableTenis-net-9',
@@ -2185,7 +2185,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: true,
-      source: '/images/tableTenis/tableTenis-net-9.jpg',
+      source: '/images/tableTenis/tableTenis-net-9.webp',
     },
     {
       id: 'tableTenis-table-10',
@@ -2205,7 +2205,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/tableTenis/tableTenis-table-10.jpg',
+      source: '/images/tableTenis/tableTenis-table-10.webp',
     },
     {
       id: 'tableTenis-racket-11',
@@ -2225,7 +2225,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tableTenis/tableTenis-racket-11.jpg',
+      source: '/images/racket/tableTenis/tableTenis-racket-11.webp',
     },
     {
       id: 'tableTenis-racket-12',
@@ -2245,7 +2245,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tableTenis/tableTenis-racket-12.jpg',
+      source: '/images/racket/tableTenis/tableTenis-racket-12.webp',
     },
     {
       id: 'tableTenis-racket-13',
@@ -2265,7 +2265,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: true,
-      source: '/images/racket/tableTenis/tableTenis-racket-13.jpg',
+      source: '/images/racket/tableTenis/tableTenis-racket-13.webp',
     },
     {
       id: 'tableTenis-racket-14',
@@ -2285,7 +2285,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tableTenis/tableTenis-racket-14.jpg',
+      source: '/images/racket/tableTenis/tableTenis-racket-14.webp',
     },
     {
       id: 'tableTenis-racket-15',
@@ -2305,10 +2305,10 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tableTenis/tableTenis-racket-15.jpg',
+      source: '/images/racket/tableTenis/tableTenis-racket-15.webp',
     },
     {
-      id: 'tabletenis-racket-16',
+      id: 'tableTenis-racket-16',
       name: 'Pro Table Tennis Racket 16',
       category: 'tableTenis',
       manufacturer: 'head',
@@ -2325,10 +2325,10 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: true,
-      source: '/images/racket/tabletenis/tabletenis-racket-16.jpg',
+      source: '/images/racket/tableTenis/tableTenis-racket-16.webp',
     },
     {
-      id: 'tabletenis-racket-17',
+      id: 'tableTenis-racket-17',
       name: 'Amateur Table Tennis Racket 17',
       category: 'tableTenis',
       manufacturer: 'yonex',
@@ -2345,10 +2345,10 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tabletenis/tabletenis-racket-17.jpg',
+      source: '/images/racket/tableTenis/tableTenis-racket-17.webp',
     },
     {
-      id: 'tabletenis-racket-18',
+      id: 'tableTenis-racket-18',
       name: 'Amazing Table Tennis Racket 18',
       category: 'tableTenis',
       manufacturer: 'prince',
@@ -2365,10 +2365,10 @@ const initialState = {
       featured: false,
       topSeller: true,
       saleOff: true,
-      source: '/images/racket/tabletenis/tabletenis-racket-18.jpg',
+      source: '/images/racket/tableTenis/tableTenis-racket-18.webp',
     },
     {
-      id: 'tabletenis-racket-19',
+      id: 'tableTenis-racket-19',
       name: 'Light Table Tennis Racket 19',
       category: 'tableTenis',
       manufacturer: 'wilson',
@@ -2385,10 +2385,10 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tabletenis/tabletenis-racket-19.jpg',
+      source: '/images/racket/tableTenis/tableTenis-racket-19.webp',
     },
     {
-      id: 'tabletenis-racket-20',
+      id: 'tableTenis-racket-20',
       name: 'Heavy Table Tennis Racket 20',
       category: 'tableTenis',
       manufacturer: 'babolat',
@@ -2405,7 +2405,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tabletenis/tabletenis-racket-20.jpg',
+      source: '/images/racket/tableTenis/tableTenis-racket-20.webp',
     },
     {
       id: 'table-tenis-21',
@@ -2425,7 +2425,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tableTennis/table-tenis-21.jpg',
+      source: '/images/racket/tableTennis/table-tenis-21.webp',
     },
     {
       id: 'table-tenis-22',
@@ -2445,7 +2445,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tableTennis/table-tenis-22.jpg',
+      source: '/images/racket/tableTennis/table-tenis-22.webp',
     },
     {
       id: 'table-tenis-23',
@@ -2465,7 +2465,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tableTennis/table-tenis-23.jpg',
+      source: '/images/racket/tableTennis/table-tenis-23.webp',
     },
     {
       id: 'table-tenis-24',
@@ -2485,7 +2485,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tableTennis/table-tenis-24.jpg',
+      source: '/images/racket/tableTennis/table-tenis-24.webp',
     },
     {
       id: 'table-tenis-25',
@@ -2505,7 +2505,7 @@ const initialState = {
       featured: false,
       topSeller: false,
       saleOff: false,
-      source: '/images/racket/tableTennis/table-tenis-25.jpg',
+      source: '/images/racket/tableTennis/table-tenis-25.webp',
     },
   ],
   cart: {

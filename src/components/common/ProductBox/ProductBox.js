@@ -59,7 +59,7 @@ const ProductBox = props => {
           <div className={styles.image}>
             <img
               alt={name}
-              src={`${process.env.PUBLIC_URL}/images/furniture/${category}/${id}.jpg`}
+              src={source}
             />
           </div>
         </NavLink>
