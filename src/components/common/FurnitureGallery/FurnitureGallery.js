@@ -126,9 +126,6 @@ const FurnitureGallery = () => {
                 </p>
               </div>
               <div className={styles.content}>
-                <h5>
-                  <a href={'/product/' + activeProduct.id}>{activeProduct.name}</a>
-                </h5>
                 <StarsReview
                   id={activeProduct.id}
                   stars={activeProduct.stars}

@@ -56,10 +56,7 @@ const ProductBox = props => {
         {promo && <div className={styles.sale}>{promo}</div>}
         <NavLink to={productLink}>
           <div className={styles.image}>
-            <img
-              alt={name}
-              src={source}
-            />
+            <img alt={name} src={source} />
           </div>
         </NavLink>
         <div className={styles.buttons}>
@@ -72,9 +69,6 @@ const ProductBox = props => {
         </div>
       </div>
       <div className={styles.content}>
-        <NavLink to={productLink}>
-          <h5>{name}</h5>
-        </NavLink>
         <StarsReview id={id} stars={stars} myStars={myStars} name={name} />
       </div>
       <div className={styles.line}></div>
@@ -83,9 +77,15 @@ const ProductBox = props => {
           <ActionButton {...{ id, favourite }} buttonType={'favourite'} />
           <ActionButton {...{ id, compare }} buttonType={'compare'} />
         </div>
-        {oldPrice && <div className={styles.oldPrice}>{currency.sign} {(oldPrice * currency.multiplier).toFixed(2)}</div>}
+        {oldPrice && (
+          <div className={styles.oldPrice}>
+            {currency.sign} {(oldPrice * currency.multiplier).toFixed(2)}
+          </div>
+        )}
         <div className={styles.price}>
-          <Button variant='small'>{currency.sign} {(price * currency.multiplier).toFixed(2)}</Button>
+          <Button className={styles.button} variant='small'>
+            {currency.sign} {(price * currency.multiplier).toFixed(2)}
+          </Button>
         </div>
       </div>
     </div>

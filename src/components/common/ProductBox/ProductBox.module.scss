@@ -62,13 +62,6 @@
   .content {
     text-align: center;
     padding: 20px;
-  
-    h5 {
-      color: $primary;
-      font-size: 16px;
-      line-height: 24px;
-      letter-spacing: 1px;
-    }
   }
 
   .line {
@@ -93,6 +86,22 @@
     justify-content: space-between;
     align-items: center;
 
+  }
+
+  &:hover {
+    .content {
+      a {
+        h5 {
+          color: $primary
+        }
+      }
+    }
+
+    .price {
+      .button {
+        background-color: $primary;
+      }
+    }
   }
 }
 
