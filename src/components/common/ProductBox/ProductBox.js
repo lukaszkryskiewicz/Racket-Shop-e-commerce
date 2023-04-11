@@ -19,7 +19,6 @@ const ProductBox = props => {
   const currency = useSelector(state => getCurrency(state));
   const {
     id,
-    category,
     name,
     price,
     promo,
