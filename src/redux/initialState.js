@@ -2554,7 +2554,7 @@ const initialState = {
       title: 'Lorem ipsum',
       text:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
-      source: '/images/blog/1.jpg',
+      source: '/images/blog/blog-1.webp',
       author: 'admin',
       category: 'Just usual',
     },
@@ -2564,7 +2564,7 @@ const initialState = {
       title: 'Lorem ipsum',
       text:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
-      source: '/images/blog/2.jpg',
+      source: '/images/blog/blog-2.webp',
       author: 'admin',
       category: 'Just usual',
     },
@@ -2574,7 +2574,7 @@ const initialState = {
       title: 'Lorem ipsum',
       text:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
-      source: '/images/blog/3.jpg',
+      source: '/images/blog/blog-3.webp',
       author: 'admin',
       category: 'Just usual',
     },
@@ -2584,7 +2584,7 @@ const initialState = {
       title: 'Lorem ipsum',
       text:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
-      source: '/images/blog/4.jpg',
+      source: '/images/blog/blog-4.webp',
       author: 'admin',
       category: 'Just usual',
     },
@@ -2594,7 +2594,7 @@ const initialState = {
       title: 'Lorem ipsum',
       text:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
-      source: '/images/blog/5.jpg',
+      source: '/images/blog/blog-5.webp',
       author: 'admin',
       category: 'Just usual',
     },

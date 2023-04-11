@@ -114,10 +114,7 @@ const Featured = () => {
                     <div className={styles.photo}>
                       <NavLink to={'product' + hotDeal.id}>
                         <div className={styles.image}>
-                          <img
-                            alt={hotDeal.name}
-                            src={`${process.env.PUBLIC_URL}/images/furniture/${hotDeal.category}/${hotDeal.id}.jpg`}
-                          />
+                          <img alt={hotDeal.name} src={hotDeal.source} />
                         </div>
                       </NavLink>
                       <div className={styles.button}>
@@ -205,10 +202,16 @@ const Featured = () => {
                       </div>
                       <div className={styles.prices}>
                         {hotDeal.oldPrice && (
-                          <div className={styles.oldPrice}>{currency.sign} {(hotDeal.oldPrice * currency.multiplier).toFixed(2)}</div>
+                          <div className={styles.oldPrice}>
+                            {currency.sign}{' '}
+                            {(hotDeal.oldPrice * currency.multiplier).toFixed(2)}
+                          </div>
                         )}
                         <div className={styles.price}>
-                          <Button variant='small'>{currency.sign} {(hotDeal.price * currency.multiplier).toFixed(2)}</Button>
+                          <Button variant='small'>
+                            {currency.sign}{' '}
+                            {(hotDeal.price * currency.multiplier).toFixed(2)}
+                          </Button>
                         </div>
                       </div>
                     </div>
@@ -234,17 +237,14 @@ const Featured = () => {
                         <NavLink to={'product' + hotDeal.id}>
                           <Swipeable leftAction={leftAction} rightAction={rightAction}>
                             <div className={styles.image}>
-                              <img
-                                alt={hotDeal.name}
-                                src={`${process.env.PUBLIC_URL}/images/furniture/${hotDeal.category}/${hotDeal.id}.jpg`}
-                              />
+                              <img alt={hotDeal.name} src={hotDeal.source} />
                             </div>
                           </Swipeable>
                         </NavLink>
                         <div className={`${styles.heading} col-12`}>
                           <div className={styles.text}>
-                            <h2>Indoor furniture</h2>
-                            <h3>Save up to 50% of all furnitures</h3>
+                            <h2>Tenis rackets!</h2>
+                            <h3>Save up to 50% of all rackets</h3>
                           </div>
                         </div>
                         <Button className={styles.shopNow}>Shop now</Button>

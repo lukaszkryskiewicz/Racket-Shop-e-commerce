@@ -18,7 +18,7 @@ const NewProduct = ({
   filter,
 }) => {
   const [activePage, setActivePage] = useState(0);
-  const [activeCategory, setActiveCategory] = useState('categories[0].id');
+  const [activeCategory, setActiveCategory] = useState('tenis');
   const [fade, setFade] = useState(true);
   const filters = useSelector(getAllFilters);
 
