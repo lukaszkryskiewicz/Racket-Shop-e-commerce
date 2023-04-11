@@ -145,13 +145,17 @@ const Cart = () => {
             <div className={`row ${styles.cartTotalsRows}`}>
               <div className='col-5'>Subtotal</div>
               <div className={`col-7 ${styles.borderLeft} ${styles.price}`}>
-                <span>${subTotalPrice}</span>
+                <span>
+                  {currency.sign} {subTotalPrice}
+                </span>
               </div>
             </div>
             <div className={`row ${styles.cartTotalsRows}`}>
               <div className='col-5'>Total</div>
               <div className={`col-7 ${styles.borderLeft} ${styles.price}`}>
-                <span>${totalPrice}</span>
+                <span>
+                  {currency.sign} {totalPrice}
+                </span>
               </div>
             </div>
             <div className={`row ${styles.cartTotalsBottom}`}>
