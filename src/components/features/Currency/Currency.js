@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Currency.module.scss';
 import { Dropdown } from 'react-bootstrap';
 import clsx from 'clsx';
@@ -11,12 +11,18 @@ const Currency = () => {
 
   const availableCurrency = ['USD', 'EUR', 'PLN'];
 
+  useEffect(() => {
+    const currencyStorage = JSON.parse(localStorage.getItem('currency')) || 'USD';
+    setActiveCurrency(currencyConverter(currencyStorage));
+    dispatch(addCurrency(currencyConverter(currencyStorage)));
+  }, [dispatch]);
+
   fetch(`http://api.nbp.pl/api/exchangerates/tables/a/`)
     .then(res => res.json())
     .then(data => {
       const usdData = {
         waluta: data[0].rates[1].code,
-        kurs: `${data[0].rates[1].mid} zł`,
+        kurs: data[0].rates[1].mid,
       };
       const euroData = {
         waluta: data[0].rates[7].code,
@@ -29,6 +35,7 @@ const Currency = () => {
   const handleClick = (e, currency) => {
     e.preventDefault();
     setActiveCurrency(currencyConverter(currency));
+    localStorage.setItem('currency', JSON.stringify(currency));
     dispatch(addCurrency(currencyConverter(currency)));
   };
 

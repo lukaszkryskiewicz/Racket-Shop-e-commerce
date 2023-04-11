@@ -7,6 +7,7 @@ import CartTableLine from './CartTableLine/CartTableLine';
 import { checkout, getAll } from '../../../redux/cartRedux';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+import { getCurrency } from '../../../redux/currencyRedux';
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ const Cart = () => {
   const [couponCode, setCouponCode] = useState('');
   const [discount, setDiscount] = useState(0);
   const cartProducts = useSelector(getAll);
+  const currency = useSelector(state => getCurrency(state));
 
   const handleClick = e => {
     e.preventDefault();
@@ -24,7 +26,7 @@ const Cart = () => {
   const calculateCartTotal = (cartProducts, couponCode, discount) => {
     let subTotal = 0;
     for (let i = 0; i < cartProducts.length; i++) {
-      subTotal += cartProducts[i].price * cartProducts[i].amount;
+      subTotal += cartProducts[i].price * currency.multiplier * cartProducts[i].amount;
     }
 
     if (couponCode === 'blackfriday') {
@@ -37,7 +39,7 @@ const Cart = () => {
         return 0;
       }
       if (subTotal) {
-        return 20;
+        return 20 * currency.multiplier;
       }
       return 0;
     };
@@ -64,9 +66,10 @@ const Cart = () => {
 
   useEffect(() => {
     const { subTotal, total } = calculateCartTotal(cartProducts, couponCode, discount);
-    setSubTotalPrice(subTotal);
-    setTotalPrice(total);
-  }, [cartProducts, couponCode, discount]);
+    setSubTotalPrice(subTotal.toFixed(2));
+    setTotalPrice(total.toFixed(2));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cartProducts, couponCode, discount, currency]);
   return (
     <div className={styles.root}>
       <div className={styles.cartBar}>
@@ -142,13 +145,17 @@ const Cart = () => {
             <div className={`row ${styles.cartTotalsRows}`}>
               <div className='col-5'>Subtotal</div>
               <div className={`col-7 ${styles.borderLeft} ${styles.price}`}>
-                <span>${subTotalPrice}</span>
+                <span>
+                  {currency.sign} {subTotalPrice}
+                </span>
               </div>
             </div>
             <div className={`row ${styles.cartTotalsRows}`}>
               <div className='col-5'>Total</div>
               <div className={`col-7 ${styles.borderLeft} ${styles.price}`}>
-                <span>${totalPrice}</span>
+                <span>
+                  {currency.sign} {totalPrice}
+                </span>
               </div>
             </div>
             <div className={`row ${styles.cartTotalsBottom}`}>
