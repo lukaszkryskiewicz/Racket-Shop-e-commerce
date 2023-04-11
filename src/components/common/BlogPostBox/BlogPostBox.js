@@ -11,7 +11,7 @@ const BlogPostBox = ({ id, date, text, title }) => {
     <div className={'col ' + styles.root}>
       <div className={'row ' + styles.photo}>
         <div className={styles.image}>
-          <img alt={id} src={`${process.env.PUBLIC_URL}/images/blog/${id}.jpg`} />
+          <img alt={id} src={`${process.env.PUBLIC_URL}/images/blog/blog-${id}.webp`} />
         </div>
       </div>
       <div className='row'>
@@ -23,7 +23,7 @@ const BlogPostBox = ({ id, date, text, title }) => {
               </div>
               <div className={'col-6 ' + styles.text}>
                 <FontAwesomeIcon icon={faComment} /> {id}
-                {id == 1 ? ' Comment' : ' Comments'}
+                {id === 1 ? ' Comment' : ' Comments'}
               </div>
             </div>
             <a href='#' className={'row mb-3 ' + styles.title}>
