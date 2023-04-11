@@ -16,6 +16,8 @@
   .title {
     font-size: 60px;
     line-height: 75px;
+    text-transform: uppercase;
+    font-weight: bold;
   }
 
   .subtitle {
@@ -24,24 +26,27 @@
     font-size: 30px;
     letter-spacing: 11px;
     word-spacing: 12px;
+    text-transform: uppercase;
 
-     span {
+    span {
       color: $banner-orange-text;
       letter-spacing: 0;
-     }
+    }
   }
 
   .menu {
     background-color: $banner-menu-background;
     padding: 10px;
 
-      span {
-        color: $banner-orange-text;
-      }
+    span {
+      color: $banner-orange-text;
+      font-weight: bold;
 
-      p {
-        text-align: start;
-        word-spacing: 10px;
-      }
+    }
+
+    p {
+      text-align: start;
+      word-spacing: 10px;
+    }
   }
 }

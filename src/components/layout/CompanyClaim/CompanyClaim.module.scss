@@ -44,10 +44,16 @@
     }
   }
 
+  .logoImage {
+    width: 350px;
+    height: 170px;
+  }
+
   .cart {
     text-align: end;
     padding-left: 0;
     padding-right: 14px;
+
     .cartBox {
       display: inline-block;
       position: relative;

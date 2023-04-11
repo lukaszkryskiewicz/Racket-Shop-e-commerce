@@ -27,10 +27,7 @@ const CompareBar = () => {
             <div key={item.name} className='col-1'>
               <div className={styles.comparedItem} onClick={() => handleClick(item.id)}>
                 <div className={styles.name}>{item.name}</div>
-                <img
-                  alt={item.name}
-                  src={`${process.env.PUBLIC_URL}/images/furniture/${item.category}/${item.id}.jpg`}
-                />
+                <img alt={item.name} src={item.source} />
                 <div className={styles.price}>{item.price}$</div>
                 {item.favourite ? (
                   <div className={styles.fav}>

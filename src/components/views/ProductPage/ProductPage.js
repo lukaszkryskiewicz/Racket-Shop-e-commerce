@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from './ProductPage.module.scss';
-import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import ProductReview from '../../features/ProductReview/ProductReview';
+import NewProduct from '../../features/NewProduct/NewProductContainer';
 
 const ProductPage = () => {
   return (
     <div className={styles.root}>
       <ProductReview />
-      <NewFurniture productsOnDesktop={8} />
+      <NewProduct productsOnDesktop={8} />
     </div>
   );
 };

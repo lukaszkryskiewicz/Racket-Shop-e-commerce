@@ -19,7 +19,6 @@ const ProductBox = props => {
   const currency = useSelector(state => getCurrency(state));
   const {
     id,
-    category,
     name,
     price,
     promo,
@@ -59,7 +58,7 @@ const ProductBox = props => {
           <div className={styles.image}>
             <img
               alt={name}
-              src={`${process.env.PUBLIC_URL}/images/furniture/${category}/${id}.jpg`}
+              src={source}
             />
           </div>
         </NavLink>

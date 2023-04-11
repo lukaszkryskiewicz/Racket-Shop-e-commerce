@@ -81,7 +81,8 @@ const FurnitureGallery = () => {
   useEffect(() => {
     setActiveProduct(productsToDisplay[0]);
     setActiveThumbnail(productsToDisplay[0]);
-  }, [activeHeadline, productsToDisplay]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeHeadline]);
   return (
     <div className={styles.root}>
       <div className={styles.panelBar}>
@@ -105,16 +106,23 @@ const FurnitureGallery = () => {
           ))}
         </ul>
         <Link
-          className={`row g-0 align-items-center ' + ${styles.photo} + ${fadeImage ? styles.fadeIn : styles.fadeOut
-            }`}
+          className={`row g-0 align-items-center ' + ${styles.photo} + ${
+            fadeImage ? styles.fadeIn : styles.fadeOut
+          }`}
           to={'/product/' + activeProduct.id}
         >
           <img alt={activeProduct.name} src={activeProduct.source} />
           <div className={styles.productInfo}>
             <div className={styles.backgroundContent}>
               <div className={styles.price}>
-                <p className={styles.newPrice}>{currency.sign}{(activeProduct.price * currency.multiplier).toFixed(2)}</p>
-                <p className={styles.oldPrice}>{currency.sign}{(activeProduct.oldPrice * currency.multiplier).toFixed(2)}</p>
+                <p className={styles.newPrice}>
+                  {currency.sign}
+                  {(activeProduct.price * currency.multiplier).toFixed(2)}
+                </p>
+                <p className={styles.oldPrice}>
+                  {currency.sign}
+                  {(activeProduct.oldPrice * currency.multiplier).toFixed(2)}
+                </p>
               </div>
               <div className={styles.content}>
                 <h5>{activeProduct.name}</h5>
@@ -179,7 +187,7 @@ const FurnitureGallery = () => {
                     >
                       <img
                         alt={product.name}
-                        src={`${process.env.PUBLIC_URL}/images/furniture/${product.category}/${product.id}.jpg`}
+                        src={product.source}
                         className={
                           product.id === activeThumbnail.id ? styles.active : null
                         }
