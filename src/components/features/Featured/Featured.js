@@ -25,7 +25,7 @@ const Featured = () => {
   const [slideInterval, setSlideInterval] = useState(3000);
   const [hotDealIndex, setHotDealIndex] = useState(0);
   const [hotProductIndex, setHotProductIndex] = useState(0);
-  const hotDeals = useSelector(getHotDeals).slice(0, 3); // max 3 elementy ustawia obecnie
+  const hotDeals = useSelector(getHotDeals).slice(0, 3);
   const currency = useSelector(getCurrency);
 
   const handleSelect = selectedIndex => {
@@ -174,44 +174,46 @@ const Featured = () => {
                         </li>
                       </div>
                     </div>
-                    <div className={styles.content}>
-                      <NavLink to={'product' + hotDeal.id}>
-                        <h5>{hotDeal.name}</h5>
-                      </NavLink>
-                      <StarsReview
-                        id={hotDeal.id}
-                        stars={hotDeal.stars}
-                        myStars={hotDeal.myStars}
-                        name={hotDeal.name}
-                      />
-                    </div>
-                    <div className={styles.line}></div>
-                    <div className={styles.actions}>
-                      <div className={styles.outlines}>
-                        <ActionButton
+                    <div className={styles.infoBox}>
+                      <div className={styles.content}>
+                        <NavLink to={'product' + hotDeal.id}>
+                          <h5>{hotDeal.name}</h5>
+                        </NavLink>
+                        <StarsReview
                           id={hotDeal.id}
-                          favourite={hotDeal.favourite}
-                          buttonType={'favourite'}
+                          stars={hotDeal.stars}
+                          myStars={hotDeal.myStars}
+                          name={hotDeal.name}
                         />
-                        <ActionButton
-                          id={hotDeal.id}
-                          compare={hotDeal.compare}
-                          buttonType={'compare'}
-                        />
-                        <ActionButton id={hotDeal.id} buttonType={'quickView'} />
                       </div>
-                      <div className={styles.prices}>
-                        {hotDeal.oldPrice && (
-                          <div className={styles.oldPrice}>
-                            {currency.sign}{' '}
-                            {(hotDeal.oldPrice * currency.multiplier).toFixed(2)}
+                      <div className={styles.line}></div>
+                      <div className={styles.actions}>
+                        <div className={styles.outlines}>
+                          <ActionButton
+                            id={hotDeal.id}
+                            favourite={hotDeal.favourite}
+                            buttonType={'favourite'}
+                          />
+                          <ActionButton
+                            id={hotDeal.id}
+                            compare={hotDeal.compare}
+                            buttonType={'compare'}
+                          />
+                          <ActionButton id={hotDeal.id} buttonType={'quickView'} />
+                        </div>
+                        <div className={styles.prices}>
+                          {hotDeal.oldPrice && (
+                            <div className={styles.oldPrice}>
+                              {currency.sign}{' '}
+                              {(hotDeal.oldPrice * currency.multiplier).toFixed(2)}
+                            </div>
+                          )}
+                          <div className={styles.price}>
+                            <Button variant='small'>
+                              {currency.sign}{' '}
+                              {(hotDeal.price * currency.multiplier).toFixed(2)}
+                            </Button>
                           </div>
-                        )}
-                        <div className={styles.price}>
-                          <Button variant='small'>
-                            {currency.sign}{' '}
-                            {(hotDeal.price * currency.multiplier).toFixed(2)}
-                          </Button>
                         </div>
                       </div>
                     </div>
@@ -234,23 +236,23 @@ const Featured = () => {
                   >
                     {hotDeals.map(hotDeal => (
                       <Carousel.Item key={hotDeal.name} className={styles.carouselItem}>
-                        <NavLink to={'product' + hotDeal.id}>
+                        <NavLink to={'product/' + hotDeal.id}>
                           <Swipeable leftAction={leftAction} rightAction={rightAction}>
                             <div className={styles.image}>
                               <img alt={hotDeal.name} src={hotDeal.source} />
                             </div>
                           </Swipeable>
                         </NavLink>
-                        <div className={`${styles.heading} col-12`}>
-                          <div className={styles.text}>
-                            <h2>Tenis rackets!</h2>
-                            <h3>Save up to 50% of all rackets</h3>
-                          </div>
-                        </div>
                         <Button className={styles.shopNow}>Shop now</Button>
                       </Carousel.Item>
                     ))}
                   </Carousel>
+                  <div className={`${styles.heading} col-12`}>
+                    <div className={styles.text}>
+                      <h2>Tenis rackets!</h2>
+                      <h3>Save up to 50% of all rackets</h3>
+                    </div>
+                  </div>
                 </div>
                 <div className={clsx(styles.slider, 'col-12')}>
                   <button
