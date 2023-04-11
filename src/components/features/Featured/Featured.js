@@ -176,9 +176,6 @@ const Featured = () => {
                     </div>
                     <div className={styles.infoBox}>
                       <div className={styles.content}>
-                        <NavLink to={'product' + hotDeal.id}>
-                          <h5>{hotDeal.name}</h5>
-                        </NavLink>
                         <StarsReview
                           id={hotDeal.id}
                           stars={hotDeal.stars}

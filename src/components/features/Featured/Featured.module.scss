@@ -18,6 +18,9 @@
   }
 
   .productBox {
+    border-right: 1px solid #e1e1e1;
+    border-left: 1px solid #e1e1e1;
+
     .photo {
       position: relative;
       z-index: 1;
@@ -115,12 +118,6 @@
       .content {
         text-align: center;
         padding: 20px;
-
-        h5 {
-          font-size: 16px;
-          line-height: 24px;
-          letter-spacing: 1px;
-        }
       }
 
       .line {
@@ -160,6 +157,16 @@
         }
       }
     }
+
+    &:hover {
+      .content {
+        a {
+          h5 {
+            color: $primary
+          }
+        }
+      }
+    }
   }
 
   .oldPrice {
@@ -171,6 +178,7 @@
   .buttonActive {
     cursor: pointer;
   }
+
 
   /* Col-8 */
 

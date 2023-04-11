@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import styles from './StarsReview.module.scss';
+import { NavLink } from 'react-router-dom';
 
 const StarsReview = props => {
   const [myStars, setMyStars] = useState(props.myStars ? props.myStars : 0);
@@ -53,22 +54,29 @@ const StarsReview = props => {
     }
   };
 
+  const productLink = '/product/' + props.id;
+
   return (
-    <div className={styles.stars}>
-      {[1, 2, 3, 4, 5].map(i => (
-        <a key={i} href='#'>
-          <FontAwesomeIcon
-            key={i}
-            className={drawStarStyle(i)}
-            icon={drawProperStar(i)}
-            onClick={e => handleClick(e, i)}
-            onMouseOver={() => handleMouseOver(i)}
-            onMouseLeave={handleMouseLeave}
-          >
-            {i} stars
-          </FontAwesomeIcon>
-        </a>
-      ))}
+    <div className={styles.content}>
+      <NavLink to={productLink}>
+        <h5>{props.name}</h5>
+      </NavLink>
+      <div className={styles.stars}>
+        {[1, 2, 3, 4, 5].map(i => (
+          <a key={i} href='#'>
+            <FontAwesomeIcon
+              key={i}
+              className={drawStarStyle(i)}
+              icon={drawProperStar(i)}
+              onClick={e => handleClick(e, i)}
+              onMouseOver={() => handleMouseOver(i)}
+              onMouseLeave={handleMouseLeave}
+            >
+              {i} stars
+            </FontAwesomeIcon>
+          </a>
+        ))}
+      </div>
     </div>
   );
 };
