@@ -9,14 +9,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 
-const MenuBar = ({ children }) => {
+const MenuBar = () => {
   const [mobileMenu, setMobileMenu] = useState(true);
 
   const action = () => {
     setMobileMenu(!mobileMenu);
   };
 
-  const menuLinks = ['/', 'tenis', 'padel', 'badminton', 'squash', 'table tenis', 'blog'];
+  const menuLinks = [
+    '/',
+    'tenis',
+    'padel',
+    'badminton',
+    'squash',
+    'table tenis',
+    'blog',
+  ];
 
   return (
     <div className={mobileMenu ? styles.root : styles.rootMobile}>
@@ -30,7 +38,7 @@ const MenuBar = ({ children }) => {
           </button>
           <div className={mobileMenu ? 'col-auto ' + styles.menu : styles.menuMobile}>
             <ul>
-              {menuLinks.map(link =>
+              {menuLinks.map(link => (
                 <li key={link}>
                   <NavLink
                     exact
@@ -40,8 +48,7 @@ const MenuBar = ({ children }) => {
                     {link === '/' ? 'home' : link}
                   </NavLink>
                 </li>
-
-              )}
+              ))}
             </ul>
           </div>
         </div>

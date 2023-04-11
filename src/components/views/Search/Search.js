@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Search.module.scss';
-import NewFurniture from '../../features/NewFurniture/NewFurniture';
+import NewProduct from '../../features/NewProduct/NewProduct';
 import { useSelector } from 'react-redux';
 import { getAll } from '../../../redux/categoriesRedux';
 import { getAllProducts } from '../../../redux/productsRedux';
@@ -13,7 +13,12 @@ const Search = () => {
 
   return (
     <div className={styles.root}>
-      <NewFurniture categories={categories} products={products} searchedText={searchedText} productsOnDesktop={8} />
+      <NewProduct
+        categories={categories}
+        products={products}
+        searchedText={searchedText}
+        productsOnDesktop={8}
+      />
     </div>
   );
 };

@@ -7,17 +7,16 @@ import Brands from '../../layout/Brands/Brands';
 import FilterByCategory from '../../common/FilterCategory/FilteByCategory';
 import FilterByPrice from '../../common/FilterByPrice/FilterByPrice';
 import Banner from '../../common/Banner/Banner';
-import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
+import NewProduct from '../../features/NewProduct/NewProduct';
 
 const ProductList = () => {
-
   return (
     <div className={styles.root}>
       <div className='container'>
         <Banner />
         <div className={`row ${styles.filtered}`}>
           <div className={`col-9 ${styles.productList}`}>
-            <NewFurniture productsOnDesktop={12} filter={true} />
+            <NewProduct productsOnDesktop={12} filter={true} />
           </div>
           <div className={`col-3 ${styles.filters}`}>
             <FilterByCategory></FilterByCategory>

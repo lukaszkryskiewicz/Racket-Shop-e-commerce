@@ -2,7 +2,7 @@
 export const getAllProducts = ({ products }) => products;
 export const getCount = ({ products }) => products.length;
 export const getNew = ({ products }) =>
-  products.filter(item => item.newFurniture === true);
+  products.filter(item => item.newProduct === true);
 export const getFeaturedProducts = ({ products }) =>
   products.filter(item => item.featured === true);
 export const getProductsToCompare = ({ products }) =>
@@ -46,9 +46,9 @@ export default function reducer(statePart = [], action = {}) {
       return statePart.map(product =>
         product.id === action.payload
           ? {
-            ...product,
-            favourite: !product.favourite,
-          }
+              ...product,
+              favourite: !product.favourite,
+            }
           : product
       );
     case TOGGLE_PRODUCT_COMPARE:
