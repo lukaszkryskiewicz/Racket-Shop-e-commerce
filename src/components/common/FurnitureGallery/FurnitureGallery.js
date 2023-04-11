@@ -105,13 +105,14 @@ const FurnitureGallery = () => {
             </li>
           ))}
         </ul>
-        <Link
+        <div
           className={`row g-0 align-items-center ' + ${styles.photo} + ${
             fadeImage ? styles.fadeIn : styles.fadeOut
           }`}
-          to={'/product/' + activeProduct.id}
         >
-          <img alt={activeProduct.name} src={activeProduct.source} />
+          <Link to={'/product/' + activeProduct.id}>
+            <img alt={activeProduct.name} src={activeProduct.source} />
+          </Link>
           <div className={styles.productInfo}>
             <div className={styles.backgroundContent}>
               <div className={styles.price}>
@@ -125,7 +126,9 @@ const FurnitureGallery = () => {
                 </p>
               </div>
               <div className={styles.content}>
-                <h5>{activeProduct.name}</h5>
+                <h5>
+                  <a href={'/product/' + activeProduct.id}>{activeProduct.name}</a>
+                </h5>
                 <StarsReview
                   id={activeProduct.id}
                   stars={activeProduct.stars}
@@ -162,7 +165,7 @@ const FurnitureGallery = () => {
               source={activeProduct.source}
             />
           </div>
-        </Link>
+        </div>
         <Swipeable leftAction={leftAction} rightAction={rightAction}>
           <div className={`row g-0 m-2 justify-content-between + ${styles.slider}`}>
             <a

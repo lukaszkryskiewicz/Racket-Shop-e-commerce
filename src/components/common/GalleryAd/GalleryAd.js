@@ -1,25 +1,28 @@
 import React from 'react';
 import styles from './GalleryAd.module.scss';
 import Button from '../Button/Button';
+import { useSelector } from 'react-redux';
+import { getTopSellerProducts } from '../../../redux/productsRedux';
 
-const GalleryAd = () => (
-  <div className={styles.root}>
-    <div className={styles.photo}>
-      <img
-        alt='Aenean Ru Bristique 20'
-        src='/images/furniture/chair/aenean-ru-bristique-20.jpg'
-      />
+const GalleryAd = () => {
+  const galleryAdProduct = useSelector(getTopSellerProducts).slice(0, 1);
+
+  return (
+    <div className={styles.root}>
+      <div className={styles.photo}>
+        <img alt={galleryAdProduct[0].name} src={galleryAdProduct[0].source} />
+      </div>
+      <div className={styles.promoText}>
+        <p className={styles.text}>
+          From <span className={styles.price}>$500.00</span>
+        </p>
+        <p className={styles.title}>Pro Tenis Racket</p>
+        <Button variant='main' className={styles.button}>
+          Shop Now
+        </Button>
+      </div>
     </div>
-    <div className={styles.promoText}>
-      <p className={styles.text}>
-        From <span className={styles.price}>$100.00</span>
-      </p>
-      <p className={styles.title}>Dining Chair</p>
-      <Button variant='main' className={styles.button}>
-        Shop Now
-      </Button>
-    </div>
-  </div>
-);
+  );
+};
 
 export default GalleryAd;
