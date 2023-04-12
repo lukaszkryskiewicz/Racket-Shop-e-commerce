@@ -46,6 +46,9 @@ const ActionButton = ({
     if (compareList.length < 4 || !!checkIfItemIsCompared) {
       //!!checkIfItemIsCompared --> converts result to boolean -> true if item was already selected, and false otherwise
       dispatch(toggleProductCompare(id));
+      const comparedProducts = JSON.parse(localStorage.getItem('compare')) || {};
+      comparedProducts[id] = !compare;
+      localStorage.setItem('compare', JSON.stringify(comparedProducts));
     }
   };
 
