@@ -10,7 +10,10 @@ import Button from '../Button/Button';
 import StarsReview from '../StarsReview/StarsReview';
 import ActionButton from '../ActionButton/ActionButton';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleProductFavourite } from '../../../redux/productsRedux';
+import {
+  toggleProductCompare,
+  toggleProductFavourite,
+} from '../../../redux/productsRedux';
 import { addProduct } from '../../../redux/cartRedux';
 import { getCurrency } from '../../../redux/currencyRedux';
 
@@ -33,9 +36,13 @@ const ProductBox = props => {
   const productLink = '/product/' + id;
 
   useEffect(() => {
-    const productData = JSON.parse(localStorage.getItem('favourites')) || {};
-    if (productData[id]) {
+    const productDataFavourite = JSON.parse(localStorage.getItem('favourites')) || {};
+    if (productDataFavourite[id]) {
       dispatch(toggleProductFavourite(id));
+    }
+    const productDataCompare = JSON.parse(localStorage.getItem('compare')) || {};
+    if (productDataCompare[id]) {
+      dispatch(toggleProductCompare(id));
     }
   }, [dispatch, id]);
 
