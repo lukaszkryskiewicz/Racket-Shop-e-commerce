@@ -4,7 +4,7 @@ import styles from './Cart.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 import CartTableLine from './CartTableLine/CartTableLine';
-import { checkout, getAll } from '../../../redux/cartRedux';
+import { checkout, getAll, getCoupons } from '../../../redux/cartRedux';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getCurrency } from '../../../redux/currencyRedux';
@@ -13,63 +13,69 @@ const Cart = () => {
   const dispatch = useDispatch();
   const [totalPrice, setTotalPrice] = useState(0);
   const [subTotalPrice, setSubTotalPrice] = useState(0);
-  const [couponCode, setCouponCode] = useState('');
-  const [discount, setDiscount] = useState(0);
+  const [couponCode, setCouponCode] = useState(null);
+  const [isCouponActive, setIsCouponActive] = useState(false);
+  const [couponMessage, setCouponMessage] = useState(null);
   const cartProducts = useSelector(getAll);
   const currency = useSelector(state => getCurrency(state));
+  const coupons = useSelector(getCoupons);
 
   const handleClick = e => {
     e.preventDefault();
     dispatch(checkout());
   };
 
-  const calculateCartTotal = (cartProducts, couponCode, discount) => {
+  const calculateCart = () => {
     let subTotal = 0;
-    for (let i = 0; i < cartProducts.length; i++) {
-      subTotal += cartProducts[i].price * currency.multiplier * cartProducts[i].amount;
+    let deliveryFee = cartProducts.length !== 0 ? 20 * currency.multiplier : 0;
+    cartProducts.map(
+      product => (subTotal += product.price * currency.multiplier * product.amount)
+    );
+    if (couponCode) {
+      coupons.find(coupon => {
+        if (coupon.id === couponCode) {
+          switch (coupon.type) {
+            case 'discount':
+              subTotal = subTotal * coupon.value;
+              setIsCouponActive(true);
+              break;
+            case 'freeDelivery':
+              deliveryFee = 0;
+              setIsCouponActive(true);
+              break;
+            default:
+              return null;
+          }
+          setCouponMessage('success');
+          return true;
+        }
+        setCouponMessage('error');
+        return null;
+      });
     }
-
-    if (couponCode === 'blackfriday') {
-      subTotal *= 0.5;
-    }
-    subTotal *= 1 - discount / 100;
-
-    const deliveryFeeCalculation = () => {
-      if (couponCode === 'bluemonday') {
-        return 0;
-      }
-      if (subTotal) {
-        return 20 * currency.multiplier;
-      }
-      return 0;
-    };
-    let total = subTotal + deliveryFeeCalculation();
-
+    let total = subTotal + deliveryFee;
     return { subTotal, total };
   };
 
   const handleCouponCodeChange = e => {
     setCouponCode(e.target.value.toLowerCase());
+    setIsCouponActive(false);
+    setCouponMessage(null);
   };
 
   const handleApplyCoupon = e => {
     e.preventDefault();
-    const { subTotal, total } = calculateCartTotal(cartProducts, couponCode, discount);
-    setSubTotalPrice(subTotal);
-    setTotalPrice(total);
-    if (couponCode === 'blackfriday') {
-      setDiscount(50);
-    } else {
-      setDiscount(0);
-    }
+    const { subTotal, total } = calculateCart();
+    setSubTotalPrice(subTotal.toFixed(2));
+    setTotalPrice(total.toFixed(2));
   };
 
   useEffect(() => {
-    const { subTotal, total } = calculateCartTotal(cartProducts, couponCode, discount);
+    const { subTotal, total } = calculateCart();
     setSubTotalPrice(subTotal.toFixed(2));
     setTotalPrice(total.toFixed(2));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cartProducts, couponCode, discount, currency]);
+  }, [cartProducts, currency, isCouponActive]);
   return (
     <div className={styles.root}>
       <div className={styles.cartBar}>
@@ -123,6 +129,13 @@ const Cart = () => {
               </Button>
             </span>
             <span className='col-6 d-flex justify-content-end'>
+              {couponMessage === 'null' && null}
+              {couponMessage === 'error' &&
+                'It looks like code ' + couponCode + ' is not working'}
+              {couponMessage === 'success' &&
+                'Great! Your code ' + couponCode + ' works!'}
+            </span>
+            {/*             <span className='col-6 d-flex justify-content-end'>
               <Button
                 variant='main'
                 type='submit'
@@ -130,7 +143,7 @@ const Cart = () => {
               >
                 UPDATE CART
               </Button>
-            </span>
+            </span> --> nie jest obecnie potrzebny */}
           </div>
         </div>
         <div className='row mx-0'>
@@ -142,6 +155,28 @@ const Cart = () => {
                 <span>Cart totals</span>
               </div>
             </div>
+            {isCouponActive && (
+              <div className={`row ${styles.cartTotalsRows}`}>
+                <div className='col-5'>Discount</div>
+                <div className={`col-7 ${styles.borderLeft} ${styles.price}`}>
+                  <span>
+                    {coupons.map(coupon => {
+                      if (coupon.id === couponCode) {
+                        switch (coupon.type) {
+                          case 'discount':
+                            return 'You got ' + (1 - coupon.value) * 100 + '% Discount';
+                          case 'freeDelivery':
+                            return 'You got free delivery!';
+                          default:
+                            return 'No cupon';
+                        }
+                      }
+                      return null;
+                    })}
+                  </span>
+                </div>
+              </div>
+            )}
             <div className={`row ${styles.cartTotalsRows}`}>
               <div className='col-5'>Subtotal</div>
               <div className={`col-7 ${styles.borderLeft} ${styles.price}`}>

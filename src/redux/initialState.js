@@ -2509,7 +2509,19 @@ const initialState = {
     },
   ],
   cart: {
-    products: [],
+    products: [
+      {
+        id: 'tenis-racket-1',
+        name: 'Pro Tenis Racket 1',
+        price: 1038,
+        source: '/images/racket/tenis/tenis-racket-1.webp',
+        amount: 1,
+      },
+    ],
+    coupons: [
+      { id: 'bluemonday', type: 'freeDelivery' },
+      { id: 'blackfriday', type: 'discount', value: 0.5 },
+    ],
   },
   brands: [
     { id: 1, source: '/images/brands/brand 1.png', brandName: 'brand 1' },

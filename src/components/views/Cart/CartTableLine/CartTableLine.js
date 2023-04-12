@@ -20,6 +20,15 @@ const CartTableLine = ({ id, name, price, source, amount }) => {
     dispatch(removeProduct(id));
   };
 
+  const handleChange = e => {
+    e.preventDefault();
+    const newAmount = parseInt(e.target.value);
+    if (!isNaN(newAmount)) {
+      setAmount(newAmount);
+      dispatch(updateProduct({ id, amount: newAmount }));
+    }
+  };
+
   const incrementAmount = () => {
     if (itemAmount < 10) {
       setAmount(itemAmount + 1);
@@ -56,9 +65,17 @@ const CartTableLine = ({ id, name, price, source, amount }) => {
         {currency.sign} {price}
       </div>
       <div className='col-2 text-center'>
-        <Button onClick={decrementAmount}>-</Button>
-        {itemAmount}
-        <Button onClick={incrementAmount}>+</Button>
+        <Button className={styles.amountControls} onClick={decrementAmount}>
+          -
+        </Button>
+        <input
+          className={styles.amountInput}
+          onChange={e => handleChange(e)}
+          value={itemAmount}
+        />
+        <Button className={styles.amountControls} onClick={incrementAmount}>
+          +
+        </Button>
       </div>
       <div className={`col-1 text-center ${styles.price}`}>
         {currency.sign} {totalForProduct}

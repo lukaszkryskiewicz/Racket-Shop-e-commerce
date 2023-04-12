@@ -6,7 +6,21 @@
   align-items: center;
   border: 1px solid $chat-textarea-bakground;
   border-bottom: none;
-  padding: 8px;
+  padding: 8px 0;
+
+  .amountInput {
+    width: 55px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 5px;
+  }
+
+  .amountControls {
+    text-decoration: none;
+    font-size: 20px;
+    vertical-align: middle;
+    margin: 5px;
+  }
 }
 
 .productImage {
