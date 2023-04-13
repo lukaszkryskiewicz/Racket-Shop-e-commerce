@@ -22,7 +22,7 @@ const MenuBar = () => {
     'padel',
     'badminton',
     'squash',
-    'table tenis',
+    'tableTenis',
     'blog',
   ];
 

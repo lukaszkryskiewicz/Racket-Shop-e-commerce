@@ -1,0 +1,77 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  padding: $base-padding 0;
+
+  .title {
+    margin: 5px;
+    position: relative;
+    text-transform: uppercase;
+    text-align: left;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: 0;
+      width: 100%;
+      border-bottom: 2px solid $text-color;
+    }
+
+    h5 {
+      font-size: 16px;
+    }
+  }
+
+  .starsRating {
+    text-align: center;
+    margin: 15px;
+    font-size: 25px;
+
+    .starsList {
+      list-style: none;
+      padding: 0;
+
+      .starsRow {
+
+        &:hover {
+          color: $primary;
+        }
+
+
+      }
+
+      .active {
+        color: $primary;
+      }
+    }
+  }
+
+
+
+  /*   .number {
+    margin-left: auto;
+    font-size: 15px;
+    border-radius: 50%;
+    background-color: black;
+    width: 25px;
+    text-align: center;
+  } */
+
+  /*  span {
+    color: $primary;
+    width: 20 px;
+
+
+  }
+
+  .active span {
+    color: white;
+    background-color: $orange;
+  }
+
+  .active {
+    color: $orange;
+    padding: 0 0 0 15px;
+  } */
+}
