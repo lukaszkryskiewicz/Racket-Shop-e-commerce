@@ -5,6 +5,7 @@ export const getAllFilters = ({ productFilters }) => productFilters;
 const createActionName = actionName => `app/filters/${actionName}`;
 const UPDATE_FILTER = createActionName('UPDATE_FILTER');
 const REMOVE_FILTER = createActionName('REMOVE_FILTER');
+const CLEAR_FILTERS = createActionName('CLEAR_FILTERS');
 
 /* action creators */
 export const updateFilter = payload => ({
@@ -14,6 +15,11 @@ export const updateFilter = payload => ({
 
 export const removeFilter = payload => ({
   type: REMOVE_FILTER,
+  payload,
+});
+
+export const clearFilters = payload => ({
+  type: CLEAR_FILTERS,
   payload,
 });
 
@@ -33,6 +39,9 @@ export default function reducer(statePart = [], action = {}) {
     case REMOVE_FILTER: {
       return statePart.filter(filter => filter.name !== action.payload.name);
 
+    }
+    case CLEAR_FILTERS: {
+      return [];
     }
     default:
       return statePart;

@@ -15,7 +15,8 @@ const NewProduct = ({
   viewportMode,
   searchedText,
   productsOnDesktop,
-  filter,
+  categoryId,
+  currency,
 }) => {
   const [activePage, setActivePage] = useState(0);
   const [activeCategory, setActiveCategory] = useState('tenis');
@@ -23,39 +24,43 @@ const NewProduct = ({
   const filters = useSelector(getAllFilters);
 
   const productSuitsAllFilters = (product, allFilters) => {
-    for (let i = 0; i < allFilters.length; i++) {
-      const checkedFilter = allFilters[i];
-      switch (checkedFilter.name) {
-        case 'sizeFilter':
-          if (
-            !product.size ||
-            !checkedFilter.value.some(size => product.size === size)
-          ) {
+    if (product.category === categoryId) {
+      for (let i = 0; i < allFilters.length; i++) {
+        const checkedFilter = allFilters[i];
+        switch (checkedFilter.name) {
+          case 'ratingFilter':
+            if (
+              !product.stars ||
+              checkedFilter.value > product.stars
+            ) {
+              return false;
+            }
+            break;
+          case 'colorFilter':
+            if (!product.color || !(checkedFilter.value.some(color => product.color.includes(color)))) {
+              return false;
+            }
+            break;
+          case 'priceFilter':
+            if (
+              !product.price ||
+              product.price * currency.multiplier < checkedFilter.value[0] ||
+              product.price * currency.multiplier > checkedFilter.value[1]
+            ) {
+              return false;
+            }
+            break;
+          case 'brandFilter':
+            if (!product.manufacturer || product.manufacturer !== checkedFilter.value) {
+              return false;
+            }
+            break;
+          default:
             return false;
-          }
-          break;
-        case 'colorFilter':
-          if (!product.color || product.color !== checkedFilter.value) {
-            return false;
-          }
-          break;
-        case 'priceFilter':
-          if (
-            !product.price ||
-            product.price < checkedFilter.value[0] ||
-            product.price > checkedFilter.value[1]
-          ) {
-            return false;
-          }
-          break;
-        case 'categoryFilter':
-          if (!product.category || product.category !== checkedFilter.value) {
-            return false;
-          }
-          break;
-        default:
-          return false;
+        }
       }
+    } else {
+      return false;
     }
     return true;
   };
@@ -103,7 +108,7 @@ const NewProduct = ({
   } else if (pageAddress.productId) {
     productsToRender = productsToRender.filter((item, index) => index < 4);
     pagesCount = 0;
-  } else if (filter) {
+  } else if (categoryId) {
     productsToRender = products.filter(product =>
       productSuitsAllFilters(product, filters)
     );
@@ -198,13 +203,19 @@ NewProduct.propTypes = {
       price: PropTypes.number,
       stars: PropTypes.number,
       promo: PropTypes.string,
-      newFurniture: PropTypes.bool,
+      newProduct: PropTypes.bool,
     })
   ),
   viewportMode: PropTypes.string,
   searchedText: PropTypes.string,
   productsOnDesktop: PropTypes.number,
-  filter: PropTypes.bool,
+  categoryId: PropTypes.string,
+  currency: PropTypes.shape({
+    name: PropTypes.string,
+    multiplier: PropTypes.number,
+    sign: PropTypes.string,
+  })
+  ,
 };
 
 NewProduct.defaultProps = {
