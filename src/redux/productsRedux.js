@@ -16,6 +16,8 @@ export const getTopSellerProducts = ({ products }) =>
   products.filter(item => item.topSeller === true);
 export const getTopRatedProducts = ({ products }) =>
   products.slice(0, 15).sort((a, b) => b.stars - a.stars);
+export const getProductById = ({ products }, id) => products.find(
+  product => product.id === id);
 
 /* actions */
 const createActionName = actionName => `app/products/${actionName}`;

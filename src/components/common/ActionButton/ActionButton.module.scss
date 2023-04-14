@@ -27,3 +27,18 @@
   opacity: 1;
   visibility: visible;
 }
+
+a {
+  text-decoration: none;
+
+  .children {
+    padding: 5px;
+    text-transform: uppercase;
+  }
+}
+
+.primaryButtonStyle {
+  background-color: $primary;
+  color: white;
+  border: 1px solid $primary;
+}
