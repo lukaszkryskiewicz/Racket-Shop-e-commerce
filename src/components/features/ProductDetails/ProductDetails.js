@@ -19,7 +19,7 @@ const ProductDetails = () => {
   const [activeImage, setActiveImage] = useState(0);
   const [productAmount, setProductAmount] = useState(1);
   const currency = useSelector(getCurrency);
-  const product = useSelector(state => getProductById(state, productId))
+  const product = useSelector(state => getProductById(state, productId));
   const pictureNumber = 4;
   const handlePhotoChange = (number) => {
     setFadeImage(false);
@@ -34,7 +34,7 @@ const ProductDetails = () => {
     { name: 'Instagram', icon: faInstagram },
     { name: 'Twitter', icon: faTwitter },
     { name: 'Pinterest', icon: faPinterest },
-    { name: 'LinkedIn', icon: faLinkedinIn }]
+    { name: 'LinkedIn', icon: faLinkedinIn }];
 
   const handleAmountChange = e => {
     e.preventDefault();
@@ -44,13 +44,15 @@ const ProductDetails = () => {
     }
   };
 
-  const incrementAmount = () => {
+  const incrementAmount = (e) => {
+    e.preventDefault();
     if (productAmount < 10) {
       setProductAmount(productAmount + 1);
     }
   };
 
-  const decrementAmount = () => {
+  const decrementAmount = (e) => {
+    e.preventDefault();
     if (productAmount > 1) {
       setProductAmount(productAmount - 1);
     }
@@ -183,33 +185,39 @@ const ProductDetails = () => {
 
             </div>
             <div className={clsx('row', styles.overviewRow)}>
-              <p>Overview</p>
+              <p className={styles.overviewTitle}>Quick Overview</p>
               <div>
                 {product.overview}
               </div>
             </div>
             <div className={clsx('row', styles.infoRow)}>
               <div>
-                <p><span>Availability: </span>{product.quantity > 0 ? 'In Stock (' + (product.quantity) + ')' : 'Currently not available'} </p>
-
+                <p>
+                  <span>availability: </span>
+                  {product.quantity > 0 ? 'In Stock (' + (product.quantity) + ')' : 'Currently not available'}
+                </p>
               </div>
               <div>
-                <p><span>Category: </span>{product.category}</p>
+                <p className='m-0'>
+                  <span>category: </span>
+                  {product.category}
+                </p>
               </div>
             </div>
             <div className={clsx('row', styles.socialRow)}>
               <div className={styles.social}>
                 {socialMedia.map(socialMedium => (
                   <Link
-                    key={socialMedium}
+                    key={socialMedium.name}
+                    className={`${styles.media} ${styles.outline}`}
                     to='/'
                     onClick={e => {
                       e.preventDefault();
                       window.open('https://www.' + socialMedium.name + '.com/');
                     }}
                   >
-                    <Button variant='outline' className={styles.media}>
-                      <FontAwesomeIcon icon={socialMedium.icon}></FontAwesomeIcon>{' '}
+                    <Button noLink variant='outline' className={styles.media}>
+                      <FontAwesomeIcon icon={socialMedium.icon} />{' '}
                       {socialMedium.name}
                     </Button>
                   </Link>

@@ -169,23 +169,37 @@
       .overviewRow {
         padding: 20px 0;
         border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+
+        .overviewTitle {
+          font-weight: bold;
+          font-size: 18px;
+        }
+
       }
 
       .infoRow {
         padding: 20px 0;
         border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+        text-transform: capitalize;
+
+        span {
+          font-weight: bold;
+          padding-right: 5px;
+        }
       }
 
       .socialRow {
         padding: 20px 0;
 
         .social {
+
           a {
             text-decoration: none;
 
           }
 
           .media {
+            text-align: center;
             width: 120px;
             margin: 3px;
           }
