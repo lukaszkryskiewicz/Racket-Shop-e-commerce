@@ -11,7 +11,13 @@ import { Link } from 'react-router-dom';
 import { getCurrency } from '../../../redux/currencyRedux';
 import Button from '../../common/Button/Button';
 import ActionButton from '../../common/ActionButton/ActionButton';
-import { faFacebook, faTwitter, faPinterest, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import {
+  faFacebook,
+  faTwitter,
+  faPinterest,
+  faInstagram,
+  faLinkedinIn,
+} from '@fortawesome/free-brands-svg-icons';
 
 const ProductDetails = () => {
   const { productId } = useParams();
@@ -21,7 +27,7 @@ const ProductDetails = () => {
   const currency = useSelector(getCurrency);
   const product = useSelector(state => getProductById(state, productId));
   const pictureNumber = 4;
-  const handlePhotoChange = (number) => {
+  const handlePhotoChange = number => {
     setFadeImage(false);
     setTimeout(() => {
       setActiveImage(number);
@@ -34,7 +40,8 @@ const ProductDetails = () => {
     { name: 'Instagram', icon: faInstagram },
     { name: 'Twitter', icon: faTwitter },
     { name: 'Pinterest', icon: faPinterest },
-    { name: 'LinkedIn', icon: faLinkedinIn }];
+    { name: 'LinkedIn', icon: faLinkedinIn },
+  ];
 
   const handleAmountChange = e => {
     e.preventDefault();
@@ -44,14 +51,14 @@ const ProductDetails = () => {
     }
   };
 
-  const incrementAmount = (e) => {
+  const incrementAmount = e => {
     e.preventDefault();
     if (productAmount < 10) {
       setProductAmount(productAmount + 1);
     }
   };
 
-  const decrementAmount = (e) => {
+  const decrementAmount = e => {
     e.preventDefault();
     if (productAmount > 1) {
       setProductAmount(productAmount - 1);
@@ -62,39 +69,41 @@ const ProductDetails = () => {
     <div className={styles.root}>
       <div className={clsx('container', styles.productDetails)}>
         <div className={clsx('row', styles.mainRow)}>
-          <div className={clsx('col-5', styles.photoSection)}>
+          <div className={clsx('col-lg-5 col-md-12', styles.photoSection)}>
             <div
               className={clsx(
                 'row g-0 align-items-center',
                 styles.photo,
                 fadeImage ? styles.fadeIn : styles.fadeOut
               )}
-            > <p className={styles.photoOverlay}>Picture {activeImage}</p>
+            >
+              {' '}
+              <p className={styles.photoOverlay}>Picture {activeImage}</p>
               <img alt={product.name} src={product.source} />
             </div>
             <div className={clsx('row g-0 m-2 justify-content-between', styles.slider)}>
               <a
                 className={'col-1 ' + styles.arrowButton}
                 onClick={() =>
-                  handlePhotoChange(activeImage === 0 ? pictureNumber - 1 : activeImage - 1)}
+                  handlePhotoChange(
+                    activeImage === 0 ? pictureNumber - 1 : activeImage - 1
+                  )
+                }
               >
                 &#60;
               </a>
-              <div
-                className={clsx('col mx-3')}>
+              <div className={clsx('col mx-3')}>
                 <div className={clsx('row', styles.thumbnailsContainer)}>
                   {[...Array(pictureNumber)].map((item, i) => (
                     <div
                       key={i}
-                      className={clsx('col-lg-2 col-md-4 col-3 px-1', styles.thumbnail)}
+                      className={clsx('col-3 px-1', styles.thumbnail)}
                       onClick={() => handlePhotoChange(i)}
                     >
                       <img
                         alt={product.name}
                         src={product.source}
-                        className={
-                          i === activeImage ? styles.active : null
-                        }
+                        className={i === activeImage ? styles.active : null}
                       />
                     </div>
                   ))}
@@ -102,41 +111,55 @@ const ProductDetails = () => {
               </div>
               <a
                 className={clsx('col-1', styles.arrowButton)}
-                onClick={() => handlePhotoChange(activeImage === pictureNumber - 1 ? 0 : activeImage + 1)}
+                onClick={() =>
+                  handlePhotoChange(
+                    activeImage === pictureNumber - 1 ? 0 : activeImage + 1
+                  )
+                }
               >
                 <span>&#62;</span>
               </a>
             </div>
           </div>
-          <div className={clsx('col-7', styles.infoSection)}>
+          <div className={clsx('col-lg-7 col-md-12', styles.infoSection)}>
             <div className={clsx('row', styles.headerRow)}>
               <div className={styles.title}>
                 <h1>{product.name}</h1>
               </div>
-              <div className={styles.review}>
-                {[1, 2, 3, 4, 5].map(i => (
-                  <span key={i} className={styles.stars}>
-                    {i <= product.stars ? (
-                      <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-                    ) : (
-                      <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-                    )}
-                  </span>
-                ))}
-                <p className={styles.reviewsNumber}>(0 reviews)</p>
-                <Link className={styles.reviewCallButton} to={`/product/${product.id}/review`}>Add your review</Link>
+              <div className={clsx(styles.review)}>
+                <div>
+                  {[1, 2, 3, 4, 5].map(i => (
+                    <span key={i} className={clsx(styles.stars)}>
+                      {i <= product.stars ? (
+                        <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
+                      ) : (
+                        <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
+                      )}
+                    </span>
+                  ))}
+                  <p className={clsx(styles.reviewsNumber)}>(0 reviews)</p>
+                </div>
+                <Link
+                  className={clsx(styles.reviewCallButton)}
+                  to={`/product/${product.id}/review`}
+                >
+                  Add your review
+                </Link>
               </div>
             </div>
             <div className={clsx('row', styles.priceRow)}>
-              {product.oldPrice && (
-                <div className={clsx('col-2', styles.oldPrice)}>
-                  {currency.sign} {(product.oldPrice * currency.multiplier).toFixed(2)}
+              <div className={clsx(styles.priceValue)}>
+                {product.oldPrice && (
+                  <div className={clsx(styles.oldPrice)}>
+                    {currency.sign}{' '}
+                    {(product.oldPrice * currency.multiplier).toFixed(2)}
+                  </div>
+                )}
+                <div className={clsx(styles.price)}>
+                  <Button className={styles.button} variant='small'>
+                    {currency.sign} {(product.price * currency.multiplier).toFixed(2)}
+                  </Button>
                 </div>
-              )}
-              <div className={clsx('col-3', styles.price)}>
-                <Button className={styles.button} variant='small'>
-                  {currency.sign} {(product.price * currency.multiplier).toFixed(2)}
-                </Button>
               </div>
             </div>
             <div className={clsx('row', styles.buttonsRow)}>
@@ -148,7 +171,9 @@ const ProductDetails = () => {
                   price={product.price}
                   source={product.source}
                   buttonStyle='primary'
-                >Add To Cart</ActionButton>
+                >
+                  Add To Cart
+                </ActionButton>
                 <ActionButton
                   id={product.id}
                   favourite={product.favourite}
@@ -162,14 +187,18 @@ const ProductDetails = () => {
                 <Button
                   variant='outline'
                   className={clsx(styles.button, 'm-1')}
-                // onClick={handleQuestionClick}
+                  // onClick={handleQuestionClick}
                 >
                   <FontAwesomeIcon icon={faEnvelope}>Ask question</FontAwesomeIcon>
                 </Button>
               </div>
               <div className={styles.quantity}>
                 <span>Quantity: </span>
-                <Button variant='outline' className={styles.amountControls} onClick={decrementAmount}>
+                <Button
+                  variant='outline'
+                  className={styles.amountControls}
+                  onClick={decrementAmount}
+                >
                   -
                 </Button>
                 <input
@@ -177,24 +206,26 @@ const ProductDetails = () => {
                   onChange={e => handleAmountChange(e)}
                   value={productAmount}
                 />
-                <Button variant='outline' className={styles.amountControls} onClick={incrementAmount}>
+                <Button
+                  variant='outline'
+                  className={styles.amountControls}
+                  onClick={incrementAmount}
+                >
                   +
                 </Button>
-
               </div>
-
             </div>
             <div className={clsx('row', styles.overviewRow)}>
               <p className={styles.overviewTitle}>Quick Overview</p>
-              <div>
-                {product.overview}
-              </div>
+              <div>{product.overview}</div>
             </div>
             <div className={clsx('row', styles.infoRow)}>
               <div>
                 <p>
                   <span>availability: </span>
-                  {product.quantity > 0 ? 'In Stock (' + (product.quantity) + ')' : 'Currently not available'}
+                  {product.quantity > 0
+                    ? 'In Stock (' + product.quantity + ')'
+                    : 'Currently not available'}
                 </p>
               </div>
               <div>
@@ -217,8 +248,7 @@ const ProductDetails = () => {
                     }}
                   >
                     <Button noLink variant='outline' className={styles.media}>
-                      <FontAwesomeIcon icon={socialMedium.icon} />{' '}
-                      {socialMedium.name}
+                      <FontAwesomeIcon icon={socialMedium.icon} /> {socialMedium.name}
                     </Button>
                   </Link>
                 ))}
@@ -227,7 +257,7 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
-    </div >
+    </div>
   );
 };
 

@@ -6,7 +6,7 @@
     margin-bottom: 20px;
 
     .mainRow {
-      height: 680px;
+      display: flex;
 
       .photoSection {
         padding: 20px;
@@ -61,9 +61,8 @@
 
             .thumbnail {
               height: 104px;
-              width: 100px;
-              cursor: pointer;
 
+              cursor: pointer;
 
               img {
                 height: 100%;
@@ -99,19 +98,24 @@
           }
 
           .review {
+            display: flex;
+            justify-content: flex-start;
+
             .stars {
               padding: 2px;
             }
 
-            .reviewCallButton {
-              text-decoration: none;
-            }
-
             .reviewsNumber {
               display: inline;
-              margin: 20px;
-
+              white-space: nowrap;
             }
+
+            .reviewCallButton {
+              text-decoration: none;
+              margin-left: 15px;
+            }
+
+
           }
 
 
@@ -120,21 +124,30 @@
         .priceRow {
           padding: 20px 0;
           border-bottom: 1px solid rgba(128, 128, 128, 0.3);
-          display: flex;
-          justify-content: flex-start;
-          font-size: 20px;
+
+          .priceValue {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-size: 20px;
 
 
-          .oldPrice {
-            text-decoration: line-through;
-            color: #a5a5a5;
-            text-decoration-color: $text-color;
+            .oldPrice {
+              text-decoration: line-through;
+              color: #a5a5a5;
+              text-decoration-color: $text-color;
+              margin-right: 10px;
 
-          }
+            }
 
-          .price {
-            .button {
-              font-size: 20px;
+            .price {
+              display: flex;
+              align-items: center;
+
+              .button {
+                font-size: 20px;
+                margin-left: 10px;
+              }
             }
           }
         }
@@ -208,9 +221,6 @@
     }
   }
 }
-
-
-
 
 .fadeIn {
   opacity: 1;
