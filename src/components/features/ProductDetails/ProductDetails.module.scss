@@ -1,0 +1,73 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  .productDetails {
+    border: 1px solid $chat-textarea-bakground;
+    margin-bottom: 20px;
+
+    .mainRow {
+      height: 680px;
+
+      .photoSection {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .photo {
+          position: relative;
+          height: 450px;
+          overflow: hidden;
+
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+
+        .slider {
+          height: 104px;
+
+          .arrowButton {
+            display: flex;
+
+            background-color: #2a2a2a;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+            width: 30px;
+
+            &:hover {
+              color: $primary;
+            }
+          }
+
+          .thumbnail {
+            height: 104px;
+            cursor: pointer;
+
+            img {
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
+              opacity: 0.5;
+
+              &.active {
+                opacity: 1;
+              }
+
+              &:hover {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+
+      .infoSection {}
+    }
+  }
+}
