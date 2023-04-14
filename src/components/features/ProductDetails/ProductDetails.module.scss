@@ -88,33 +88,115 @@
         padding: 20px;
 
         .headerRow {
-          .title {}
+          padding-bottom: 15px;
+          border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+
+
+          .title {
+            h1 {
+              font-size: 36px;
+            }
+          }
 
           .review {
             .stars {
               padding: 2px;
             }
 
-            .reviewCall {
+            .reviewCallButton {
+              text-decoration: none;
+            }
+
+            .reviewsNumber {
               display: inline;
               margin: 20px;
+
+            }
+          }
+
+
+        }
+
+        .priceRow {
+          padding: 20px 0;
+          border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+          display: flex;
+          justify-content: flex-start;
+          font-size: 20px;
+
+
+          .oldPrice {
+            text-decoration: line-through;
+            color: #a5a5a5;
+            text-decoration-color: $text-color;
+
+          }
+
+          .price {
+            .button {
+              font-size: 20px;
             }
           }
         }
 
-        .priceRow {}
+        .buttonsRow {
+          padding: 20px 0;
+          border-bottom: 1px solid rgba(128, 128, 128, 0.3);
 
-        .buttonsRow {}
+          .quantity {
+            padding-top: 20px;
 
-        .overViewRow {}
+            .amountInput {
+              width: 55px;
+              text-align: center;
+              vertical-align: middle;
+              margin: 5px;
+              height: 30px
+            }
 
-        .infoRow {}
+            .amountControls {
+              text-decoration: none;
+              font-size: 20px;
+              vertical-align: middle;
+              margin: 5px;
+              height: 30px;
 
-        .socialRow {}
+            }
+          }
+        }
+      }
+
+      .overviewRow {
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+      }
+
+      .infoRow {
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+      }
+
+      .socialRow {
+        padding: 20px 0;
+
+        .social {
+          a {
+            text-decoration: none;
+
+          }
+
+          .media {
+            width: 120px;
+            margin: 3px;
+          }
+        }
       }
     }
   }
 }
+
+
+
 
 .fadeIn {
   opacity: 1;

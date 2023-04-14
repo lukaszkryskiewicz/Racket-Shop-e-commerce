@@ -28,6 +28,8 @@ const ActionButton = ({
   name,
   source,
   price,
+  children,
+  buttonStyle,
 }) => {
   const dispatch = useDispatch();
 
@@ -95,11 +97,12 @@ const ActionButton = ({
   return (
     <Button
       variant='outline'
-      className={clsx(styles.button, buttonProps.active, 'm-1')}
+      className={clsx(buttonStyle === 'primary' ? styles.primaryButtonStyle : null, buttonProps.active, 'm-1')}
       onClick={buttonProps.function}
       data-tooltip={dataTooltip}
     >
       <FontAwesomeIcon icon={buttonProps.icon}>{buttonProps.name}</FontAwesomeIcon>
+      {children && <span className={styles.children}>{children}</span>}
     </Button>
   );
 };
@@ -115,4 +118,6 @@ ActionButton.propTypes = {
   name: PropTypes.string,
   price: PropTypes.number,
   source: PropTypes.string,
+  children: PropTypes.string,
+  buttonStyle: PropTypes.string,
 };

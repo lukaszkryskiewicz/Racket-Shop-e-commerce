@@ -26,6 +26,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tenis/tenis-racket-1.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tenis-racket-2',
@@ -46,6 +48,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tenis/tenis-racket-2.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tenis-racket-3',
@@ -66,6 +70,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tenis/tenis-racket-3.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tenis-racket-4',
@@ -86,6 +92,8 @@ const initialState = {
       topSeller: true,
       saleOff: false,
       source: '/images/racket/tenis/tenis-racket-4.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tenis-racket-5',
@@ -106,6 +114,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tenis/tenis-racket-5.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tenis-racket-6',
@@ -126,6 +136,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tenis/tenis-racket-6.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tenis-racket-7',
@@ -146,6 +158,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/tenis/tenis-racket-7.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tenis-racket-8',
@@ -166,6 +180,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tenis/tenis-racket-8.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tenis-racket-9',
@@ -186,6 +202,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tenis/tenis-racket-9.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tenis-racket-10',
@@ -206,6 +224,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/tenis/tenis-racket-10.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tenis-racket-11',
@@ -226,6 +246,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tenis/tenis-racket-11.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tenis-racket-12',
@@ -246,6 +268,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tenis/tenis-racket-12.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tenis-racket-13',
@@ -266,6 +290,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/tenis/tenis-racket-13.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tenis-racket-14',
@@ -286,6 +312,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tenis/tenis-racket-14.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tenis-racket-15',
@@ -306,6 +334,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/tenis/tenis-racket-15.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tenis-racket-16',
@@ -326,6 +356,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/tenis/tenis-racket-16.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tenis-racket-17',
@@ -346,6 +378,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tenis/tenis-racket-17.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tenis-racket-18',
@@ -366,6 +400,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tenis/tenis-racket-18.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tenis-racket-19',
@@ -386,6 +422,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tenis/tenis-racket-19.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tenis-racket-20',
@@ -406,6 +444,8 @@ const initialState = {
       topSeller: true,
       saleOff: false,
       source: '/images/racket/tenis/tenis-racket-20.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tenis-racket-21',
@@ -426,6 +466,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tenis/tenis-racket-21.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tenis-racket-22',
@@ -446,6 +488,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/tenis/tenis-racket-22.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tenis-racket-23',
@@ -466,6 +510,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tenis/tenis-racket-23.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tenis-racket-24',
@@ -486,6 +532,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tenis/tenis-racket-24.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tenis-racket-25',
@@ -506,6 +554,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tenis/tenis-racket-25.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'squash-racket-1',
@@ -526,6 +576,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/squash/squash-racket-1.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'squash-racket-2',
@@ -546,6 +598,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/squash/squash-racket-2.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'squash-racket-3',
@@ -566,6 +620,8 @@ const initialState = {
       topSeller: true,
       saleOff: false,
       source: '/images/racket/squash/squash-racket-3.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'squash-racket-4',
@@ -586,6 +642,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/squash/squash-racket-4.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'squash-racket-5',
@@ -606,6 +664,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/squash/squash-racket-5.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'squash-racket-6',
@@ -626,6 +686,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/squash/squash-racket-6.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'squash-racket-7',
@@ -646,6 +708,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/squash/squash-racket-7.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'squash-racket-8',
@@ -666,6 +730,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/squash/squash-racket-8.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'squash-racket-9',
@@ -686,6 +752,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/squash/squash-racket-9.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'squash-racket-10',
@@ -706,6 +774,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/squash/squash-racket-10.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'squash-racket-11',
@@ -726,6 +796,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/squash/squash-racket-11.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'squash-racket-12',
@@ -746,6 +818,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/squash/squash-racket-12.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'squash-racket-13',
@@ -766,6 +840,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/squash/squash-racket-13.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'squash-racket-14',
@@ -786,6 +862,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/squash/squash-racket-14.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'squash-racket-15',
@@ -806,6 +884,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/squash/squash-racket-15.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'squash-racket-16',
@@ -826,6 +906,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/squash/squash-racket-16.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'squash-racket-17',
@@ -846,6 +928,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/squash/squash-racket-17.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'squash-racket-18',
@@ -866,6 +950,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/squash/squash-racket-18.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'squash-racket-19',
@@ -886,6 +972,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/squash/squash-racket-19.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'squash-racket-20',
@@ -906,6 +994,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/squash/squash-racket-20.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'squash-racket-21',
@@ -926,6 +1016,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/squash/squash-racket-21.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'squash-racket-22',
@@ -946,6 +1038,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/squash/squash-racket-22.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'squash-racket-23',
@@ -966,6 +1060,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/squash/squash-racket-23.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'squash-racket-24',
@@ -986,6 +1082,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/squash/squash-racket-24.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'squash-racket-25',
@@ -1006,6 +1104,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/squash/squash-racket-25.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'padel-racket-1',
@@ -1026,6 +1126,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/padel/padel-racket-1.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'padel-racket-2',
@@ -1046,6 +1148,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/padel/padel-racket-2.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'padel-racket-3',
@@ -1066,6 +1170,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/padel/padel-racket-3.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'padel-racket-4',
@@ -1086,6 +1192,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/padel/padel-racket-4.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'padel-racket-5',
@@ -1106,6 +1214,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/padel/padel-racket-5.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'padel-racket-6',
@@ -1126,6 +1236,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/padel/padel-racket-6.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'padel-racket-7',
@@ -1146,6 +1258,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/padel/padel-racket-7.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'padel-racket-8',
@@ -1166,6 +1280,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/padel/padel-racket-8.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'padel-racket-9',
@@ -1186,6 +1302,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/padel/padel-racket-9.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'padel-racket-10',
@@ -1206,6 +1324,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/padel/padel-racket-10.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'padel-racket-11',
@@ -1226,6 +1346,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/padel/padel-racket-11.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'padel-racket-12',
@@ -1246,6 +1368,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/padel/padel-racket-12.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'padel-racket-13',
@@ -1266,6 +1390,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/padel/padel-racket-13.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'padel-racket-14',
@@ -1286,6 +1412,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/padel/padel-racket-14.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'padel-racket-15',
@@ -1306,6 +1434,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/padel/padel-racket-15.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'padel-racket-16',
@@ -1326,6 +1456,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/padel/padel-racket-16.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'padel-racket-17',
@@ -1346,6 +1478,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/padel/padel-racket-17.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'padel-racket-18',
@@ -1366,6 +1500,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/padel/padel-racket-18.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'padel-racket-19',
@@ -1386,6 +1522,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/padel/padel-racket-19.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'padel-racket-20',
@@ -1406,6 +1544,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/padel/padel-racket-20.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'padel-racket-21',
@@ -1426,6 +1566,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/padel/padel-racket-21.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'padel-racket-22',
@@ -1446,6 +1588,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/padel/padel-racket-22.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'padel-racket-23',
@@ -1466,6 +1610,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/padel/padel-racket-23.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'padel-racket-24',
@@ -1486,6 +1632,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/padel/padel-racket-24.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'padel-racket-25',
@@ -1506,6 +1654,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/padel/padel-racket-25.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'badminton-racket-1',
@@ -1526,6 +1676,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-1.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'badminton-racket-2',
@@ -1546,6 +1698,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-2.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'badminton-racket-3',
@@ -1566,6 +1720,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-3.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'badminton-racket-4',
@@ -1586,6 +1742,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-4.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'badminton-racket-5',
@@ -1606,6 +1764,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-5.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'badminton-racket-6',
@@ -1626,6 +1786,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/badminton/badminton-racket-6.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'badminton-racket-7',
@@ -1646,6 +1808,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-7.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'badminton-racket-8',
@@ -1666,6 +1830,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/badminton/badminton-racket-8.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'badminton-racket-9',
@@ -1686,6 +1852,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-9.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'badminton-racket-10',
@@ -1706,6 +1874,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/badminton/badminton-racket-10.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'badminton-racket-11',
@@ -1726,6 +1896,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-11.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'badminton-racket-12',
@@ -1746,6 +1918,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/badminton/badminton-racket-12.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'badminton-racket-13',
@@ -1766,6 +1940,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-13.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'badminton-racket-14',
@@ -1786,6 +1962,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-14.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'badminton-racket-15',
@@ -1806,6 +1984,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-15.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'badminton-racket-16',
@@ -1826,6 +2006,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-16.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'badminton-racket-17',
@@ -1846,6 +2028,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-17.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'badminton-racket-18',
@@ -1866,6 +2050,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/badminton/badminton-racket-18.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'badminton-racket-19',
@@ -1886,6 +2072,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-19.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'badminton-racket-20',
@@ -1906,6 +2094,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-20.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'badminton-racket-21',
@@ -1926,6 +2116,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-21.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'badminton-racket-22',
@@ -1946,6 +2138,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/badminton/badminton-racket-22.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'badminton-racket-23',
@@ -1966,6 +2160,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-23.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'badminton-racket-24',
@@ -1986,6 +2182,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-24.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'badminton-racket-25',
@@ -2006,6 +2204,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-25.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tableTenis-racket-1',
@@ -2026,6 +2226,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/tableTenis/tableTenis-racket-1.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tableTenis-racket-2',
@@ -2046,6 +2248,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tableTenis/tableTenis-racket-2.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tableTenis-racket-3',
@@ -2066,6 +2270,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/tableTenis/tableTenis-racket-3.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tableTenis-racket-4',
@@ -2086,6 +2292,8 @@ const initialState = {
       topSeller: true,
       saleOff: true,
       source: '/images/racket/tableTenis/tableTenis-racket-4.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tableTenis-racket-5',
@@ -2106,6 +2314,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tableTenis/tableTenis-racket-5.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tableTenis-racket-6',
@@ -2126,6 +2336,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tableTenis/tableTenis-racket-6.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tableTenis-racket-7',
@@ -2146,6 +2358,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tableTenis/tableTenis-racket-7.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tableTenis-racket-8',
@@ -2166,6 +2380,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tableTenis/tableTenis-racket-8.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tableTenis-racket-9',
@@ -2186,6 +2402,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/tableTenis/tableTenis-racket-9.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tableTenis-racket-10',
@@ -2206,6 +2424,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tableTenis/tableTenis-racket-10.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tableTenis-racket-11',
@@ -2226,6 +2446,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tableTenis/tableTenis-racket-11.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tableTenis-racket-12',
@@ -2246,6 +2468,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tableTenis/tableTenis-racket-12.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tableTenis-racket-13',
@@ -2266,6 +2490,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/tableTenis/tableTenis-racket-13.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tableTenis-racket-14',
@@ -2286,6 +2512,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tableTenis/tableTenis-racket-14.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tableTenis-racket-15',
@@ -2306,6 +2534,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tableTenis/tableTenis-racket-15.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tableTenis-racket-16',
@@ -2326,6 +2556,8 @@ const initialState = {
       topSeller: false,
       saleOff: true,
       source: '/images/racket/tableTenis/tableTenis-racket-16.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tableTenis-racket-17',
@@ -2346,6 +2578,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tableTenis/tableTenis-racket-17.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tableTenis-racket-18',
@@ -2366,6 +2600,8 @@ const initialState = {
       topSeller: true,
       saleOff: true,
       source: '/images/racket/tableTenis/tableTenis-racket-18.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tableTenis-racket-19',
@@ -2386,6 +2622,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tableTenis/tableTenis-racket-19.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tableTenis-racket-20',
@@ -2406,6 +2644,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tableTenis/tableTenis-racket-20.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tableTenis-racket-21',
@@ -2426,6 +2666,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tableTennis/tableTenis-racket-21.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tableTenis-racket-22',
@@ -2446,6 +2688,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tableTennis/tableTenis-racket-22.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tableTenis-racket-23',
@@ -2466,6 +2710,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tableTennis/tableTenis-racket-23.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tableTenis-racket-24',
@@ -2486,6 +2732,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tableTennis/tableTenis-racket-24.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
     {
       id: 'tableTenis-racket-25',
@@ -2506,6 +2754,8 @@ const initialState = {
       topSeller: false,
       saleOff: false,
       source: '/images/racket/tableTennis/tableTenis-racket-25.webp',
+      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      quantity: 1,
     },
   ],
   cart: {
@@ -2515,6 +2765,8 @@ const initialState = {
         name: 'Pro Tenis Racket 1',
         price: 1038,
         source: '/images/racket/tenis/tenis-racket-1.webp',
+        overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        quantity: 1,
         amount: 1,
       },
     ],

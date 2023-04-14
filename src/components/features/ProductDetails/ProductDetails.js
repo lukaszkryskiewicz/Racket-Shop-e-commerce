@@ -5,15 +5,20 @@ import styles from './ProductDetails.module.scss';
 import { useSelector } from 'react-redux';
 import { getProductById } from '../../../redux/productsRedux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom';
+import { getCurrency } from '../../../redux/currencyRedux';
 import Button from '../../common/Button/Button';
+import ActionButton from '../../common/ActionButton/ActionButton';
+import { faFacebook, faTwitter, faPinterest, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 const ProductDetails = () => {
   const { productId } = useParams();
   const [fadeImage, setFadeImage] = useState(true);
   const [activeImage, setActiveImage] = useState(0);
+  const [productAmount, setProductAmount] = useState(1);
+  const currency = useSelector(getCurrency);
   const product = useSelector(state => getProductById(state, productId))
   const pictureNumber = 4;
   const handlePhotoChange = (number) => {
@@ -22,6 +27,33 @@ const ProductDetails = () => {
       setActiveImage(number);
       setFadeImage(true);
     }, 400);
+  };
+
+  const socialMedia = [
+    { name: 'Facebook', icon: faFacebook },
+    { name: 'Instagram', icon: faInstagram },
+    { name: 'Twitter', icon: faTwitter },
+    { name: 'Pinterest', icon: faPinterest },
+    { name: 'LinkedIn', icon: faLinkedinIn }]
+
+  const handleAmountChange = e => {
+    e.preventDefault();
+    const newAmount = parseInt(e.target.value);
+    if (!isNaN(newAmount)) {
+      setProductAmount(newAmount);
+    }
+  };
+
+  const incrementAmount = () => {
+    if (productAmount < 10) {
+      setProductAmount(productAmount + 1);
+    }
+  };
+
+  const decrementAmount = () => {
+    if (productAmount > 1) {
+      setProductAmount(productAmount - 1);
+    }
   };
 
   return (
@@ -89,22 +121,101 @@ const ProductDetails = () => {
                     )}
                   </span>
                 ))}
-                <p className={styles.reviewCall}>(0 reviews)</p>
-                <Link to={`/product/${product.id}/review`}>
-                  <Button variant='outline'>Add your review</Button>
-                </Link>
+                <p className={styles.reviewsNumber}>(0 reviews)</p>
+                <Link className={styles.reviewCallButton} to={`/product/${product.id}/review`}>Add your review</Link>
               </div>
             </div>
             <div className={clsx('row', styles.priceRow)}>
-              test</div>
+              {product.oldPrice && (
+                <div className={clsx('col-2', styles.oldPrice)}>
+                  {currency.sign} {(product.oldPrice * currency.multiplier).toFixed(2)}
+                </div>
+              )}
+              <div className={clsx('col-3', styles.price)}>
+                <Button className={styles.button} variant='small'>
+                  {currency.sign} {(product.price * currency.multiplier).toFixed(2)}
+                </Button>
+              </div>
+            </div>
             <div className={clsx('row', styles.buttonsRow)}>
-              test</div>
+              <div className={styles.outlines}>
+                <ActionButton
+                  id={product.id}
+                  buttonType={'addToCart'}
+                  name={product.name}
+                  price={product.price}
+                  source={product.source}
+                  buttonStyle='primary'
+                >Add To Cart</ActionButton>
+                <ActionButton
+                  id={product.id}
+                  favourite={product.favourite}
+                  buttonType={'favourite'}
+                />
+                <ActionButton
+                  id={product.id}
+                  compare={product.compare}
+                  buttonType={'compare'}
+                />
+                <Button
+                  variant='outline'
+                  className={clsx(styles.button, 'm-1')}
+                // onClick={handleQuestionClick}
+                >
+                  <FontAwesomeIcon icon={faEnvelope}>Ask question</FontAwesomeIcon>
+                </Button>
+              </div>
+              <div className={styles.quantity}>
+                <span>Quantity: </span>
+                <Button variant='outline' className={styles.amountControls} onClick={decrementAmount}>
+                  -
+                </Button>
+                <input
+                  className={styles.amountInput}
+                  onChange={e => handleAmountChange(e)}
+                  value={productAmount}
+                />
+                <Button variant='outline' className={styles.amountControls} onClick={incrementAmount}>
+                  +
+                </Button>
+
+              </div>
+
+            </div>
             <div className={clsx('row', styles.overviewRow)}>
-              test</div>
+              <p>Overview</p>
+              <div>
+                {product.overview}
+              </div>
+            </div>
             <div className={clsx('row', styles.infoRow)}>
-              test</div>
+              <div>
+                <p><span>Availability: </span>{product.quantity > 0 ? 'In Stock (' + (product.quantity) + ')' : 'Currently not available'} </p>
+
+              </div>
+              <div>
+                <p><span>Category: </span>{product.category}</p>
+              </div>
+            </div>
             <div className={clsx('row', styles.socialRow)}>
-              test</div>
+              <div className={styles.social}>
+                {socialMedia.map(socialMedium => (
+                  <Link
+                    key={socialMedium}
+                    to='/'
+                    onClick={e => {
+                      e.preventDefault();
+                      window.open('https://www.' + socialMedium.name + '.com/');
+                    }}
+                  >
+                    <Button variant='outline' className={styles.media}>
+                      <FontAwesomeIcon icon={socialMedium.icon}></FontAwesomeIcon>{' '}
+                      {socialMedium.name}
+                    </Button>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
