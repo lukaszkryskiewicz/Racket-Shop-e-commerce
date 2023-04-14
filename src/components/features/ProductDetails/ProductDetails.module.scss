@@ -16,8 +16,18 @@
 
         .photo {
           position: relative;
-          height: 450px;
+          height: 500px;
           overflow: hidden;
+
+          .photoOverlay {
+            background-color: rgba(128, 128, 128, 0.3);
+            height: 50px;
+            position: absolute;
+            color: white;
+            font-size: 40px;
+            text-align: center;
+
+          }
 
           img {
             height: 100%;
@@ -28,10 +38,10 @@
 
         .slider {
           height: 104px;
+          margin: 0;
 
           .arrowButton {
             display: flex;
-
             background-color: #2a2a2a;
             justify-content: center;
             align-items: center;
@@ -45,29 +55,73 @@
             }
           }
 
-          .thumbnail {
-            height: 104px;
-            cursor: pointer;
+          .thumbnailsContainer {
+            display: flex;
+            justify-content: space-between;
 
-            img {
-              height: 100%;
-              width: 100%;
-              object-fit: cover;
-              opacity: 0.5;
+            .thumbnail {
+              height: 104px;
+              width: 100px;
+              cursor: pointer;
 
-              &.active {
-                opacity: 1;
-              }
 
-              &:hover {
-                opacity: 1;
+              img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                opacity: 0.5;
+
+                &.active {
+                  opacity: 1;
+                }
+
+                &:hover {
+                  opacity: 1;
+                }
               }
             }
           }
         }
       }
 
-      .infoSection {}
+      .infoSection {
+        padding: 20px;
+
+        .headerRow {
+          .title {}
+
+          .review {
+            .stars {
+              padding: 2px;
+            }
+
+            .reviewCall {
+              display: inline;
+              margin: 20px;
+            }
+          }
+        }
+
+        .priceRow {}
+
+        .buttonsRow {}
+
+        .overViewRow {}
+
+        .infoRow {}
+
+        .socialRow {}
+      }
     }
   }
+}
+
+.fadeIn {
+  opacity: 1;
+  transition: opacity 600ms;
+}
+
+.fadeOut {
+  opacity: 0;
+  transition: opacity 400ms;
 }
