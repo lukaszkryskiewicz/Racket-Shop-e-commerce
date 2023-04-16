@@ -29,7 +29,7 @@ const PromotionBox = () => {
           <div className={`col ${styles.box} ${styles.second}`}>
             <div className={styles.content}>
               <h5>
-                <strong>{promo.secondTitleStrong}</strong> {promo.secondTitle}
+                <strong>{promo.secondTitleStrong}</strong>
               </h5>
               <h6>{promo.secondSubtitle}</h6>
               <h5 className={styles.color}>

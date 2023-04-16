@@ -20,10 +20,10 @@ const Homepage = () => (
     <FeatureBoxes />
     <PromotionBox />
     <NewProduct productsOnDesktop={8} />
+    <Gallery />
     <BlogBox />
     <Brands />
     <Feedback />
-    <Gallery />
   </div>
 );
 

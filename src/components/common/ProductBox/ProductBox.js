@@ -90,7 +90,7 @@ const ProductBox = props => {
           </div>
         )}
         <div className={styles.price}>
-          <Button className={styles.button} variant='small'>
+          <Button noLink className={styles.button} variant='small'>
             {currency.sign} {(price * currency.multiplier).toFixed(2)}
           </Button>
         </div>

@@ -1,6 +1,7 @@
 @import "../../../styles/settings.scss";
 
 .root {
+  text-transform: uppercase;
 
   h1,
   h2,
@@ -78,7 +79,7 @@
     align-items: center;
     justify-content: end;
     text-align: end;
-    color: $white;
+    color: $light-black;
 
     .content {
       right: 15px;
