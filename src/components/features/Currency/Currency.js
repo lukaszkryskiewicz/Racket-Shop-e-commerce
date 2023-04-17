@@ -17,7 +17,7 @@ const Currency = () => {
     dispatch(addCurrency(currencyConverter(currencyStorage)));
   }, [dispatch]);
 
-  fetch(`http://api.nbp.pl/api/exchangerates/tables/a/`)
+  fetch(`https://api.nbp.pl/api/exchangerates/tables/a/`)
     .then(res => res.json())
     .then(data => {
       const usdData = {

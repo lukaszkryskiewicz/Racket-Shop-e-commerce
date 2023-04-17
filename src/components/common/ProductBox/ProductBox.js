@@ -70,8 +70,8 @@ const ProductBox = props => {
           <Button onClick={openModal} variant='small'>
             Quick View
           </Button>
-          <Button variant='small' onClick={handleAddToCartClick}>
-            <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
+          <Button className='text-uppercase' variant='small' onClick={handleAddToCartClick}>
+            <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> add to cart
           </Button>
         </div>
       </div>

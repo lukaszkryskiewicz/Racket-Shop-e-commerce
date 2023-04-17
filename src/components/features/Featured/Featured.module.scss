@@ -20,6 +20,7 @@
   .productBox {
     border-right: 1px solid #e1e1e1;
     border-left: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1;
 
     .photo {
       position: relative;
@@ -79,8 +80,8 @@
 
         .iconTimer {
           color: $footer-bg;
-          height: 60px;
-          width: 60px;
+          height: 70px;
+          width: 70px;
           opacity: 0.9;
           position: relative;
         }
@@ -91,6 +92,7 @@
           top: 50%;
           left: 50%;
           transform: translate(-54%, -54%);
+          //padding: 15px;
         }
       }
     }
@@ -111,9 +113,6 @@
 
     .infoBox {
       background-color: #ffffff;
-      border-left: 1px solid #e1e1e1;
-      border-bottom: 1px solid #e1e1e1;
-      border-right: 1px solid #e1e1e1;
 
       .content {
         text-align: center;
@@ -191,7 +190,7 @@
 
   .hotProduct {
     position: relative;
-    height: 635px;
+    height: 633px;
 
     .photoProduct {
       height: 100%;
@@ -250,7 +249,7 @@
         display: flex;
         margin: auto;
         position: absolute;
-        top: 55%;
+        top: 52%;
         left: 41%;
         text-decoration: none;
         color: $text-color;
