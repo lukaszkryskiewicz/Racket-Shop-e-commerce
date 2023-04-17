@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 import styles from './ProductDetails.module.scss';
 import { useSelector } from 'react-redux';
@@ -18,14 +19,16 @@ import {
   faInstagram,
   faLinkedinIn,
 } from '@fortawesome/free-brands-svg-icons';
+import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
-const ProductDetails = () => {
+const ProductDetails = ({ productData }) => {
   const { productId } = useParams();
+  const productOnSite = useSelector(state => getProductById(state, productId));
   const [fadeImage, setFadeImage] = useState(true);
   const [activeImage, setActiveImage] = useState(0);
   const [productAmount, setProductAmount] = useState(1);
   const currency = useSelector(getCurrency);
-  const product = useSelector(state => getProductById(state, productId));
+  const product = productData || productOnSite;
   const pictureNumber = 4;
   const handlePhotoChange = number => {
     setFadeImage(false);
@@ -80,6 +83,9 @@ const ProductDetails = () => {
               {' '}
               <p className={styles.photoOverlay}>Picture {activeImage}</p>
               <img alt={product.name} src={product.source} />
+              {/*               <Button className={styles.buttonZoom} variant='outline' onClick={handleEnlargeClick}>
+                <FontAwesomeIcon className={styles.zoomIcon} icon={faUpRightAndDownLeftFromCenter} />
+              </Button> */}
             </div>
             <div className={clsx('row g-0 m-2 justify-content-between', styles.slider)}>
               <a
@@ -187,7 +193,7 @@ const ProductDetails = () => {
                 <Button
                   variant='outline'
                   className={clsx(styles.button, 'm-1')}
-                  // onClick={handleQuestionClick}
+                // onClick={handleQuestionClick}
                 >
                   <FontAwesomeIcon icon={faEnvelope}>Ask question</FontAwesomeIcon>
                 </Button>
@@ -199,7 +205,7 @@ const ProductDetails = () => {
                   className={styles.amountControls}
                   onClick={decrementAmount}
                 >
-                  -
+                  <FontAwesomeIcon icon={faMinus} />
                 </Button>
                 <input
                   className={styles.amountInput}
@@ -207,11 +213,12 @@ const ProductDetails = () => {
                   value={productAmount}
                 />
                 <Button
+
                   variant='outline'
                   className={styles.amountControls}
                   onClick={incrementAmount}
                 >
-                  +
+                  <FontAwesomeIcon icon={faPlus} />
                 </Button>
               </div>
             </div>
@@ -262,3 +269,8 @@ const ProductDetails = () => {
 };
 
 export default ProductDetails;
+
+ProductDetails.propTypes = {
+  closeModal: PropTypes.bool,
+  productData: PropTypes.object,
+};
