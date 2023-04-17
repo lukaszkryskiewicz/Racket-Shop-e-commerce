@@ -82,7 +82,7 @@ const Featured = () => {
             align-items-center
             justify-content-between'
             >
-              <h4 className='m-0 p-3'>HOT DEALS</h4>
+              <h4 className='m-0 p-3 text-uppercase'>Hot deals</h4>
               <div className={clsx(styles.icons, 'm-2')}>
                 {hotDeals.map((hotDeal, i) => (
                   <FontAwesomeIcon
@@ -130,7 +130,7 @@ const Featured = () => {
                           }
                         >
                           <FontAwesomeIcon icon={faShoppingBasket} />
-                          ADD TO CART
+                          {'  '}ADD TO CART
                         </Button>
                       </div>
                       <div className={`${styles.timer} row`}>
@@ -240,7 +240,6 @@ const Featured = () => {
                             </div>
                           </Swipeable>
                         </NavLink>
-                        <Button className={styles.shopNow}>Shop now</Button>
                       </Carousel.Item>
                     ))}
                   </Carousel>
@@ -251,6 +250,7 @@ const Featured = () => {
                     </div>
                   </div>
                 </div>
+                <Button link='shop/tennis' className={styles.shopNow}>Shop now</Button>
                 <div className={clsx(styles.slider, 'col-12')}>
                   <button
                     className={`${styles.arrow} col-6 text-center p-0`}
