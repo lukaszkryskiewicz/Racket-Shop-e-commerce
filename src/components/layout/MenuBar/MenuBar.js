@@ -18,11 +18,11 @@ const MenuBar = () => {
 
   const menuLinks = [
     '/',
-    'tenis',
+    'tennis',
     'padel',
     'badminton',
     'squash',
-    'tableTenis',
+    'tableTennis',
     'blog',
   ];
 
