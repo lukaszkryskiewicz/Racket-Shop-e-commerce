@@ -34,6 +34,20 @@
             width: 100%;
             object-fit: cover;
           }
+
+          .buttonZoom {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            right: 20px;
+            bottom: 10px;
+            font-size: 20px;
+            padding: 5px;
+
+            .zoomIcon {
+              padding: 0px;
+            }
+          }
         }
 
         .slider {
@@ -155,6 +169,7 @@
         .buttonsRow {
           padding: 20px 0;
           border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+          display: flex;
 
           .quantity {
             padding-top: 20px;
@@ -168,8 +183,6 @@
             }
 
             .amountControls {
-              text-decoration: none;
-              font-size: 20px;
               vertical-align: middle;
               margin: 5px;
               height: 30px;

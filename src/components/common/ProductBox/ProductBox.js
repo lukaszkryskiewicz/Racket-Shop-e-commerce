@@ -44,7 +44,7 @@ const ProductBox = props => {
 
   return (
     <div className={styles.root}>
-      {modal && <ProductModal closeModal={setModal} productData={props}></ProductModal>}
+      {modal && <ProductModal closeModal={setModal} productData={props} />}
       <div className={styles.photo}>
         {promo && <div className={styles.sale}>{promo}</div>}
         <NavLink to={productLink}>
