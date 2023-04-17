@@ -73,6 +73,7 @@
     "react-test-renderer": "^16.9.0",
     "react-tooltip": "^5.10.0",
     "redux": "^4.0.4",
+    "redux-persist": "^6.0.0",
     "sass": "^1.54.3",
     "shortid": "^2.2.16",
     "yarn": "^1.22.19"
