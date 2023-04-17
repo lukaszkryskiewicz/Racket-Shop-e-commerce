@@ -19,7 +19,7 @@ const NewProduct = ({
   currency,
 }) => {
   const [activePage, setActivePage] = useState(0);
-  const [activeCategory, setActiveCategory] = useState('tenis');
+  const [activeCategory, setActiveCategory] = useState('tennis');
   const [fade, setFade] = useState(true);
   const filters = useSelector(getAllFilters);
 
@@ -80,6 +80,7 @@ const NewProduct = ({
     setFade(false);
     setTimeout(() => {
       setActiveCategory(newCategory);
+      setActivePage(0);
       setFade(true);
     }, 600);
   };
