@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
@@ -10,10 +10,7 @@ import Button from '../Button/Button';
 import StarsReview from '../StarsReview/StarsReview';
 import ActionButton from '../ActionButton/ActionButton';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  toggleProductCompare,
-  toggleProductFavourite,
-} from '../../../redux/productsRedux';
+
 import { addProduct } from '../../../redux/cartRedux';
 import { getCurrency } from '../../../redux/currencyRedux';
 
@@ -34,17 +31,6 @@ const ProductBox = props => {
   } = props;
   const dispatch = useDispatch();
   const productLink = '/product/' + id;
-
-  useEffect(() => {
-    const productDataFavourite = JSON.parse(localStorage.getItem('favourites')) || {};
-    if (productDataFavourite[id]) {
-      dispatch(toggleProductFavourite(id));
-    }
-    const productDataCompare = JSON.parse(localStorage.getItem('compare')) || {};
-    if (productDataCompare[id]) {
-      dispatch(toggleProductCompare(id));
-    }
-  }, [dispatch, id]);
 
   const openModal = e => {
     e.preventDefault();

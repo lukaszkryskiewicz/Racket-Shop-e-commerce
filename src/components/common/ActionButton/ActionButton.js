@@ -36,9 +36,6 @@ const ActionButton = ({
   const handleFavouriteClick = e => {
     e.preventDefault();
     dispatch(toggleProductFavourite(id));
-    const favouriteProducts = JSON.parse(localStorage.getItem('favourites')) || {};
-    favouriteProducts[id] = !favourite;
-    localStorage.setItem('favourites', JSON.stringify(favouriteProducts));
   };
 
   const compareList = useSelector(state => getProductsToCompare(state));
@@ -48,9 +45,6 @@ const ActionButton = ({
     if (compareList.length < 4 || !!checkIfItemIsCompared) {
       //!!checkIfItemIsCompared --> converts result to boolean -> true if item was already selected, and false otherwise
       dispatch(toggleProductCompare(id));
-      const comparedProducts = JSON.parse(localStorage.getItem('compare')) || {};
-      comparedProducts[id] = !compare;
-      localStorage.setItem('compare', JSON.stringify(comparedProducts));
     }
   };
 
