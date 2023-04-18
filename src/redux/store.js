@@ -13,7 +13,7 @@ import blogPostsReducer from './blogPostsRedux';
 import promotionReducer from './promotionRedux';
 import brandsReducer from './brandsRedux';
 import filtersReducer from './filterRedux';
-import searchTextReducer from './searchTextRedux';
+import searchReducer from './searchRedux';
 import currencyReducer from './currencyRedux';
 
 
@@ -32,7 +32,7 @@ const reducers = {
   promotion: promotionReducer,
   brands: brandsReducer,
   productFilters: filtersReducer,
-  searchText: searchTextReducer,
+  search: searchReducer,
   currency: currencyReducer,
 };
 

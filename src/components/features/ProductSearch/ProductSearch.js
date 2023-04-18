@@ -1,29 +1,30 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import { changeSearchText } from '../../../redux/searchTextRedux';
-
+import { changeSearch } from '../../../redux/searchRedux';
 import styles from './ProductSearch.module.scss';
-import { Link } from 'react-router-dom';
+import { getAll } from '../../../redux/categoriesRedux';
 
 const ProductSearch = () => {
-  
+  const categories = useSelector(getAll);
   const [searchText, setSearchText] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('');
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(changeSearchText(''));
-  }, [dispatch]);
+  /*   useEffect(() => {
+      dispatch(changeSearch({ searchText: '', category: undefined }));
+    }, [dispatch]); */
 
   const handleSubmit = (e) => {
     if (searchText.length > 0) {
-      dispatch(changeSearchText(searchText));
+      const category = selectedCategory ? selectedCategory.toLowerCase() : undefined;
+      dispatch(changeSearch({ searchText, category }));
       setSearchText('');
+      setSelectedCategory(null);
     }
     else {
       e.preventDefault();
@@ -31,26 +32,22 @@ const ProductSearch = () => {
   };
 
   return (
-    <form action='' className={styles.root}>
+    <form action='/search' className={styles.root} onSubmit={handleSubmit}>
       <div className={styles.category}>
-        <ul className={styles.selectCategoryList}>
-          <li>select a category</li>
-          <ul className={styles.categoriesList}>
-            <li>category 1</li>
-            <li>category 2</li>
-            <li>category 3</li>
-            <li>category 4</li>
-            <li>category 5</li>
-          </ul>
-        </ul>
+        <select className={styles.selectCategoryList} value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
+          <option value="">Select a category</option>
+          {categories.map(category => (
+            <option key={category.name} value={category.name}>
+              {category.name}
+            </option>
+          ))}
+        </select>
       </div>
       <div className={styles.searchField}>
         <input placeholder='Search products...' type='text' value={searchText} onChange={e => setSearchText(e.target.value)} />
-        <Link to='/search' onClick={e => handleSubmit(e)}>
-          <button>
-            <FontAwesomeIcon className={styles.icon} icon={faSearch} />
-          </button>
-        </Link>
+        <button type='submit' className='m-1'>
+          <FontAwesomeIcon className={styles.icon} icon={faSearch} />
+        </button>
       </div>
     </form>
   );

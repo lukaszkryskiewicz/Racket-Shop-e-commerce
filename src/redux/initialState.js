@@ -2880,7 +2880,10 @@ const initialState = {
     thirdTitle: 'collection',
     thirdSubtitle: 'save up to 45% on squash rackets',
   },
-  searchText: '',
+  search: {
+    searchText: '',
+    category: undefined,
+  },
   currency: { name: 'USD', multiplier: 1, sign: '$' },
   productFilters: [],
 };
