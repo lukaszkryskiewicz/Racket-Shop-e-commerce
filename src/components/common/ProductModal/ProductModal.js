@@ -33,7 +33,7 @@ const ProductModal = ({ closeModal, productData }) => {
 };
 
 ProductModal.propTypes = {
-  closeModal: PropTypes.bool,
+  closeModal: PropTypes.func,
   productData: PropTypes.object,
 };
 

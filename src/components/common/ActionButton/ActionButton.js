@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './ActionButton.module.scss';
 import Button from '../Button/Button';
@@ -18,7 +18,6 @@ import {
   toggleProductCompare,
 } from '../../../redux/productsRedux';
 import { addProduct } from '../../../redux/cartRedux';
-import Alert from '../Alert/Alert';
 
 const ActionButton = ({
   id,
@@ -31,13 +30,16 @@ const ActionButton = ({
   price,
   children,
   buttonStyle,
+  buttonVariant,
+  productData,
+  onClickFunction,
 }) => {
   const dispatch = useDispatch();
-  const [alert, setAlert] = useState(false);
 
   const handleFavouriteClick = e => {
     e.preventDefault();
     dispatch(toggleProductFavourite(id));
+
   };
 
   const compareList = useSelector(state => getProductsToCompare(state));
@@ -50,14 +52,17 @@ const ActionButton = ({
     }
   };
 
+
   const handleQuickViewClick = e => {
     e.preventDefault();
+    onClickFunction(true);
+
   };
 
   const handleAddToCartClick = e => {
     e.preventDefault();
+    onClickFunction(true);
     dispatch(addProduct({ id, name, source, price }));
-    setAlert(true);
   };
 
   const getButtonProps = buttonType => {
@@ -94,7 +99,7 @@ const ActionButton = ({
   return (
     <>
       <Button
-        variant='outline'
+        variant={buttonVariant || 'outline'}
         className={clsx(buttonStyle === 'primary' ? styles.primaryButtonStyle : null, buttonProps.active, 'm-1')}
         onClick={buttonProps.function}
         data-tooltip={dataTooltip}
@@ -102,7 +107,6 @@ const ActionButton = ({
         <FontAwesomeIcon icon={buttonProps.icon}>{buttonProps.name}</FontAwesomeIcon>
         {children && <span className={styles.children}>{children}</span>}
       </Button>
-      {alert && <Alert id={id} />}
     </>
   );
 };
@@ -120,4 +124,7 @@ ActionButton.propTypes = {
   source: PropTypes.string,
   children: PropTypes.string,
   buttonStyle: PropTypes.string,
+  buttonVariant: PropTypes.string,
+  productData: PropTypes.object,
+  onClickFunction: PropTypes.func,
 };

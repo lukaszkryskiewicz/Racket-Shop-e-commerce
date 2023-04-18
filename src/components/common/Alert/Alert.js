@@ -9,21 +9,17 @@ import { useSelector } from 'react-redux';
 import { getProductById } from '../../../redux/productsRedux';
 import { getCurrency } from '../../../redux/currencyRedux';
 
-const Alert = ({ type, id, amount }) => {
+const Alert = ({ type, id, productAmount, closeAlert }) => {
   const product = useSelector(state => getProductById(state, id));
-  console.log(id)
   const currency = useSelector(getCurrency);
-  /*   const product = {
-      id: '1',
-      name: 'testowa nazwa',
-      amount: 2,
-      source: '/images/racket/tennis/tennis-racket-21.webp',
-      price: 200,
-    } */
 
-  const handleClick = () => {
+  const amount = productAmount || 1;
 
-  }
+
+  const handleClick = e => {
+    e.preventDefault();
+    closeAlert(false);
+  };
 
 
   return (
@@ -46,8 +42,8 @@ const Alert = ({ type, id, amount }) => {
               <div className={styles.textContainer}>
                 <h3 className={styles.productName}>{product.name}</h3>
                 <ul className={styles.productInfoList}>
-                  <li className={styles.productAmount}>You ordered {product.amount} {product.amount > 1 ? 'pieces' : 'piece'}</li>
-                  <li className={styles.productPrice}>Total price: {product.price * product.amount * currency.multiplier} {currency.sign}</li>
+                  <li className={styles.productAmount}>You ordered {amount} {amount > 1 ? 'pieces' : 'piece'}</li>
+                  <li className={styles.productPrice}>Total price: {product.price * amount * currency.multiplier} {currency.sign}</li>
                   <p className={styles.text}>Estimated delivery time - 3 days</p>
                 </ul>
               </div>
@@ -71,5 +67,6 @@ export default Alert;
 Alert.propTypes = {
   type: PropTypes.string,
   id: PropTypes.string,
-  amount: PropTypes.number,
+  productAmount: PropTypes.number,
+  closeAlert: PropTypes.func,
 };

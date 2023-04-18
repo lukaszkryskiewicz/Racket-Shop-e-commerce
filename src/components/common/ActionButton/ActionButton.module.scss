@@ -42,4 +42,15 @@ a {
   color: white;
   border: 1px solid $primary;
   padding: 6px;
+
+  &:hover {
+    border: 1px solid #2a2a2a;
+  }
+}
+
+.buttonStyle {
+  background-color: $primary;
+  color: white;
+  border: 1px solid $primary;
+  padding: 6px;
 }
