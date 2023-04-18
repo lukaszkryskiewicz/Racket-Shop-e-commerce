@@ -15,6 +15,8 @@ import { getViewportMode } from '../../../redux/viewportModeRedux';
 import { Link } from 'react-router-dom';
 import Swipeable from '../Swipeable/Swipeable';
 import { getCurrency } from '../../../redux/currencyRedux';
+import ProductModal from '../ProductModal/ProductModal';
+import Alert from '../Alert/Alert';
 
 const FurnitureGallery = () => {
   const headlines = ['Featured', 'Top Seller', 'Sale Off', 'Top Rated'];
@@ -22,6 +24,8 @@ const FurnitureGallery = () => {
   const [fadeSlider, setFadeSlider] = useState(true);
   const [activeHeadline, setActiveHeadline] = useState('Featured');
   const [activePage, setActivePage] = useState(0);
+  const [modal, setModal] = useState(false);
+  const [alert, setAlert] = useState(false);
   const viewportMode = useSelector(viewportMode => getViewportMode(viewportMode));
   const currency = useSelector(getCurrency);
   const productsToDisplay = useSelector(state => {
@@ -85,6 +89,8 @@ const FurnitureGallery = () => {
   }, [activeHeadline]);
   return (
     <div className={styles.root}>
+      {modal && <ProductModal closeModal={setModal} productData={activeProduct} />}
+      {alert && <Alert closeAlert={setAlert} id={activeProduct.id} />}
       <div className={styles.panelBar}>
         <div className='row g-0'>
           <div className={'col ' + styles.heading}>
@@ -106,9 +112,8 @@ const FurnitureGallery = () => {
           ))}
         </ul>
         <div
-          className={`row g-0 align-items-center ' + ${styles.photo} + ${
-            fadeImage ? styles.fadeIn : styles.fadeOut
-          }`}
+          className={`row g-0 align-items-center ' + ${styles.photo} + ${fadeImage ? styles.fadeIn : styles.fadeOut
+            }`}
         >
           <Link to={'/product/' + activeProduct.id}>
             <img alt={activeProduct.name} src={activeProduct.source} />
@@ -152,6 +157,8 @@ const FurnitureGallery = () => {
               id={activeProduct.id}
               buttonType={'quickView'}
               dataTooltip='Quick View'
+              productData={activeProduct}
+              onClickFunction={setModal}
             />
             <ActionButton
               id={activeProduct.id}
@@ -160,6 +167,7 @@ const FurnitureGallery = () => {
               name={activeProduct.name}
               price={activeProduct.price}
               source={activeProduct.source}
+              onClickFunction={setAlert}
             />
           </div>
         </div>

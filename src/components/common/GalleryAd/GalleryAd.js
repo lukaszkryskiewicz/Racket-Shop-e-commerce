@@ -16,8 +16,8 @@ const GalleryAd = () => {
         <p className={styles.text}>
           From <span className={styles.price}>$500.00</span>
         </p>
-        <p className={styles.title}>Pro Tenis Racket</p>
-        <Button variant='main' className={styles.button}>
+        <p className={styles.title}>{galleryAdProduct[0].name}</p>
+        <Button link={'/product/' + galleryAdProduct[0].id} variant='main' className={styles.button}>
           Shop Now
         </Button>
       </div>

@@ -4,18 +4,16 @@ import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import ProductModal from '../ProductModal/ProductModal';
 import styles from './ProductBox.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import Button from '../Button/Button';
 import StarsReview from '../StarsReview/StarsReview';
 import ActionButton from '../ActionButton/ActionButton';
-import { useDispatch, useSelector } from 'react-redux';
-
-import { addProduct } from '../../../redux/cartRedux';
+import { useSelector } from 'react-redux';
 import { getCurrency } from '../../../redux/currencyRedux';
+import Alert from '../Alert/Alert';
 
 const ProductBox = props => {
   const [modal, setModal] = useState(false);
+  const [alert, setAlert] = useState(false);
   const currency = useSelector(state => getCurrency(state));
   const {
     id,
@@ -29,22 +27,12 @@ const ProductBox = props => {
     compare,
     source,
   } = props;
-  const dispatch = useDispatch();
   const productLink = '/product/' + id;
-
-  const openModal = e => {
-    e.preventDefault();
-    setModal(true);
-  };
-
-  const handleAddToCartClick = e => {
-    e.preventDefault();
-    dispatch(addProduct({ id, name, price, source }));
-  };
 
   return (
     <div className={styles.root}>
       {modal && <ProductModal closeModal={setModal} productData={props} />}
+      {alert && <Alert closeAlert={setAlert} id={id} />}
       <div className={styles.photo}>
         {promo && <div className={styles.sale}>{promo}</div>}
         <NavLink to={productLink}>
@@ -53,12 +41,24 @@ const ProductBox = props => {
           </div>
         </NavLink>
         <div className={styles.buttons}>
-          <Button onClick={openModal} variant='small'>
-            Quick View
-          </Button>
-          <Button className='text-uppercase' variant='small' onClick={handleAddToCartClick}>
-            <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> add to cart
-          </Button>
+          <ActionButton
+            id={id}
+            buttonType={'quickView'}
+            buttonVariant='small'
+            onClickFunction={setModal}
+            productData={props}
+          >Quick view</ActionButton>
+          <ActionButton
+            id={id}
+            buttonType={'addToCart'}
+            name={name}
+            price={price}
+            source={source}
+            buttonVariant='small'
+            onClickFunction={setAlert}
+          >
+            Add To Cart
+          </ActionButton>
         </div>
       </div>
       <div className={styles.content}>
@@ -81,7 +81,7 @@ const ProductBox = props => {
           </Button>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

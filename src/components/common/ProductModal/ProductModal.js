@@ -17,13 +17,12 @@ const ProductModal = ({ closeModal, productData }) => {
   };
 
   return (
-
     <div className={styles.root}>
       <div className='container'>
         <div className={styles.productModalContainer}>
           <ProductDetails productData={productData} />
-          <div className={styles.quitButton}>
-            <Button onClick={handleClick}>
+          <div className={styles.closeButton}>
+            <Button onClick={handleClick} variant='small'>
               <FontAwesomeIcon icon={faXmark} />
             </Button>
           </div>
@@ -34,7 +33,7 @@ const ProductModal = ({ closeModal, productData }) => {
 };
 
 ProductModal.propTypes = {
-  closeModal: PropTypes.bool,
+  closeModal: PropTypes.func,
   productData: PropTypes.object,
 };
 

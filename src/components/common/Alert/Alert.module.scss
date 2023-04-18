@@ -1,0 +1,72 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  position: relative;
+  z-index: 999;
+
+  .alertContainer {
+    padding: 1rem 1rem 1rem 1rem;
+    width: 600px;
+    height: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border: 1px solid black;
+
+    .closeButton {
+      font-size: 25px;
+      position: absolute;
+      top: 0;
+      left: 7px;
+    }
+
+    .alertHeader {
+      padding: 20px;
+      font-size: 25px;
+    }
+
+    .alertInfoContainer {
+      padding: 20px;
+
+      .imageContainer {
+        width: 150px;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .textContainer {
+        .productName {
+          font-size: 20px;
+        }
+
+        .productInfoList {
+          list-style: none;
+          padding: 0;
+          color: $granitGrey;
+
+
+        }
+      }
+    }
+
+    .buttonsContainer {
+      padding: 20px;
+
+      .buttons {
+        margin: 10px;
+        text-align: center;
+
+        .button {
+          margin: 10px;
+          padding: 10px;
+          font-size: 18px;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}

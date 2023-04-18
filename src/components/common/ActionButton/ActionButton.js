@@ -30,12 +30,16 @@ const ActionButton = ({
   price,
   children,
   buttonStyle,
+  buttonVariant,
+  productData,
+  onClickFunction,
 }) => {
   const dispatch = useDispatch();
 
   const handleFavouriteClick = e => {
     e.preventDefault();
     dispatch(toggleProductFavourite(id));
+
   };
 
   const compareList = useSelector(state => getProductsToCompare(state));
@@ -48,12 +52,16 @@ const ActionButton = ({
     }
   };
 
+
   const handleQuickViewClick = e => {
     e.preventDefault();
+    onClickFunction(true);
+
   };
 
   const handleAddToCartClick = e => {
     e.preventDefault();
+    onClickFunction(true);
     dispatch(addProduct({ id, name, source, price }));
   };
 
@@ -89,15 +97,17 @@ const ActionButton = ({
   const buttonProps = getButtonProps(buttonType);
 
   return (
-    <Button
-      variant='outline'
-      className={clsx(buttonStyle === 'primary' ? styles.primaryButtonStyle : null, buttonProps.active, 'm-1')}
-      onClick={buttonProps.function}
-      data-tooltip={dataTooltip}
-    >
-      <FontAwesomeIcon icon={buttonProps.icon}>{buttonProps.name}</FontAwesomeIcon>
-      {children && <span className={styles.children}>{children}</span>}
-    </Button>
+    <>
+      <Button
+        variant={buttonVariant || 'outline'}
+        className={clsx(buttonStyle === 'primary' ? styles.primaryButtonStyle : null, buttonProps.active, 'm-1')}
+        onClick={buttonProps.function}
+        data-tooltip={dataTooltip}
+      >
+        <FontAwesomeIcon icon={buttonProps.icon}>{buttonProps.name}</FontAwesomeIcon>
+        {children && <span className={styles.children}>{children}</span>}
+      </Button>
+    </>
   );
 };
 
@@ -114,4 +124,7 @@ ActionButton.propTypes = {
   source: PropTypes.string,
   children: PropTypes.string,
   buttonStyle: PropTypes.string,
+  buttonVariant: PropTypes.string,
+  productData: PropTypes.object,
+  onClickFunction: PropTypes.func,
 };
