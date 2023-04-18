@@ -1,5 +1,12 @@
 @import "../../../styles/settings.scss";
 
 .root {
-    padding: $base-padding 0;
+  padding: $base-padding 0;
+
+  .currentSearch {
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+    ;
   }
+}

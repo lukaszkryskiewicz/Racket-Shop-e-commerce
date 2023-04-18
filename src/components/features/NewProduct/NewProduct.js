@@ -13,7 +13,7 @@ const NewProduct = ({
   categories,
   products,
   viewportMode,
-  searchedText,
+  searchedData,
   productsOnDesktop,
   categoryId,
   currency,
@@ -103,8 +103,9 @@ const NewProduct = ({
   let productsToRender = products.filter(item => item.category === activeCategory);
   let pagesCount = Math.ceil(productsToRender.length / productsToDisplay);
 
-  if (searchedText) {
-    productsToRender = products.filter(product => product.name.includes(searchedText));
+  if (searchedData) {
+    productsToRender = products.filter(product => product.name.includes(searchedData.searchText) &&
+      (!searchedData.category || product.category === searchedData.category));
     pagesCount = Math.ceil(productsToRender.length / productsToDisplay);
   } else if (pageAddress.productId) {
     productsToRender = productsToRender.filter((item, index) => index < 4);
@@ -208,7 +209,7 @@ NewProduct.propTypes = {
     })
   ),
   viewportMode: PropTypes.string,
-  searchedText: PropTypes.string,
+  searchedData: PropTypes.object,
   productsOnDesktop: PropTypes.number,
   categoryId: PropTypes.string,
   currency: PropTypes.shape({
