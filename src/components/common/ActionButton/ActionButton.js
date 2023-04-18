@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './ActionButton.module.scss';
 import Button from '../Button/Button';
@@ -18,6 +18,7 @@ import {
   toggleProductCompare,
 } from '../../../redux/productsRedux';
 import { addProduct } from '../../../redux/cartRedux';
+import Alert from '../Alert/Alert';
 
 const ActionButton = ({
   id,
@@ -32,6 +33,7 @@ const ActionButton = ({
   buttonStyle,
 }) => {
   const dispatch = useDispatch();
+  const [alert, setAlert] = useState(false);
 
   const handleFavouriteClick = e => {
     e.preventDefault();
@@ -55,6 +57,7 @@ const ActionButton = ({
   const handleAddToCartClick = e => {
     e.preventDefault();
     dispatch(addProduct({ id, name, source, price }));
+    setAlert(true);
   };
 
   const getButtonProps = buttonType => {
@@ -89,15 +92,18 @@ const ActionButton = ({
   const buttonProps = getButtonProps(buttonType);
 
   return (
-    <Button
-      variant='outline'
-      className={clsx(buttonStyle === 'primary' ? styles.primaryButtonStyle : null, buttonProps.active, 'm-1')}
-      onClick={buttonProps.function}
-      data-tooltip={dataTooltip}
-    >
-      <FontAwesomeIcon icon={buttonProps.icon}>{buttonProps.name}</FontAwesomeIcon>
-      {children && <span className={styles.children}>{children}</span>}
-    </Button>
+    <>
+      <Button
+        variant='outline'
+        className={clsx(buttonStyle === 'primary' ? styles.primaryButtonStyle : null, buttonProps.active, 'm-1')}
+        onClick={buttonProps.function}
+        data-tooltip={dataTooltip}
+      >
+        <FontAwesomeIcon icon={buttonProps.icon}>{buttonProps.name}</FontAwesomeIcon>
+        {children && <span className={styles.children}>{children}</span>}
+      </Button>
+      {alert && <Alert id={id} />}
+    </>
   );
 };
 
