@@ -4,14 +4,10 @@ import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import ProductModal from '../ProductModal/ProductModal';
 import styles from './ProductBox.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import Button from '../Button/Button';
 import StarsReview from '../StarsReview/StarsReview';
 import ActionButton from '../ActionButton/ActionButton';
-import { useDispatch, useSelector } from 'react-redux';
-
-import { addProduct } from '../../../redux/cartRedux';
+import { useSelector } from 'react-redux';
 import { getCurrency } from '../../../redux/currencyRedux';
 import Alert from '../Alert/Alert';
 
@@ -31,13 +27,7 @@ const ProductBox = props => {
     compare,
     source,
   } = props;
-  /*   const dispatch = useDispatch(); */
   const productLink = '/product/' + id;
-
-  /*   const handleAddToCartClick = e => {
-      e.preventDefault();
-      dispatch(addProduct({ id, name, price, source }));
-    }; */
 
   return (
     <div className={styles.root}>
@@ -58,9 +48,6 @@ const ProductBox = props => {
             onClickFunction={setModal}
             productData={props}
           >Quick view</ActionButton>
-          {/*           <Button onClick={openModal} variant='small'>
-            Quick View
-          </Button> */}
           <ActionButton
             id={id}
             buttonType={'addToCart'}
@@ -72,9 +59,6 @@ const ProductBox = props => {
           >
             Add To Cart
           </ActionButton>
-          {/*           <Button className='text-uppercase' variant='small' onClick={handleAddToCartClick}>
-            <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> add to cart
-          </Button> */}
         </div>
       </div>
       <div className={styles.content}>

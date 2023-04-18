@@ -7,7 +7,6 @@ import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import clsx from 'clsx';
 import StarsReview from '../../common/StarsReview/StarsReview';
 import {
-  faShoppingBasket,
   faChevronRight,
   faChevronLeft,
 } from '@fortawesome/free-solid-svg-icons';
@@ -15,25 +14,29 @@ import Button from '../../common/Button/Button';
 import ActionButton from '../../common/ActionButton/ActionButton';
 import Carousel from 'react-bootstrap/Carousel';
 import { NavLink } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { addProduct } from '../../../redux/cartRedux';
 import Swipeable from '../../common/Swipeable/Swipeable';
 import { getCurrency } from '../../../redux/currencyRedux';
+import Alert from '../../common/Alert/Alert';
+import ProductModal from '../../common/ProductModal/ProductModal';
 
 const Featured = () => {
-  const dispatch = useDispatch();
   const [slideInterval, setSlideInterval] = useState(3000);
   const [hotDealIndex, setHotDealIndex] = useState(0);
   const [hotProductIndex, setHotProductIndex] = useState(0);
   const hotDeals = useSelector(getHotDeals).slice(0, 3);
+  const [currentHotDeal, setCurrentHotDeal] = useState(hotDeals[0]);
+  const [modal, setModal] = useState(false);
+  const [alert, setAlert] = useState(false);
   const currency = useSelector(getCurrency);
 
   const handleSelect = selectedIndex => {
     setHotDealIndex(selectedIndex);
+    setCurrentHotDeal(hotDeals[selectedIndex]);
   };
 
   const onClickHandlerHotDeals = index => {
     setHotDealIndex(index);
+    setCurrentHotDeal(hotDeals[index]);
     setSlideInterval(7000);
     setTimeout(() => {
       setSlideInterval(3000);
@@ -53,11 +56,6 @@ const Featured = () => {
     }
   };
 
-  const handleAddToCartClick = (e, product) => {
-    e.preventDefault();
-    dispatch(addProduct(product));
-  };
-
   const leftAction = () => {
     if (hotProductIndex === 0) {
       setHotProductIndex(hotDeals.length - 1);
@@ -71,6 +69,8 @@ const Featured = () => {
   };
   return (
     <div className={styles.root}>
+      {modal && <ProductModal closeModal={setModal} productData={currentHotDeal} />}
+      {alert && <Alert closeAlert={setAlert} id={hotDeals[hotDealIndex].id} />}
       <div className='container'>
         <div className='row'>
           <div className='col-6 col-lg-4 d-none d-md-block'>
@@ -118,20 +118,17 @@ const Featured = () => {
                         </div>
                       </NavLink>
                       <div className={styles.button}>
-                        <Button
-                          variant='small'
-                          onClick={e =>
-                            handleAddToCartClick(e, {
-                              id: hotDeal.id,
-                              name: hotDeal.name,
-                              price: hotDeal.price,
-                              source: hotDeal.source,
-                            })
-                          }
+                        <ActionButton
+                          id={hotDeal.id}
+                          buttonType={'addToCart'}
+                          name={hotDeal.name}
+                          price={hotDeal.price}
+                          source={hotDeal.source}
+                          buttonVariant='small'
+                          onClickFunction={setAlert}
                         >
-                          <FontAwesomeIcon icon={faShoppingBasket} />
-                          {'  '}ADD TO CART
-                        </Button>
+                          Add To Cart
+                        </ActionButton>
                       </div>
                       <div className={`${styles.timer} row`}>
                         <li className='col'>
@@ -196,7 +193,11 @@ const Featured = () => {
                             compare={hotDeal.compare}
                             buttonType={'compare'}
                           />
-                          <ActionButton id={hotDeal.id} buttonType={'quickView'} />
+                          <ActionButton
+                            id={hotDeal.id}
+                            buttonType={'quickView'}
+                            productData={hotDeal}
+                            onClickFunction={setModal} />
                         </div>
                         <div className={styles.prices}>
                           {hotDeal.oldPrice && (
