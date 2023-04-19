@@ -11,7 +11,7 @@ import { useState } from 'react';
 
 const MenuBar = () => {
   const [mobileMenu, setMobileMenu] = useState(true);
-
+  console.log('render');
   const action = () => {
     setMobileMenu(!mobileMenu);
   };
@@ -42,7 +42,14 @@ const MenuBar = () => {
                 <li key={link}>
                   <NavLink
                     exact
-                    to={link !== '/' && link !== 'blog' ? '/shop/' + link : link}
+                    /*       to={link !== '/' && link !== 'blog' ? '/shop/' + link : link} */
+                    to={
+                      link === 'blog'
+                        ? '/blog'
+                        : link.startsWith('/')
+                        ? link
+                        : '/shop/' + link
+                    }
                     className={isActive => (isActive ? styles.active : undefined)}
                   >
                     {link === '/' ? 'home' : link}

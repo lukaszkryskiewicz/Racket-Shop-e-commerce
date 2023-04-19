@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import styles from './BlogBox.module.scss';
 import BlogPostBox from '../../common/BlogPostBox/BlogPostBox';
-import { getAllBlogPosts } from '../../../redux/blogPostsRedux';
+import { getAllBlogPosts } from '../../../redux/blogRedux';
 import { useState } from 'react';
 import { getViewportMode } from '../../../redux/viewportModeRedux';
 import { useEffect } from 'react';

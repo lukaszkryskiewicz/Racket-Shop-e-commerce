@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import { persistor, store } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 
-
 import './styles/bootstrap.scss';
 import './styles/global.scss';
 
@@ -20,8 +19,8 @@ import Cart from './components/views/Cart/Cart';
 import NotFound from './components/views/NotFound/NotFound';
 
 const App = () => (
-  <Provider store={store} >
-    <PersistGate persistor={persistor} >
+  <Provider store={store}>
+    <PersistGate persistor={persistor}>
       <BrowserRouter>
         <MainLayout>
           <Switch>
@@ -29,16 +28,17 @@ const App = () => (
             <Route exact path={'/shop/:categoryId'} component={ProductList} />
             <Route exact path={'/product/:productId'} component={ProductPage} />
             <Route exact path={'/blog'} component={Blog} />
+            <Route exact path={'/blog/:blogPostId'} component={Blog} />
             <Route exact path={'/register'} component={Register} />
             <Route exact path={'/login'} component={Login} />
             <Route exact path={'/search'} component={Search} />
             <Route exact path={'/cart'} component={Cart} />
-            <Route path="*" component={NotFound} />
+            <Route path='*' component={NotFound} />
           </Switch>
         </MainLayout>
       </BrowserRouter>
-    </PersistGate >
-  </Provider >
+    </PersistGate>
+  </Provider>
 );
 
 export default App;

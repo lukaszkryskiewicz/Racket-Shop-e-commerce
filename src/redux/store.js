@@ -3,23 +3,22 @@ import initialState from './initialState';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-
 import cartReducer from './cartRedux';
 import categoriesReducer from './categoriesRedux';
 import productsReducer from './productsRedux';
 import viewportModeReducer from './viewportModeRedux';
 import feedbacksReducer from './feedbacksRedux';
-import blogPostsReducer from './blogPostsRedux';
+import blogReducer from './blogRedux';
 import promotionReducer from './promotionRedux';
 import brandsReducer from './brandsRedux';
 import filtersReducer from './filterRedux';
 import searchReducer from './searchRedux';
 import currencyReducer from './currencyRedux';
 
-
 const persistConfig = {
   key: 'root',
   storage,
+  whitelist: ['cart', 'products', 'currency'],
 };
 // define reducers
 const reducers = {
@@ -28,7 +27,7 @@ const reducers = {
   products: productsReducer,
   viewportMode: viewportModeReducer,
   feedbacks: feedbacksReducer,
-  blogPosts: blogPostsReducer,
+  blog: blogReducer,
   promotion: promotionReducer,
   brands: brandsReducer,
   productFilters: filtersReducer,
@@ -55,5 +54,3 @@ export const store = createStore(
 );
 
 export const persistor = persistStore(store);
-
-

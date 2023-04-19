@@ -2,14 +2,49 @@
 
 .blogCategoriesContainer {
   margin-bottom: 40px;
-}
 
-.blogCategoriesTitle {
-  border-bottom: 1px solid $light-grey;
-  padding-bottom: 2px;
-}
 
-.blogCategory {
-  border-bottom: 1px solid $light-grey;
-  text-decoration: none;
+  .blogCategoriesTitle {
+    border-bottom: 1px solid $light-grey;
+    padding-bottom: 2px;
+  }
+
+  /*  .blogCategory {
+
+    text-decoration: none;
+  } */
+
+  .blogCategoriesList {
+    padding: 0;
+
+    .blogCategory {
+      font-size: 20px;
+      padding: 2px 0;
+      cursor: pointer;
+
+      h4 {
+        font-size: 15px;
+        margin: 5px;
+      }
+
+      .number {
+
+        font-size: 15px;
+        border-radius: 50%;
+        background-color: black;
+        width: 25px;
+        text-align: center;
+        color: white;
+      }
+    }
+
+    .active .number {
+      background-color: $primary;
+    }
+
+    .active {
+      color: $primary;
+      padding: 0 0 0 15px;
+    }
+  }
 }
