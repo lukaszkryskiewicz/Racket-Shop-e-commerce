@@ -2,30 +2,24 @@ import React from 'react';
 import styles from './BlogLayout.module.scss';
 
 import BlogPosts from '../../features/BlogPosts/BlogPosts';
-import RecentPosts from '../../features/RecentPosts/RecentPosts';
-import RecentComments from '../../features/RecentComments/RecentComments';
-import BlogArchives from '../../features/BlogArchives/BlogArchives';
+import BlogRecentPosts from '../../features/BlogRecentPosts/BlogRecentPosts';
 import BlogCategories from '../../features/BlogCategories/BlogCategories';
+import BlogPost from '../../features/BlogPost/BlogPost';
+import { useParams } from 'react-router-dom';
 
 const BlogLayout = () => {
+  const { blogPostId } = useParams();
+
   return (
     <div className={styles.root}>
       <div className={`container ${styles.mainContainer}`}>
         <div className='row'>
           <div className='col-9'>
-            <BlogPosts />
+            {blogPostId ? <BlogPost blogPostId={blogPostId} /> : <BlogPosts />}
           </div>
-          <div className='col-3'>
-            <div className={styles.inputContainer}>
-              <input placeholder='Search...' type={'text'}></input>
-            </div>
-            <RecentPosts />
-            <RecentComments />
-            <BlogArchives />
+          <div className='col-3 mt-3'>
+            <BlogRecentPosts />
             <BlogCategories />
-            <div>
-              <h5 className={styles.meta}>Meta</h5>
-            </div>
           </div>
         </div>
       </div>

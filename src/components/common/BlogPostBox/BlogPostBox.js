@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar } from '@fortawesome/free-regular-svg-icons';
 import { faComment } from '@fortawesome/free-solid-svg-icons';
 import Button from '../Button/Button';
+import { Link } from 'react-router-dom';
 
 const BlogPostBox = ({ id, date, text, title }) => {
   return (
@@ -40,7 +41,11 @@ const BlogPostBox = ({ id, date, text, title }) => {
         </div>
       </div>
       <div className={'text-center ' + styles.button}>
-        <Button variant='main'>Read More</Button>
+        <Link to={'blog/' + id}>
+          <Button noLink variant='main'>
+            Read More
+          </Button>
+        </Link>
       </div>
     </div>
   );
