@@ -11,7 +11,6 @@ import { useState } from 'react';
 
 const MenuBar = () => {
   const [mobileMenu, setMobileMenu] = useState(true);
-  console.log('render');
   const action = () => {
     setMobileMenu(!mobileMenu);
   };
