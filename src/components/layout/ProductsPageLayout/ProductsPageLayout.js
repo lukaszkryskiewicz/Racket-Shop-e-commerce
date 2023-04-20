@@ -11,6 +11,10 @@ import { useParams } from 'react-router-dom';
 import Button from '../../common/Button/Button';
 import { useDispatch } from 'react-redux';
 import { clearFilters } from '../../../redux/filterRedux';
+import ProductList from '../../features/ProductList/ProductList';
+import ProductGrid from '../../features/ProductGrid/ProductGrid';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faList, faSquare } from '@fortawesome/free-solid-svg-icons';
 
 const ProductsPageLayout = () => {
   const { categoryId } = useParams();
@@ -26,6 +30,10 @@ const ProductsPageLayout = () => {
         <Banner />
         <div className={`row ${styles.filtered}`}>
           <div className={`col-9 ${styles.productList}`}>
+            <FontAwesomeIcon icon={faList}></FontAwesomeIcon>
+            <FontAwesomeIcon icon={faSquare}></FontAwesomeIcon>
+            <ProductList />
+            <ProductGrid />
             <NewProduct productsOnDesktop={12} categoryId={categoryId} />
           </div>
           <div className={`col-3 ${styles.filters}`}>

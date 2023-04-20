@@ -11,7 +11,7 @@ const Currency = () => {
 
   const availableCurrency = ['USD', 'EUR', 'PLN'];
 
-  fetch(`https://api.nbp.pl/api/exchangerates/tables/a/`)
+/*   fetch(`https://api.nbp.pl/api/exchangerates/tables/a/`)
     .then(res => res.json())
     .then(data => {
       const usdData = {
@@ -25,7 +25,7 @@ const Currency = () => {
       console.log('Kurs USD', usdData);
       console.log('Kurs Euro', euroData);
     });
-
+ */
   const handleClick = (e, currency) => {
     e.preventDefault();
     setActiveCurrency(currencyConverter(currency));
