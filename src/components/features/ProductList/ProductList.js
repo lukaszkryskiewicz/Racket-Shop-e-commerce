@@ -1,43 +1,45 @@
-import React from 'react';
+import React, {useState} from 'react';
 // import PropTypes from 'prop-types';
 import styles from './ProductList.module.scss';
-import { useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import clsx from 'clsx';
-import { getAllProducts } from '../../../redux/productsRedux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faEnvelope, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { getCurrency } from '../../../redux/currencyRedux';
 import Button from '../../common/Button/Button';
 import ActionButton from '../../common/ActionButton/ActionButton';
 import StarsReview from '../../common/StarsReview/StarsReview';
+import Alert from '../../common/Alert/Alert';
 
 
-const ProductList = () => {
-  const { categoryId } = useParams();
-  const dispatch = useDispatch();
+const ProductList = ({productsToRender}) => {
   const currency = useSelector(getCurrency)
+  const [alert, setAlert] = useState(false);
 
-  const allProduct = useSelector(getAllProducts)
-const product = allProduct[0]
 
 
   return (
     <div className={styles.root}>
       <div className='container'>
       <div className={clsx(styles.productListContainer)}>
-        <div className={clsx('row', styles.productListRow)}>
+        {productsToRender.map(product => (
+        <div key={product.name} className={clsx('row', styles.productListRow)}>
+          {alert && <Alert closeAlert={setAlert} id={product.id} />}
           <div className={clsx('col-4')}>
             <div className={styles.productPhoto}>
+              <NavLink to={'/product/' + product.id}>
             <img src={product.source} alt={product.name}/>
+            </NavLink>
             </div>
           </div>
           <div className={clsx('col-8', styles.productInfo)}>
              <div className={clsx('row', styles.headerRow)}>
               <div className={styles.title}>
+              <NavLink to={'/product/' + product.id}>
                 <h1>{product.name}</h1>
+                </NavLink>
               </div>
               <div className={clsx(styles.review)}>
                 <div>
@@ -99,6 +101,7 @@ const product = allProduct[0]
                   price={product.price}
                   source={product.source}
                   buttonStyle='primary'
+                  onClickFunction={setAlert}
                 >
                   Add To Cart
                 </ActionButton>
@@ -107,6 +110,7 @@ const product = allProduct[0]
             </div>
           </div>
         </div>
+        ))}
         </div>
       </div>
     </div>
