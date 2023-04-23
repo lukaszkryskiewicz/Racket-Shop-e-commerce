@@ -75,7 +75,11 @@ export default function reducer(statePart = [], action = {}) {
       case UPDATE_PRODUCT_QUANTITY:
         return statePart.map(product => 
           product.id === action.payload.id ?
-          {...product, quantity: product.quantity - action.payload.amount}
+          action.payload.type === 'minus' ?
+          {...product, quantity: product.quantity - action.payload.quantity}
+          : action.payload.type === 'plus' ?
+          {...product, quantity: product.quantity + action.payload.quantity} 
+          :product
           : product
         );
     default:

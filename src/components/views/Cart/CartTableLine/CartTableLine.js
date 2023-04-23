@@ -7,32 +7,43 @@ import Button from '../../../common/Button/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeProduct, updateProduct } from '../../../../redux/cartRedux';
 import { getCurrency } from '../../../../redux/currencyRedux';
+import { getProductById } from '../../../../redux/productsRedux';
+import { updateProductQuantity } from '../../../../redux/productsRedux';
 
 const CartTableLine = ({ id, name, price, source, quantity }) => {
   const dispatch = useDispatch();
+  const product = useSelector(state => getProductById(state, id))
   const [itemQuantity, setItemQuantity] = useState(quantity);
   const currency = useSelector(state => getCurrency(state));
   price = (price * currency.multiplier).toFixed(2);
   const totalForProduct = (price * itemQuantity).toFixed(2);
 
+console.log(product)
   const handleClick = e => {
     e.preventDefault(e);
     dispatch(removeProduct(id));
+    dispatch(updateProductQuantity({id, quantity: itemQuantity, type: 'plus'}))
   };
 
   const handleChange = e => {
     e.preventDefault();
     const newQuantity = parseInt(e.target.value);
-    if (!isNaN(newQuantity)) {
-      setItemQuantity(newQuantity);
+    if (!isNaN(newQuantity) && product.quantity + itemQuantity >= newQuantity) {
+       if (newQuantity > itemQuantity) {
+      dispatch(updateProductQuantity({id, quantity: newQuantity - itemQuantity, type: 'minus'}))
+    } else {
+      dispatch(updateProductQuantity({id, quantity: itemQuantity - newQuantity, type: 'plus'}))
+    } setItemQuantity(newQuantity);
       dispatch(updateProduct({ id, quantity: newQuantity }));
+
     }
   };
 
   const incrementQuantity = () => {
-    if (itemQuantity < 10) {
+    if (product.quantity >= 1) {
       setItemQuantity(itemQuantity + 1);
       dispatch(updateProduct({ id, quantity: itemQuantity + 1 }));
+      dispatch(updateProductQuantity({id, quantity: 1, type: 'minus'}))
     }
   };
 
@@ -40,6 +51,7 @@ const CartTableLine = ({ id, name, price, source, quantity }) => {
     if (itemQuantity > 1) {
       setItemQuantity(itemQuantity - 1);
       dispatch(updateProduct({ id, quantity: itemQuantity - 1 }));
+      dispatch(updateProductQuantity({id, quantity: 1, type: 'plus'}))
     }
   };
 

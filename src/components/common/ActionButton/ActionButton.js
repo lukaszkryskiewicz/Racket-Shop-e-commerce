@@ -16,6 +16,7 @@ import {
   toggleProductFavourite,
   getProductsToCompare,
   toggleProductCompare,
+  updateProductQuantity,
 } from '../../../redux/productsRedux';
 import { addProduct } from '../../../redux/cartRedux';
 import { getProductById } from '../../../redux/productsRedux';
@@ -68,6 +69,7 @@ const ActionButton = ({
     if (product.quantity >= quantity) {
     onClickFunction({status: true, type:'success'});
     dispatch(addProduct({ id, name, source, price, quantity }));
+    dispatch(updateProductQuantity({id, quantity, type: 'minus'}))
     } else {
     onClickFunction({status: true, type:'error'})
     }
