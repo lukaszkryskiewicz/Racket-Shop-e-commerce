@@ -19,15 +19,18 @@ import {
   faInstagram,
   faLinkedinIn,
 } from '@fortawesome/free-brands-svg-icons';
+import Alert from '../../common/Alert/Alert';
 
 const ProductDetails = ({ productData }) => {
   const { productId } = useParams();
   const productOnSite = useSelector(state => getProductById(state, productId));
   const [fadeImage, setFadeImage] = useState(true);
   const [activeImage, setActiveImage] = useState(0);
-  const [productAmount, setProductAmount] = useState(1);
+  const [productQuantity, setProductQuantity] = useState(1);
+  const [alert, setAlert] = useState({status: false, type:'success'});
   const currency = useSelector(getCurrency);
   const product = productData || productOnSite;
+
   const pictureNumber = 4;
   const handlePhotoChange = number => {
     setFadeImage(false);
@@ -45,30 +48,31 @@ const ProductDetails = ({ productData }) => {
     { name: 'LinkedIn', icon: faLinkedinIn },
   ];
 
-  const handleAmountChange = e => {
+  const handleQuantityChange = e => {
     e.preventDefault();
-    const newAmount = parseInt(e.target.value);
-    if (!isNaN(newAmount)) {
-      setProductAmount(newAmount);
+    const newQuantity = parseInt(e.target.value);
+    if (!isNaN(newQuantity)) {
+      setProductQuantity(newQuantity);
     }
   };
 
-  const incrementAmount = e => {
+  const incrementQuantity = e => {
     e.preventDefault();
-    if (productAmount < 10) {
-      setProductAmount(productAmount + 1);
+    if (productQuantity < 10) {
+      setProductQuantity(productQuantity + 1);
     }
   };
 
-  const decrementAmount = e => {
+  const decrementQuantity = e => {
     e.preventDefault();
-    if (productAmount > 1) {
-      setProductAmount(productAmount - 1);
+    if (productQuantity > 1) {
+      setProductQuantity(productQuantity - 1);
     }
   };
 
   return (
     <div className={styles.root}>
+      {alert.status && <Alert closeAlert={setAlert} id={product.id} quantity={productQuantity} type={alert.type}/>}
       <div className={clsx('container', styles.productDetails)}>
         <div className={clsx('row', styles.mainRow)}>
           <div className={clsx('col-lg-5 col-md-12', styles.photoSection)}>
@@ -176,6 +180,8 @@ const ProductDetails = ({ productData }) => {
                   price={product.price}
                   source={product.source}
                   buttonStyle='primary'
+                  quantity={productQuantity}
+                  onClickFunction={setAlert}
                 >
                   Add To Cart
                 </ActionButton>
@@ -202,20 +208,20 @@ const ProductDetails = ({ productData }) => {
                 <Button
                   variant='outline'
                   className={styles.amountControls}
-                  onClick={decrementAmount}
+                  onClick={decrementQuantity}
                 >
                   <FontAwesomeIcon icon={faMinus} />
                 </Button>
                 <input
                   className={styles.amountInput}
-                  onChange={e => handleAmountChange(e)}
-                  value={productAmount}
+                  onChange={e => handleQuantityChange(e)}
+                  value={productQuantity}
                 />
                 <Button
 
                   variant='outline'
                   className={styles.amountControls}
-                  onClick={incrementAmount}
+                  onClick={incrementQuantity}
                 >
                   <FontAwesomeIcon icon={faPlus} />
                 </Button>

@@ -8,12 +8,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { removeProduct, updateProduct } from '../../../../redux/cartRedux';
 import { getCurrency } from '../../../../redux/currencyRedux';
 
-const CartTableLine = ({ id, name, price, source, amount }) => {
+const CartTableLine = ({ id, name, price, source, quantity }) => {
   const dispatch = useDispatch();
-  const [itemAmount, setAmount] = useState(amount);
+  const [itemQuantity, setItemQuantity] = useState(quantity);
   const currency = useSelector(state => getCurrency(state));
   price = (price * currency.multiplier).toFixed(2);
-  const totalForProduct = (price * itemAmount).toFixed(2);
+  const totalForProduct = (price * itemQuantity).toFixed(2);
 
   const handleClick = e => {
     e.preventDefault(e);
@@ -22,24 +22,24 @@ const CartTableLine = ({ id, name, price, source, amount }) => {
 
   const handleChange = e => {
     e.preventDefault();
-    const newAmount = parseInt(e.target.value);
-    if (!isNaN(newAmount)) {
-      setAmount(newAmount);
-      dispatch(updateProduct({ id, amount: newAmount }));
+    const newQuantity = parseInt(e.target.value);
+    if (!isNaN(newQuantity)) {
+      setItemQuantity(newQuantity);
+      dispatch(updateProduct({ id, quantity: newQuantity }));
     }
   };
 
-  const incrementAmount = () => {
-    if (itemAmount < 10) {
-      setAmount(itemAmount + 1);
-      dispatch(updateProduct({ id, amount: itemAmount + 1 }));
+  const incrementQuantity = () => {
+    if (itemQuantity < 10) {
+      setItemQuantity(itemQuantity + 1);
+      dispatch(updateProduct({ id, quantity: itemQuantity + 1 }));
     }
   };
 
-  const decrementAmount = () => {
-    if (itemAmount > 1) {
-      setAmount(itemAmount - 1);
-      dispatch(updateProduct({ id, amount: itemAmount - 1 }));
+  const decrementQuantity = () => {
+    if (itemQuantity > 1) {
+      setItemQuantity(itemQuantity - 1);
+      dispatch(updateProduct({ id, quantity: itemQuantity - 1 }));
     }
   };
 
@@ -65,15 +65,15 @@ const CartTableLine = ({ id, name, price, source, amount }) => {
         {currency.sign} {price}
       </div>
       <div className='col-2 text-center'>
-        <Button className={styles.amountControls} onClick={decrementAmount}>
+        <Button className={styles.amountControls} onClick={decrementQuantity}>
           -
         </Button>
         <input
           className={styles.amountInput}
           onChange={e => handleChange(e)}
-          value={itemAmount}
+          value={itemQuantity}
         />
-        <Button className={styles.amountControls} onClick={incrementAmount}>
+        <Button className={styles.amountControls} onClick={incrementQuantity}>
           +
         </Button>
       </div>
@@ -89,7 +89,7 @@ CartTableLine.propTypes = {
   name: PropTypes.string,
   price: PropTypes.number,
   source: PropTypes.string,
-  amount: PropTypes.number,
+  quantity: PropTypes.number,
   countSubTotal: PropTypes.func,
   totalForProduct: PropTypes.func,
 };

@@ -13,7 +13,7 @@ import Alert from '../Alert/Alert';
 
 const ProductBox = props => {
   const [modal, setModal] = useState(false);
-  const [alert, setAlert] = useState(false);
+  const [alert, setAlert] = useState({status: false, type:'success'});
   const currency = useSelector(state => getCurrency(state));
   const {
     id,
@@ -32,7 +32,7 @@ const ProductBox = props => {
   return (
     <div className={styles.root}>
       {modal && <ProductModal closeModal={setModal} productData={props} />}
-      {alert && <Alert closeAlert={setAlert} id={id} />}
+      {alert.status && <Alert closeAlert={setAlert} id={id} type={alert.type} />}
       <div className={styles.photo}>
         {promo && <div className={styles.sale}>{promo}</div>}
         <NavLink to={productLink}>

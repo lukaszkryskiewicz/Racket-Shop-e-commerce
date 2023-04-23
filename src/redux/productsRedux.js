@@ -24,6 +24,7 @@ const createActionName = actionName => `app/products/${actionName}`;
 const TOGGLE_PRODUCT_FAVOURITE = createActionName('TOGGLE_PRODUCT_FAVOURITE');
 const TOGGLE_PRODUCT_COMPARE = createActionName('TOGGLE_PRODUCT_COMPARE');
 const ADD_MY_STARS = createActionName('ADD_MY_STARS');
+const UPDATE_PRODUCT_QUANTITY = createActionName('UPDATE_PRODUCT_QUANTITY')
 
 /* action creators */
 export const toggleProductFavourite = payload => ({
@@ -40,6 +41,12 @@ export const addMyStars = payload => ({
   type: ADD_MY_STARS,
   payload,
 });
+
+export const updateProductQuantity = payload => ({
+  type: UPDATE_PRODUCT_QUANTITY,
+  payload,
+});
+
 
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
@@ -65,6 +72,12 @@ export default function reducer(statePart = [], action = {}) {
           ? { ...product, myStars: action.payload.clickedStars }
           : product
       );
+      case UPDATE_PRODUCT_QUANTITY:
+        return statePart.map(product => 
+          product.id === action.payload.id ?
+          {...product, quantity: product.quantity - action.payload.amount}
+          : product
+        );
     default:
       return statePart;
   }
