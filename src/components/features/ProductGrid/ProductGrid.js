@@ -31,5 +31,5 @@ export default ProductGrid;
 
 
 ProductGrid.propTypes = {
-  productsToRender: PropTypes.object,
+  productsToRender: PropTypes.array,
 };

@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import styles from './NewProduct.module.scss';
+import styles from './NewProducts.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 import CompareBar from '../../common/CompareBar/CompareBar';
 import Swipeable from '../../common/Swipeable/Swipeable';
 import { useParams } from 'react-router';
 import { useLocation } from 'react-router';
+import { useSelector } from 'react-redux';
+import { getAll } from '../../../redux/categoriesRedux';
+import { getAllProducts } from '../../../redux/productsRedux';
+import { getViewportMode } from '../../../redux/viewportModeRedux';
 
-const NewProduct = ({
-  categories,
-  products,
-  viewportMode,
-  searchedData,
-  productsOnDesktop,
-}) => {
+const NewProducts = ({ searchedData, productsOnDesktop }) => {
+  const categories = useSelector(getAll);
+  const products = useSelector(getAllProducts);
+  const viewportMode = useSelector(getViewportMode);
   const [activePage, setActivePage] = useState(0);
   const [activeCategory, setActiveCategory] = useState('tennis');
   const [fade, setFade] = useState(true);
@@ -89,7 +90,7 @@ const NewProduct = ({
           <div className={styles.panelBar}>
             <div className='row g-0 align-items-end'>
               <div className={'col-md-auto col-12 mb-3 mb-md-0 ' + styles.heading}>
-                <h3>New product</h3>
+                <h3>New products</h3>
               </div>
               <div className={'col-md col-12 ' + styles.menu}>
                 <ul>
@@ -132,7 +133,7 @@ const NewProduct = ({
   );
 };
 
-NewProduct.propTypes = {
+NewProducts.propTypes = {
   children: PropTypes.node,
   categories: PropTypes.arrayOf(
     PropTypes.shape({
@@ -161,10 +162,10 @@ NewProduct.propTypes = {
     sign: PropTypes.string,
   }),
 };
-
-NewProduct.defaultProps = {
+/* 
+NewProducts.defaultProps = {
   categories: [],
   products: [],
-};
+}; */
 
-export default NewProduct;
+export default NewProducts;

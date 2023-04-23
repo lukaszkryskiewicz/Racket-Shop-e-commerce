@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
-
+import { NavLink, useLocation } from 'react-router-dom';
 import ProductSearch from '../../features/ProductSearch/ProductSearch';
-
 import styles from './MenuBar.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -11,6 +9,7 @@ import { useState } from 'react';
 
 const MenuBar = () => {
   const [mobileMenu, setMobileMenu] = useState(true);
+  const location = useLocation();
   const action = () => {
     setMobileMenu(!mobileMenu);
   };
@@ -49,7 +48,7 @@ const MenuBar = () => {
                           ? link
                           : '/shop/' + link
                     }
-                    className={isActive => (isActive ? styles.active : undefined)}
+                    className={isActive => ((isActive || location.pathname.includes('/' + link)) ? styles.active : undefined)}
                   >
                     {link === '/' ? 'home' : link}
                   </NavLink>
