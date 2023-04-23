@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Gallery.module.scss';
-import FurnitureGallery from '../../common/FurnitureGallery/FurnitureGallery';
+import RacketsGallery from '../../common/RacketsGallery/RacketsGallery';
 import GalleryAd from '../../common/GalleryAd/GalleryAd';
 
 const Gallery = () => (
@@ -8,7 +8,7 @@ const Gallery = () => (
     <div className='container'>
       <div className='row'>
         <div className='col-lg-6 col-12 mt-3'>
-          <FurnitureGallery />
+          <RacketsGallery />
         </div>
         <div className='col-lg-6 col-12 mt-3'>
           <GalleryAd />

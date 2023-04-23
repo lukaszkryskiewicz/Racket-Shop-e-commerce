@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './FurnitureGallery.module.scss';
+import styles from './RacketsGallery.module.scss';
 import { useState } from 'react';
 import {
   getFeaturedProducts,
@@ -18,7 +18,7 @@ import { getCurrency } from '../../../redux/currencyRedux';
 import ProductModal from '../ProductModal/ProductModal';
 import Alert from '../Alert/Alert';
 
-const FurnitureGallery = () => {
+const RacketsGallery = () => {
   const headlines = ['Featured', 'Top Seller', 'Sale Off', 'Top Rated'];
   const [fadeImage, setFadeImage] = useState(true);
   const [fadeSlider, setFadeSlider] = useState(true);
@@ -90,11 +90,13 @@ const FurnitureGallery = () => {
   return (
     <div className={styles.root}>
       {modal && <ProductModal closeModal={setModal} productData={activeProduct} />}
-      {alert.status && <Alert closeAlert={setAlert} id={activeProduct.id} type={alert.type} />}
+      {alert.status && (
+        <Alert closeAlert={setAlert} id={activeProduct.id} type={alert.type} />
+      )}
       <div className={styles.panelBar}>
         <div className='row g-0'>
           <div className={'col ' + styles.heading}>
-            <h3>Furniture Gallery</h3>
+            <h3>Rackets Gallery</h3>
           </div>
         </div>
       </div>
@@ -112,8 +114,9 @@ const FurnitureGallery = () => {
           ))}
         </ul>
         <div
-          className={`row g-0 align-items-center ' + ${styles.photo} + ${fadeImage ? styles.fadeIn : styles.fadeOut
-            }`}
+          className={`row g-0 align-items-center ' + ${styles.photo} + ${
+            fadeImage ? styles.fadeIn : styles.fadeOut
+          }`}
         >
           <Link to={'/product/' + activeProduct.id}>
             <img alt={activeProduct.name} src={activeProduct.source} />
@@ -218,4 +221,4 @@ const FurnitureGallery = () => {
     </div>
   );
 };
-export default FurnitureGallery;
+export default RacketsGallery;
