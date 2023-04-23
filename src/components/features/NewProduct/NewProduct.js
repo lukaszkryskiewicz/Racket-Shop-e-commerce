@@ -7,7 +7,6 @@ import Swipeable from '../../common/Swipeable/Swipeable';
 import { useParams } from 'react-router';
 import { useLocation } from 'react-router';
 import { useSelector } from 'react-redux';
-import { getAllFilters } from '../../../redux/filterRedux';
 
 const NewProduct = ({
   categories,
@@ -15,55 +14,10 @@ const NewProduct = ({
   viewportMode,
   searchedData,
   productsOnDesktop,
-  categoryId,
-  currency,
 }) => {
   const [activePage, setActivePage] = useState(0);
   const [activeCategory, setActiveCategory] = useState('tennis');
   const [fade, setFade] = useState(true);
-  const filters = useSelector(getAllFilters);
-
-  const productSuitsAllFilters = (product, allFilters) => {
-    if (product.category === categoryId) {
-      for (let i = 0; i < allFilters.length; i++) {
-        const checkedFilter = allFilters[i];
-        switch (checkedFilter.name) {
-          case 'ratingFilter':
-            if (
-              !product.stars ||
-              checkedFilter.value > product.stars
-            ) {
-              return false;
-            }
-            break;
-          case 'colorFilter':
-            if (!product.color || !(checkedFilter.value.some(color => product.color.includes(color)))) {
-              return false;
-            }
-            break;
-          case 'priceFilter':
-            if (
-              !product.price ||
-              product.price * currency.multiplier < checkedFilter.value[0] ||
-              product.price * currency.multiplier > checkedFilter.value[1]
-            ) {
-              return false;
-            }
-            break;
-          case 'brandFilter':
-            if (!product.manufacturer || product.manufacturer !== checkedFilter.value) {
-              return false;
-            }
-            break;
-          default:
-            return false;
-        }
-      }
-    } else {
-      return false;
-    }
-    return true;
-  };
 
   const pageAddress = useParams();
   const location = useLocation();
@@ -104,17 +58,15 @@ const NewProduct = ({
   let pagesCount = Math.ceil(productsToRender.length / productsToDisplay);
 
   if (searchedData) {
-    productsToRender = products.filter(product => product.name.includes(searchedData.searchText) &&
-      (!searchedData.category || product.category === searchedData.category));
+    productsToRender = products.filter(
+      product =>
+        product.name.includes(searchedData.searchText) &&
+        (!searchedData.category || product.category === searchedData.category)
+    );
     pagesCount = Math.ceil(productsToRender.length / productsToDisplay);
   } else if (pageAddress.productId) {
     productsToRender = productsToRender.filter((item, index) => index < 4);
     pagesCount = 0;
-  } else if (categoryId) {
-    productsToRender = products.filter(product =>
-      productSuitsAllFilters(product, filters)
-    );
-    pagesCount = Math.ceil(productsToRender.length / productsToDisplay);
   }
 
   const dots = [];
@@ -143,7 +95,6 @@ const NewProduct = ({
               <div className={'col-md col-12 ' + styles.menu}>
                 <ul>
                   {!location.pathname.includes('search') &&
-                    !location.pathname.includes('shop') &&
                     categories.map(item => (
                       <li key={item.id}>
                         <a
@@ -169,14 +120,7 @@ const NewProduct = ({
                   (activePage + 1) * productsToDisplay
                 )
                 .map(item => (
-                  <div
-                    key={item.id}
-                    className={
-                      location.pathname.includes('shop')
-                        ? 'col-lg-4 col-md-6 col-12'
-                        : 'col-lg-3 col-md-6 col-12'
-                    }
-                  >
+                  <div key={item.id} className={'col-lg-3 col-md-6 col-12'}>
                     <ProductBox {...item} />
                   </div>
                 ))}
@@ -216,8 +160,7 @@ NewProduct.propTypes = {
     name: PropTypes.string,
     multiplier: PropTypes.number,
     sign: PropTypes.string,
-  })
-  ,
+  }),
 };
 
 NewProduct.defaultProps = {

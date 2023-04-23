@@ -4,10 +4,11 @@
   padding: $base-padding 0;
 
   .productListContainer {
-    border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+   
     .productListRow { 
+      border-bottom: 1px solid  rgba(128, 128, 128, 0.3);
         width: 100%;
-        margin: 0;
+        margin-bottom: 20px;
       .productPhoto{
         width: 100%;
  
