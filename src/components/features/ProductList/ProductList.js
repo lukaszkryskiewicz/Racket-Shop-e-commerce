@@ -121,5 +121,5 @@ const ProductList = ({ productsToRender }) => {
 export default ProductList;
 
 ProductList.propTypes = {
-  productsToRender: PropTypes.object,
+  productsToRender: PropTypes.array,
 };
