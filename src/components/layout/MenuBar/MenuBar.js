@@ -46,8 +46,8 @@ const MenuBar = () => {
                       link === 'blog'
                         ? '/blog'
                         : link.startsWith('/')
-                        ? link
-                        : '/shop/' + link
+                          ? link
+                          : '/shop/' + link
                     }
                     className={isActive => (isActive ? styles.active : undefined)}
                   >

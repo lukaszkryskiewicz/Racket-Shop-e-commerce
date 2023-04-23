@@ -27,7 +27,7 @@ const ProductDetails = ({ productData }) => {
   const [fadeImage, setFadeImage] = useState(true);
   const [activeImage, setActiveImage] = useState(0);
   const [productQuantity, setProductQuantity] = useState(1);
-  const [alert, setAlert] = useState({status: false, type:'success'});
+  const [alert, setAlert] = useState({ status: false, type: 'success' });
   const currency = useSelector(getCurrency);
   const product = productData || productOnSite;
 
@@ -72,7 +72,7 @@ const ProductDetails = ({ productData }) => {
 
   return (
     <div className={styles.root}>
-      {alert.status && <Alert closeAlert={setAlert} id={product.id} quantity={productQuantity} type={alert.type}/>}
+      {alert.status && <Alert closeAlert={setAlert} id={product.id} quantity={productQuantity} type={alert.type} />}
       <div className={clsx('container', styles.productDetails)}>
         <div className={clsx('row', styles.mainRow)}>
           <div className={clsx('col-lg-5 col-md-12', styles.photoSection)}>
