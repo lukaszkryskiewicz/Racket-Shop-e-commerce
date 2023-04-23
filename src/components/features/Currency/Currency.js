@@ -11,21 +11,21 @@ const Currency = () => {
 
   const availableCurrency = ['USD', 'EUR', 'PLN'];
 
-/*   fetch(`https://api.nbp.pl/api/exchangerates/tables/a/`)
-    .then(res => res.json())
-    .then(data => {
-      const usdData = {
-        waluta: data[0].rates[1].code,
-        kurs: data[0].rates[1].mid,
-      };
-      const euroData = {
-        waluta: data[0].rates[7].code,
-        kurs: `${data[0].rates[7].mid} zł`,
-      };
-      console.log('Kurs USD', usdData);
-      console.log('Kurs Euro', euroData);
-    });
- */
+  /*   fetch(`https://api.nbp.pl/api/exchangerates/tables/a/`)
+      .then(res => res.json())
+      .then(data => {
+        const usdData = {
+          waluta: data[0].rates[1].code,
+          kurs: data[0].rates[1].mid,
+        };
+        const euroData = {
+          waluta: data[0].rates[7].code,
+          kurs: `${data[0].rates[7].mid} zł`,
+        };
+        console.log('Kurs USD', usdData);
+        console.log('Kurs Euro', euroData);
+      });
+   */
   const handleClick = (e, currency) => {
     e.preventDefault();
     setActiveCurrency(currencyConverter(currency));

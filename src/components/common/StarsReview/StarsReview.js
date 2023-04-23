@@ -9,10 +9,10 @@ import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import styles from './StarsReview.module.scss';
 import { NavLink } from 'react-router-dom';
 
-const StarsReview = (props, {noTitle}) => {
+const StarsReview = (props, { noTitle }) => {
   const [myStars, setMyStars] = useState(props.myStars ? props.myStars : 0);
   const [hoverStars, setHoverStars] = useState(undefined);
-  
+
   const dispatch = useDispatch();
   const id = props.id;
 
@@ -59,9 +59,9 @@ const StarsReview = (props, {noTitle}) => {
   return (
     <div className={styles.content}>
       {!props.noTitle &&
-      <NavLink to={productLink}>
-        <h5>{props.name}</h5>
-      </NavLink>}
+        <NavLink to={productLink}>
+          <h5>{props.name}</h5>
+        </NavLink>}
       <div className={styles.stars}>
         {[1, 2, 3, 4, 5].map(i => (
           <a key={i} href='#'>

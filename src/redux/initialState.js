@@ -2893,7 +2893,6 @@ const initialState = {
         overview:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
         quantity: 1,
-        amount: 1,
       },
     ],
     coupons: [

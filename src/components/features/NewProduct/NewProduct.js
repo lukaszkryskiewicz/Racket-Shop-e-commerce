@@ -6,7 +6,6 @@ import CompareBar from '../../common/CompareBar/CompareBar';
 import Swipeable from '../../common/Swipeable/Swipeable';
 import { useParams } from 'react-router';
 import { useLocation } from 'react-router';
-import { useSelector } from 'react-redux';
 
 const NewProduct = ({
   categories,

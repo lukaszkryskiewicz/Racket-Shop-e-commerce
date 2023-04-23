@@ -29,7 +29,7 @@ const Cart = () => {
     let subTotal = 0;
     let deliveryFee = cartProducts.length !== 0 ? 20 * currency.multiplier : 0;
     cartProducts.map(
-      product => (subTotal += product.price * currency.multiplier * product.amount)
+      product => (subTotal += product.price * currency.multiplier * product.quantity)
     );
     if (couponCode) {
       coupons.find(coupon => {
@@ -106,7 +106,7 @@ const Cart = () => {
             <CartTableLine
               key={singleItem.id}
               id={singleItem.id}
-              amount={singleItem.amount}
+              quantity={singleItem.quantity}
               name={singleItem.name}
               price={singleItem.price}
               source={singleItem.source}

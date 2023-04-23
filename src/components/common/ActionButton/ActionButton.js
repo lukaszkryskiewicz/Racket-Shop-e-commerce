@@ -16,8 +16,10 @@ import {
   toggleProductFavourite,
   getProductsToCompare,
   toggleProductCompare,
+  updateProductQuantity,
 } from '../../../redux/productsRedux';
 import { addProduct } from '../../../redux/cartRedux';
+import { getProductById } from '../../../redux/productsRedux';
 
 const ActionButton = ({
   id,
@@ -33,8 +35,10 @@ const ActionButton = ({
   buttonVariant,
   productData,
   onClickFunction,
+  quantity = 1,
 }) => {
   const dispatch = useDispatch();
+  const product = useSelector(state => getProductById(state, id));
 
   const handleFavouriteClick = e => {
     e.preventDefault();
@@ -61,8 +65,13 @@ const ActionButton = ({
 
   const handleAddToCartClick = e => {
     e.preventDefault();
-    onClickFunction(true);
-    dispatch(addProduct({ id, name, source, price }));
+    if (product.quantity >= quantity) {
+      onClickFunction({ status: true, type: 'success' });
+      dispatch(addProduct({ id, name, source, price, quantity }));
+      dispatch(updateProductQuantity({ id, quantity, type: 'minus' }));
+    } else {
+      onClickFunction({ status: true, type: 'error' });
+    }
   };
 
   const getButtonProps = buttonType => {
@@ -127,4 +136,5 @@ ActionButton.propTypes = {
   buttonVariant: PropTypes.string,
   productData: PropTypes.object,
   onClickFunction: PropTypes.func,
+  quantity: PropTypes.number,
 };

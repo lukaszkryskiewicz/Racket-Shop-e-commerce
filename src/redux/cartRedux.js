@@ -27,14 +27,14 @@ export default function reducer(statePart = [], action = {}) {
           ...statePart,
           products: statePart.products.map(product =>
             product.id === action.payload.id
-              ? { ...product, amount: product.amount + 1 }
+              ? { ...product, quantity: product.quantity + action.payload.quantity }
               : product
           ),
         };
       } else {
         return {
           ...statePart,
-          products: [...statePart.products, { ...action.payload, amount: 1 }],
+          products: [...statePart.products, action.payload],
         };
       }
     }
@@ -50,9 +50,9 @@ export default function reducer(statePart = [], action = {}) {
         products: statePart.products.map(product =>
           product.id === action.payload.id
             ? {
-                ...product,
-                ...action.payload,
-              }
+              ...product,
+              ...action.payload,
+            }
             : product
         ),
       };
