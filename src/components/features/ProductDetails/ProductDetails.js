@@ -6,7 +6,7 @@ import styles from './ProductDetails.module.scss';
 import { useSelector } from 'react-redux';
 import { getProductById } from '../../../redux/productsRedux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faEnvelope, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom';
 import { getCurrency } from '../../../redux/currencyRedux';
@@ -19,7 +19,6 @@ import {
   faInstagram,
   faLinkedinIn,
 } from '@fortawesome/free-brands-svg-icons';
-import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
 const ProductDetails = ({ productData }) => {
   const { productId } = useParams();
@@ -162,7 +161,7 @@ const ProductDetails = ({ productData }) => {
                   </div>
                 )}
                 <div className={clsx(styles.price)}>
-                  <Button className={styles.button} variant='small'>
+                  <Button noLink className={styles.button} variant='small'>
                     {currency.sign} {(product.price * currency.multiplier).toFixed(2)}
                   </Button>
                 </div>

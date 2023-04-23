@@ -9,7 +9,6 @@ import './styles/global.scss';
 
 import MainLayout from './components/layout/MainLayout/MainLayout';
 import Homepage from './components/views/Homepage/Homepage';
-import ProductList from './components/views/ProductList/ProductList';
 import ProductPage from './components/views/ProductPage/ProductPage';
 import Blog from './components/views/Blog/Blog';
 import Register from './components/views/Register/Register';
@@ -17,6 +16,7 @@ import Login from './components/views/Login/Login';
 import Search from './components/views/Search/Search';
 import Cart from './components/views/Cart/Cart';
 import NotFound from './components/views/NotFound/NotFound';
+import ProductsPage from './components/views/ProductsPage/ProductsPage';
 
 const App = () => (
   <Provider store={store}>
@@ -25,7 +25,7 @@ const App = () => (
         <MainLayout>
           <Switch>
             <Route exact path={'/'} component={Homepage} />
-            <Route exact path={'/shop/:categoryId'} component={ProductList} />
+            <Route exact path={'/shop/:categoryId'} component={ProductsPage} />
             <Route exact path={'/product/:productId'} component={ProductPage} />
             <Route exact path={'/blog'} component={Blog} />
             <Route exact path={'/blog/:blogPostId'} component={Blog} />
