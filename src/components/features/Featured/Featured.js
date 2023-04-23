@@ -26,7 +26,7 @@ const Featured = () => {
   const hotDeals = useSelector(getHotDeals).slice(0, 3);
   const [currentHotDeal, setCurrentHotDeal] = useState(hotDeals[0]);
   const [modal, setModal] = useState(false);
-  const [alert, setAlert] = useState(false);
+  const [alert, setAlert] = useState({ status: false, type: 'success' });
   const currency = useSelector(getCurrency);
 
   const handleSelect = selectedIndex => {
@@ -70,7 +70,7 @@ const Featured = () => {
   return (
     <div className={styles.root}>
       {modal && <ProductModal closeModal={setModal} productData={currentHotDeal} />}
-      {alert && <Alert closeAlert={setAlert} id={hotDeals[hotDealIndex].id} />}
+      {alert.status && <Alert closeAlert={setAlert} id={hotDeals[hotDealIndex].id} type={alert.type} />}
       <div className='container'>
         <div className='row'>
           <div className='col-6 col-lg-4 d-none d-md-block'>

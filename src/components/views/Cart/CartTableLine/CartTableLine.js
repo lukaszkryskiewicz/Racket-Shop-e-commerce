@@ -9,33 +9,35 @@ import { removeProduct, updateProduct } from '../../../../redux/cartRedux';
 import { getCurrency } from '../../../../redux/currencyRedux';
 import { getProductById } from '../../../../redux/productsRedux';
 import { updateProductQuantity } from '../../../../redux/productsRedux';
+import Alert from '../../../common/Alert/Alert';
 
 const CartTableLine = ({ id, name, price, source, quantity }) => {
   const dispatch = useDispatch();
-  const product = useSelector(state => getProductById(state, id))
+  const product = useSelector(state => getProductById(state, id));
   const [itemQuantity, setItemQuantity] = useState(quantity);
+  const [alert, setAlert] = useState({ status: false, type: 'error' });
   const currency = useSelector(state => getCurrency(state));
   price = (price * currency.multiplier).toFixed(2);
   const totalForProduct = (price * itemQuantity).toFixed(2);
 
-console.log(product)
   const handleClick = e => {
     e.preventDefault(e);
     dispatch(removeProduct(id));
-    dispatch(updateProductQuantity({id, quantity: itemQuantity, type: 'plus'}))
+    dispatch(updateProductQuantity({ id, quantity: itemQuantity, type: 'plus' }));
   };
 
   const handleChange = e => {
     e.preventDefault();
     const newQuantity = parseInt(e.target.value);
     if (!isNaN(newQuantity) && product.quantity + itemQuantity >= newQuantity) {
-       if (newQuantity > itemQuantity) {
-      dispatch(updateProductQuantity({id, quantity: newQuantity - itemQuantity, type: 'minus'}))
-    } else {
-      dispatch(updateProductQuantity({id, quantity: itemQuantity - newQuantity, type: 'plus'}))
-    } setItemQuantity(newQuantity);
+      if (newQuantity > itemQuantity) {
+        dispatch(updateProductQuantity({ id, quantity: newQuantity - itemQuantity, type: 'minus' }));
+      } else {
+        dispatch(updateProductQuantity({ id, quantity: itemQuantity - newQuantity, type: 'plus' }));
+      } setItemQuantity(newQuantity);
       dispatch(updateProduct({ id, quantity: newQuantity }));
-
+    } else {
+      setAlert({ status: true, type: 'error' });
     }
   };
 
@@ -43,7 +45,9 @@ console.log(product)
     if (product.quantity >= 1) {
       setItemQuantity(itemQuantity + 1);
       dispatch(updateProduct({ id, quantity: itemQuantity + 1 }));
-      dispatch(updateProductQuantity({id, quantity: 1, type: 'minus'}))
+      dispatch(updateProductQuantity({ id, quantity: 1, type: 'minus' }));
+    } else {
+      setAlert({ status: true, type: 'error' });
     }
   };
 
@@ -51,12 +55,13 @@ console.log(product)
     if (itemQuantity > 1) {
       setItemQuantity(itemQuantity - 1);
       dispatch(updateProduct({ id, quantity: itemQuantity - 1 }));
-      dispatch(updateProductQuantity({id, quantity: 1, type: 'plus'}))
+      dispatch(updateProductQuantity({ id, quantity: 1, type: 'plus' }));
     }
   };
 
   return (
     <div className={`row ${styles.nextRows}`}>
+      {alert.status && <Alert closeAlert={setAlert} id={id} type={alert.type} />}
       <div className='col-8 h-100'>
         <div className={`row w-100 ${styles.vertCenter}`}>
           <Button

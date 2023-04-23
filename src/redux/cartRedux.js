@@ -50,9 +50,9 @@ export default function reducer(statePart = [], action = {}) {
         products: statePart.products.map(product =>
           product.id === action.payload.id
             ? {
-                ...product,
-                ...action.payload,
-              }
+              ...product,
+              ...action.payload,
+            }
             : product
         ),
       };

@@ -38,8 +38,7 @@ const ActionButton = ({
   quantity = 1,
 }) => {
   const dispatch = useDispatch();
-  const product = useSelector(state => getProductById(state, id))
-  console.log(product.quantity, quantity)
+  const product = useSelector(state => getProductById(state, id));
 
   const handleFavouriteClick = e => {
     e.preventDefault();
@@ -67,11 +66,11 @@ const ActionButton = ({
   const handleAddToCartClick = e => {
     e.preventDefault();
     if (product.quantity >= quantity) {
-    onClickFunction({status: true, type:'success'});
-    dispatch(addProduct({ id, name, source, price, quantity }));
-    dispatch(updateProductQuantity({id, quantity, type: 'minus'}))
+      onClickFunction({ status: true, type: 'success' });
+      dispatch(addProduct({ id, name, source, price, quantity }));
+      dispatch(updateProductQuantity({ id, quantity, type: 'minus' }));
     } else {
-    onClickFunction({status: true, type:'error'})
+      onClickFunction({ status: true, type: 'error' });
     }
   };
 
@@ -137,5 +136,5 @@ ActionButton.propTypes = {
   buttonVariant: PropTypes.string,
   productData: PropTypes.object,
   onClickFunction: PropTypes.func,
-  amount: PropTypes.number,
+  quantity: PropTypes.number,
 };

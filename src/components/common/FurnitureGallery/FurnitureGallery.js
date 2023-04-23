@@ -25,7 +25,7 @@ const FurnitureGallery = () => {
   const [activeHeadline, setActiveHeadline] = useState('Featured');
   const [activePage, setActivePage] = useState(0);
   const [modal, setModal] = useState(false);
-  const [alert, setAlert] = useState(false);
+  const [alert, setAlert] = useState({ status: false, type: 'success' });
   const viewportMode = useSelector(viewportMode => getViewportMode(viewportMode));
   const currency = useSelector(getCurrency);
   const productsToDisplay = useSelector(state => {
@@ -90,7 +90,7 @@ const FurnitureGallery = () => {
   return (
     <div className={styles.root}>
       {modal && <ProductModal closeModal={setModal} productData={activeProduct} />}
-      {alert && <Alert closeAlert={setAlert} id={activeProduct.id} />}
+      {alert.status && <Alert closeAlert={setAlert} id={activeProduct.id} type={alert.type} />}
       <div className={styles.panelBar}>
         <div className='row g-0'>
           <div className={'col ' + styles.heading}>
