@@ -1,0 +1,71 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  position: absolute;
+  z-index: 999;
+
+  .modalContainer {
+    padding: 1rem 1rem 1rem 1rem;
+    width: 600px;
+    height: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border: 1px solid black;
+
+    .closeButton {
+      font-size: 25px;
+      position: absolute;
+      top: 0;
+      left: 7px;
+    }
+
+    .modalHeader {
+      text-align: center;
+      padding: 20px;
+      font-size: 30px;
+    }
+
+    .modalInfoContainer {
+      padding: 20px;
+
+      .imageContainer {
+        width: 230px;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .textContainer {
+        text-align: center;
+        .productName {
+          font-size: 25px;
+          padding-bottom: 10px;
+        }
+
+        .textarea {
+          resize: none;
+        }
+      }
+    }
+
+    .buttonsContainer {
+      padding: 20px;
+
+      .buttons {
+        //margin: 10px;
+        text-align: center;
+
+        .button {
+         // margin: 10px;
+          padding: 10px;
+          font-size: 18px;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}

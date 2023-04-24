@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './ActionButton.module.scss';
 import Button from '../Button/Button';
@@ -9,6 +9,7 @@ import {
   faExchangeAlt,
   faHeart,
   faEye,
+  faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,6 +21,7 @@ import {
 } from '../../../redux/productsRedux';
 import { addProduct } from '../../../redux/cartRedux';
 import { getProductById } from '../../../redux/productsRedux';
+import Modal from '../Modal/Modal';
 
 const ActionButton = ({
   id,
@@ -39,6 +41,7 @@ const ActionButton = ({
 }) => {
   const dispatch = useDispatch();
   const product = useSelector(state => getProductById(state, id));
+  const [modal, setModal] = useState(false);
 
   const handleFavouriteClick = e => {
     e.preventDefault();
@@ -60,7 +63,6 @@ const ActionButton = ({
   const handleQuickViewClick = e => {
     e.preventDefault();
     onClickFunction(true);
-
   };
 
   const handleAddToCartClick = e => {
@@ -72,6 +74,12 @@ const ActionButton = ({
     } else {
       onClickFunction({ status: true, type: 'error' });
     }
+  };
+
+  const handleMail = e => {
+    e.preventDefault();
+    setModal(true);
+
   };
 
   const getButtonProps = buttonType => {
@@ -98,15 +106,21 @@ const ActionButton = ({
           function: handleAddToCartClick,
           icon: faShoppingBasket,
         };
+      case 'mail':
+        return {
+          name: 'Mail us',
+          function: handleMail,
+          icon: faEnvelope,
+        };
       default:
         return null;
     }
   };
 
   const buttonProps = getButtonProps(buttonType);
-
   return (
     <>
+      {modal && <Modal closeModal={setModal} id={id} />}
       <Button
         variant={buttonVariant || 'outline'}
         className={clsx(buttonStyle === 'primary' ? styles.primaryButtonStyle : null, buttonProps.active, 'm-1')}

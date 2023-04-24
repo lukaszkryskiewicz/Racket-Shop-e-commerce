@@ -135,15 +135,6 @@ const Cart = () => {
               {couponMessage === 'success' &&
                 'Great! Your code ' + couponCode + ' works!'}
             </span>
-            {/*             <span className='col-6 d-flex justify-content-end'>
-              <Button
-                variant='main'
-                type='submit'
-                className={`${styles.cartButton} ${styles.cartButtonTransp}`}
-              >
-                UPDATE CART
-              </Button>
-            </span> --> nie jest obecnie potrzebny */}
           </div>
         </div>
         <div className='row mx-0'>

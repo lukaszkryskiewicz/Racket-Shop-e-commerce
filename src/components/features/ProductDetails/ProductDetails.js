@@ -195,13 +195,11 @@ const ProductDetails = ({ productData }) => {
                   compare={product.compare}
                   buttonType={'compare'}
                 />
-                <Button
-                  variant='outline'
-                  className={clsx(styles.button, 'm-1')}
-                // onClick={handleQuestionClick}
+                <ActionButton
+                  buttonType={'mail'}
+                  id={product.id}
                 >
-                  <FontAwesomeIcon icon={faEnvelope}>Ask question</FontAwesomeIcon>
-                </Button>
+                </ActionButton>
               </div>
               <div className={styles.quantity}>
                 <span>Quantity: </span>

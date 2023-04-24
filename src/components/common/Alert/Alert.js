@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 import { getProductById } from '../../../redux/productsRedux';
 import { getCurrency } from '../../../redux/currencyRedux';
 
-const Alert = ({ type, id, quantity = 1, closeAlert }) => {
+const Alert = ({ type, id, quantity = 1, closeAlert, action }) => {
   const product = useSelector(state => getProductById(state, id));
   const currency = useSelector(getCurrency);
 
@@ -19,8 +19,8 @@ const Alert = ({ type, id, quantity = 1, closeAlert }) => {
         return {
           title: 'Product was succesfully added to cart',
           content: <>
-          <li className={styles.productAmount}>You ordered {quantity} {quantity > 1 ? 'pieces' : 'piece'}</li>
-          <li className={styles.productPrice}>Total price: {product.price * quantity * currency.multiplier} {currency.sign}</li>
+            <li className={styles.productAmount}>You ordered {quantity} {quantity > 1 ? 'pieces' : 'piece'}</li>
+            <li className={styles.productPrice}>Total price: {product.price * quantity * currency.multiplier} {currency.sign}</li>
           </>,
           text: 'Estimated delivery time - 3 days',
         };
@@ -28,9 +28,17 @@ const Alert = ({ type, id, quantity = 1, closeAlert }) => {
         return {
           title: 'Unfortunatelly we don\' have enough products',
           content: <>
-          <li className={styles.productAmount}>Avalibale: {product.quantity} {product.quantity > 1 ? 'pieces' : 'piece'}</li>
+            <li className={styles.productAmount}>Avalibale: {product.quantity} {product.quantity > 1 ? 'pieces' : 'piece'}</li>
           </>,
           text: 'Please choose smaller quantity or other products',
+        };
+      case 'delete':
+        return {
+          title: 'Are you sure?',
+          content: <>
+            <li className={styles.productAmount}>You want to delete {product.name}</li>
+          </>,
+          text: 'Please confirm or cancel',
         };
       default:
         return null;
@@ -44,7 +52,12 @@ const Alert = ({ type, id, quantity = 1, closeAlert }) => {
     closeAlert(false);
   };
 
-  const alertMessage = alertInfo(type)
+  const handleDelete = e => {
+    e.preventDefault();
+    action();
+  };
+
+  const alertMessage = alertInfo(type);
 
 
   return (
@@ -67,21 +80,22 @@ const Alert = ({ type, id, quantity = 1, closeAlert }) => {
               <div className={styles.textContainer}>
                 <h3 className={styles.productName}>{product.name}</h3>
                 <ul className={styles.productInfoList}>
-{alertMessage.content}
-{alertMessage.text}
+                  {alertMessage.content}
+                  {alertMessage.text}
                 </ul>
               </div>
             </div>
           </div>
           <div className={clsx('row', styles.buttonsContainer)}>
             <div className={clsx('col-12', styles.buttons)}>
-              {type === 'success' && <Button link='/cart' variant='small' className={styles.button}>go to cart</Button>}
-              <Button onClick={handleClick} variant='small' className={styles.button}>continue shopping</Button>
+              {(type === 'success' || type === 'delete') && <Button link='/cart' variant='small' className={styles.button}>go to cart</Button>}
+              {type !== 'delete' && <Button onClick={handleClick} variant='small' className={styles.button}>continue shopping</Button>}
+              {type === 'delete' && <Button link='/cart' variant='small' className={styles.button} onClick={handleDelete}>delete product</Button>}
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </div >
 
   );
 };
@@ -93,4 +107,6 @@ Alert.propTypes = {
   id: PropTypes.string,
   productAmount: PropTypes.number,
   closeAlert: PropTypes.func,
+  quantity: PropTypes.number,
+  action: PropTypes.func,
 };

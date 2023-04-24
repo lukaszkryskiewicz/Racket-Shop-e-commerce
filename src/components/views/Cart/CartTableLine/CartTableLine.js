@@ -10,18 +10,22 @@ import { getCurrency } from '../../../../redux/currencyRedux';
 import { getProductById } from '../../../../redux/productsRedux';
 import { updateProductQuantity } from '../../../../redux/productsRedux';
 import Alert from '../../../common/Alert/Alert';
+import clsx from 'clsx';
 
 const CartTableLine = ({ id, name, price, source, quantity }) => {
   const dispatch = useDispatch();
   const product = useSelector(state => getProductById(state, id));
   const [itemQuantity, setItemQuantity] = useState(quantity);
-  const [alert, setAlert] = useState({ status: false, type: 'error' });
+  const [alert, setAlert] = useState({ status: false, type: 'error', action: null });
   const currency = useSelector(state => getCurrency(state));
   price = (price * currency.multiplier).toFixed(2);
   const totalForProduct = (price * itemQuantity).toFixed(2);
 
-  const handleClick = e => {
-    e.preventDefault(e);
+  const handleDelete = () => {
+    setAlert({ status: true, type: 'delete', action: confirmDelete });
+  };
+
+  const confirmDelete = () => {
     dispatch(removeProduct(id));
     dispatch(updateProductQuantity({ id, quantity: itemQuantity, type: 'plus' }));
   };
@@ -60,42 +64,44 @@ const CartTableLine = ({ id, name, price, source, quantity }) => {
   };
 
   return (
-    <div className={`row ${styles.nextRows}`}>
-      {alert.status && <Alert closeAlert={setAlert} id={id} type={alert.type} />}
-      <div className='col-8 h-100'>
-        <div className={`row w-100 ${styles.vertCenter}`}>
-          <Button
-            className={`col-1 text-center ${styles.vertCenter}`}
-            onClick={handleClick}
-          >
-            <AiOutlineCloseCircle className={styles.tableIcon} />
-          </Button>
-          <div className={`col-3 text-center ${styles.vertCenter}`}>
-            <div className={styles.productImage}>
-              <img alt={name} src={source} />
+    <div className={styles.root}>
+      <div className={`row ${styles.nextRows}`}>
+        {alert.status && <Alert closeAlert={setAlert} id={id} type={alert.type} action={alert.action} />}
+        <div className='col-8 h-100'>
+          <div className={`row w-100 ${styles.vertCenter}`}>
+            <Button
+              className={clsx('col-1 text-center', styles.button)}
+              onClick={(e) => handleDelete(e)}
+            >
+              <AiOutlineCloseCircle className={styles.tableIcon} />
+            </Button>
+            <div className={`col-3 text-center ${styles.vertCenter}`}>
+              <div className={styles.productImage}>
+                <img alt={name} src={source} />
+              </div>
             </div>
+            <div className={`col-8  ps-4 ${styles.vertCenter}`}>{name}</div>
           </div>
-          <div className={`col-8  ps-4 ${styles.vertCenter}`}>{name}</div>
         </div>
-      </div>
-      <div className={`col-1 text-center ${styles.price}`}>
-        {currency.sign} {price}
-      </div>
-      <div className='col-2 text-center'>
-        <Button className={styles.amountControls} onClick={decrementQuantity}>
-          -
-        </Button>
-        <input
-          className={styles.amountInput}
-          onChange={e => handleChange(e)}
-          value={itemQuantity}
-        />
-        <Button className={styles.amountControls} onClick={incrementQuantity}>
-          +
-        </Button>
-      </div>
-      <div className={`col-1 text-center ${styles.price}`}>
-        {currency.sign} {totalForProduct}
+        <div className={`col-1 text-center ${styles.price}`}>
+          {currency.sign} {price}
+        </div>
+        <div className='col-2 text-center'>
+          <Button className={styles.amountControls} onClick={decrementQuantity}>
+            -
+          </Button>
+          <input
+            className={styles.amountInput}
+            onChange={e => handleChange(e)}
+            value={itemQuantity}
+          />
+          <Button className={styles.amountControls} onClick={incrementQuantity}>
+            +
+          </Button>
+        </div>
+        <div className={`col-1 text-center ${styles.price}`}>
+          {currency.sign} {totalForProduct}
+        </div>
       </div>
     </div>
   );
