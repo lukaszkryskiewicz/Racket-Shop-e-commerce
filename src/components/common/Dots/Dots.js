@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './Dots.module.scss';
 
 const Dots = ({ pagesCount, handlePageChange, activePage }) => {
+
   const dots = [];
   for (let i = 0; i < pagesCount; i++) {
     dots.push(
