@@ -27,7 +27,7 @@ const ProductBox = props => {
     compare,
     source,
   } = props;
-  const productLink = '/product/' + id;
+  const productLink = '/product/' + id + '/#';
 
   return (
     <div className={styles.root}>
@@ -47,7 +47,9 @@ const ProductBox = props => {
             buttonVariant='small'
             onClickFunction={setModal}
             productData={props}
-          >Quick view</ActionButton>
+          >
+            Quick view
+          </ActionButton>
           <ActionButton
             id={id}
             buttonType={'addToCart'}
@@ -81,7 +83,7 @@ const ProductBox = props => {
           </Button>
         </div>
       </div>
-    </div >
+    </div>
   );
 };
 

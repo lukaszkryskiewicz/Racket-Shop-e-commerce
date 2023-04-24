@@ -7,6 +7,7 @@ import { getAllBlogPosts } from '../../../redux/blogRedux';
 import { useState } from 'react';
 import { getViewportMode } from '../../../redux/viewportModeRedux';
 import { useEffect } from 'react';
+import Dots from '../../common/Dots/Dots';
 const BlogBox = () => {
   const [activePage, setActivePage] = useState(0);
   const handlePageChange = newPage => {
@@ -40,9 +41,11 @@ const BlogBox = () => {
             <div className={'col-md-auto col-12  mb-md-0 ' + styles.heading}>
               <h3>Latest Blog</h3>
             </div>
-            <div className={'col-lg-auto col-12 text-center ' + styles.dots}>
-              <ul>{dots}</ul>
-            </div>
+            <Dots
+              pagesCount={pagesCount}
+              handlePageChange={handlePageChange}
+              activePage={activePage}
+            />
           </div>
         </div>
 

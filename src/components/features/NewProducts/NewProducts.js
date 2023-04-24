@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux';
 import { getAll } from '../../../redux/categoriesRedux';
 import { getAllProducts } from '../../../redux/productsRedux';
 import { getViewportMode } from '../../../redux/viewportModeRedux';
+import Dots from '../../common/Dots/Dots';
 
 const NewProducts = ({ searchedData, productsOnDesktop }) => {
   const categories = useSelector(getAll);
@@ -51,7 +52,7 @@ const NewProducts = ({ searchedData, productsOnDesktop }) => {
   };
   const rightAction = () => {
     let page = activePage + 1;
-    if (page < dots.length) handlePageChange(page);
+    if (page < pagesCount) handlePageChange(page);
   };
 
   let productsToRender = products.filter(item => item.category === activeCategory);
@@ -67,20 +68,6 @@ const NewProducts = ({ searchedData, productsOnDesktop }) => {
   } else if (pageAddress.productId) {
     productsToRender = productsToRender.filter((item, index) => index < 4);
     pagesCount = 0;
-  }
-
-  const dots = [];
-  for (let i = 0; i < pagesCount; i++) {
-    dots.push(
-      <li key={i}>
-        <a
-          onClick={() => handlePageChange(i)}
-          className={i === activePage && styles.active}
-        >
-          page {i}
-        </a>
-      </li>
-    );
   }
 
   return (
@@ -107,9 +94,11 @@ const NewProducts = ({ searchedData, productsOnDesktop }) => {
                     ))}
                 </ul>
               </div>
-              <div className={'col-lg-auto col-12 text-center ' + styles.dots}>
-                <ul>{dots}</ul>
-              </div>
+              <Dots
+                pagesCount={pagesCount}
+                handlePageChange={handlePageChange}
+                activePage={activePage}
+              />
             </div>
           </div>
           <div className={`row + ${fade ? styles.fadeIn : styles.fadeOut}`}>

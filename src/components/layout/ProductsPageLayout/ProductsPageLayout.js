@@ -18,6 +18,7 @@ import { getAllProducts } from '../../../redux/productsRedux';
 import { getAllFilters } from '../../../redux/filterRedux';
 import { getCurrency } from '../../../redux/currencyRedux';
 import clsx from 'clsx';
+import Dots from '../../common/Dots/Dots';
 
 const ProductsPageLayout = () => {
   const { categoryId } = useParams();
@@ -162,6 +163,13 @@ const ProductsPageLayout = () => {
                   </ul>
                 </div>
               </div>
+              <div className={styles.dots}>
+                <Dots
+                  pagesCount={pagesCount}
+                  handlePageChange={handlePageChange}
+                  activePage={activePage}
+                />
+              </div>
             </div>
             {displayForm === 'list' && (
               <ProductList productsToRender={productsToRender} />
@@ -169,9 +177,6 @@ const ProductsPageLayout = () => {
             {displayForm === 'grid' && (
               <ProductGrid productsToRender={productsToRender} />
             )}
-            <div className={clsx('col-lg-auto col-12 text-center', styles.dots)}>
-              <ul>{dots}</ul>
-            </div>
           </div>
           <div className={`col-3 ${styles.filters}`}>
             <FilterByBrand categoryId={categoryId} />
