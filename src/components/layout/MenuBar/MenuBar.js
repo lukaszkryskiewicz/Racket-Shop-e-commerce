@@ -40,14 +40,7 @@ const MenuBar = () => {
                 <li key={link}>
                   <NavLink
                     exact
-                    /*       to={link !== '/' && link !== 'blog' ? '/shop/' + link : link} */
-                    to={
-                      link === 'blog'
-                        ? '/blog'
-                        : link.startsWith('/')
-                          ? link
-                          : '/shop/' + link
-                    }
+                    to={link !== '/' ? link !== 'blog' ? '/shop/' + link : '/' + link : link}
                     className={isActive => ((isActive || location.pathname.includes('/' + link)) ? styles.active : undefined)}
                   >
                     {link === '/' ? 'home' : link}

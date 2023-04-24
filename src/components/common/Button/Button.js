@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import styles from './Button.module.scss';
 
 const Button = ({ children, variant, noHover, link, noLink, className: propClassName, ...props }) => {
@@ -11,21 +10,22 @@ const Button = ({ children, variant, noHover, link, noLink, className: propClass
   if (variant) classes.push(styles[variant]);
   else classes.push('main');
 
-  let Comp = 'a';
-
   if (noHover) {
     classes.push(styles.noHover);
-    Comp = 'div';
   }
 
-  if (noLink) {
-    Comp = 'div';
+  if (link) {
+    return (
+      <a href={link} {...props} className={classes.join(' ')}>
+        {children}
+      </a>
+    );
   }
 
   return (
-    <Comp href={link ? link : '#'} {...props} className={classes.join(' ')}>
+    <button {...props} className={classes.join(' ')}>
       {children}
-    </Comp>
+    </button>
   );
 };
 

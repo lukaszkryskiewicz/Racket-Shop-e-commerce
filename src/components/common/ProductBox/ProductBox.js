@@ -13,7 +13,7 @@ import Alert from '../Alert/Alert';
 
 const ProductBox = props => {
   const [modal, setModal] = useState(false);
-  const [alert, setAlert] = useState({status: false, type:'success'});
+  const [alert, setAlert] = useState({ status: false, type: 'success' });
   const currency = useSelector(state => getCurrency(state));
   const {
     id,
@@ -76,7 +76,7 @@ const ProductBox = props => {
           </div>
         )}
         <div className={styles.price}>
-          <Button noLink className={styles.button} variant='small'>
+          <Button className={styles.button} variant='small'>
             {currency.sign} {(price * currency.multiplier).toFixed(2)}
           </Button>
         </div>
