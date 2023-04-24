@@ -23,15 +23,16 @@
     }
 
     .modalHeader {
+      text-align: center;
       padding: 20px;
-      font-size: 25px;
+      font-size: 30px;
     }
 
     .modalInfoContainer {
       padding: 20px;
 
       .imageContainer {
-        width: 150px;
+        width: 230px;
 
         img {
           width: 100%;
@@ -39,16 +40,14 @@
       }
 
       .textContainer {
+        text-align: center;
         .productName {
-          font-size: 20px;
+          font-size: 25px;
+          padding-bottom: 10px;
         }
 
-        .productInfoList {
-          list-style: none;
-          padding: 0;
-          color: $granitGrey;
-
-
+        .textarea {
+          resize: none;
         }
       }
     }
@@ -57,11 +56,11 @@
       padding: 20px;
 
       .buttons {
-        margin: 10px;
+        //margin: 10px;
         text-align: center;
 
         .button {
-          margin: 10px;
+         // margin: 10px;
           padding: 10px;
           font-size: 18px;
           text-transform: uppercase;

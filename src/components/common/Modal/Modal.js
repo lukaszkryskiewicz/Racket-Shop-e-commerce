@@ -23,6 +23,7 @@ const Modal = ({ closeModal, id }) => {
   const handleSubmit = e => {
     e.preventDefault();
     console.log(question);
+    setQuestion('')
   };
 
   return (
@@ -35,31 +36,33 @@ const Modal = ({ closeModal, id }) => {
             </Button>
           </div>
           <h3 className={styles.modalHeader}>Please write your question below</h3>
+          <form onSubmit={handleSubmit}>
           <div className={clsx('row', styles.modalInfoContainer)}>
-            <div className={clsx('col-4')}>
+            <div className={clsx('col-5')}>
               <div className={styles.imageContainer}>
                 <img src={product.source} alt={product.name} />
               </div>
             </div>
-            <div className={clsx('col-8')}>
+            <div className={clsx('col-7')}>
               <div className={styles.textContainer}>
                 <h3 className={styles.productName}>{product.name}</h3>
-                <form onSubmit={handleSubmit}>
-                  <p>Your Question</p>
                   <textarea
-                    placeholder="write your question"
+                  className={styles.textarea}
+                    rows={4}
+                    cols={25}
+                    placeholder="Write your question here"
                     value={question}
                     onChange={e => setQuestion(e.target.value)}
-                  />
-                  <div className={clsx('row', styles.buttonsContainer)}>
-                    <div className={clsx('col-12', styles.buttons)}>
+                  />          
+              </div>
+              <div className={clsx(styles.buttonsContainer)}>
+                    <div className={clsx(styles.buttons)}>
                       <Button type='submit' variant='small' className={styles.button}>Send message</Button>
                     </div>
-                  </div>
-                </form>
-              </div>
-            </div>
+                  </div>  
+            </div> 
           </div>
+          </form>
         </div>
       </div>
     </div >
