@@ -42,7 +42,7 @@ const BlogPostBox = ({ id, date, text, title }) => {
       </div>
       <div className={'text-center ' + styles.button}>
         <Link to={'blog/' + id}>
-          <Button noLink variant='main'>
+          <Button variant='main'>
             Read More
           </Button>
         </Link>

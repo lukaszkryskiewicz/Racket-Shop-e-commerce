@@ -3,6 +3,7 @@ import styles from './RacketsGallery.module.scss';
 import { useState } from 'react';
 import {
   getFeaturedProducts,
+  getProductById,
   getSaleOffProducts,
   getTopRatedProducts,
   getTopSellerProducts,
@@ -55,6 +56,10 @@ const RacketsGallery = () => {
       setFadeSlider(true);
     }, 400);
   };
+  const displayedProduct = useSelector(state =>
+    getProductById(state, activeProduct.id)
+  );
+
   const columns = viewportMode === 'mobile' ? 4 : viewportMode === 'tablet' ? 3 : 6;
   const pagesCount = Math.ceil(productsToDisplay.length / columns);
 
@@ -87,11 +92,12 @@ const RacketsGallery = () => {
     setActiveThumbnail(productsToDisplay[0]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeHeadline]);
+
   return (
     <div className={styles.root}>
-      {modal && <ProductModal closeModal={setModal} productData={activeProduct} />}
+      {modal && <ProductModal closeModal={setModal} productData={displayedProduct} />}
       {alert.status && (
-        <Alert closeAlert={setAlert} id={activeProduct.id} type={alert.type} />
+        <Alert closeAlert={setAlert} id={displayedProduct.id} type={alert.type} />
       )}
       <div className={styles.panelBar}>
         <div className='row g-0'>
@@ -118,58 +124,58 @@ const RacketsGallery = () => {
             fadeImage ? styles.fadeIn : styles.fadeOut
           }`}
         >
-          <Link to={'/product/' + activeProduct.id}>
-            <img alt={activeProduct.name} src={activeProduct.source} />
+          <Link to={'/product/' + displayedProduct.id}>
+            <img alt={displayedProduct.name} src={displayedProduct.source} />
           </Link>
           <div className={styles.productInfo}>
             <div className={styles.backgroundContent}>
               <div className={styles.price}>
                 <p className={styles.newPrice}>
                   {currency.sign}
-                  {(activeProduct.price * currency.multiplier).toFixed(2)}
+                  {(displayedProduct.price * currency.multiplier).toFixed(2)}
                 </p>
                 <p className={styles.oldPrice}>
                   {currency.sign}
-                  {(activeProduct.oldPrice * currency.multiplier).toFixed(2)}
+                  {(displayedProduct.oldPrice * currency.multiplier).toFixed(2)}
                 </p>
               </div>
               <div className={styles.content}>
                 <StarsReview
-                  id={activeProduct.id}
-                  stars={activeProduct.stars}
-                  myStars={activeProduct.myStars}
-                  name={activeProduct.name}
+                  id={displayedProduct.id}
+                  stars={displayedProduct.stars}
+                  myStars={displayedProduct.myStars}
+                  name={displayedProduct.name}
                 />
               </div>
             </div>
           </div>
           <div className={styles.buttons}>
             <ActionButton
-              id={activeProduct.id}
-              favourite={activeProduct.favourite}
+              id={displayedProduct.id}
+              favourite={displayedProduct.favourite}
               buttonType={'favourite'}
               dataTooltip='Favourite'
             />
             <ActionButton
-              id={activeProduct.id}
-              compare={activeProduct.compare}
+              id={displayedProduct.id}
+              compare={displayedProduct.compare}
               buttonType={'compare'}
               dataTooltip='Compare'
             />
             <ActionButton
-              id={activeProduct.id}
+              id={displayedProduct.id}
               buttonType={'quickView'}
               dataTooltip='Quick View'
-              productData={activeProduct}
+              productData={displayedProduct}
               onClickFunction={setModal}
             />
             <ActionButton
-              id={activeProduct.id}
+              id={displayedProduct.id}
               buttonType={'addToCart'}
               dataTooltip='Add to cart'
-              name={activeProduct.name}
-              price={activeProduct.price}
-              source={activeProduct.source}
+              name={displayedProduct.name}
+              price={displayedProduct.price}
+              source={displayedProduct.source}
               onClickFunction={setAlert}
             />
           </div>
