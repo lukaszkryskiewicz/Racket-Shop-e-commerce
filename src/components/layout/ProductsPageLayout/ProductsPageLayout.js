@@ -10,8 +10,8 @@ import { useParams } from 'react-router-dom';
 import Button from '../../common/Button/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { clearFilters } from '../../../redux/filterRedux';
-import ProductList from '../../features/ProductList/ProductList';
-import ProductGrid from '../../features/ProductGrid/ProductGrid';
+import ProductList from '../../views/ProductList/ProductList';
+import ProductGrid from '../../views/ProductGrid/ProductGrid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faList, faSquare } from '@fortawesome/free-solid-svg-icons';
 import { getAllProducts } from '../../../redux/productsRedux';
@@ -19,6 +19,7 @@ import { getAllFilters } from '../../../redux/filterRedux';
 import { getCurrency } from '../../../redux/currencyRedux';
 import clsx from 'clsx';
 import Dots from '../../common/Dots/Dots';
+import CompareBar from '../../common/CompareBar/CompareBar';
 
 const ProductsPageLayout = () => {
   const { categoryId } = useParams();
@@ -189,6 +190,7 @@ const ProductsPageLayout = () => {
           </div>
           <div className={`row mt-3 ${styles.brands}`}>
             <Brands />
+            <CompareBar />
           </div>
         </div>
       </div>
