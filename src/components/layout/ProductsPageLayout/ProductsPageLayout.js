@@ -12,7 +12,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { clearFilters } from '../../../redux/filterRedux';
 import ProductList from '../../views/ProductList/ProductList';
 import ProductGrid from '../../views/ProductGrid/ProductGrid';
-import { getAllProducts } from '../../../redux/productsRedux';
+import { getAllProducts, getSortedProducts } from '../../../redux/productsRedux';
 import { getAllFilters } from '../../../redux/filterRedux';
 import { getCurrency } from '../../../redux/currencyRedux';
 import clsx from 'clsx';
@@ -23,7 +23,6 @@ import ProductsDisplayOptions from '../../features/ProductsDisplayOptions/Produc
 const ProductsPageLayout = () => {
   const { categoryId } = useParams();
   const dispatch = useDispatch();
-  const products = useSelector(getAllProducts);
   const [fade, setFade] = useState('false');
   const [productsToDisplay, setProductsToDisplay] = useState(12);
   const [activePage, setActivePage] = useState(0);
@@ -31,6 +30,7 @@ const ProductsPageLayout = () => {
   const [sortBy, setSortBy] = useState('recommended');
   const filters = useSelector(getAllFilters);
   const currency = useSelector(getCurrency);
+  const products = useSelector(state => getSortedProducts(state, sortBy));
 
   const productSuitsAllFilters = (product, allFilters) => {
     if (product.category === categoryId) {
@@ -102,7 +102,7 @@ const ProductsPageLayout = () => {
       setActivePage(0);
       setFade(true);
     }, 400);
-  }, [productsToDisplay]);
+  }, [productsToDisplay, sortBy, displayForm]);
 
 
   return (

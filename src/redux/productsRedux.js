@@ -18,6 +18,24 @@ export const getTopRatedProducts = ({ products }) =>
   products.slice(0, 15).sort((a, b) => b.stars - a.stars);
 export const getProductById = ({ products }, id) => products.find(
   product => product.id === id);
+export const getSortedProducts = ({ products }, sort) => {
+  const sortedProducts = [...products];
+  switch (sort) {
+    case 'recommended':
+      return sortedProducts;
+    case 'priceLow':
+      sortedProducts.sort((a, b) => a.price - b.price);
+      return sortedProducts;
+    case 'priceHigh':
+      sortedProducts.sort((a, b) => b.price - a.price);
+      return sortedProducts;
+    case 'name':
+      sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
+      return sortedProducts;
+    default:
+      return sortedProducts;
+  }
+};
 
 /* actions */
 const createActionName = actionName => `app/products/${actionName}`;
