@@ -6,7 +6,7 @@ import styles from './ProductDetails.module.scss';
 import { useSelector } from 'react-redux';
 import { getProductById } from '../../../redux/productsRedux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faEnvelope, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom';
 import { getCurrency } from '../../../redux/currencyRedux';

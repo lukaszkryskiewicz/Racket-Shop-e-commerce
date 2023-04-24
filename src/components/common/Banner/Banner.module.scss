@@ -37,12 +37,7 @@
   .menu {
     background-color: $banner-menu-background;
     padding: 10px;
-
-    span {
-      color: $banner-orange-text;
-      font-weight: bold;
-
-    }
+    text-transform: capitalize;
 
     p {
       text-align: start;
