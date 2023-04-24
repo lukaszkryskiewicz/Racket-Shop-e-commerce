@@ -94,13 +94,11 @@ const ProductRow = product => {
                 compare={compare}
                 buttonType={'compare'}
               />
-              <Button
-                variant='outline'
-                className={clsx(styles.button, 'm-1')}
-              // onClick={handleQuestionClick}
-              >
-                <FontAwesomeIcon icon={faEnvelope}>Ask question</FontAwesomeIcon>
-              </Button>
+          <ActionButton
+                  buttonType={'mail'}
+                  id={product.id}
+                >
+                </ActionButton>
               <ActionButton
                 id={id}
                 buttonType={'addToCart'}
