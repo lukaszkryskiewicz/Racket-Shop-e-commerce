@@ -65,34 +65,35 @@ const Alert = ({ type, id, quantity = 1, closeAlert, action }) => {
       <div className='container'>
         <div className={styles.alertContainer}>
           <div className={styles.closeButton}>
-            <Button onClick={handleClick} variant='small'>
+            <Button onClick={handleClick}>
               <FontAwesomeIcon icon={faXmark} />
             </Button>
           </div>
-          <h3 className={styles.alertHeader}>{alertMessage.title}</h3>
-          <div className={clsx('row', styles.alertInfoContainer)}>
-            <div className={clsx('col-4')}>
-              <div className={styles.imageContainer}>
-                <img src={product.source} alt={product.name} />
+          <div className={styles.alertContent}>
+            <h3 className={styles.alertHeader}>{alertMessage.title}</h3>
+            <div className={clsx('row', styles.alertInfoContainer)}>
+              <div className={clsx('col-4')}>
+                <div className={styles.imageContainer}>
+                  <img src={product.source} alt={product.name} />
+                </div>
               </div>
-            </div>
-            <div className={clsx('col-8')}>
-              <div className={styles.textContainer}>
-                <h3 className={styles.productName}>{product.name}</h3>
-                <ul className={styles.productInfoList}>
-                  {alertMessage.content}
-                  {alertMessage.text}
-                </ul>
-                <div className={clsx('row', styles.buttonsContainer)}>
-                  <div className={clsx('col-12', styles.buttons)}>
-                    {(type === 'success' || type === 'delete') && <Button link='/cart' variant='small' className={styles.button}>go to cart</Button>}
-                    {type !== 'delete' && <Button link='#' onClick={handleClick} variant='small' className={styles.button}>continue shopping</Button>}
-                    {type === 'delete' && <Button link='/cart' variant='small' className={styles.button} onClick={handleDelete}>delete product</Button>}
+              <div className={clsx('col-8', styles.rightContent)}>
+                <div className={styles.textContainer}>
+                  <h3 className={styles.productName}>{product.name}</h3>
+                  <ul className={styles.productInfoList}>
+                    {alertMessage.content}
+                    {alertMessage.text}
+                  </ul>
+                  <div className={clsx('row', styles.buttonsContainer)}>
+                    <div className={clsx('col-12', styles.buttons)}>
+                      {(type === 'success' || type === 'delete') && <Button link='/cart' variant='small' className={styles.button}>go to cart</Button>}
+                      {type !== 'delete' && <Button link='#' onClick={handleClick} variant='small' className={styles.button}>continue shopping</Button>}
+                      {type === 'delete' && <Button link='/cart' variant='small' className={styles.button} onClick={handleDelete}>delete product</Button>}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>

@@ -138,7 +138,7 @@ const ProductDetails = ({ productData }) => {
               <div className={clsx(styles.review)}>
                 <div>
                   <StarsReviewBasic {...product} />
-                  <p className={clsx(styles.reviewsNumber)}>(0 reviews)</p>
+                  <p className={clsx(styles.reviewsNumber)}>({product.reviews ? product.reviews.length : 0} reviews)</p>
                 </div>
                 <Link
                   className={clsx(styles.reviewCallButton)}
@@ -157,7 +157,7 @@ const ProductDetails = ({ productData }) => {
                   </div>
                 )}
                 <div className={clsx(styles.price)}>
-                  <Button noLink className={styles.button} variant='small'>
+                  <Button className={styles.button} variant='small'>
                     {currency.sign} {(product.price * currency.multiplier).toFixed(2)}
                   </Button>
                 </div>
@@ -249,7 +249,7 @@ const ProductDetails = ({ productData }) => {
                       window.open('https://www.' + socialMedium.name + '.com/');
                     }}
                   >
-                    <Button noLink variant='outline' className={styles.media}>
+                    <Button variant='outline' className={styles.media}>
                       <FontAwesomeIcon icon={socialMedium.icon} /> {socialMedium.name}
                     </Button>
                   </Link>

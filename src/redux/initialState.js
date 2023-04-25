@@ -29,6 +29,10 @@ const initialState = {
       overview:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
       quantity: 1,
+      reviews: [
+        { id: 1, author: 'Lukas', stars: 3, date: '01/03/2021', text: 'Lorem Ipsum... Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.' },
+        { id: 2, author: 'Thomas', stars: 4, date: '02/03/2021', text: 'Lorem Ipsum... Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.' },
+      ],
     },
     {
       id: 'tennis-racket-2',

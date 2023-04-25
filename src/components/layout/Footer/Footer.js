@@ -92,7 +92,7 @@ const Footer = ({ children }) => (
                 </li>
               </ul>
             </div>
-            <img src='./images/cards.png' alt='Supported credit cards' />
+            <img src='/images/cards.png' alt='Supported credit cards' />
           </div>
         </div>
       </div>
@@ -102,7 +102,7 @@ const Footer = ({ children }) => (
         <div className='row align-items-center'>
           <div className='col-lg-4 col-md-12'></div>
           <div className={'col text-center ' + styles.copyright}>
-            <p>©Copyright 2016 Bazar | All Rights Reserved</p>
+            <p>©Copyright 2023 LukKry | All Rights Reserved</p>
           </div>
           <div className={'col text-right ' + styles.socialMedia}>
             <ul>

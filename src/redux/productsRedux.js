@@ -43,6 +43,7 @@ const TOGGLE_PRODUCT_FAVOURITE = createActionName('TOGGLE_PRODUCT_FAVOURITE');
 const TOGGLE_PRODUCT_COMPARE = createActionName('TOGGLE_PRODUCT_COMPARE');
 const ADD_MY_STARS = createActionName('ADD_MY_STARS');
 const UPDATE_PRODUCT_QUANTITY = createActionName('UPDATE_PRODUCT_QUANTITY');
+const ADD_REVIEW = createActionName('ADD_REVIEW');
 
 /* action creators */
 export const toggleProductFavourite = payload => ({
@@ -62,6 +63,11 @@ export const addMyStars = payload => ({
 
 export const updateProductQuantity = payload => ({
   type: UPDATE_PRODUCT_QUANTITY,
+  payload,
+});
+
+export const addReview = payload => ({
+  type: ADD_REVIEW,
   payload,
 });
 
@@ -92,12 +98,18 @@ export default function reducer(statePart = [], action = {}) {
       );
     case UPDATE_PRODUCT_QUANTITY:
       return statePart.map(product =>
-        product.id === action.payload.id ?
+        product.id === action.payload.productId ?
           action.payload.type === 'minus' ?
             { ...product, quantity: product.quantity - action.payload.quantity }
             : action.payload.type === 'plus' ?
               { ...product, quantity: product.quantity + action.payload.quantity }
               : product
+          : product
+      );
+    case ADD_REVIEW:
+      return statePart.map(product =>
+        product.id === action.payload.productId
+          ? { ...product, reviews: [...(product.reviews || []), action.payload.review] }
           : product
       );
     default:
