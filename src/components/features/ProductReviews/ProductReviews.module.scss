@@ -1,0 +1,14 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  .container {
+    border: 1px solid $chat-textarea-bakground;
+    margin-bottom: 20px;
+  }
+
+  .review {
+    padding-inline: 30px;
+    padding-bottom: 60px;
+
+  }
+}
