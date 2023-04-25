@@ -20,7 +20,7 @@ const Alert = ({ type, id, quantity = 1, closeAlert, action }) => {
           title: 'Product was succesfully added to cart',
           content: <>
             <li className={styles.productAmount}>You ordered {quantity} {quantity > 1 ? 'pieces' : 'piece'}</li>
-            <li className={styles.productPrice}>Total price: {product.price * quantity * currency.multiplier} {currency.sign}</li>
+            <li className={styles.productPrice}>Total price: {(product.price * quantity * currency.multiplier).toFixed(2)} {currency.sign}</li>
           </>,
           text: 'Estimated delivery time - 3 days',
         };
