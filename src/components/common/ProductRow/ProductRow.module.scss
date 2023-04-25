@@ -5,6 +5,20 @@
 
   .productPhoto {
     width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    .sale {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #292929;
+      border-radius: 50%;
+      color: #ffffff;
+      padding: 30px 15px 5px 15px;
+      z-index: 1;
+    }
 
 
     img {

@@ -20,7 +20,7 @@ const Alert = ({ type, id, quantity = 1, closeAlert, action }) => {
           title: 'Product was succesfully added to cart',
           content: <>
             <li className={styles.productAmount}>You ordered {quantity} {quantity > 1 ? 'pieces' : 'piece'}</li>
-            <li className={styles.productPrice}>Total price: {product.price * quantity * currency.multiplier} {currency.sign}</li>
+            <li className={styles.productPrice}>Total price: {(product.price * quantity * currency.multiplier).toFixed(2)} {currency.sign}</li>
           </>,
           text: 'Estimated delivery time - 3 days',
         };
@@ -83,15 +83,16 @@ const Alert = ({ type, id, quantity = 1, closeAlert, action }) => {
                   {alertMessage.content}
                   {alertMessage.text}
                 </ul>
+                <div className={clsx('row', styles.buttonsContainer)}>
+                  <div className={clsx('col-12', styles.buttons)}>
+                    {(type === 'success' || type === 'delete') && <Button link='/cart' variant='small' className={styles.button}>go to cart</Button>}
+                    {type !== 'delete' && <Button link='#' onClick={handleClick} variant='small' className={styles.button}>continue shopping</Button>}
+                    {type === 'delete' && <Button link='/cart' variant='small' className={styles.button} onClick={handleDelete}>delete product</Button>}
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div className={clsx('row', styles.buttonsContainer)}>
-            <div className={clsx('col-12', styles.buttons)}>
-              {(type === 'success' || type === 'delete') && <Button link='/cart' variant='small' className={styles.button}>go to cart</Button>}
-              {type !== 'delete' && <Button onClick={handleClick} variant='small' className={styles.button}>continue shopping</Button>}
-              {type === 'delete' && <Button link='/cart' variant='small' className={styles.button} onClick={handleDelete}>delete product</Button>}
-            </div>
+
           </div>
         </div>
       </div>

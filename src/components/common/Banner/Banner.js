@@ -1,7 +1,11 @@
 import React from 'react';
 import styles from './Banner.module.scss';
+import { Link, useParams } from 'react-router-dom';
 
 const Banner = () => {
+  const { categoryId } = useParams();
+
+
   return (
     <div className={styles.root}>
       <div className='container'>
@@ -13,7 +17,8 @@ const Banner = () => {
         </div>
         <div className={styles.menu}>
           <p>
-            Home &gt; <span>Rackets</span>
+            <Link to='/'>Home</Link> &gt;
+            {categoryId && <Link to={'/shop/' + categoryId}> {categoryId}</Link>}
           </p>
         </div>
       </div>

@@ -18,6 +18,7 @@ import Swipeable from '../Swipeable/Swipeable';
 import { getCurrency } from '../../../redux/currencyRedux';
 import ProductModal from '../ProductModal/ProductModal';
 import Alert from '../Alert/Alert';
+import clsx from 'clsx';
 
 const RacketsGallery = () => {
   const headlines = ['Featured', 'Top Seller', 'Sale Off', 'Top Rated'];
@@ -100,18 +101,18 @@ const RacketsGallery = () => {
         <Alert closeAlert={setAlert} id={displayedProduct.id} type={alert.type} />
       )}
       <div className={styles.panelBar}>
-        <div className='row g-0'>
-          <div className={'col ' + styles.heading}>
+        <div className={clsx('row g-0')}>
+          <div className={clsx('col', styles.heading)}>
             <h3>Rackets Gallery</h3>
           </div>
         </div>
       </div>
       <div className={styles.galleryWrapper}>
-        <ul className={'row g-0 ' + styles.menu}>
+        <ul className={clsx('row g-0', styles.menu)}>
           {headlines.map(headline => (
-            <li className='col' key={headline}>
+            <li className={clsx('col')} key={headline}>
               <a
-                className={headline === activeHeadline && styles.active}
+                className={clsx(headline === activeHeadline && styles.active)}
                 onClick={() => handleHeadlineChange(headline)}
               >
                 {headline}
@@ -120,9 +121,11 @@ const RacketsGallery = () => {
           ))}
         </ul>
         <div
-          className={`row g-0 align-items-center ' + ${styles.photo} + ${
+          className={clsx(
+            'row g-0 align-items-center',
+            styles.photo,
             fadeImage ? styles.fadeIn : styles.fadeOut
-          }`}
+          )}
         >
           <Link to={'/product/' + displayedProduct.id}>
             <img alt={displayedProduct.name} src={displayedProduct.source} />
@@ -181,9 +184,9 @@ const RacketsGallery = () => {
           </div>
         </div>
         <Swipeable leftAction={leftAction} rightAction={rightAction}>
-          <div className={`row g-0 m-2 justify-content-between + ${styles.slider}`}>
+          <div className={clsx('row g-0 m-2 justify-content-between', styles.slider)}>
             <a
-              className={'col-1 ' + styles.arrowButton}
+              className={clsx('col-1', styles.arrowButton)}
               onClick={() =>
                 handlePageChange(activePage === 0 ? pagesCount - 1 : activePage - 1)
               }
@@ -191,30 +194,30 @@ const RacketsGallery = () => {
               &#60;
             </a>
             <div
-              className={`col mx-3 + ${fadeSlider ? styles.fadeIn : styles.fadeOut}`}
+              className={clsx('col mx-3', fadeSlider ? styles.fadeIn : styles.fadeOut)}
             >
-              <div className={'row'}>
+              <div className={clsx('row')}>
                 {productsToDisplay
                   .slice(activePage * columns, (activePage + 1) * columns)
                   .map(product => (
                     <div
                       key={product.name}
-                      className={'col-lg-2 col-md-4 col-3 px-1 ' + styles.thumbnail}
+                      className={clsx('col-lg-2 col-md-4 col-3 px-1', styles.thumbnail)}
                       onClick={() => handleProductChange(product)}
                     >
                       <img
                         alt={product.name}
                         src={product.source}
-                        className={
-                          product.id === activeThumbnail.id ? styles.active : null
-                        }
+                        className={clsx(
+                          product.id === activeThumbnail.id && styles.active
+                        )}
                       />
                     </div>
                   ))}
               </div>
             </div>
             <a
-              className={'col-1 ' + styles.arrowButton}
+              className={clsx('col-1', styles.arrowButton)}
               onClick={() =>
                 handlePageChange(activePage + 1 >= pagesCount ? 0 : activePage + 1)
               }

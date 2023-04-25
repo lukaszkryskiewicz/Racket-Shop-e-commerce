@@ -1,12 +1,7 @@
 @import "../../../styles/settings.scss";
 
 
-.blogPosts {
-  .blogInfoContainer {
-    border-top: solid 2px grey;
-    border-bottom: solid 2px grey;
-    margin: 0 0 20px 0;
-  }
+.blogPost {
 
   .postTitle {
     font-weight: 400;
@@ -14,29 +9,63 @@
 
   .imageContainer {
     max-height: 400px;
+
+
+    .postImage {
+      width: -webkit-fill-available;
+      max-height: 400px;
+      object-fit: cover;
+    }
   }
 
-  .postImage {
-    width: -webkit-fill-available;
-    max-height: 400px;
-    object-fit: cover;
+  .postText {
+    margin: 25px 0 25px 0;
   }
+
+  .postInfoContainer {
+    border-top: solid 2px grey;
+    border-bottom: solid 2px grey;
+    margin: 0 0 50px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .postFooter {
+      display: flex;
+
+      .postFooterIcons {
+        padding: 2px 0;
+        list-style: none;
+        margin: 0;
+
+        li {
+          display: inline;
+
+          .icon {
+            padding: 0 10px;
+          }
+        }
+      }
+    }
+
+    .backToBlog {
+      padding: 2px 0;
+      text-align: right;
+
+      a {
+        text-decoration: none;
+      }
+    }
+
+  }
+
+
+
+
 
   .readMoreColumn {
     text-align: end;
   }
 
-  a {
-    padding: 5px;
-    color: $text-color;
-    font-weight: 300;
-  }
 
-  .icon {
-    padding-right: 5px;
-  }
-
-  .postText {
-    margin: 15px 0 40px 0;
-  }
 }

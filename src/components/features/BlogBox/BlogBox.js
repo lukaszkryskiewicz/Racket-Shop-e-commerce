@@ -19,20 +19,6 @@ const BlogBox = () => {
   const rows = viewportMode === 'mobile' ? 1 : viewportMode === 'tablet' ? 2 : 3;
   const pagesCount = Math.ceil(blogPosts.length / rows);
 
-  const dots = [];
-  for (let i = 0; i < pagesCount; i++) {
-    dots.push(
-      <li key={i}>
-        <a
-          onClick={() => handlePageChange(i)}
-          className={i === activePage && styles.active}
-        >
-          page {i}
-        </a>
-      </li>
-    );
-  }
-
   return (
     <div className={styles.root}>
       <div className='container'>

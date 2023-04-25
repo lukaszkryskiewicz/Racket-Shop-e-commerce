@@ -16,5 +16,9 @@
   li {
     padding-top: 5px;
     border-bottom: 1px solid $light-grey;
+
+    a {
+      text-decoration: none;
+    }
   }
 }

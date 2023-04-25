@@ -23,7 +23,7 @@ const Modal = ({ closeModal, id }) => {
   const handleSubmit = e => {
     e.preventDefault();
     console.log(question);
-    setQuestion('')
+    setQuestion('');
   };
 
   return (
@@ -37,31 +37,31 @@ const Modal = ({ closeModal, id }) => {
           </div>
           <h3 className={styles.modalHeader}>Please write your question below</h3>
           <form onSubmit={handleSubmit}>
-          <div className={clsx('row', styles.modalInfoContainer)}>
-            <div className={clsx('col-5')}>
-              <div className={styles.imageContainer}>
-                <img src={product.source} alt={product.name} />
+            <div className={clsx('row', styles.modalInfoContainer)}>
+              <div className={clsx('col-5')}>
+                <div className={styles.imageContainer}>
+                  <img src={product.source} alt={product.name} />
+                </div>
               </div>
-            </div>
-            <div className={clsx('col-7')}>
-              <div className={styles.textContainer}>
-                <h3 className={styles.productName}>{product.name}</h3>
+              <div className={clsx('col-7')}>
+                <div className={styles.textContainer}>
+                  <h3 className={styles.productName}>{product.name}</h3>
                   <textarea
-                  className={styles.textarea}
+                    className={styles.textarea}
                     rows={4}
                     cols={25}
                     placeholder="Write your question here"
                     value={question}
                     onChange={e => setQuestion(e.target.value)}
-                  />          
+                  />
+                </div>
+                <div className={clsx(styles.buttonsContainer)}>
+                  <div className={clsx(styles.buttons)}>
+                    <Button type='submit' variant='small' className={styles.button}>Send message</Button>
+                  </div>
+                </div>
               </div>
-              <div className={clsx(styles.buttonsContainer)}>
-                    <div className={clsx(styles.buttons)}>
-                      <Button type='submit' variant='small' className={styles.button}>Send message</Button>
-                    </div>
-                  </div>  
-            </div> 
-          </div>
+            </div>
           </form>
         </div>
       </div>

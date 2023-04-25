@@ -119,7 +119,7 @@ const ActionButton = ({
 
   const buttonProps = getButtonProps(buttonType);
   return (
-    <>
+    <div className={styles.root}>
       {modal && <Modal closeModal={setModal} id={id} />}
       <Button
         variant={buttonVariant || 'outline'}
@@ -130,7 +130,7 @@ const ActionButton = ({
         <FontAwesomeIcon icon={buttonProps.icon}>{buttonProps.name}</FontAwesomeIcon>
         {children && <span className={styles.children}>{children}</span>}
       </Button>
-    </>
+    </div>
   );
 };
 
