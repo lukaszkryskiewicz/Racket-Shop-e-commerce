@@ -3,14 +3,11 @@ import PropTypes from 'prop-types';
 import styles from './ProductRow.module.scss';
 import { useSelector } from 'react-redux';
 import clsx from 'clsx';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import { NavLink } from 'react-router-dom';
 import { getCurrency } from '../../../redux/currencyRedux';
 import Button from '../../common/Button/Button';
 import ActionButton from '../../common/ActionButton/ActionButton';
-//import StarsReview from '../../common/StarsReview/StarsReview';
+import StarsReviewBasic from '../StarsReviewBasic/StarsReviewBasic';
 import Alert from '../../common/Alert/Alert';
 
 const ProductRow = product => {
@@ -21,8 +18,6 @@ const ProductRow = product => {
     name,
     price,
     promo,
-    stars,
-    myStars,
     oldPrice,
     favourite,
     compare,
@@ -51,16 +46,7 @@ const ProductRow = product => {
             </div>
             <div className={clsx(styles.review)}>
               <div>
-                {/*                   <StarsReview noTitle id={id} stars={stars} myStars={myStars} name={name}/> */}
-                {[1, 2, 3, 4, 5].map(i => (
-                  <span key={i} className={clsx(styles.stars)}>
-                    {i <= stars ? (
-                      <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-                    ) : (
-                      <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-                    )}
-                  </span>
-                ))}
+                <StarsReviewBasic {...product} />
                 <p className={clsx(styles.reviewsNumber)}>(0 reviews)</p>
               </div>
             </div>

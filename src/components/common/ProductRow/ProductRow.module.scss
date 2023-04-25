@@ -33,23 +33,28 @@
       padding-bottom: 5px;
 
       .title {
-        h1 {
-          font-size: 25px;
-          color: $primary;
+        padding-bottom: 5px;
+
+        a {
+          text-decoration: none;
+
+          h1 {
+            font-size: 25px;
+            color: $primary;
+          }
         }
       }
 
       .review {
         display: flex;
         justify-content: flex-start;
+        padding-bottom: 5px;
 
-        .stars {
-          padding: 2px;
-        }
 
         .reviewsNumber {
           display: inline;
           white-space: nowrap;
+          padding: 0 5px;
         }
 
       }
