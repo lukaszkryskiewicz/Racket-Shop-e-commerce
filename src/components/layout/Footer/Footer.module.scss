@@ -16,11 +16,13 @@
         margin: 0 0 1.5rem 0;
         padding: 0;
         list-style: none;
+
         li {
           a {
             font-size: 14px;
             line-height: 30px;
             color: rgb(169, 169, 169);
+            text-decoration: none;
 
             &:hover {
               color: #ffffff;
@@ -44,7 +46,7 @@
   .bottomBar {
     background-color: $footer-claim-bg;
 
-    :global(.container) > :global(.row) {
+    :global(.container)> :global(.row) {
       height: 95px;
     }
 
