@@ -45,37 +45,32 @@ const BlogPosts = () => {
             <img src={post.source} alt={post.title} className={styles.postImage} />
           </div>
           <p className={styles.postText}>{overviewText(post.text)}</p>
-          <div className={`row ${styles.blogInfoContainer}`}>
+          <div className={clsx('row', styles.blogInfoContainer)}>
             <div className={clsx('col-8', styles.postFooter)}>
-              <div className={styles.postFooterIcons}>
-                <FontAwesomeIcon
-                  icon={faUser}
-                  className={styles.icon}
-                ></FontAwesomeIcon>
-                {post.author}
-              </div>
-              <div className={styles.postFooterIcons}>
-                <FontAwesomeIcon
-                  icon={faCalendar}
-                  className={styles.icon}
-                ></FontAwesomeIcon>
-                {post.date}
-              </div>
-              <div className={styles.postFooterIcons}>
-                <FontAwesomeIcon
-                  icon={faFolder}
-                  className={styles.icon}
-                ></FontAwesomeIcon>
-                {post.category.map(category => (
-                  <span key={category}>
-                    {post.category.indexOf(category) !== 0 && ', '}
-                    {category}
-                  </span>
-                ))}
-              </div>
+              <ul className={styles.postFooterIcons}>
+                <li>
+                  <FontAwesomeIcon icon={faUser} className={styles.icon} />
+                  {post.author}
+                </li>
+                <li>
+                  <FontAwesomeIcon icon={faCalendar} className={styles.icon} />
+                  {post.date}
+                </li>
+                <li>
+                  <FontAwesomeIcon icon={faFolder} className={styles.icon} />
+                  {post.category.map(category => (
+                    <span key={category}>
+                      {post.category.indexOf(category) !== 0 && ', '}
+                      {category}
+                    </span>
+                  ))}
+                </li>
+              </ul>
             </div>
             <div className={`col-2 ${styles.readMoreColumn}`}>
-              <Link to={'/blog/' + post.id}>Read more...</Link>
+              <Link className={styles.link} to={'/blog/' + post.id}>
+                Read more...
+              </Link>
             </div>
           </div>
         </div>

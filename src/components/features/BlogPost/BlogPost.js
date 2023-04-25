@@ -5,43 +5,45 @@ import { useSelector } from 'react-redux';
 import { getBlogPostById } from '../../../redux/blogRedux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar, faFolder, faUser } from '@fortawesome/free-solid-svg-icons';
-import Button from '../../common/Button/Button';
+import clsx from 'clsx';
+import { Link } from 'react-router-dom';
 
 const BlogPost = ({ blogPostId }) => {
   const post = useSelector(state => getBlogPostById(state, parseInt(blogPostId)));
 
   return (
-    <div className={styles.blogPosts}>
-      <div key={post.id}>
-        <h2 className={styles.postTitle}>{post.title}</h2>
-        <div className={styles.imageContainer}>
-          <img src={post.source} alt={post.title} className={styles.postImage} />
-        </div>
-        <p className={styles.postText}>{post.text}</p>
-        <div className={`row ${styles.blogInfoContainer}`}>
-          <div className='col-8 p-0'>
-            <a>
-              <FontAwesomeIcon icon={faUser} className={styles.icon}></FontAwesomeIcon>
+    <div className={styles.blogPost}>
+      <h2 className={styles.postTitle}>{post.title}</h2>
+      <div className={styles.imageContainer}>
+        <img src={post.source} alt={post.title} className={styles.postImage} />
+      </div>
+      <p className={styles.postText}>{post.text}</p>
+      <div className={clsx('row', styles.postInfoContainer)}>
+        <div className={clsx('col-8', styles.postFooter)}>
+          <ul className={styles.postFooterIcons}>
+            <li>
+              <FontAwesomeIcon icon={faUser} className={styles.icon} />
               {post.author}
-            </a>
-            <a>
-              <FontAwesomeIcon
-                icon={faCalendar}
-                className={styles.icon}
-              ></FontAwesomeIcon>
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faCalendar} className={styles.icon} />
               {post.date}
-            </a>
-            <a>
-              <FontAwesomeIcon
-                icon={faFolder}
-                className={styles.icon}
-              ></FontAwesomeIcon>
-              {post.category}
-            </a>
-          </div>
-          <div className={`col-4 p-0 ${styles.readMoreColumn}`}>
-            <Button link={'/blog'}>Back to Blog</Button>
-          </div>
+            </li>
+            <li>
+              <FontAwesomeIcon icon={faFolder} className={styles.icon} />
+              {post.category.map(category => (
+                <span key={category}>
+                  {post.category.indexOf(category) !== 0 && ', '}
+                  {category}
+                </span>
+              ))}
+            </li>
+          </ul>
+        </div>
+        <div className={`col-2 ${styles.backToBlog}`}>
+          <Link className={styles.link} to={'/blog'}>
+            Go back to Blog
+          </Link>
         </div>
       </div>
     </div>
