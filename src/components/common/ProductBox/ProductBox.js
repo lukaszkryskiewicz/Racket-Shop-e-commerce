@@ -20,8 +20,6 @@ const ProductBox = props => {
     name,
     price,
     promo,
-    stars,
-    myStars,
     oldPrice,
     favourite,
     compare,
@@ -64,7 +62,7 @@ const ProductBox = props => {
         </div>
       </div>
       <div className={styles.content}>
-        <StarsReview id={id} stars={stars} myStars={myStars} name={name} />
+        <StarsReview {...props} />
       </div>
       <div className={styles.line}></div>
       <div className={styles.actions}>

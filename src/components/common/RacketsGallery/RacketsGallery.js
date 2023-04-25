@@ -144,10 +144,7 @@ const RacketsGallery = () => {
               </div>
               <div className={styles.content}>
                 <StarsReview
-                  id={displayedProduct.id}
-                  stars={displayedProduct.stars}
-                  myStars={displayedProduct.myStars}
-                  name={displayedProduct.name}
+                  {...displayedProduct}
                 />
               </div>
             </div>

@@ -116,13 +116,10 @@
             display: flex;
             justify-content: flex-start;
 
-            .stars {
-              padding: 2px;
-            }
-
             .reviewsNumber {
               display: inline;
               white-space: nowrap;
+              padding: 0 10px;
             }
 
             .reviewCallButton {

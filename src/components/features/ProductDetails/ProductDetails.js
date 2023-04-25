@@ -6,8 +6,7 @@ import styles from './ProductDetails.module.scss';
 import { useSelector } from 'react-redux';
 import { getProductById } from '../../../redux/productsRedux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
+import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { getCurrency } from '../../../redux/currencyRedux';
 import Button from '../../common/Button/Button';
@@ -20,6 +19,7 @@ import {
   faLinkedinIn,
 } from '@fortawesome/free-brands-svg-icons';
 import Alert from '../../common/Alert/Alert';
+import StarsReviewBasic from '../../common/StarsReviewBasic/StarsReviewBasic';
 
 const ProductDetails = ({ productData }) => {
   const { productId } = useParams();
@@ -137,15 +137,7 @@ const ProductDetails = ({ productData }) => {
               </div>
               <div className={clsx(styles.review)}>
                 <div>
-                  {[1, 2, 3, 4, 5].map(i => (
-                    <span key={i} className={clsx(styles.stars)}>
-                      {i <= product.stars ? (
-                        <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-                      ) : (
-                        <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-                      )}
-                    </span>
-                  ))}
+                  <StarsReviewBasic {...product} />
                   <p className={clsx(styles.reviewsNumber)}>(0 reviews)</p>
                 </div>
                 <Link

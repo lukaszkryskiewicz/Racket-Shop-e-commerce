@@ -174,10 +174,7 @@ const Featured = () => {
                     <div className={styles.infoBox}>
                       <div className={styles.content}>
                         <StarsReview
-                          id={hotDeal.id}
-                          stars={hotDeal.stars}
-                          myStars={hotDeal.myStars}
-                          name={hotDeal.name}
+                          {...hotDeal}
                         />
                       </div>
                       <div className={styles.line}></div>
