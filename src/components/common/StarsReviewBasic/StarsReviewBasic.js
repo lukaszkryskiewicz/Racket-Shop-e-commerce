@@ -8,22 +8,21 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import styles from './StarsReviewBasic.module.scss';
 
-const StarsReviewBasic = props => {
-  const [myStars, setMyStars] = useState(props.myStars ? props.myStars : 0);
+const StarsReviewBasic = ({ id, stars, myStars, noAction }) => {
+  const [myStarsState, setMyStarsState] = useState(myStars ? myStars : 0);
   const [hoverStars, setHoverStars] = useState(undefined);
   const dispatch = useDispatch();
-  const id = props.id;
 
   const handleClick = (e, clickedStars) => {
     e.preventDefault();
-    if (myStars === 0) {
-      setMyStars(clickedStars);
+    if (myStarsState === 0 && !noAction) {
+      setMyStarsState(clickedStars);
       dispatch(addMyStars({ id, clickedStars }));
     }
   };
 
   const handleMouseOver = i => {
-    if (myStars === 0) {
+    if (myStarsState === 0 && !noAction) {
       setHoverStars(i);
     }
   };
@@ -33,17 +32,17 @@ const StarsReviewBasic = props => {
   };
 
   const drawProperStar = i => {
-    if (myStars !== 0) {
-      return myStars < i ? farStar : faStar;
+    if (myStarsState !== 0) {
+      return myStarsState < i ? farStar : faStar;
     } else if (hoverStars) {
       return hoverStars < i ? farStar : faStar;
     } else {
-      return i <= props.stars ? faStar : farStar;
+      return i <= stars ? faStar : farStar;
     }
   };
 
   const drawStarStyle = i => {
-    if (myStars !== 0) {
+    if (myStarsState !== 0) {
       return styles.hoverStars;
     } else if (hoverStars) {
       return hoverStars < i ? styles.stars : styles.hoverStars;
@@ -74,9 +73,9 @@ const StarsReviewBasic = props => {
 
 StarsReviewBasic.propTypes = {
   id: PropTypes.string,
-  name: PropTypes.string,
   stars: PropTypes.number,
   myStars: PropTypes.number,
+  noAction: PropTypes.bool,
 };
 
 export default StarsReviewBasic;

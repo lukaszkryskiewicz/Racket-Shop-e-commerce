@@ -138,7 +138,7 @@ const ProductDetails = ({ productData }) => {
               <div className={clsx(styles.review)}>
                 <div>
                   <StarsReviewBasic {...product} />
-                  <p className={clsx(styles.reviewsNumber)}>(0 reviews)</p>
+                  <p className={clsx(styles.reviewsNumber)}>({product.reviews.length} reviews)</p>
                 </div>
                 <Link
                   className={clsx(styles.reviewCallButton)}

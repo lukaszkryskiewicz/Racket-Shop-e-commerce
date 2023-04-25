@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from './ProductExtendedInfo.module.scss';
-import StarsReviewBasic from '../../common/StarsReviewBasic/StarsReviewBasic';
 import clsx from 'clsx';
-import PropTypes from 'prop-types';
+/* import PropTypes from 'prop-types'; */
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getProductById } from '../../../redux/productsRedux';
@@ -21,7 +20,7 @@ const ProductExtendedInfo = () => {
               <p>description</p>
             </div>
             <div className={clsx('col-2 ' + styles.menuText, styles.active)}>
-              <p>reviews(0)</p>
+              <p>reviews({product.reviews.length})</p>
             </div>
             <div className={'col-2 ' + styles.menuText}>
               <p>specification</p>
@@ -37,11 +36,8 @@ const ProductExtendedInfo = () => {
   );
 };
 
-ProductExtendedInfo.propTypes = {
-  name: PropTypes.string,
-  id: PropTypes.string,
-  stars: PropTypes.number,
-  myStars: PropTypes.number,
-};
+/* ProductExtendedInfo.propTypes = {
+
+}; */
 
 export default ProductExtendedInfo;
