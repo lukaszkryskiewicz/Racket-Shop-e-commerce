@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Button.module.scss';
 
-const Button = ({ children, variant, noHover, link, noLink, className: propClassName, ...props }) => {
+const Button = ({ children, variant, noHover, link, className: propClassName, ...props }) => {
   const classes = [];
 
   if (propClassName) classes.push(propClassName);
@@ -32,7 +32,6 @@ const Button = ({ children, variant, noHover, link, noLink, className: propClass
 Button.propTypes = {
   children: PropTypes.node,
   noHover: PropTypes.bool,
-  noLink: PropTypes.bool,
   className: PropTypes.string,
   variant: PropTypes.string,
   link: PropTypes.string,

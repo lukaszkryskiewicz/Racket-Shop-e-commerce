@@ -204,7 +204,7 @@ const Featured = () => {
                             </div>
                           )}
                           <div className={styles.price}>
-                            <Button noLink variant='small'>
+                            <Button variant='small'>
                               {currency.sign}{' '}
                               {(hotDeal.price * currency.multiplier).toFixed(2)}
                             </Button>

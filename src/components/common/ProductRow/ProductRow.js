@@ -60,7 +60,7 @@ const ProductRow = product => {
                 </div>
               )}
               <div className={clsx(styles.price)}>
-                <Button noLink className={styles.button} variant='small'>
+                <Button className={styles.button} variant='small'>
                   {currency.sign} {(price * currency.multiplier).toFixed(2)}
                 </Button>
               </div>
