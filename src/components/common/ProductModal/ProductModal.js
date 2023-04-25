@@ -22,7 +22,7 @@ const ProductModal = ({ closeModal, productData }) => {
         <div className={styles.productModalContainer}>
           <ProductDetails productData={productData} />
           <div className={styles.closeButton}>
-            <Button onClick={handleClick} variant='small'>
+            <Button onClick={handleClick}>
               <FontAwesomeIcon icon={faXmark} />
             </Button>
           </div>

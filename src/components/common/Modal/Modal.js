@@ -14,6 +14,7 @@ import { getProductById } from '../../../redux/productsRedux';
 const Modal = ({ closeModal, id }) => {
   const product = useSelector(state => getProductById(state, id));
   const [question, setQuestion] = useState('');
+  const [email, setEmail] = useState('');
 
   const handleClick = e => {
     e.preventDefault();
@@ -24,6 +25,7 @@ const Modal = ({ closeModal, id }) => {
     e.preventDefault();
     console.log(question);
     setQuestion('');
+    setEmail('');
   };
 
   return (
@@ -31,7 +33,7 @@ const Modal = ({ closeModal, id }) => {
       <div className='container'>
         <div className={styles.modalContainer}>
           <div className={styles.closeButton}>
-            <Button onClick={handleClick} variant='small'>
+            <Button onClick={handleClick}>
               <FontAwesomeIcon icon={faXmark} />
             </Button>
           </div>
@@ -46,10 +48,18 @@ const Modal = ({ closeModal, id }) => {
               <div className={clsx('col-7')}>
                 <div className={styles.textContainer}>
                   <h3 className={styles.productName}>{product.name}</h3>
+                  <input
+                    className={styles.mailInput}
+                    type="email"
+                    placeholder="Your email address"
+                    value={email}
+                    onChange={e => setEmail(e.target.value)}
+
+                  />
+
                   <textarea
                     className={styles.textarea}
                     rows={4}
-                    cols={25}
                     placeholder="Write your question here"
                     value={question}
                     onChange={e => setQuestion(e.target.value)}

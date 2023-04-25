@@ -13,7 +13,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #ffffff;
-    border: 1px solid black;
+    border: 1px solid $primary;
+    border-radius: 10px;
 
     .closeButton {
       font-size: 25px;
@@ -26,6 +27,7 @@
       text-align: center;
       padding: 20px;
       font-size: 30px;
+      color: $primary;
     }
 
     .modalInfoContainer {
@@ -43,11 +45,17 @@
         text-align: center;
 
         .productName {
-          font-size: 25px;
+          font-size: 20px;
           padding-bottom: 10px;
         }
 
+        .mailInput {
+          width: 100%;
+          margin-bottom: 2px;
+        }
+
         .textarea {
+          width: 100%;
           resize: none;
         }
       }
@@ -57,11 +65,9 @@
       padding: 20px;
 
       .buttons {
-        //margin: 10px;
         text-align: center;
 
         .button {
-          // margin: 10px;
           padding: 10px;
           font-size: 18px;
           text-transform: uppercase;
