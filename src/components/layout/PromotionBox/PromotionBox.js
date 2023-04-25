@@ -29,9 +29,9 @@ const PromotionBox = () => {
             </div>
           </Link>
         </div>
-        <div className={`col-12 col-md-6 mb-4 ${styles.height}`}>
+        <div className={clsx('col-12 col-md-6 mb-4', styles.height)}>
           <Link to='/shop/badminton'>
-            <div className={`col ${styles.box} ${styles.second}`}>
+            <div className={clsx('col', styles.box, styles.second)}>
               <div className={styles.content}>
                 <h5>
                   <strong>{promo.secondTitleStrong}</strong>
@@ -45,7 +45,7 @@ const PromotionBox = () => {
             </div>
           </Link>
           <Link to='/shop/squash'>
-            <div className={`col ${styles.box} ${styles.third}`}>
+            <div className={clsx('col', styles.box, styles.third)}>
               <div className={styles.content}>
                 <h6>
                   <strong className={styles.color}>{promo.thirdTitleStrong}</strong>{' '}

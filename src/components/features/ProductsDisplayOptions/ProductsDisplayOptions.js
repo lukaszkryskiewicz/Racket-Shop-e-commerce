@@ -5,8 +5,14 @@ import clsx from 'clsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faList, faSquare } from '@fortawesome/free-solid-svg-icons';
 
-const ProductsDisplayOptions = ({ productsToDisplay, displayForm, sortBy, setProductsToDisplay, setDisplayForm, setSortBy }) => {
-
+const ProductsDisplayOptions = ({
+  productsToDisplay,
+  displayForm,
+  sortBy,
+  setProductsToDisplay,
+  setDisplayForm,
+  setSortBy,
+}) => {
   return (
     <>
       <div className={clsx('col-md col-12', styles.menu)}>
@@ -40,13 +46,13 @@ const ProductsDisplayOptions = ({ productsToDisplay, displayForm, sortBy, setPro
           <ul>
             <li
               onClick={() => setDisplayForm('list')}
-              className={displayForm === 'list' && styles.active}
+              className={clsx(displayForm === 'list' && styles.active)}
             >
               <FontAwesomeIcon icon={faList}></FontAwesomeIcon>
             </li>
             <li
               onClick={() => setDisplayForm('grid')}
-              className={displayForm === 'grid' && styles.active}
+              className={clsx(displayForm === 'grid' && styles.active)}
             >
               <FontAwesomeIcon icon={faSquare}></FontAwesomeIcon>
             </li>
