@@ -6,8 +6,8 @@
 
   .modalContainer {
     padding: 1rem 1rem 1rem 1rem;
-    width: 600px;
-    height: 400px;
+    width: 60vh;
+    height: 40vh;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -41,6 +41,7 @@
 
       .textContainer {
         text-align: center;
+
         .productName {
           font-size: 25px;
           padding-bottom: 10px;
@@ -60,7 +61,7 @@
         text-align: center;
 
         .button {
-         // margin: 10px;
+          // margin: 10px;
           padding: 10px;
           font-size: 18px;
           text-transform: uppercase;

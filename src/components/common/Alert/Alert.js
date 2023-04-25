@@ -83,15 +83,16 @@ const Alert = ({ type, id, quantity = 1, closeAlert, action }) => {
                   {alertMessage.content}
                   {alertMessage.text}
                 </ul>
+                <div className={clsx('row', styles.buttonsContainer)}>
+                  <div className={clsx('col-12', styles.buttons)}>
+                    {(type === 'success' || type === 'delete') && <Button link='/cart' variant='small' className={styles.button}>go to cart</Button>}
+                    {type !== 'delete' && <Button link='#' onClick={handleClick} variant='small' className={styles.button}>continue shopping</Button>}
+                    {type === 'delete' && <Button link='/cart' variant='small' className={styles.button} onClick={handleDelete}>delete product</Button>}
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div className={clsx('row', styles.buttonsContainer)}>
-            <div className={clsx('col-12', styles.buttons)}>
-              {(type === 'success' || type === 'delete') && <Button link='/cart' variant='small' className={styles.button}>go to cart</Button>}
-              {type !== 'delete' && <Button onClick={handleClick} variant='small' className={styles.button}>continue shopping</Button>}
-              {type === 'delete' && <Button link='/cart' variant='small' className={styles.button} onClick={handleDelete}>delete product</Button>}
-            </div>
+
           </div>
         </div>
       </div>
