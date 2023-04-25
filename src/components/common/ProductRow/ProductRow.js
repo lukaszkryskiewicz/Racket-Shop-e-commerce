@@ -4,7 +4,7 @@ import styles from './ProductRow.module.scss';
 import { useSelector } from 'react-redux';
 import clsx from 'clsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import { NavLink } from 'react-router-dom';
 import { getCurrency } from '../../../redux/currencyRedux';
@@ -36,6 +36,7 @@ const ProductRow = product => {
         <div className={clsx('col-4')}>
           {alert.status && <Alert closeAlert={setAlert} id={id} type={alert.type} />}
           <div className={styles.productPhoto}>
+            {promo && <div className={styles.sale}>{promo}</div>}
             <NavLink to={'/product/' + id}>
               <img src={source} alt={name} />
             </NavLink>
@@ -94,11 +95,11 @@ const ProductRow = product => {
                 compare={compare}
                 buttonType={'compare'}
               />
-          <ActionButton
-                  buttonType={'mail'}
-                  id={product.id}
-                >
-                </ActionButton>
+              <ActionButton
+                buttonType={'mail'}
+                id={product.id}
+              >
+              </ActionButton>
               <ActionButton
                 id={id}
                 buttonType={'addToCart'}
