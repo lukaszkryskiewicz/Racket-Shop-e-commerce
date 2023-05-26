@@ -59,14 +59,17 @@ const RegisterForm = () => {
             <form className='col-12 col-md-8 col-lg-4'>
               <h3 className='text-center'>Create an account</h3>
               <input
-                {...register('email', { required: true, pattern: /@/ })}
+                {...register('email', {
+                  required: true,
+                  pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                })}
                 value={email}
                 type='email'
                 className='form-control my-3'
                 placeholder='Email*'
                 onChange={e => setEmail(e.target.value)}
               ></input>
-              {errors.email && <span>This field must include @</span>}
+              {errors.email && <span>This is not a valid email</span>}
               <input
                 {...register('password', {
                   required: true,
@@ -78,7 +81,7 @@ const RegisterForm = () => {
                 placeholder='Password*'
                 onChange={e => setPassword(e.target.value)}
               ></input>
-              {errors.password && <span>This field min. length is 3</span>}
+              {errors.password && <span>Password is to short</span>}
               <input
                 {...register('repeatPassword', {
                   required: true,
@@ -92,9 +95,7 @@ const RegisterForm = () => {
                 onChange={e => setRepeatPassword(e.target.value)}
               ></input>
               {errors.repeatPassword && (
-                <span>
-                  This field min. length is 3 and must be the same as password
-                </span>
+                <span>Repeated password is to short or does not match password</span>
               )}
               <div className='form-check form-switch my-3'>
                 <input
