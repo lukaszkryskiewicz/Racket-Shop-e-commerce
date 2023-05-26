@@ -7,36 +7,75 @@ import Button from '../../common/Button/Button';
 import { useDispatch } from 'react-redux';
 import { addReview } from '../../../redux/productsRedux';
 import shortid from 'shortid';
+import { useForm } from 'react-hook-form';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 
 const AddProductReview = ({ id }) => {
   const dispatch = useDispatch();
   const [stars, setStars] = useState(0);
-  const [author, setAuthor] = useState('');
-  const [email, setEmail] = useState('');
-  const [text, setText] = useState('');
+  const [starsError, setStarsError] = useState(false);
   const [reviewDone, setReviewDone] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const currentDate = new Date().toLocaleDateString('pl-PL');
-    const formattedDate = currentDate.split('.').join('/');
-    dispatch(addReview({ productId: id, review: { author, stars, text, date: formattedDate, id: shortid() } }));
-    setReviewDone(true);
+  const schema = yup.object({
+    author: yup
+      .string()
+      .max(30, 'Name must have less than 30 characters')
+      .required('Please enter your name'),
+    email: yup
+      .string()
+      .test('valid-email', 'Please enter a valid email', value => {
+        if (!value) return false;
+
+        const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+        return emailRegex.test(value);
+      })
+      .required('Please enter your mail'),
+    text: yup.string().required('Please add a few words about product'),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit = data => {
+    if (stars === 0) {
+      setStarsError(true);
+    } else {
+      const currentDate = new Date().toLocaleDateString('pl-PL');
+      const formattedDate = currentDate.split('.').join('/');
+      const reviewData = {
+        stars: stars,
+        author: data.author,
+        email: data.email,
+        text: data.text,
+        date: formattedDate,
+        id: shortid(),
+      };
+      dispatch(addReview({ productId: id, review: reviewData }));
+      setReviewDone(true);
+    }
   };
 
   return (
     <div className={styles.root}>
       <div className='container'>
-        {reviewDone ?
-          <h3>You have already added a review!</h3>
-          :
+        {reviewDone ? (
+          <h3>Thank you for the review!</h3>
+        ) : (
           <div className={styles.reviewBox}>
             <h3>Add a review</h3>
-            <h4>Your rating</h4>
-            <form className={styles.form} onSubmit={handleSubmit}>
+
+            <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+              <h4>Your rating</h4>
               <div className={clsx('row', styles.ratingBox)}>
                 <div className={clsx('col-2', styles.rateStars)}>
                   <StarsReviewBasic id={id} getStars={stars === 0 ? setStars : null} />
+                  {starsError && <p>Please add rating!</p>}
                 </div>
               </div>
               <h4>Your review</h4>
@@ -45,9 +84,10 @@ const AddProductReview = ({ id }) => {
                   className={clsx('col-12 form-control mb-3', styles.textarea)}
                   rows='3'
                   type='text'
-                  value={text}
-                  onChange={(e) => setText(e.target.value)}
-                ></textarea>
+                  {...register('text')}
+                  placeholder='Enter your review*'
+                />
+                <p>{errors.text?.message}</p>
               </div>
               <div className={clsx('row', styles.inputsContainer)}>
                 <div className={clsx('col-5', styles.input)}>
@@ -55,23 +95,30 @@ const AddProductReview = ({ id }) => {
                     className='form-control'
                     type='text'
                     placeholder='Name*'
-                    value={author}
-                    onChange={(e) => setAuthor(e.target.value)}></input>
+                    {...register('author')}
+                  />
+                  <p>{errors.author?.message}</p>
                 </div>
                 <div className={clsx('col-5', styles.input)}>
                   <input
                     className='form-control'
                     type='text'
                     placeholder='Email*'
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}></input>
+                    {...register('email')}
+                  />
+                  <p>{errors.email?.message}</p>
                 </div>
-                <Button className={clsx('col-2', styles.button)} type='submit' variant='small'>
+                <Button
+                  className={clsx('col-2', styles.button)}
+                  type='submit'
+                  variant='small'
+                >
                   Continue
                 </Button>
               </div>
             </form>
-          </div>}
+          </div>
+        )}
       </div>
     </div>
   );
