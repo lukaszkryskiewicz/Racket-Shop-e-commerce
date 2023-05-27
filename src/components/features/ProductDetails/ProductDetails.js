@@ -70,9 +70,23 @@ const ProductDetails = ({ productData }) => {
     }
   };
 
+  const scrollToReview = () => {
+    const element = document.getElementById('review');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className={styles.root}>
-      {alert.status && <Alert closeAlert={setAlert} id={product.id} quantity={productQuantity} type={alert.type} />}
+      {alert.status && (
+        <Alert
+          closeAlert={setAlert}
+          id={product.id}
+          quantity={productQuantity}
+          type={alert.type}
+        />
+      )}
       <div className={clsx('container', styles.productDetails)}>
         <div className={clsx('row', styles.mainRow)}>
           <div className={clsx('col-lg-5 col-md-12', styles.photoSection)}>
@@ -138,11 +152,14 @@ const ProductDetails = ({ productData }) => {
               <div className={clsx(styles.review)}>
                 <div>
                   <StarsReviewBasic {...product} />
-                  <p className={clsx(styles.reviewsNumber)}>({product.reviews ? product.reviews.length : 0} reviews)</p>
+                  <p className={clsx(styles.reviewsNumber)}>
+                    ({product.reviews ? product.reviews.length : 0} reviews)
+                  </p>
                 </div>
                 <Link
                   className={clsx(styles.reviewCallButton)}
-                  to={`/product/${product.id}/review`}
+                  to={`/product/${product.id}#review`}
+                  onClick={scrollToReview}
                 >
                   Add your review
                 </Link>
@@ -187,11 +204,7 @@ const ProductDetails = ({ productData }) => {
                   compare={product.compare}
                   buttonType={'compare'}
                 />
-                <ActionButton
-                  buttonType={'mail'}
-                  id={product.id}
-                >
-                </ActionButton>
+                <ActionButton buttonType={'mail'} id={product.id}></ActionButton>
               </div>
               <div className={styles.quantity}>
                 <span>Quantity: </span>
@@ -208,7 +221,6 @@ const ProductDetails = ({ productData }) => {
                   value={productQuantity}
                 />
                 <Button
-
                   variant='outline'
                   className={styles.amountControls}
                   onClick={incrementQuantity}

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import ProductModal from '../ProductModal/ProductModal';
 import styles from './ProductBox.module.scss';
@@ -10,22 +9,14 @@ import ActionButton from '../ActionButton/ActionButton';
 import { useSelector } from 'react-redux';
 import { getCurrency } from '../../../redux/currencyRedux';
 import Alert from '../Alert/Alert';
+import { HashLink as NavLink } from 'react-router-hash-link';
 
 const ProductBox = props => {
   const [modal, setModal] = useState(false);
   const [alert, setAlert] = useState({ status: false, type: 'success' });
   const currency = useSelector(state => getCurrency(state));
-  const {
-    id,
-    name,
-    price,
-    promo,
-    oldPrice,
-    favourite,
-    compare,
-    source,
-  } = props;
-  const productLink = '/product/' + id + '/#';
+  const { id, name, price, promo, oldPrice, favourite, compare, source } = props;
+  const productLink = '/product/' + id + '/#top';
 
   return (
     <div className={styles.root}>

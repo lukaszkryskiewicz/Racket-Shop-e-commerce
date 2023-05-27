@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import styles from './Footer.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -11,6 +10,7 @@ import {
   faLinkedinIn,
   faPinterestP,
 } from '@fortawesome/free-brands-svg-icons';
+import { HashLink as Link } from 'react-router-hash-link';
 
 const Footer = ({ children }) => (
   <footer className={styles.root}>
@@ -41,7 +41,7 @@ const Footer = ({ children }) => (
               <h6>My account</h6>
               <ul>
                 <li>
-                  <Link to='/login'>Login</Link>
+                  <Link to='/login#'>Login</Link>
                 </li>
                 <li>
                   <a href='#'>My cart</a>

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar } from '@fortawesome/free-regular-svg-icons';
 import { faComment } from '@fortawesome/free-solid-svg-icons';
 import Button from '../Button/Button';
-import { Link } from 'react-router-dom';
+import { HashLink as NavLink } from 'react-router-hash-link';
 
 const BlogPostBox = ({ id, date, text, title }) => {
   return (
@@ -41,11 +41,9 @@ const BlogPostBox = ({ id, date, text, title }) => {
         </div>
       </div>
       <div className={'text-center ' + styles.button}>
-        <Link to={'blog/' + id}>
-          <Button variant='main'>
-            Read More
-          </Button>
-        </Link>
+        <NavLink to={'blog/' + id + '#top'}>
+          <Button variant='main'>Read More</Button>
+        </NavLink>
       </div>
     </div>
   );

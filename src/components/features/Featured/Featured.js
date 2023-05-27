@@ -6,18 +6,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import clsx from 'clsx';
 import StarsReview from '../../common/StarsReview/StarsReview';
-import {
-  faChevronRight,
-  faChevronLeft,
-} from '@fortawesome/free-solid-svg-icons';
+import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import Button from '../../common/Button/Button';
 import ActionButton from '../../common/ActionButton/ActionButton';
 import Carousel from 'react-bootstrap/Carousel';
-import { NavLink } from 'react-router-dom';
 import Swipeable from '../../common/Swipeable/Swipeable';
 import { getCurrency } from '../../../redux/currencyRedux';
 import Alert from '../../common/Alert/Alert';
 import ProductModal from '../../common/ProductModal/ProductModal';
+import { HashLink as NavLink } from 'react-router-hash-link';
 
 const Featured = () => {
   const [slideInterval, setSlideInterval] = useState(3000);
@@ -70,7 +67,9 @@ const Featured = () => {
   return (
     <div className={styles.root}>
       {modal && <ProductModal closeModal={setModal} productData={currentHotDeal} />}
-      {alert.status && <Alert closeAlert={setAlert} id={hotDeals[hotDealIndex].id} type={alert.type} />}
+      {alert.status && (
+        <Alert closeAlert={setAlert} id={hotDeals[hotDealIndex].id} type={alert.type} />
+      )}
       <div className='container'>
         <div className='row'>
           <div className='col-6 col-lg-4 d-none d-md-block'>
@@ -112,7 +111,7 @@ const Featured = () => {
                 {hotDeals.map(hotDeal => (
                   <Carousel.Item key={hotDeal.name}>
                     <div className={styles.photo}>
-                      <NavLink to={'product' + hotDeal.id}>
+                      <NavLink to={'product/' + hotDeal.id + '#top'}>
                         <div className={styles.image}>
                           <img alt={hotDeal.name} src={hotDeal.source} />
                         </div>
@@ -173,9 +172,7 @@ const Featured = () => {
                     </div>
                     <div className={styles.infoBox}>
                       <div className={styles.content}>
-                        <StarsReview
-                          {...hotDeal}
-                        />
+                        <StarsReview {...hotDeal} />
                       </div>
                       <div className={styles.line}></div>
                       <div className={styles.actions}>
@@ -194,7 +191,8 @@ const Featured = () => {
                             id={hotDeal.id}
                             buttonType={'quickView'}
                             productData={hotDeal}
-                            onClickFunction={setModal} />
+                            onClickFunction={setModal}
+                          />
                         </div>
                         <div className={styles.prices}>
                           {hotDeal.oldPrice && (
@@ -231,7 +229,7 @@ const Featured = () => {
                   >
                     {hotDeals.map(hotDeal => (
                       <Carousel.Item key={hotDeal.name} className={styles.carouselItem}>
-                        <NavLink to={'product/' + hotDeal.id}>
+                        <NavLink to={'product/' + hotDeal.id + '#top'}>
                           <Swipeable leftAction={leftAction} rightAction={rightAction}>
                             <div className={styles.image}>
                               <img alt={hotDeal.name} src={hotDeal.source} />
@@ -248,7 +246,9 @@ const Featured = () => {
                     </div>
                   </div>
                 </div>
-                <Button link='shop/tennis' className={styles.shopNow}>Shop now</Button>
+                <NavLink to='shop/tennis#top'>
+                  <Button className={styles.shopNow}>Shop now</Button>
+                </NavLink>
                 <div className={clsx(styles.slider, 'col-12')}>
                   <button
                     className={`${styles.arrow} col-6 text-center p-0`}

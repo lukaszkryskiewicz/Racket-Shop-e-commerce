@@ -13,12 +13,12 @@ import StarsReview from '../StarsReview/StarsReview';
 import ActionButton from '../ActionButton/ActionButton';
 import { useEffect } from 'react';
 import { getViewportMode } from '../../../redux/viewportModeRedux';
-import { Link } from 'react-router-dom';
 import Swipeable from '../Swipeable/Swipeable';
 import { getCurrency } from '../../../redux/currencyRedux';
 import ProductModal from '../ProductModal/ProductModal';
 import Alert from '../Alert/Alert';
 import clsx from 'clsx';
+import { HashLink as NavLink } from 'react-router-hash-link';
 
 const RacketsGallery = () => {
   const headlines = ['Featured', 'Top Seller', 'Sale Off', 'Top Rated'];
@@ -127,9 +127,9 @@ const RacketsGallery = () => {
             fadeImage ? styles.fadeIn : styles.fadeOut
           )}
         >
-          <Link to={'/product/' + displayedProduct.id}>
+          <NavLink to={'/product/' + displayedProduct.id + '#top'}>
             <img alt={displayedProduct.name} src={displayedProduct.source} />
-          </Link>
+          </NavLink>
           <div className={styles.productInfo}>
             <div className={styles.backgroundContent}>
               <div className={styles.price}>
@@ -143,9 +143,7 @@ const RacketsGallery = () => {
                 </p>
               </div>
               <div className={styles.content}>
-                <StarsReview
-                  {...displayedProduct}
-                />
+                <StarsReview {...displayedProduct} />
               </div>
             </div>
           </div>
