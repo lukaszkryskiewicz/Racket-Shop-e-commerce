@@ -19,7 +19,10 @@ const ProductExtendedInfo = () => {
             <div className={'col-2 ' + styles.menuText}>
               <p>description</p>
             </div>
-            <div className={clsx('col-2 ' + styles.menuText, styles.active)}>
+            <div
+              id='review'
+              className={clsx('col-2 ' + styles.menuText, styles.active)}
+            >
               <p>reviews({product.reviews ? product.reviews.length : 0})</p>
             </div>
             <div className={'col-2 ' + styles.menuText}>

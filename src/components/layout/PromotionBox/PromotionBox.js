@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { getPromotion } from '../../../redux/promotionRedux';
 import styles from './PromotionBox.module.scss';
 import clsx from 'clsx';
-import { Link } from 'react-router-dom';
+import { HashLink as NavLink } from 'react-router-hash-link';
 
 const PromotionBox = () => {
   const promo = useSelector(state => getPromotion(state));
@@ -12,7 +12,7 @@ const PromotionBox = () => {
     <div className={clsx('container', styles.root)}>
       <div className='row'>
         <div className={clsx('col-12 col-md-6 mb-4', styles.height)}>
-          <Link to='/shop/tennis'>
+          <NavLink to='/shop/tennis#top'>
             <div className={clsx(styles.box, styles.first)}>
               <div className={styles.shadow}>
                 <div className={styles.content}>
@@ -27,10 +27,10 @@ const PromotionBox = () => {
               </div>
               <img src={promo.firstImage} alt={promo.firstAltName} />
             </div>
-          </Link>
+          </NavLink>
         </div>
         <div className={clsx('col-12 col-md-6 mb-4', styles.height)}>
-          <Link to='/shop/badminton'>
+          <NavLink to='/shop/badminton#top'>
             <div className={clsx('col', styles.box, styles.second)}>
               <div className={styles.content}>
                 <h5>
@@ -43,8 +43,8 @@ const PromotionBox = () => {
               </div>
               <img src={promo.secondImage} alt={promo.secondAltName} />
             </div>
-          </Link>
-          <Link to='/shop/squash'>
+          </NavLink>
+          <NavLink to='/shop/squash#top'>
             <div className={clsx('col', styles.box, styles.third)}>
               <div className={styles.content}>
                 <h6>
@@ -55,7 +55,7 @@ const PromotionBox = () => {
               </div>
               <img src={promo.thirdImage} alt={promo.thirdAltName} />
             </div>
-          </Link>
+          </NavLink>
         </div>
       </div>
     </div>
