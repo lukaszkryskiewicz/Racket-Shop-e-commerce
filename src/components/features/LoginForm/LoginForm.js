@@ -1,26 +1,29 @@
 import React, { useState } from 'react';
 import styles from './LoginForm.module.scss';
 import Button from '../../common/Button/Button';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import UserAlert from '../../common/UserAlert/UserAlert';
+
 const LoginForm = () => {
   const [inputType, setInputType] = useState('password');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [infoAlert, setInfoAlert] = useState(false);
   const {
     register,
     handleSubmit: validate,
     formState: { errors },
   } = useForm();
-  const history = useHistory();
   const handleShowPassword = checked => {
     checked ? setInputType('text') : setInputType('password');
   };
   const handleSubmit = () => {
-    history.push('/');
+    setInfoAlert(true);
   };
   return (
     <div className={styles.root}>
+      {infoAlert && <UserAlert type='login' closeAlert={setInfoAlert} />}
       <div className='container'>
         <div className='row justify-content-center my-5'>
           <form className='col-12 col-md-8 col-lg-4'>
@@ -79,7 +82,7 @@ const LoginForm = () => {
               </div>
             </div>
             <div className='mt-5 text-center'>
-              <Link to='/register'>New to Bazar? Create an account&gt;</Link>
+              <Link to='/register'>New to RacketShop? Create an account&gt;</Link>
             </div>
           </form>
         </div>

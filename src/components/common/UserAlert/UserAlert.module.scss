@@ -1,0 +1,70 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  position: relative;
+  z-index: 999;
+
+  .alertContainer {
+    padding: 1rem 1rem 1rem 1rem;
+    width: 50vh;
+    height: 20vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border: 1px solid $primary;
+    border-radius: 10px;
+
+    .closeButton {
+      font-size: 25px;
+      position: absolute;
+      top: 0;
+      left: 7px;
+    }
+
+    .alertContent {
+      padding: 20px;
+      text-align: center;
+      align-items: center;
+
+      .alertHeader {
+        font-size: 25px;
+        color: $primary;
+      }
+
+      .alertInfoContainer {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .textContainer {
+
+        .productInfoList {
+          list-style: none;
+          padding: 0;
+          color: $granitGrey;
+          font-size: 16px;
+
+        }
+      }
+    }
+
+    .buttonsContainer {
+
+
+      .buttons {
+        margin: 10px;
+        text-align: center;
+
+        .button {
+          margin: 10px;
+          padding: 10px;
+          font-size: 14px;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+}

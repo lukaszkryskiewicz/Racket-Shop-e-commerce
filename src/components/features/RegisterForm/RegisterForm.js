@@ -3,7 +3,7 @@ import styles from './RegisterForm.module.scss';
 import Button from '../../common/Button/Button';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { useHistory } from 'react-router-dom';
+import UserAlert from '../../common/UserAlert/UserAlert';
 
 const RegisterForm = () => {
   const {
@@ -15,6 +15,7 @@ const RegisterForm = () => {
   const [checkTermConditions, setCheckTermConditions] = useState(false);
   const [checkNewsletter, setCheckNewsletter] = useState(false);
   const [inputType, setInputType] = useState('password');
+  const [infoAlert, setInfoAlert] = useState(false);
 
   useEffect(() => {
     if (checkNewsletter && checkTermConditions) {
@@ -46,14 +47,14 @@ const RegisterForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
-  const history = useHistory();
   const handleSubmit = () => {
-    history.push('/');
+    setInfoAlert(true);
   };
 
   return (
     <>
       <div className={styles.root}>
+        {infoAlert && <UserAlert closeAlert={setInfoAlert} type={'register'} />}
         <div className='container'>
           <div className='row justify-content-center my-5'>
             <form className='col-12 col-md-8 col-lg-4'>
