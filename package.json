@@ -70,6 +70,7 @@
     "react-router-dom": "^5.1.2",
     "react-router-hash-link": "^2.4.3",
     "react-scripts": "3.1.2",
+    "react-simple-chatbot": "^0.6.1",
     "react-slider": "^2.0.4",
     "react-swipeable": "^7.0.0",
     "react-test-renderer": "^16.9.0",
@@ -78,6 +79,7 @@
     "redux-persist": "^6.0.0",
     "sass": "^1.54.3",
     "shortid": "^2.2.16",
+    "styled-components": "^5.3.11",
     "yarn": "^1.22.19",
     "yup": "^1.2.0"
   },
