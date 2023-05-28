@@ -14,6 +14,11 @@ const UserAlert = ({ type, closeAlert }) => {
           title: 'Registration completed',
           text: 'You can now log in',
         };
+      case 'registerError':
+        return {
+          title: 'Register Error',
+          text: 'it seems that you already have the account',
+        };
       case 'login':
         return {
           title: 'You are now logged in!',

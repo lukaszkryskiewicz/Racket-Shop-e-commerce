@@ -16,6 +16,7 @@ const RegisterForm = () => {
   const [checkNewsletter, setCheckNewsletter] = useState(false);
   const [inputType, setInputType] = useState('password');
   const [infoAlert, setInfoAlert] = useState(false);
+  const [alertType, setAlertType] = useState('');
 
   useEffect(() => {
     if (checkNewsletter && checkTermConditions) {
@@ -48,13 +49,26 @@ const RegisterForm = () => {
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
   const handleSubmit = () => {
+    const data = {
+      userEmail: email,
+      userPassword: password,
+    };
+
+    let currentData = JSON.parse(localStorage.getItem('userData')) || [];
+    if (currentData && !currentData.some(user => user.userEmail === data.userEmail)) {
+      currentData.push(data);
+      localStorage.setItem('userData', JSON.stringify(currentData));
+      setAlertType('register');
+    } else {
+      setAlertType('registerError');
+    }
     setInfoAlert(true);
   };
 
   return (
     <>
       <div className={styles.root}>
-        {infoAlert && <UserAlert closeAlert={setInfoAlert} type={'register'} />}
+        {infoAlert && <UserAlert closeAlert={setInfoAlert} type={alertType} />}
         <div className='container'>
           <div className='row justify-content-center my-5'>
             <form className='col-12 col-md-8 col-lg-4'>
