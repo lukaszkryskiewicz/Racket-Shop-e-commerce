@@ -1,14 +1,9 @@
 import React from 'react';
 import styles from './ChatBotComponent.module.scss';
-import Button from '../Button/Button';
-import { useState } from 'react';
-import clsx from 'clsx';
 import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
 
 const ChatBotComponent = () => {
-  const [activeChat, setActiveChat] = useState(true);
-
   const theme = {
     background: '#f5f8fb',
     fontFamily: 'Helvetica Neue',
@@ -68,32 +63,11 @@ const ChatBotComponent = () => {
       end: true,
     },
   ];
-
-  const handleClick = e => {
-    e.preventDefault();
-    setActiveChat(!activeChat);
-  };
-
   return (
     <div className={styles.root}>
-      <div className='container'>
-        <div className={styles.chatBot}>
-          {activeChat && (
-            <ThemeProvider theme={theme}>
-              <ChatBot steps={steps} />
-            </ThemeProvider>
-          )}
-          <div className={styles.chatButton}>
-            <Button
-              variant='small'
-              className={clsx(styles.button, activeChat && styles.active)}
-              onClick={handleClick}
-            >
-              Need help? Use our chat!
-            </Button>
-          </div>
-        </div>
-      </div>
+      <ThemeProvider theme={theme}>
+        <ChatBot floating={true} steps={steps} headerTitle='RacketShop Chat' />
+      </ThemeProvider>
     </div>
   );
 };
