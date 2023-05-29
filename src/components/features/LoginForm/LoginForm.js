@@ -34,6 +34,7 @@ const LoginForm = () => {
 
     if (userIndex !== -1 && usersDB[userIndex].userPassword === password) {
       setAlertType('login');
+      localStorage.setItem('isLogged', JSON.stringify(true));
     } else {
       setAlertType('loginError');
     }
