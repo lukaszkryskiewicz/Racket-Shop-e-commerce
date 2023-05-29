@@ -4,6 +4,7 @@ import Button from '../../common/Button/Button';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import UserAlert from '../../common/UserAlert/UserAlert';
+import { Form, Modal } from 'react-bootstrap';
 
 const LoginForm = () => {
   const [inputType, setInputType] = useState('password');
@@ -11,6 +12,8 @@ const LoginForm = () => {
   const [password, setPassword] = useState('');
   const [infoAlert, setInfoAlert] = useState(false);
   const [alertType, setAlertType] = useState('');
+  const [forgotPasswordModal, setForgotPasswordModal] = useState(false);
+  const [passwordSendInfo, setPasswordSendInfo] = useState(false);
   const {
     register,
     handleSubmit: validate,
@@ -18,6 +21,11 @@ const LoginForm = () => {
   } = useForm();
   const handleShowPassword = checked => {
     checked ? setInputType('text') : setInputType('password');
+  };
+
+  const handleForgottenPassword = e => {
+    e.preventDefault();
+    setForgotPasswordModal(true);
   };
 
   const handleSubmit = () => {
@@ -60,9 +68,6 @@ const LoginForm = () => {
               onChange={e => setPassword(e.target.value)}
             ></input>
             {errors.email && <p className='text-danger'>Incorrect email!</p>}
-            {!errors.email && errors.password && (
-              <p className='text-danger'>Incorrect password!</p>
-            )}
             <div className='row my-3'>
               <div className='col text-start'>
                 <div className='form-check form-switch '>
@@ -79,27 +84,56 @@ const LoginForm = () => {
                 </div>
               </div>
               <div className='col text-end'>
-                <a href='#'>Forgot password?</a>
-              </div>
-            </div>
-            <div className='form-check'>
-              <input className='form-check-input' type='checkbox'></input>
-              <label className='form-check-label'>Remember me</label>
-            </div>
-            <div className='row my-4 align-items-center'>
-              <div className='col text-start'>
-                <Link to='/'>&lt;Back</Link>
-              </div>
-              <div className='col text-end'>
                 <Button variant='main' type='submit' onClick={validate(handleSubmit)}>
                   Sign in
                 </Button>
               </div>
             </div>
-            <div className='mt-5 text-center'>
-              <Link to='/register'>New to RacketShop? Create an account&gt;</Link>
-            </div>
           </form>
+          <div className='mt-2 text-center' onClick={handleForgottenPassword}>
+            <Button variant='outline'>Forgot password?</Button>
+          </div>
+          {forgotPasswordModal && (
+            <Modal
+              centered
+              show={forgotPasswordModal}
+              onHide={() => setForgotPasswordModal(false)}
+            >
+              <Modal.Header closeButton>
+                <Modal.Title>Please enter your email</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                {!passwordSendInfo && (
+                  <Form>
+                    <Form.Group className='mb-3'>
+                      <Form.Label>Email address</Form.Label>
+                      <Form.Control
+                        type='email'
+                        placeholder='name@example.com'
+                        autoFocus
+                      />
+                    </Form.Group>
+                    <button
+                      type='button'
+                      className='btn btn-primary'
+                      onClick={() => setPasswordSendInfo(true)}
+                    >
+                      Send
+                    </button>
+                  </Form>
+                )}
+                {passwordSendInfo && (
+                  <p>
+                    If there is an account connected with provided mail we will send you
+                    info how to reset password
+                  </p>
+                )}
+              </Modal.Body>
+            </Modal>
+          )}
+          <div className='mt-4 text-center'>
+            <Link to='/register'>New to RacketShop? Create an account&gt;</Link>
+          </div>
         </div>
       </div>
     </div>
