@@ -1,50 +1,74 @@
 import React, { useState } from 'react';
 import styles from './LoginForm.module.scss';
 import Button from '../../common/Button/Button';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import UserAlert from '../../common/UserAlert/UserAlert';
+import { Form, Modal } from 'react-bootstrap';
+
 const LoginForm = () => {
   const [inputType, setInputType] = useState('password');
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [infoAlert, setInfoAlert] = useState(false);
+  const [alertType, setAlertType] = useState('');
+  const [forgotPasswordModal, setForgotPasswordModal] = useState(false);
+  const [passwordSendInfo, setPasswordSendInfo] = useState(false);
   const {
     register,
     handleSubmit: validate,
     formState: { errors },
   } = useForm();
-  const history = useHistory();
   const handleShowPassword = checked => {
     checked ? setInputType('text') : setInputType('password');
   };
-  const handleSubmit = () => {
-    history.push('/');
+
+  const handleForgottenPassword = e => {
+    e.preventDefault();
+    setForgotPasswordModal(true);
   };
+
+  const handleSubmit = () => {
+    const usersDB = JSON.parse(localStorage.getItem('userData'));
+    const userIndex = usersDB?.findIndex(user => user.userEmail === email);
+
+    if (userIndex !== -1 && usersDB[userIndex].userPassword === password) {
+      setAlertType('login');
+      localStorage.setItem('isLogged', JSON.stringify(true));
+    } else {
+      setAlertType('loginError');
+    }
+
+    setInfoAlert(true);
+  };
+
   return (
     <div className={styles.root}>
+      {infoAlert && <UserAlert type={alertType} closeAlert={setInfoAlert} />}
       <div className='container'>
         <div className='row justify-content-center my-5'>
           <form className='col-12 col-md-8 col-lg-4'>
             <h3 className='text-center'>Sign in to Bazar</h3>
             <input
-              {...register('username', { required: true, pattern: /^admin$/ })}
-              type='username'
+              {...register('email', {
+                required: true,
+                pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              })}
+              type='email'
               className='form-control my-3'
-              placeholder='Username*'
-              value={username}
-              onChange={e => setUsername(e.target.value)}
+              placeholder='Email*'
+              value={email}
+              onChange={e => setEmail(e.target.value)}
             ></input>
             <input
-              {...register('password', { required: true, pattern: /^pass$/ })}
+              {...register('password', { required: true })}
               type={inputType}
               className='form-control my-3'
               placeholder='Password*'
               value={password}
               onChange={e => setPassword(e.target.value)}
             ></input>
-            {errors.username && <p className='text-danger'>Incorrect username!</p>}
-            {!errors.username && errors.password && (
-              <p className='text-danger'>Incorrect password!</p>
-            )}
+            {errors.email && <p className='text-danger'>Incorrect email!</p>}
             <div className='row my-3'>
               <div className='col text-start'>
                 <div className='form-check form-switch '>
@@ -61,27 +85,56 @@ const LoginForm = () => {
                 </div>
               </div>
               <div className='col text-end'>
-                <a href='#'>Forgot password?</a>
-              </div>
-            </div>
-            <div className='form-check'>
-              <input className='form-check-input' type='checkbox'></input>
-              <label className='form-check-label'>Remember me</label>
-            </div>
-            <div className='row my-4 align-items-center'>
-              <div className='col text-start'>
-                <Link to='/'>&lt;Back</Link>
-              </div>
-              <div className='col text-end'>
                 <Button variant='main' type='submit' onClick={validate(handleSubmit)}>
                   Sign in
                 </Button>
               </div>
             </div>
-            <div className='mt-5 text-center'>
-              <Link to='/register'>New to Bazar? Create an account&gt;</Link>
-            </div>
           </form>
+          <div className='mt-2 text-center' onClick={handleForgottenPassword}>
+            <Button variant='outline'>Forgot password?</Button>
+          </div>
+          {forgotPasswordModal && (
+            <Modal
+              centered
+              show={forgotPasswordModal}
+              onHide={() => setForgotPasswordModal(false)}
+            >
+              <Modal.Header closeButton>
+                <Modal.Title>Please enter your email</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                {!passwordSendInfo && (
+                  <Form>
+                    <Form.Group className='mb-3'>
+                      <Form.Label>Email address</Form.Label>
+                      <Form.Control
+                        type='email'
+                        placeholder='name@example.com'
+                        autoFocus
+                      />
+                    </Form.Group>
+                    <button
+                      type='button'
+                      className='btn btn-primary'
+                      onClick={() => setPasswordSendInfo(true)}
+                    >
+                      Send
+                    </button>
+                  </Form>
+                )}
+                {passwordSendInfo && (
+                  <p>
+                    If there is an account connected with provided mail we will send you
+                    info how to reset password
+                  </p>
+                )}
+              </Modal.Body>
+            </Modal>
+          )}
+          <div className='mt-4 text-center'>
+            <Link to='/register'>New to RacketShop? Create an account&gt;</Link>
+          </div>
         </div>
       </div>
     </div>
