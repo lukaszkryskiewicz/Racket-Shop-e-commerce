@@ -19,6 +19,11 @@ const UserAlert = ({ type, closeAlert }) => {
           title: 'Register Error',
           text: 'it seems that you already have the account',
         };
+      case 'loginError':
+        return {
+          title: 'User or password incorrect',
+          text: "Please try again or click 'Forgot password?'!",
+        };
       case 'login':
         return {
           title: 'You are now logged in!',

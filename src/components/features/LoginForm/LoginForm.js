@@ -7,9 +7,10 @@ import UserAlert from '../../common/UserAlert/UserAlert';
 
 const LoginForm = () => {
   const [inputType, setInputType] = useState('password');
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [infoAlert, setInfoAlert] = useState(false);
+  const [alertType, setAlertType] = useState('');
   const {
     register,
     handleSubmit: validate,
@@ -18,34 +19,48 @@ const LoginForm = () => {
   const handleShowPassword = checked => {
     checked ? setInputType('text') : setInputType('password');
   };
+
   const handleSubmit = () => {
+    const usersDB = JSON.parse(localStorage.getItem('userData'));
+    const userIndex = usersDB?.findIndex(user => user.userEmail === email);
+
+    if (userIndex !== -1 && usersDB[userIndex].userPassword === password) {
+      setAlertType('login');
+    } else {
+      setAlertType('loginError');
+    }
+
     setInfoAlert(true);
   };
+
   return (
     <div className={styles.root}>
-      {infoAlert && <UserAlert type='login' closeAlert={setInfoAlert} />}
+      {infoAlert && <UserAlert type={alertType} closeAlert={setInfoAlert} />}
       <div className='container'>
         <div className='row justify-content-center my-5'>
           <form className='col-12 col-md-8 col-lg-4'>
             <h3 className='text-center'>Sign in to Bazar</h3>
             <input
-              {...register('username', { required: true, pattern: /^admin$/ })}
-              type='username'
+              {...register('email', {
+                required: true,
+                pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+              })}
+              type='email'
               className='form-control my-3'
-              placeholder='Username*'
-              value={username}
-              onChange={e => setUsername(e.target.value)}
+              placeholder='Email*'
+              value={email}
+              onChange={e => setEmail(e.target.value)}
             ></input>
             <input
-              {...register('password', { required: true, pattern: /^pass$/ })}
+              {...register('password', { required: true })}
               type={inputType}
               className='form-control my-3'
               placeholder='Password*'
               value={password}
               onChange={e => setPassword(e.target.value)}
             ></input>
-            {errors.username && <p className='text-danger'>Incorrect username!</p>}
-            {!errors.username && errors.password && (
+            {errors.email && <p className='text-danger'>Incorrect email!</p>}
+            {!errors.email && errors.password && (
               <p className='text-danger'>Incorrect password!</p>
             )}
             <div className='row my-3'>
