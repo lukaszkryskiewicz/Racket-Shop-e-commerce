@@ -61,7 +61,7 @@ const RacketsGallery = () => {
     getProductById(state, activeProduct.id)
   );
 
-  const columns = viewportMode === 'mobile' ? 4 : viewportMode === 'tablet' ? 3 : 6;
+  const columns = viewportMode === 'mobile' ? 4 : viewportMode === 'tablet' ? 6 : 6;
   const pagesCount = Math.ceil(productsToDisplay.length / columns);
 
   const handlePageChange = newPage => {
@@ -197,7 +197,7 @@ const RacketsGallery = () => {
                   .map(product => (
                     <div
                       key={product.name}
-                      className={clsx('col-lg-2 col-md-4 col-3 px-1', styles.thumbnail)}
+                      className={clsx('col-md-2 col-3 px-1', styles.thumbnail)}
                       onClick={() => handleProductChange(product)}
                     >
                       <img
