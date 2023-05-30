@@ -42,7 +42,7 @@ const NewProducts = ({ searchedData, productsOnDesktop }) => {
   };
 
   const productsToDisplay =
-    viewportMode === 'mobile' ? 2 : viewportMode === 'tablet' ? 3 : productsOnDesktop;
+    viewportMode === 'mobile' ? 3 : viewportMode === 'tablet' ? 6 : productsOnDesktop;
   useEffect(() => handlePageChange(0), [viewportMode]);
 
   const leftAction = () => {
