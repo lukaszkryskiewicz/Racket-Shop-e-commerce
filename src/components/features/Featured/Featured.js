@@ -15,6 +15,7 @@ import { getCurrency } from '../../../redux/currencyRedux';
 import Alert from '../../common/Alert/Alert';
 import ProductModal from '../../common/ProductModal/ProductModal';
 import { HashLink as NavLink } from 'react-router-hash-link';
+import PromoTimer from '../../common/PromoTimer/PromoTimer';
 
 const Featured = () => {
   const [slideInterval, setSlideInterval] = useState(3000);
@@ -130,44 +131,7 @@ const Featured = () => {
                         </ActionButton>
                       </div>
                       <div className={`${styles.timer} row`}>
-                        <li className='col'>
-                          <FontAwesomeIcon
-                            className={`${styles.iconTimer} me-1`}
-                            icon={faCircle}
-                          />
-                          <p>
-                            25
-                            <br />
-                            DAYS
-                          </p>
-                        </li>
-                        <li className='col'>
-                          <FontAwesomeIcon
-                            className={`${styles.iconTimer} me-1`}
-                            icon={faCircle}
-                          />
-                          <p>
-                            10<br></br>HRS
-                          </p>
-                        </li>
-                        <li className='col'>
-                          <FontAwesomeIcon
-                            className={`${styles.iconTimer} me-1`}
-                            icon={faCircle}
-                          />
-                          <p>
-                            45<br></br>MIN
-                          </p>
-                        </li>
-                        <li className='col'>
-                          <FontAwesomeIcon
-                            className={`${styles.iconTimer} me-1`}
-                            icon={faCircle}
-                          />
-                          <p>
-                            30<br></br>SEC
-                          </p>
-                        </li>
+                        <PromoTimer />
                       </div>
                     </div>
                     <div className={styles.infoBox}>
