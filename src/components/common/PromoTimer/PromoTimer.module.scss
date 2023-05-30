@@ -1,0 +1,17 @@
+@import "../../../styles/settings.scss";
+
+
+.promoTimer {
+  .timerContainer {
+    opacity: 0.85;
+    background-color: $footer-bg;
+    margin: 10px;
+    border-radius: 10px;
+    color: white;
+
+    .promoTitle {
+      padding: 5px;
+    }
+
+  }
+}
