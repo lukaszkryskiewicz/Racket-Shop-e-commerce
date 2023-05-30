@@ -15,7 +15,13 @@ export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
     case TOGGLE_VIEWPORTMODE:
       return (statePart =
-        action.payload < 768 ? 'mobile' : action.payload < 992 ? 'tablet' : 'desktop');
+        action.payload < 768
+          ? 'mobile'
+          : action.payload < 992
+          ? 'tablet'
+          : action.payload < 1200
+          ? 'desktop'
+          : 'largeDesktop');
     default:
       return statePart;
   }
