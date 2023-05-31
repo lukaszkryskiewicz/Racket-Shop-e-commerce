@@ -6,9 +6,10 @@
   }
 
   .carouselContainer {
+    width: 100%;
     padding: 10px 0;
-    border-bottom: 3px solid $dark-grey;
-    border-top: 3px solid $dark-grey;
+    border-bottom: 2px solid $light-grey;
+    border-top: 2px solid $light-grey;
 
     .brandContainer {
       display: flex;
@@ -16,24 +17,25 @@
 
 
       .brandImage {
-        max-width: 180px;
-        border: solid 2px;
+        max-width: 140px;
+        border: solid 3px;
       }
     }
 
     button {
       background-color: $light-black;
+      min-width: 25px;
       border-radius: 0;
-      padding: 41px 0;
-      transform: translateX(-110%);
+      height: 100%;
+      left: 0;
+      //transform: translateX(-70%);
     }
 
 
     button:last-child {
-      border-radius: 0;
-      padding: 41px 0;
-      transform: translateX(110%);
-
+      max-width: 25px;
+      left: 100%;
+      transform: translateX(-100%);
     }
   }
 }
@@ -44,7 +46,7 @@
     .carouselContainer {
       .brandContainer {
         .brandImage {
-          max-width: 150px;
+          max-width: 130px;
         }
       }
     }

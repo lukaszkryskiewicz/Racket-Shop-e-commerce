@@ -73,7 +73,7 @@ const Featured = () => {
       )}
       <div className='container'>
         <div className='row'>
-          <div className='col-6 col-lg-4 d-none d-md-block'>
+          <div className='col-12 col-lg-5'>
             <div
               className='col
             bg-dark
@@ -179,8 +179,7 @@ const Featured = () => {
               </Carousel>
             </div>
           </div>
-
-          <div className='col-md-6 col-lg-8 col-12"'>
+          <div className='col-md-6 col-lg-7 col-12"'>
             <div className={styles.hotProduct}>
               <div className={clsx(styles.photoProduct)}>
                 <div className={clsx(styles.carousel, 'col-12')}>

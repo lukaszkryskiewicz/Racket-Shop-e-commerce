@@ -42,7 +42,13 @@ const NewProducts = ({ searchedData, productsOnDesktop }) => {
   };
 
   const productsToDisplay =
-    viewportMode === 'mobile' ? 1 : viewportMode === 'tablet' ? 2 : productsOnDesktop;
+    viewportMode === 'mobile'
+      ? 3
+      : viewportMode === 'tablet'
+      ? 6
+      : viewportMode === 'desktop'
+      ? 9
+      : productsOnDesktop;
   useEffect(() => handlePageChange(0), [viewportMode]);
 
   const leftAction = () => {
@@ -110,7 +116,7 @@ const NewProducts = ({ searchedData, productsOnDesktop }) => {
                   (activePage + 1) * productsToDisplay
                 )
                 .map(item => (
-                  <div key={item.id} className={'col-lg-3 col-md-6 col-12'}>
+                  <div key={item.id} className={'col-xl-3 col-lg-4 col-md-6 col-12'}>
                     <ProductBox {...item} />
                   </div>
                 ))}

@@ -19,7 +19,7 @@ const Dots = ({ pagesCount, handlePageChange, activePage }) => {
   }
 
   return (
-    <div className={'col-lg-auto col-12 text-center ' + styles.dots}>
+    <div className={'col-lg-auto col-12 text-center mb-2 ' + styles.dots}>
       <ul>{dots}</ul>
     </div>
   );

@@ -16,19 +16,19 @@ const Brands = () => {
     },
     tablet: {
       breakpoint: { max: 1023, min: 425 },
-      items: 4,
+      items: 3,
       slidesToSlide: 3,
     },
     mobile: {
       breakpoint: { max: 425, min: 0 },
-      items: 4,
+      items: 3,
       slidesToSlide: 3,
     },
   };
 
   return (
     <div className={styles.root}>
-      <div className='container my-10'>
+      <div className='container p-3'>
         <div className={styles.carouselContainer}>
           <Carousel
             responsive={responsive}
@@ -36,7 +36,7 @@ const Brands = () => {
             transition='all .5'
             transitionDuration={300}
             containerClass='carousel-container'
-          //itemClass='carousel-item-padding-40-px'
+            //itemClass='carousel-item-padding-40-px'
           >
             {brands.map(brand => (
               <div key={brand.id} className={styles.brandContainer}>
