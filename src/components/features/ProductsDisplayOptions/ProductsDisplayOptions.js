@@ -14,52 +14,50 @@ const ProductsDisplayOptions = ({
   setSortBy,
 }) => {
   return (
-    <>
-      <div className={clsx('col-md col-12', styles.menu)}>
-        <div className={styles.sortBy}>
-          <p className={styles.sortByTitle}>Sort by</p>
-          <select
-            className={styles.selectSortedBy}
-            value={sortBy}
-            onChange={e => setSortBy(e.target.value)}
-          >
-            <option value={'recommended'}>Recommended</option>
-            <option value={'priceLow'}>Price - lowest first</option>
-            <option value={'priceHigh'}>Price - highest first</option>
-            <option value={'name'}>Name</option>
-          </select>
-        </div>
-        <div className={styles.productsToDisplay}>
-          <p className={styles.productToDisplayTitle}>Show</p>
-          <select
-            className={styles.selectProductsToDisplay}
-            value={productsToDisplay}
-            onChange={e => setProductsToDisplay(parseInt(e.target.value))}
-          >
-            <option value={6}>6</option>
-            <option value={12}>12</option>
-            <option value={18}>18</option>
-            <option value={24}>24</option>
-          </select>
-        </div>
-        <div className={styles.displayForm}>
-          <ul>
-            <li
-              onClick={() => setDisplayForm('list')}
-              className={clsx(displayForm === 'list' && styles.active)}
-            >
-              <FontAwesomeIcon icon={faList}></FontAwesomeIcon>
-            </li>
-            <li
-              onClick={() => setDisplayForm('grid')}
-              className={clsx(displayForm === 'grid' && styles.active)}
-            >
-              <FontAwesomeIcon icon={faSquare}></FontAwesomeIcon>
-            </li>
-          </ul>
-        </div>
+    <div className={clsx(styles.menu)}>
+      <div className={styles.sortBy}>
+        <p className={styles.sortByTitle}>Sort by</p>
+        <select
+          className={styles.selectSortedBy}
+          value={sortBy}
+          onChange={e => setSortBy(e.target.value)}
+        >
+          <option value={'recommended'}>Recommended</option>
+          <option value={'priceLow'}>Price - lowest first</option>
+          <option value={'priceHigh'}>Price - highest first</option>
+          <option value={'name'}>Name</option>
+        </select>
       </div>
-    </>
+      <div className={styles.productsToDisplay}>
+        <p className={styles.productToDisplayTitle}>Show</p>
+        <select
+          className={styles.selectProductsToDisplay}
+          value={productsToDisplay}
+          onChange={e => setProductsToDisplay(parseInt(e.target.value))}
+        >
+          <option value={6}>6</option>
+          <option value={12}>12</option>
+          <option value={18}>18</option>
+          <option value={24}>24</option>
+        </select>
+      </div>
+      <div className={styles.displayForm}>
+        <ul>
+          <li
+            onClick={() => setDisplayForm('list')}
+            className={clsx(displayForm === 'list' && styles.active)}
+          >
+            <FontAwesomeIcon icon={faList}></FontAwesomeIcon>
+          </li>
+          <li
+            onClick={() => setDisplayForm('grid')}
+            className={clsx(displayForm === 'grid' && styles.active)}
+          >
+            <FontAwesomeIcon icon={faSquare}></FontAwesomeIcon>
+          </li>
+        </ul>
+      </div>
+    </div>
   );
 };
 

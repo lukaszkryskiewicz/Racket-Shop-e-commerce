@@ -63,7 +63,7 @@ const ProductBox = props => {
         </div>
         {oldPrice && (
           <div className={styles.oldPrice}>
-            {currency.sign} {(oldPrice * currency.multiplier).toFixed(2)}
+            {(oldPrice * currency.multiplier).toFixed(0)}
           </div>
         )}
         <div className={styles.price}>
