@@ -19,10 +19,12 @@ import clsx from 'clsx';
 import Dots from '../../common/Dots/Dots';
 import CompareBar from '../../common/CompareBar/CompareBar';
 import ProductsDisplayOptions from '../../features/ProductsDisplayOptions/ProductsDisplayOptions';
+import { getViewportMode } from '../../../redux/viewportModeRedux';
 
 const ProductsPageLayout = () => {
   const { categoryId } = useParams();
   const dispatch = useDispatch();
+  const viewportMode = useSelector(getViewportMode);
   const [fade, setFade] = useState('false');
   const [productsToDisplay, setProductsToDisplay] = useState(12);
   const [activePage, setActivePage] = useState(0);
@@ -31,6 +33,13 @@ const ProductsPageLayout = () => {
   const filters = useSelector(getAllFilters);
   const currency = useSelector(getCurrency);
   const products = useSelector(state => getSortedProducts(state, sortBy));
+
+  useEffect(() => {
+    if (viewportMode === 'tablet' || viewportMode === 'mobile') {
+      setDisplayForm('grid');
+      setProductsToDisplay(12);
+    }
+  }, [viewportMode]);
 
   const productSuitsAllFilters = (product, allFilters) => {
     if (product.category === categoryId) {
