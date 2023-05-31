@@ -47,7 +47,7 @@ const NewProducts = ({ searchedData, productsOnDesktop }) => {
       : viewportMode === 'tablet'
       ? 6
       : viewportMode === 'desktop'
-      ? 6
+      ? 9
       : productsOnDesktop;
   useEffect(() => handlePageChange(0), [viewportMode]);
 
