@@ -3,8 +3,10 @@
 
 .menu {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   height: 35px;
+  gap: 30px;
+  margin-left: 20px;
 
 
   .sortBy {
@@ -43,6 +45,7 @@
 
   .displayForm {
 
+
     ul {
       //margin: 0;
       padding: 5px;
@@ -60,6 +63,29 @@
         }
 
       }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .menu {
+    justify-content: flex-start;
+    gap: 0px;
+
+    .productsToDisplay {
+      padding: 0 10px;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .menu {
+    .productsToDisplay {
+      display: none;
+    }
+
+    .displayForm {
+      display: none;
     }
   }
 }

@@ -12,17 +12,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { clearFilters } from '../../../redux/filterRedux';
 import ProductList from '../../views/ProductList/ProductList';
 import ProductGrid from '../../views/ProductGrid/ProductGrid';
-import { getAllProducts, getSortedProducts } from '../../../redux/productsRedux';
+import { getSortedProducts } from '../../../redux/productsRedux';
 import { getAllFilters } from '../../../redux/filterRedux';
 import { getCurrency } from '../../../redux/currencyRedux';
 import clsx from 'clsx';
 import Dots from '../../common/Dots/Dots';
 import CompareBar from '../../common/CompareBar/CompareBar';
 import ProductsDisplayOptions from '../../features/ProductsDisplayOptions/ProductsDisplayOptions';
+import { getViewportMode } from '../../../redux/viewportModeRedux';
 
 const ProductsPageLayout = () => {
   const { categoryId } = useParams();
   const dispatch = useDispatch();
+  const viewportMode = useSelector(getViewportMode);
   const [fade, setFade] = useState('false');
   const [productsToDisplay, setProductsToDisplay] = useState(12);
   const [activePage, setActivePage] = useState(0);
@@ -31,6 +33,13 @@ const ProductsPageLayout = () => {
   const filters = useSelector(getAllFilters);
   const currency = useSelector(getCurrency);
   const products = useSelector(state => getSortedProducts(state, sortBy));
+
+  useEffect(() => {
+    if (viewportMode === 'tablet' || viewportMode === 'mobile') {
+      setDisplayForm('grid');
+      setProductsToDisplay(12);
+    }
+  }, [viewportMode]);
 
   const productSuitsAllFilters = (product, allFilters) => {
     if (product.category === categoryId) {
@@ -104,18 +113,26 @@ const ProductsPageLayout = () => {
     }, 400);
   }, [productsToDisplay, sortBy, displayForm]);
 
-
   return (
     <div className={styles.root}>
       <Banner />
       <div className='container'>
         <div className={clsx('row', styles.filtered)}>
-          <div className={clsx('col-9', styles.productList)}>
-            <div className={clsx('row g-0 align-items-end', styles.headRow)}>
-              <div className={clsx('col-md-auto col-12 mb-3 mb-md-0', styles.heading)}>
+          <div className={clsx('col-lg-9 col-md-8 col-12', styles.productList)}>
+            <div className={clsx('row g-0 align-items-center', styles.headRow)}>
+              <div className={clsx('col-md-auto col-5 mb-3 mb-md-0', styles.heading)}>
                 <h3>{categoryId}</h3>
               </div>
-              <ProductsDisplayOptions productsToDisplay={productsToDisplay} displayForm={displayForm} sortBy={sortBy} setProductsToDisplay={setProductsToDisplay} setDisplayForm={setDisplayForm} setSortBy={setSortBy} />
+              <div className={clsx('col-md-auto col-7', styles.menu)}>
+                <ProductsDisplayOptions
+                  productsToDisplay={productsToDisplay}
+                  displayForm={displayForm}
+                  sortBy={sortBy}
+                  setProductsToDisplay={setProductsToDisplay}
+                  setDisplayForm={setDisplayForm}
+                  setSortBy={setSortBy}
+                />
+              </div>
               <div className={styles.dots}>
                 <Dots
                   pagesCount={pagesCount}
@@ -124,7 +141,11 @@ const ProductsPageLayout = () => {
                 />
               </div>
             </div>
-            <div className={`row + ${fade ? styles.fadeIn : styles.fadeOut}`}>
+            <div
+              className={`row + ${fade ? styles.fadeIn : styles.fadeOut} + ${
+                styles.productContainer
+              }`}
+            >
               {displayForm === 'list' && (
                 <ProductList productsToRender={productsToRender} />
               )}
@@ -133,19 +154,21 @@ const ProductsPageLayout = () => {
               )}
             </div>
           </div>
-          <div className={`col-3 ${styles.filters}`}>
+          <div className={`col-lg-3 col-md-4 d-sm-none d-md-block ${styles.filters}`}>
             <FilterByBrand categoryId={categoryId} />
             <FilterByPrice categoryId={categoryId} />
             <FilterByRating />
             <FilterByColor />
-            <Button variant='small' onClick={handleClick}>
-              Clear filters
-            </Button>
+            <div className={styles.clearFilters}>
+              <Button variant='small' onClick={handleClick}>
+                Clear filters
+              </Button>
+            </div>
           </div>
-          <div className={`row mt-3 ${styles.brands}`}>
+          <div className={`row mt-3 d-sm-none d-md-block ${styles.brands}`}>
             <Brands />
-            <CompareBar />
           </div>
+          <CompareBar />
         </div>
       </div>
     </div>

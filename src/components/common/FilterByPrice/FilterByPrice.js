@@ -62,7 +62,7 @@ const FilterByPrice = ({ categoryId }) => {
             </Button>
             <div className={clsx('col-5 p-0', styles.rangeDisplay)}>
               <p>
-                {currency.sign}{actualPrice[0]} - {currency.sign}{actualPrice[1]}
+                {actualPrice[0]} - {actualPrice[1]}
               </p>
             </div>
           </div>

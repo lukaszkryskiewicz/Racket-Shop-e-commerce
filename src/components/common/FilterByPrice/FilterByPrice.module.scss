@@ -57,6 +57,7 @@
       cursor: pointer;
       border: 3px solid $primary;
       border-radius: 50%;
+      z-index: 1 !important;
 
       &:active {
         background-color: $primary;
@@ -88,7 +89,7 @@
 
     .rangeDisplay {
       border: 1px solid $filter-borders;
-      font-size: 14px;
+      font-size: 12px;
       display: flex;
       justify-content: center;
       align-items: center;
