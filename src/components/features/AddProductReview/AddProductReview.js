@@ -42,7 +42,7 @@ const AddProductReview = ({ id }) => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = data => {
+  const handleAddReview = data => {
     if (stars === 0) {
       setStarsError(true);
     } else {
@@ -70,10 +70,10 @@ const AddProductReview = ({ id }) => {
           <div className={styles.reviewBox}>
             <h3>Add a review</h3>
 
-            <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+            <form className={styles.form} onSubmit={handleSubmit(handleAddReview)}>
               <h4>Your rating</h4>
               <div className={clsx('row', styles.ratingBox)}>
-                <div className={clsx('col-2', styles.rateStars)}>
+                <div className={clsx('col', styles.rateStars)}>
                   <StarsReviewBasic id={id} getStars={stars === 0 ? setStars : null} />
                   {starsError && <p>Please add rating!</p>}
                 </div>
@@ -90,30 +90,32 @@ const AddProductReview = ({ id }) => {
                 <p>{errors.text?.message}</p>
               </div>
               <div className={clsx('row', styles.inputsContainer)}>
-                <div className={clsx('col-5', styles.input)}>
-                  <input
-                    className='form-control'
-                    type='text'
-                    placeholder='Name*'
-                    {...register('author')}
-                  />
-                  <p>{errors.author?.message}</p>
-                </div>
-                <div className={clsx('col-5', styles.input)}>
-                  <input
-                    className='form-control'
-                    type='text'
-                    placeholder='Email*'
-                    {...register('email')}
-                  />
-                  <p>{errors.email?.message}</p>
+                <div className={clsx('col-md-10 col-12', styles.inputs)}>
+                  <div className={clsx('col-6', styles.input)}>
+                    <input
+                      className='form-control'
+                      type='text'
+                      placeholder='Name*'
+                      {...register('author')}
+                    />
+                    <p>{errors.author?.message}</p>
+                  </div>
+                  <div className={clsx('col-6', styles.input)}>
+                    <input
+                      className='form-control'
+                      type='text'
+                      placeholder='Email*'
+                      {...register('email')}
+                    />
+                    <p>{errors.email?.message}</p>
+                  </div>
                 </div>
                 <Button
-                  className={clsx('col-2', styles.button)}
+                  className={clsx('col-12 col-md-2', styles.button)}
                   type='submit'
                   variant='small'
                 >
-                  Continue
+                  Submit
                 </Button>
               </div>
             </form>

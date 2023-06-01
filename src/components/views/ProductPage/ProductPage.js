@@ -9,7 +9,7 @@ const ProductPage = () => {
     <div className={styles.root}>
       <ProductDetails />
       <ProductExtendedInfo id='#review' />
-      <NewProducts productsOnDesktop={8} />
+      <NewProducts productsOnDesktop={4} />
     </div>
   );
 };

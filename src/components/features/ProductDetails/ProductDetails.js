@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import { getProductById } from '../../../redux/productsRedux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import { getCurrency } from '../../../redux/currencyRedux';
 import Button from '../../common/Button/Button';
 import ActionButton from '../../common/ActionButton/ActionButton';
@@ -70,13 +70,6 @@ const ProductDetails = ({ productData }) => {
     }
   };
 
-  const scrollToReview = () => {
-    const element = document.getElementById('review');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <div className={styles.root}>
       {alert.status && (
@@ -100,9 +93,6 @@ const ProductDetails = ({ productData }) => {
               {' '}
               <p className={styles.photoOverlay}>Picture {activeImage}</p>
               <img alt={product.name} src={product.source} />
-              {/*               <Button className={styles.buttonZoom} variant='outline' onClick={handleEnlargeClick}>
-                <FontAwesomeIcon className={styles.zoomIcon} icon={faUpRightAndDownLeftFromCenter} />
-              </Button> */}
             </div>
             <div className={clsx('row g-0 m-2 justify-content-between', styles.slider)}>
               <a
@@ -158,8 +148,7 @@ const ProductDetails = ({ productData }) => {
                 </div>
                 <Link
                   className={clsx(styles.reviewCallButton)}
-                  to={`/product/${product.id}#review`}
-                  onClick={scrollToReview}
+                  to={`/product/${product.id}#reviews`}
                 >
                   Add your review
                 </Link>
@@ -249,7 +238,7 @@ const ProductDetails = ({ productData }) => {
                 </p>
               </div>
             </div>
-            <div className={clsx('row', styles.socialRow)}>
+            <div className={clsx('row d-none d-lg-block', styles.socialRow)}>
               <div className={styles.social}>
                 {socialMedia.map(socialMedium => (
                   <Link
