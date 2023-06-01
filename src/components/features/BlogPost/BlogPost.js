@@ -19,17 +19,17 @@ const BlogPost = ({ blogPostId }) => {
       </div>
       <p className={styles.postText}>{post.text}</p>
       <div className={clsx('row', styles.postInfoContainer)}>
-        <div className={clsx('col-8', styles.postFooter)}>
+        <div className={clsx('col-auto', styles.postFooter)}>
           <ul className={styles.postFooterIcons}>
             <li>
               <FontAwesomeIcon icon={faUser} className={styles.icon} />
               {post.author}
             </li>
-            <li>
+            <li className={clsx('d-none d-lg-inline')}>
               <FontAwesomeIcon icon={faCalendar} className={styles.icon} />
               {post.date}
             </li>
-            <li>
+            <li className={clsx('d-none d-md-inline')}>
               <FontAwesomeIcon icon={faFolder} className={styles.icon} />
               {post.category.map(category => (
                 <span key={category}>
@@ -40,7 +40,7 @@ const BlogPost = ({ blogPostId }) => {
             </li>
           </ul>
         </div>
-        <div className={`col-2 ${styles.backToBlog}`}>
+        <div className={`col-auto ${styles.backToBlog}`}>
           <Link className={styles.link} to={'/blog'}>
             Go back to Blog
           </Link>

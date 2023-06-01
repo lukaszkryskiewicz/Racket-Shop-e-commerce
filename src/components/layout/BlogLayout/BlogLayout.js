@@ -14,10 +14,10 @@ const BlogLayout = () => {
     <div className={styles.root}>
       <div className={`container ${styles.mainContainer}`}>
         <div className='row'>
-          <div className='col-9'>
+          <div className='col-md-9 col-12'>
             {blogPostId ? <BlogPost blogPostId={blogPostId} /> : <BlogPosts />}
           </div>
-          <div className='col-3 mt-3'>
+          <div className='d-none d-md-block col-3 mt-3'>
             <BlogRecentPosts />
             <BlogCategories />
           </div>
