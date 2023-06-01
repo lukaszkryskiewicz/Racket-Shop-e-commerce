@@ -59,4 +59,18 @@
 
     }
   }
+
+  .pageNavigation {
+    text-align: center;
+
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+
+      .active {
+        color: $primary;
+      }
+    }
+  }
 }
