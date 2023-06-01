@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './ProductExtendedInfo.module.scss';
 import clsx from 'clsx';
-/* import PropTypes from 'prop-types'; */
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getProductById } from '../../../redux/productsRedux';
@@ -9,6 +8,8 @@ import ProductReviews from '../ProductReviews/ProductReviews';
 
 const ProductExtendedInfo = () => {
   const { productId } = useParams();
+  const tabs = ['description', 'reviews', 'specification', 'custom tab'];
+  const [activeTab, setActiveTab] = useState('reviews');
   const product = useSelector(state => getProductById(state, productId));
 
   return (
@@ -16,31 +17,41 @@ const ProductExtendedInfo = () => {
       <div className={'container ' + styles.container}>
         <div className={styles.box}>
           <div className={'row ' + styles.menu}>
-            <div className={'col-2 ' + styles.menuText}>
-              <p>description</p>
-            </div>
-            <div
-              id='review'
-              className={clsx('col-2 ' + styles.menuText, styles.active)}
-            >
-              <p>reviews({product.reviews ? product.reviews.length : 0})</p>
-            </div>
-            <div className={'col-2 ' + styles.menuText}>
-              <p>specification</p>
-            </div>
-            <div className={'col-2 ' + styles.menuText}>
-              <p>custom tab</p>
-            </div>
+            {tabs.map(tab => (
+              <div
+                className={clsx(
+                  'col-md-3',
+                  styles.menuText,
+                  tab === activeTab && styles.active
+                )}
+                id={tab}
+                key={tab}
+              >
+                <div onClick={() => setActiveTab(tab)}>
+                  {tab}{' '}
+                  {tab === 'reviews' &&
+                    product.reviews &&
+                    '(' + (product.reviews.length || '0') + ')'}
+                </div>
+              </div>
+            ))}
           </div>
-          <ProductReviews {...product} />
+          {activeTab === 'reviews' && <ProductReviews {...product} />}
+          {activeTab !== 'reviews' && (
+            <div className={clsx(styles.tabsContent)}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+              commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+              cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+              est laborum.
+            </div>
+          )}
         </div>
       </div>
     </div>
   );
 };
-
-/* ProductExtendedInfo.propTypes = {
-
-}; */
 
 export default ProductExtendedInfo;

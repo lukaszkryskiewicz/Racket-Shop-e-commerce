@@ -17,7 +17,7 @@
 
         .photo {
           position: relative;
-          height: 500px;
+          min-height: 500px;
           overflow: hidden;
 
           .photoOverlay {
@@ -192,6 +192,7 @@
       .overviewRow {
         padding: 20px 0;
         border-bottom: 1px solid rgba(128, 128, 128, 0.3);
+        font-size: 15px;
 
         .overviewTitle {
           font-weight: bold;
@@ -223,7 +224,6 @@
 
           .media {
             text-align: center;
-            width: 120px;
             margin: 3px;
           }
         }
@@ -240,4 +240,30 @@
 .fadeOut {
   opacity: 0;
   transition: opacity 400ms;
+}
+
+@media (max-width: 768px) {
+  .root {
+    .productDetails {
+      .mainRow {
+        .infoSection {
+          .headerRow {
+            .title {
+              h1 {
+                font-size: 30px;
+              }
+            }
+
+            .review {
+              .reviewsNumber {
+                padding: 5px;
+              }
+            }
+          }
+
+
+        }
+      }
+    }
+  }
 }

@@ -10,23 +10,20 @@ const ProductReviews = product => {
     <div className={styles.root}>
       <ul className={styles.givenReviews}>
         {product.reviews ? (
-          product.reviews.map(review =>
+          product.reviews.map(review => (
             <div key={review.id}>
               <div className={styles.reviewContent}>
                 <div className={clsx('row', styles.reviewFirstRow)}>
-                  <div className={clsx('col-2', styles.reviewStars)}>
+                  <div className={clsx('col', styles.reviewStars)}>
                     <StarsReviewBasic id={product.id} stars={review.stars} noAction />
                   </div>
-                  <div className={clsx('col-2', styles.reviewDate)}>
-                    {review.date}
-                  </div>
+                  <div className={clsx('col', styles.reviewDate)}>{review.date}</div>
                 </div>
-                <p className={styles.reviewText}>
-                  {review.text}
-                </p>
+                <p className={styles.reviewText}>{review.text}</p>
                 <p className={styles.reviewAuthor}>{review.author}</p>
               </div>
-            </div>)
+            </div>
+          ))
         ) : (
           <li>
             <p className={styles.reviewText}>There are no reviews for this product</p>

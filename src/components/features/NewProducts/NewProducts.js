@@ -73,7 +73,11 @@ const NewProducts = ({ searchedData, productsOnDesktop }) => {
     );
     pagesCount = Math.ceil(productsToRender.length / productsToDisplay);
   } else if (pageAddress.productId) {
-    productsToRender = productsToRender.filter((item, index) => index < 4);
+    if (viewportMode === 'desktop') {
+      productsToRender = productsToRender.filter((item, index) => index < 3);
+    } else {
+      productsToRender = productsToRender.filter((item, index) => index < 4);
+    }
     pagesCount = 0;
   }
 
@@ -101,11 +105,13 @@ const NewProducts = ({ searchedData, productsOnDesktop }) => {
                     ))}
                 </ul>
               </div>
-              <Dots
-                pagesCount={pagesCount}
-                handlePageChange={handlePageChange}
-                activePage={activePage}
-              />
+              {pagesCount > 0 && (
+                <Dots
+                  pagesCount={pagesCount}
+                  handlePageChange={handlePageChange}
+                  activePage={activePage}
+                />
+              )}
             </div>
           </div>
           <div className={`row + ${fade ? styles.fadeIn : styles.fadeOut}`}>
