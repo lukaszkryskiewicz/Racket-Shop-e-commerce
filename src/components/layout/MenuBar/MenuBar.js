@@ -1,28 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import ProductSearch from '../../features/ProductSearch/ProductSearch';
 import styles from './MenuBar.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { getAllCategories } from '../../../redux/categoriesRedux';
 
 const MenuBar = () => {
   const [mobileMenu, setMobileMenu] = useState(true);
-  const location = useLocation();
+  const categories = useSelector(getAllCategories);
   const action = () => {
     setMobileMenu(!mobileMenu);
   };
-
-  const menuLinks = [
-    '/',
-    'tennis',
-    'padel',
-    'badminton',
-    'squash',
-    'tableTennis',
-    'blog',
-  ];
 
   return (
     <div className={mobileMenu ? styles.root : styles.rootMobile}>
@@ -36,17 +28,29 @@ const MenuBar = () => {
           </button>
           <div className={mobileMenu ? 'col-auto ' + styles.menu : styles.menuMobile}>
             <ul>
-              {menuLinks.map(link => (
-                <li key={link}>
+              <li>
+                <NavLink exact to='/'
+                  className={isActive => isActive ? styles.active : undefined}>
+                  Home
+                </NavLink>
+              </li>
+              {categories.map(category => (
+                <li key={category.id}>
                   <NavLink
                     exact
-                    to={link !== '/' ? link !== 'blog' ? '/shop/' + link : '/' + link : link}
-                    className={isActive => ((isActive || location.pathname.includes('/' + link)) ? styles.active : undefined)}
+                    to={'/shop/' + category.id}
+                    className={isActive => (isActive ? styles.active : undefined)}
                   >
-                    {link === '/' ? 'home' : link}
+                    {category.name}
                   </NavLink>
                 </li>
               ))}
+              <li>
+                <NavLink exact to='/blog'
+                  className={isActive => isActive ? styles.active : undefined}>
+                  blog
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>

@@ -3032,5 +3032,6 @@ const initialState = {
   },
   currency: { name: 'USD', multiplier: 1, sign: '$' },
   productFilters: [],
+  loggedUser: false,
 };
 export default initialState;
