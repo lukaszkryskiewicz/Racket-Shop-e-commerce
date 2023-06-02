@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './FilterByBrand.module.scss';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useDispatch } from 'react-redux';
-import { removeFilter, updateFilter } from '../../../redux/filterRedux';
+import { getAllFilters, removeFilter, updateFilter } from '../../../redux/filterRedux';
 import { getAllProducts } from '../../../redux/productsRedux';
 import { useSelector } from 'react-redux';
 
@@ -12,6 +12,16 @@ const FilterByBrand = ({ categoryId }) => {
   const dispatch = useDispatch();
   const [activeBrand, setActiveBrand] = useState(null);
   const products = useSelector(state => getAllProducts(state));
+  const productFilters = useSelector(getAllFilters);
+
+  const brandFilter = productFilters.find(filter => filter.name === 'brandFilter');
+  useEffect(() => {
+    if (brandFilter) {
+      setActiveBrand(brandFilter.value);
+    } else {
+      setActiveBrand(null);
+    }
+  }, [brandFilter]);
 
   const brands = products.reduce((acc, obj) => {
     if (obj.category === categoryId) {

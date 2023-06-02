@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './FilterByRating.module.scss';
-import { useDispatch } from 'react-redux';
-import { removeFilter, updateFilter } from '../../../redux/filterRedux';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllFilters, removeFilter, updateFilter } from '../../../redux/filterRedux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
@@ -10,6 +10,17 @@ import clsx from 'clsx';
 const FilterByRating = () => {
   const dispatch = useDispatch();
   const [activeRating, setActiveRating] = useState(null);
+  const productFilters = useSelector(getAllFilters);
+
+  const ratingFilter = productFilters.find(filter => filter.name === 'ratingFilter');
+  useEffect(() => {
+    if (ratingFilter) {
+      setActiveRating(ratingFilter.value);
+    } else {
+      setActiveRating(null);
+    }
+  }, [ratingFilter]);
+
 
   const handleClick = row => {
     if (activeRating === row) {

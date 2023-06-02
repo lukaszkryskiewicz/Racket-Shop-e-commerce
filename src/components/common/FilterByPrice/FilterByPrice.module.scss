@@ -80,11 +80,14 @@
 
 
     .button {
-      background-color: $primary;
       font-size: 14px;
       margin: 0;
       text-decoration: none;
       text-transform: uppercase;
+
+      &.active {
+        background-color: $primary;
+      }
     }
 
     .rangeDisplay {
