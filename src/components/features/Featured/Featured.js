@@ -103,7 +103,7 @@ const Featured = () => {
               <Carousel
                 activeIndex={hotDealIndex}
                 onSelect={handleSelect}
-                interval={slideInterval}
+                interval={!modal ? slideInterval : null}
                 pause={false}
                 controls={false}
                 fade={true}
