@@ -13,6 +13,7 @@
     transform: translate(-50%, -50%);
     background-color: #ffffff;
     display: flex;
+    overflow: scroll;
 
     .closeButton {
       font-size: 25px;

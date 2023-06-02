@@ -142,8 +142,7 @@ const ProductsPageLayout = () => {
               </div>
             </div>
             <div
-              className={`row + ${fade ? styles.fadeIn : styles.fadeOut} + ${
-                styles.productContainer
+              className={`row + ${fade ? styles.fadeIn : styles.fadeOut} + ${styles.productContainer
               }`}
             >
               {displayForm === 'list' && (
@@ -156,7 +155,7 @@ const ProductsPageLayout = () => {
           </div>
           <div className={`col-lg-3 col-md-4 d-sm-none d-md-block ${styles.filters}`}>
             <FilterByBrand categoryId={categoryId} />
-            <FilterByPrice categoryId={categoryId} />
+            <FilterByPrice categoryId={categoryId} clearFilters={handleClick} />
             <FilterByRating />
             <FilterByColor />
             <div className={styles.clearFilters}>

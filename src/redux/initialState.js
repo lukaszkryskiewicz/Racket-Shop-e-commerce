@@ -30,8 +30,22 @@ const initialState = {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
       quantity: 1,
       reviews: [
-        { id: 1, author: 'Lukas', stars: 3, date: '01/03/2021', text: 'Lorem Ipsum... Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.' },
-        { id: 2, author: 'Thomas', stars: 4, date: '02/03/2021', text: 'Lorem Ipsum... Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.' },
+        {
+          id: 1,
+          author: 'Lukas',
+          stars: 3,
+          date: '01/03/2021',
+          text:
+            'Lorem Ipsum... Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        },
+        {
+          id: 2,
+          author: 'Thomas',
+          stars: 4,
+          date: '02/03/2021',
+          text:
+            'Lorem Ipsum... Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        },
       ],
     },
     {
@@ -2996,17 +3010,17 @@ const initialState = {
     blogFilter: [],
   },
   promotion: {
-    firstImage: './images/racket/tennis/tennis-racket-21.webp',
+    firstImage: '/images/racket/tennis/tennis-racket-21.webp',
     firstAltName: 'tennis-racket',
     firstTitle: 'Tennis Rackets',
     firstTitleStrong: 'head',
     firstDiscountBox: '-15%',
-    secondImage: './images/racket/badminton/badminton-racket-19.webp',
+    secondImage: '/images/racket/badminton/badminton-racket-19.webp',
     secondAltName: 'badminton-racket',
     secondTitleStrong: 'Badminton Rackets',
     secondSubtitle: 'collection',
     secondPrice: 'up to -25%',
-    thirdImage: './images/racket/squash/squash-racket-17.webp',
+    thirdImage: '/images/racket/squash/squash-racket-17.webp',
     thirdAltName: 'squash-racket',
     thirdTitleStrong: 'special',
     thirdTitle: 'collection',
