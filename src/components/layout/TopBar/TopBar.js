@@ -6,18 +6,22 @@ import { faCaretDown, faUser, faLock, faBars } from '@fortawesome/free-solid-svg
 import { Link } from 'react-router-dom';
 import styles from './TopBar.module.scss';
 import Currency from '../../features/Currency/Currency';
+import { useDispatch, useSelector } from 'react-redux';
+import { getLoggedUser, logOut } from '../../../redux/loggedUserRedux';
 
 const TopBar = () => {
+  const loggedUser = useSelector(getLoggedUser);
+  const dispatch = useDispatch();
   const [isLogged, setIsLogged] = useState(false);
 
   useEffect(() => {
-    if (JSON.parse(localStorage.getItem('isLogged'))) {
+    if (loggedUser) {
       setIsLogged(true);
     }
-  }, []);
+  }, [loggedUser]);
 
   const handleLogout = () => {
-    localStorage.setItem('isLogged', JSON.stringify(false));
+    dispatch(logOut());
     setIsLogged(false);
   };
 

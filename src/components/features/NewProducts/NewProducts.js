@@ -7,14 +7,14 @@ import Swipeable from '../../common/Swipeable/Swipeable';
 import { useParams } from 'react-router';
 import { useLocation } from 'react-router';
 import { useSelector } from 'react-redux';
-import { getAll } from '../../../redux/categoriesRedux';
+import { getAllCategories } from '../../../redux/categoriesRedux';
 import { getAllProducts } from '../../../redux/productsRedux';
 import { getViewportMode } from '../../../redux/viewportModeRedux';
 import Dots from '../../common/Dots/Dots';
 import clsx from 'clsx';
 
 const NewProducts = ({ searchedData, productsOnDesktop }) => {
-  const categories = useSelector(getAll);
+  const categories = useSelector(getAllCategories);
   const products = useSelector(getAllProducts);
   const viewportMode = useSelector(getViewportMode);
   const [activePage, setActivePage] = useState(0);
@@ -45,10 +45,10 @@ const NewProducts = ({ searchedData, productsOnDesktop }) => {
     viewportMode === 'mobile'
       ? 3
       : viewportMode === 'tablet'
-      ? 6
-      : viewportMode === 'desktop'
-      ? 9
-      : productsOnDesktop;
+        ? 6
+        : viewportMode === 'desktop'
+          ? 9
+          : productsOnDesktop;
   useEffect(() => handlePageChange(0), [viewportMode]);
 
   const leftAction = () => {

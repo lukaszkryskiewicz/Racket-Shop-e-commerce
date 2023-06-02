@@ -30,20 +30,20 @@ const FilterByPrice = ({ categoryId, clearFilters }) => {
     });
     return tempPrice * currency.multiplier;
   };
-  const [actualPrice, setActualPrice] = useState([0, maxPrice().toFixed(0)]);
+  const [actualPrice, setActualPrice] = useState([0, parseInt(maxPrice().toFixed(0))]);
 
   useEffect(() => {
     if (priceFilter) {
       setActualPrice(priceFilter.value);
       setFilterApllied(true);
     } else {
-      setActualPrice([0, maxPrice().toFixed(0)]);
+      setActualPrice([0, parseInt(maxPrice().toFixed(0))]);
       setFilterApllied(false);
     }
   }, [priceFilter]);
 
   useEffect(() => {
-    setActualPrice([0, maxPrice().toFixed(0)]);
+    setActualPrice([0, parseInt(maxPrice().toFixed(0))]);
     clearFilters();
   }, [currency]);
 

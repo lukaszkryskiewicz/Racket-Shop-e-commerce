@@ -14,11 +14,12 @@ import brandsReducer from './brandsRedux';
 import filtersReducer from './filterRedux';
 import searchReducer from './searchRedux';
 import currencyReducer from './currencyRedux';
+import loggedUserReducer from './loggedUserRedux';
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['cart', 'products', 'currency'],
+  whitelist: ['cart', 'products', 'currency', 'loggedUser'],
 };
 // define reducers
 const reducers = {
@@ -33,6 +34,7 @@ const reducers = {
   productFilters: filtersReducer,
   search: searchReducer,
   currency: currencyReducer,
+  loggedUser: loggedUserReducer,
 };
 
 const persistedReducer = persistReducer(persistConfig, combineReducers(reducers));

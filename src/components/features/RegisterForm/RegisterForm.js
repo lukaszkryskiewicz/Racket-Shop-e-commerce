@@ -71,13 +71,14 @@ const RegisterForm = () => {
         {infoAlert && <UserAlert closeAlert={setInfoAlert} type={alertType} />}
         <div className='container'>
           <div className='row justify-content-center my-5'>
-            <form className='col-12 col-md-8 col-lg-4'>
+            <form className='col-12 col-md-8 col-lg-4' onSubmit={validate(handleSubmit)}>
               <h3 className='text-center'>Create an account</h3>
               <input
                 {...register('email', {
                   required: true,
                   pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                 })}
+                autoComplete='username'
                 value={email}
                 type='email'
                 className='form-control my-3'
@@ -90,6 +91,7 @@ const RegisterForm = () => {
                   required: true,
                   minLength: 3,
                 })}
+                autoComplete='new-password'
                 value={password}
                 type={inputType}
                 className='form-control my-3'
@@ -103,6 +105,7 @@ const RegisterForm = () => {
                   minLength: 3,
                   validate: value => value === password,
                 })}
+                autoComplete='new-password'
                 value={repeatPassword}
                 type={inputType}
                 className='form-control my-3'
@@ -158,7 +161,7 @@ const RegisterForm = () => {
                   <Link to='/'>&lt;Back</Link>
                 </div>
                 <div className='col text-end'>
-                  <Button variant='main' type='submit' onClick={validate(handleSubmit)}>
+                  <Button variant='main' type='submit'>
                     Sign up
                   </Button>
                 </div>

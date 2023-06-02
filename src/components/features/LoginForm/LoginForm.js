@@ -5,8 +5,11 @@ import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import UserAlert from '../../common/UserAlert/UserAlert';
 import { Form, Modal } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
+import { logIn } from '../../../redux/loggedUserRedux';
 
 const LoginForm = () => {
+  const dispatch = useDispatch();
   const [inputType, setInputType] = useState('password');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -34,11 +37,10 @@ const LoginForm = () => {
 
     if (userIndex !== -1 && usersDB[userIndex].userPassword === password) {
       setAlertType('login');
-      localStorage.setItem('isLogged', JSON.stringify(true));
+      dispatch(logIn({ userName: usersDB[userIndex].userEmail }));
     } else {
       setAlertType('loginError');
     }
-
     setInfoAlert(true);
   };
 
@@ -47,13 +49,14 @@ const LoginForm = () => {
       {infoAlert && <UserAlert type={alertType} closeAlert={setInfoAlert} />}
       <div className='container'>
         <div className='row justify-content-center my-5'>
-          <form className='col-12 col-md-8 col-lg-4'>
+          <form className='col-12 col-md-8 col-lg-4' onSubmit={validate(handleSubmit)}>
             <h3 className='text-center'>Sign in to Bazar</h3>
             <input
               {...register('email', {
                 required: true,
                 pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
               })}
+              autoComplete='username'
               type='email'
               className='form-control my-3'
               placeholder='Email*'
@@ -62,6 +65,7 @@ const LoginForm = () => {
             ></input>
             <input
               {...register('password', { required: true })}
+              autoComplete='current-password'
               type={inputType}
               className='form-control my-3'
               placeholder='Password*'
@@ -85,7 +89,7 @@ const LoginForm = () => {
                 </div>
               </div>
               <div className='col text-end'>
-                <Button variant='main' type='submit' onClick={validate(handleSubmit)}>
+                <Button variant='main' type='submit'>
                   Sign in
                 </Button>
               </div>

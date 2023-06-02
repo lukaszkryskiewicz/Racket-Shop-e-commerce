@@ -6,10 +6,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { changeSearch } from '../../../redux/searchRedux';
 import styles from './ProductSearch.module.scss';
-import { getAll } from '../../../redux/categoriesRedux';
+import { getAllCategories } from '../../../redux/categoriesRedux';
 
 const ProductSearch = () => {
-  const categories = useSelector(getAll);
+  const categories = useSelector(getAllCategories);
   const [searchText, setSearchText] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
 
