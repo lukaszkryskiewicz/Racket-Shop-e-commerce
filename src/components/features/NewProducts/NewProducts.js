@@ -45,11 +45,11 @@ const NewProducts = ({ searchedData, productsOnDesktop }) => {
     viewportMode === 'mobile'
       ? 3
       : viewportMode === 'tablet'
-        ? 6
-        : viewportMode === 'desktop'
-          ? 9
-          : productsOnDesktop;
-  useEffect(() => handlePageChange(0), [viewportMode]);
+      ? 6
+      : viewportMode === 'desktop'
+      ? 9
+      : productsOnDesktop;
+  useEffect(() => handlePageChange(0), [viewportMode, searchedData]);
 
   const leftAction = () => {
     if (activePage > 0) {
