@@ -41,14 +41,39 @@ const NewProducts = ({ searchedData, productsOnDesktop }) => {
     }, 600);
   };
 
-  const productsToDisplay =
-    viewportMode === 'mobile'
-      ? 3
-      : viewportMode === 'tablet'
-      ? 6
-      : viewportMode === 'desktop'
-      ? 9
-      : productsOnDesktop;
+  const isSearchPage = location.pathname.includes('/search');
+
+  let productsToDisplay;
+
+  switch (viewportMode) {
+    case 'mobile':
+      productsToDisplay = isSearchPage ? 5 : 3;
+      break;
+    case 'tablet':
+      productsToDisplay = isSearchPage ? 10 : 6;
+      break;
+    case 'desktop':
+      productsToDisplay = isSearchPage ? 12 : 9;
+      break;
+    default:
+      productsToDisplay = isSearchPage ? 18 : productsOnDesktop;
+      break;
+  }
+  /*  const productsToDisplay = isSearchPage
+     ? viewportMode === 'mobile'
+       ? 6
+       : viewportMode === 'tablet'
+         ? 12
+         : viewportMode === 'desktop'
+           ? 15
+           : productsOnDesktop
+     : viewportMode === 'mobile'
+       ? 3
+       : viewportMode === 'tablet'
+         ? 6
+         : viewportMode === 'desktop'
+           ? 9
+           : productsOnDesktop; */
   useEffect(() => handlePageChange(0), [viewportMode, searchedData]);
 
   const leftAction = () => {
@@ -90,10 +115,10 @@ const NewProducts = ({ searchedData, productsOnDesktop }) => {
               <div className={'col-md-auto col-12 mb-3 mb-md-0 ' + styles.heading}>
                 <h3>New products</h3>
               </div>
-              <div className={'col-md col-12 ' + styles.menu}>
-                <ul>
-                  {!location.pathname.includes('search') &&
-                    categories.map(item => (
+              {!isSearchPage && (
+                <div className={'col-md col-12 ' + styles.menu}>
+                  <ul>
+                    {categories.map(item => (
                       <li key={item.id}>
                         <a
                           className={clsx(item.id === activeCategory && styles.active)}
@@ -103,8 +128,9 @@ const NewProducts = ({ searchedData, productsOnDesktop }) => {
                         </a>
                       </li>
                     ))}
-                </ul>
-              </div>
+                  </ul>
+                </div>
+              )}
               {pagesCount > 0 && (
                 <Dots
                   pagesCount={pagesCount}

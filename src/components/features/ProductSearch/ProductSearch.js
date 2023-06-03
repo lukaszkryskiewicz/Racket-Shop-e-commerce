@@ -17,22 +17,15 @@ const ProductSearch = () => {
 
   const dispatch = useDispatch();
 
-  /*   useEffect(() => {
-      dispatch(changeSearch({ searchText: '', category: undefined }));
-    }, [dispatch]); */
-
   const handleSubmit = e => {
-    console.log('test');
     if (searchText.length > 0) {
       e.preventDefault();
-      console.log('test2');
       const category = selectedCategory ? selectedCategory.toLowerCase() : undefined;
       dispatch(changeSearch({ searchText, category }));
       setSearchText('');
       setSelectedCategory('');
       history.push('/search');
     } else {
-      console.log('test3');
       e.preventDefault();
     }
   };
