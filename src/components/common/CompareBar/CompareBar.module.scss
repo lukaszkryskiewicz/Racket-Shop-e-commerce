@@ -8,7 +8,7 @@
   padding: 10px;
   background-color: #f1f1f1;
   text-align: left;
-  z-index: 1;
+  z-index: 100;
 
   .compareBar {
     display: flex;
@@ -24,17 +24,7 @@
       min-height: 3rem;
       width: 4rem;
 
-      .name {
-        text-align: center;
-      }
-      .price {
-        text-align: center;
-      }
 
-       .fav {
-        color: $primary;
-        text-align: center;
-      }
 
       img {
         height: 100%;
