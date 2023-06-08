@@ -7,13 +7,13 @@ import { faWindowClose } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { toggleProductCompare } from '../../../redux/productsRedux';
 import { useDispatch } from 'react-redux';
-import CompareModal from '../CompareModal/CompareModal';
 import clsx from 'clsx';
+import CompareModalBase from '../CompareModalBase/CompareModalBase';
 
 const CompareBar = () => {
   const dispatch = useDispatch();
   const compare = useSelector(state => getProductsToCompare(state));
-  const [compareModal, setCompareModal] = useState(true);
+  const [compareModal, setCompareModal] = useState(false);
 
   const handleClick = id => {
     dispatch(toggleProductCompare(id));
@@ -28,7 +28,7 @@ const CompareBar = () => {
 
   return (
     <div className={styles.root}>
-      {compareModal && <CompareModal closeModal={setCompareModal} />}
+      {compareModal && <CompareModalBase closeModal={setCompareModal} />}
       <div className='container'>
         <div className={styles.compareBar}>
           <p className={styles.title}>Products to compare:</p>
@@ -42,7 +42,11 @@ const CompareBar = () => {
               </div>
             </div>
           ))}
-          <Button variant='small' className={styles.button} onClick={handleCompareClick}>
+          <Button
+            variant='small'
+            className={styles.button}
+            onClick={handleCompareClick}
+          >
             Compare
           </Button>
         </div>
