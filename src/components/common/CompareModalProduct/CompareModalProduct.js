@@ -3,8 +3,16 @@ import styles from './CompareModalProduct.module.scss';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import StarsReviewBasic from '../StarsReviewBasic/StarsReviewBasic';
+import Button from '../Button/Button';
+import { useDispatch } from 'react-redux';
+import { toggleProductCompare } from '../../../redux/productsRedux';
 
 const CompareModalProduct = ({ product }) => {
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    dispatch(toggleProductCompare(product.id));
+  };
+
   return (
     <div className={clsx('col', styles.root)}>
       <div className={clsx(styles.productColumn)} key={product.id}>
@@ -48,6 +56,17 @@ const CompareModalProduct = ({ product }) => {
               <p>Link</p>
             ) : (
               <a href={'/product/' + product.id}>{product.name}</a>
+            )}
+          </div>
+        </div>
+        <div className={styles.infoSection}>
+          <div className={styles.deleteCompare}>
+            {product.id === 'title-col' ? (
+              <p>Delete product</p>
+            ) : (
+              <Button onClick={handleClick} variant='main'>
+                Delete
+              </Button>
             )}
           </div>
         </div>
