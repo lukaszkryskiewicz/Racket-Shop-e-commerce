@@ -9,19 +9,25 @@ import { toggleProductCompare } from '../../../redux/productsRedux';
 import { useDispatch } from 'react-redux';
 import clsx from 'clsx';
 import CompareModalBase from '../CompareModalBase/CompareModalBase';
+import Alert from '../Alert/Alert';
 
 const CompareBar = () => {
   const dispatch = useDispatch();
   const compare = useSelector(state => getProductsToCompare(state));
   const [compareModal, setCompareModal] = useState(false);
+  const [alert, setAlert] = useState(false);
 
   const handleClick = id => {
     dispatch(toggleProductCompare(id));
   };
 
   const handleCompareClick = e => {
-    e.preventDefault();
-    setCompareModal(true);
+    if (compare.length < 2) {
+      setAlert(true);
+    } else {
+      e.preventDefault();
+      setCompareModal(true);
+    }
   };
 
   if (!compare.length) return null;
@@ -29,6 +35,7 @@ const CompareBar = () => {
   return (
     <div className={styles.root}>
       {compareModal && <CompareModalBase closeModal={setCompareModal} />}
+      {alert && <Alert type='compareError' closeAlert={setAlert} />}
       <div className='container'>
         <div className={styles.compareBar}>
           <p className={styles.title}>Products to compare:</p>

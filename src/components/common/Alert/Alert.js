@@ -40,6 +40,13 @@ const Alert = ({ type, id, quantity = 1, closeAlert, action }) => {
           </>,
           text: 'Please confirm or cancel',
         };
+      case 'compareError':
+        return {
+          title: 'Not enough products to compare',
+          content: <>
+            <li className={styles.productAmount}>Please add at least one more Product to comparison</li>
+          </>,
+        };
       default:
         return null;
     }
@@ -72,14 +79,16 @@ const Alert = ({ type, id, quantity = 1, closeAlert, action }) => {
           <div className={styles.alertContent}>
             <h3 className={styles.alertHeader}>{alertMessage.title}</h3>
             <div className={clsx('row', styles.alertInfoContainer)}>
-              <div className={clsx('col-4')}>
-                <div className={styles.imageContainer}>
-                  <img src={product.source} alt={product.name} />
+              {product?.source &&
+                <div className={clsx('col-4')}>
+                  <div className={styles.imageContainer}>
+                    <img src={product.source} alt={product.name} />
+                  </div>
                 </div>
-              </div>
-              <div className={clsx('col-8', styles.rightContent)}>
+              }
+              <div className={clsx(product ? 'col-8' : 'col-12', styles.rightContent)}>
                 <div className={styles.textContainer}>
-                  <h3 className={styles.productName}>{product.name}</h3>
+                  {product?.name && <h3 className={styles.productName}>{product.name}</h3>}
                   <ul className={styles.productInfoList}>
                     {alertMessage.content}
                     {alertMessage.text}
@@ -89,6 +98,7 @@ const Alert = ({ type, id, quantity = 1, closeAlert, action }) => {
                       {(type === 'success' || type === 'delete') && <Button link='/cart' variant='small' className={styles.button}>go to cart</Button>}
                       {type !== 'delete' && <Button link='#' onClick={handleClick} variant='small' className={styles.button}>continue shopping</Button>}
                       {type === 'delete' && <Button link='/cart' variant='small' className={styles.button} onClick={handleDelete}>delete product</Button>}
+                      {/*                       {type === 'compareError' && <Button variant='small' className={styles.button} onClick={handleClick}>close alert</Button>} */}
                     </div>
                   </div>
                 </div>
