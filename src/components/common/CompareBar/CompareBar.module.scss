@@ -8,15 +8,14 @@
   padding: 10px;
   background-color: #f1f1f1;
   text-align: left;
-  z-index: 1;
+  z-index: 100;
 
   .compareBar {
     display: flex;
     justify-content: flex-start;
 
     .title {
-      margin: auto 20px;
-
+      margin: auto 5px;
     }
 
     .comparedItem {
@@ -24,17 +23,7 @@
       min-height: 3rem;
       width: 4rem;
 
-      .name {
-        text-align: center;
-      }
-      .price {
-        text-align: center;
-      }
 
-       .fav {
-        color: $primary;
-        text-align: center;
-      }
 
       img {
         height: 100%;
@@ -66,5 +55,21 @@
       align-items: center;
     }
 
+  }
+}
+
+@media (max-width: 991px) {
+  .root {
+    .compareBar {
+      .dots {
+        position: static;
+
+        ul {
+          transform: translateY(0);
+          padding: 0;
+          margin-bottom: 1rem;
+        }
+      }
+    }
   }
 }

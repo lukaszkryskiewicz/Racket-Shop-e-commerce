@@ -23,7 +23,6 @@ const Modal = ({ closeModal, id }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(question);
     setQuestion('');
     setEmail('');
   };
