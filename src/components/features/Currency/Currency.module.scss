@@ -4,13 +4,11 @@
   .currencyButton {
     background: none;
     border: none;
-    text-decoration: underline;
     font-size: 13px;
     color: #fff;
 
     &:hover {
       color: $primary;
-      text-decoration: none;
     }
 
   }
@@ -24,7 +22,7 @@
 
       &:hover {
         color: $primary;
-        text-decoration: none;
+
       }
 
     }
