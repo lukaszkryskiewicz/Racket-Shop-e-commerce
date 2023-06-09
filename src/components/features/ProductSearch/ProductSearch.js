@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,30 +8,29 @@ import { changeSearch } from '../../../redux/searchRedux';
 import styles from './ProductSearch.module.scss';
 import { getAllCategories } from '../../../redux/categoriesRedux';
 import { useHistory } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
 const ProductSearch = () => {
   const history = useHistory();
   const categories = useSelector(getAllCategories);
   const [searchText, setSearchText] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
+  const { register, handleSubmit: validate } = useForm();
 
   const dispatch = useDispatch();
 
-  const handleSubmit = e => {
+  const handleSubmit = () => {
     if (searchText.length > 0) {
-      e.preventDefault();
       const category = selectedCategory ? selectedCategory.toLowerCase() : undefined;
       dispatch(changeSearch({ searchText, category }));
       setSearchText('');
       setSelectedCategory('');
       history.push('/search');
-    } else {
-      e.preventDefault();
     }
   };
 
   return (
-    <form className={styles.root} onSubmit={handleSubmit}>
+    <form className={styles.root} onSubmit={validate(handleSubmit)}>
       <div className={styles.category}>
         <select
           className={styles.selectCategoryList}
@@ -48,6 +47,9 @@ const ProductSearch = () => {
       </div>
       <div className={styles.searchField}>
         <input
+          {...register('search', {
+            required: true,
+          })}
           placeholder='Search products...'
           type='text'
           value={searchText}

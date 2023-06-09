@@ -19,7 +19,7 @@ import loggedUserReducer from './loggedUserRedux';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['cart', 'products', 'currency', 'loggedUser'],
+  whitelist: ['cart', 'products', 'currency', 'loggedUser', 'search'],
 };
 // define reducers
 const reducers = {

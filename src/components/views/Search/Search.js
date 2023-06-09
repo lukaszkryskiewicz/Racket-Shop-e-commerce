@@ -8,8 +8,6 @@ import clsx from 'clsx';
 const Search = () => {
   const searchInfo = useSelector(getSearch);
 
-  console.log(searchInfo);
-
   return (
     <div className={styles.root}>
       <div className={clsx('container', styles.searchInfo)}>
