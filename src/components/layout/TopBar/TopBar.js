@@ -2,12 +2,19 @@ import React, { useState, useEffect } from 'react';
 // import PropTypes from 'prop-types';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown, faUser, faLock, faBars } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCaretDown,
+  faUser,
+  faLock,
+  faDoorOpen,
+} from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import styles from './TopBar.module.scss';
 import Currency from '../../features/Currency/Currency';
 import { useDispatch, useSelector } from 'react-redux';
 import { getLoggedUser, logOut } from '../../../redux/loggedUserRedux';
+import { Dropdown } from 'react-bootstrap';
+import clsx from 'clsx';
 
 const TopBar = () => {
   const loggedUser = useSelector(getLoggedUser);
@@ -35,14 +42,22 @@ const TopBar = () => {
                 <Currency />
               </li>
               <li>
-                <a href='#'>
-                  English <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
-                </a>
-              </li>
-              <li>
-                <a href='#'>
-                  Help <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
-                </a>
+                <Dropdown>
+                  <Dropdown.Toggle
+                    className={styles.languageButton}
+                    id='dropdown-basic'
+                  >
+                    English
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu className={styles.languageMenu}>
+                    <Dropdown.Item
+                      className={clsx(styles.menuItem, 'dropdown-item')}
+                      href='#'
+                    >
+                      English
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
               </li>
             </ul>
           </div>
@@ -57,7 +72,7 @@ const TopBar = () => {
                 )}
                 {isLogged && (
                   <Link to='/'>
-                    <FontAwesomeIcon className={styles.icon} icon={faUser} />
+                    <FontAwesomeIcon className={styles.icon} icon={faDoorOpen} />
                     <span className={styles.iconLabel} onClick={handleLogout}>
                       {' '}
                       Logout
@@ -70,11 +85,6 @@ const TopBar = () => {
                   <FontAwesomeIcon className={styles.icon} icon={faLock} />
                   <span className={styles.iconLabel}> Register</span>
                 </Link>
-              </li>
-              <li>
-                <a href='#'>
-                  <FontAwesomeIcon className={styles.icon} icon={faBars} />
-                </a>
               </li>
             </ul>
           </div>
