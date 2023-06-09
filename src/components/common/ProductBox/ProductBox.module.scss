@@ -7,7 +7,7 @@
 
   .photo {
     position: relative;
-    padding: 80% 10px 0 10px;
+    // padding: 80% 10px 0 10px;
     height: 310px;
 
     background: {
@@ -33,11 +33,16 @@
     }
 
     .buttons {
-      position: relative;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
       z-index: 1;
       display: flex;
+      justify-content: center;
       opacity: 0;
-      justify-content: space-between;
+      gap: 20px;
     }
 
     &:hover {
@@ -117,4 +122,12 @@
 
 .buttonActive {
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .root {
+    .photo {
+      height: 420px;
+    }
+  }
 }

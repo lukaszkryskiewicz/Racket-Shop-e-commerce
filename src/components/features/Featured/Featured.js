@@ -16,6 +16,7 @@ import Alert from '../../common/Alert/Alert';
 import ProductModal from '../../common/ProductModal/ProductModal';
 import { HashLink as NavLink } from 'react-router-hash-link';
 import PromoTimer from '../../common/PromoTimer/PromoTimer';
+import { getViewportMode } from '../../../redux/viewportModeRedux';
 
 const Featured = () => {
   const [slideInterval, setSlideInterval] = useState(3000);
@@ -26,6 +27,7 @@ const Featured = () => {
   const [modal, setModal] = useState(false);
   const [alert, setAlert] = useState({ status: false, type: 'success' });
   const currency = useSelector(getCurrency);
+  const viewportMode = useSelector(getViewportMode);
 
   const handleSelect = selectedIndex => {
     setHotDealIndex(selectedIndex);
@@ -103,7 +105,7 @@ const Featured = () => {
               <Carousel
                 activeIndex={hotDealIndex}
                 onSelect={handleSelect}
-                interval={!modal ? slideInterval : null}
+                interval={!(modal || alert.status) ? slideInterval : null}
                 pause={false}
                 controls={false}
                 fade={true}
@@ -117,21 +119,25 @@ const Featured = () => {
                           <img alt={hotDeal.name} src={hotDeal.source} />
                         </div>
                       </NavLink>
-                      <div className={styles.button}>
-                        <ActionButton
-                          id={hotDeal.id}
-                          buttonType={'addToCart'}
-                          name={hotDeal.name}
-                          price={hotDeal.price}
-                          source={hotDeal.source}
-                          buttonVariant='small'
-                          onClickFunction={setAlert}
-                        >
-                          Add To Cart
-                        </ActionButton>
-                      </div>
-                      <div className={`${styles.timer} row`}>
-                        <PromoTimer />
+                      <div className={styles.photoOverlays}>
+                        {!(viewportMode === 'tablet' || viewportMode === 'mobile') && (
+                          <div className={styles.button}>
+                            <ActionButton
+                              id={hotDeal.id}
+                              buttonType={'addToCart'}
+                              name={hotDeal.name}
+                              price={hotDeal.price}
+                              source={hotDeal.source}
+                              buttonVariant='small'
+                              onClickFunction={setAlert}
+                            >
+                              Add To Cart
+                            </ActionButton>
+                          </div>
+                        )}
+                        <div className={`${styles.timer} row`}>
+                          <PromoTimer />
+                        </div>
                       </div>
                     </div>
                     <div className={styles.infoBox}>
@@ -157,11 +163,20 @@ const Featured = () => {
                             productData={hotDeal}
                             onClickFunction={setModal}
                           />
+                          {(viewportMode === 'tablet' || viewportMode === 'mobile') && (
+                            <ActionButton
+                              id={hotDeal.id}
+                              buttonType={'addToCart'}
+                              name={hotDeal.name}
+                              price={hotDeal.price}
+                              source={hotDeal.source}
+                              onClickFunction={setAlert}
+                            />
+                          )}
                         </div>
                         <div className={styles.prices}>
                           {hotDeal.oldPrice && (
                             <div className={styles.oldPrice}>
-                              {currency.sign}{' '}
                               {(hotDeal.oldPrice * currency.multiplier).toFixed(2)}
                             </div>
                           )}
