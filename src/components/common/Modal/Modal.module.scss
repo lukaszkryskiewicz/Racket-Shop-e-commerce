@@ -12,10 +12,10 @@
   z-index: 999;
 
 
+
   .modalContainer {
     padding: 1rem 1rem 1rem 1rem;
     width: 60vh;
-    height: 40vh;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -23,6 +23,8 @@
     background-color: #ffffff;
     border: 1px solid $primary;
     border-radius: 10px;
+    overflow: scroll;
+
 
     .closeButton {
       font-size: 25px;
@@ -42,44 +44,87 @@
       padding: 20px;
 
       .imageContainer {
-        width: 230px;
+        //width: 230px;
 
         img {
           width: 100%;
         }
       }
 
-      .textContainer {
-        text-align: center;
+      .inputsContainer {
 
-        .productName {
-          font-size: 20px;
-          padding-bottom: 10px;
+        .textContainer {
+          text-align: center;
+
+          .productName {
+            font-size: 20px;
+            padding-bottom: 10px;
+          }
+
+          .mailInput {
+            width: 100%;
+            margin-bottom: 2px;
+          }
+
+          .textarea {
+            width: 100%;
+            resize: none;
+          }
         }
 
-        .mailInput {
-          width: 100%;
-          margin-bottom: 2px;
-        }
+        .buttonsContainer {
+          padding: 20px;
 
-        .textarea {
-          width: 100%;
-          resize: none;
+          .buttons {
+            text-align: center;
+
+            .button {
+              padding: 10px;
+              font-size: 18px;
+              text-transform: uppercase;
+            }
+          }
         }
       }
     }
 
-    .buttonsContainer {
-      padding: 20px;
+    .messageSent {
+      font-size: 25px;
+      color: $primary;
+      text-align: center;
+    }
+  }
+}
 
-      .buttons {
-        text-align: center;
+@media (max-width: 769px) {
+  .root {
+    .modalContainer {
+      width: 30vh;
 
-        .button {
-          padding: 10px;
-          font-size: 18px;
-          text-transform: uppercase;
+      .modalHeader {
+        font-size: 20px;
+      }
+
+      .modalInfoContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+
+        .imageContainer {
+          display: none;
         }
+
+        .inputsContainer {
+          width: 100%;
+
+
+        }
+      }
+
+      .messageSent {
+        font-size: 15px;
       }
     }
   }
