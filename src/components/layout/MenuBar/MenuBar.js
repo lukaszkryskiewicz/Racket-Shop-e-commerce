@@ -12,7 +12,7 @@ import clsx from 'clsx';
 import { getViewportMode } from '../../../redux/viewportModeRedux';
 
 const MenuBar = () => {
-  const [mobileMenu, setMobileMenu] = useState(true);
+  const [mobileMenu, setMobileMenu] = useState(false);
   const categories = useSelector(getAllCategories);
   const viewportMode = useSelector(getViewportMode);
   const toggleMobileMenu = () => {

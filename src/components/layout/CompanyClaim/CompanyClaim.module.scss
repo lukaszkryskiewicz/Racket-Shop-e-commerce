@@ -25,28 +25,8 @@
     }
   }
 
-  .phoneNumberSmall {
-    display: none;
-
-    p {
-      margin: 0;
-      line-height: 42px;
-      color: rgb(216, 216, 216);
-      font-weight: 500;
-      text-align: end;
-
-      .icon {
-        color: $primary;
-        vertical-align: middle;
-        margin-top: -3px;
-        margin-right: 0.8rem;
-      }
-    }
-  }
-
   .logoImage {
     width: 350px;
-    height: 170px;
   }
 
   .cart {
@@ -100,68 +80,19 @@
   }
 }
 
-@media screen and (max-width: 425px) {
+@media (max-width: 425px) {
 
   .root {
-    .phoneNumber {
-      display: none;
-    }
-
-    .phoneNumberSmall {
-      display: block;
-
-      p {
-        font-size: 14px;
-
-        .icon {
-          font-size: 18px;
-        }
-      }
-    }
-
     .logoImage {
-      width: 70%;
-      height: 70%;
+      width: 210px;
     }
   }
 }
 
-@media screen and (min-width: 425px) and (max-width: 575px) {
-
+@media (max-width: 992px) {
   .root {
     .phoneNumber {
-      display: none;
-    }
-
-    .phoneNumberSmall {
-      display: block;
-
-      p {
-        font-size: 17px;
-
-        .icon {
-          font-size: 32px;
-        }
-      }
-    }
-
-    .logoImage {
-      width: 80%;
-      height: 80%;
-    }
-  }
-}
-
-@media screen and (min-width: 575px) and (max-width: 768px) {
-  .root {
-    .phoneNumber {
-      p {
-        font-size: 14px;
-
-        .icon {
-          font-size: 32px;
-        }
-      }
+      display: none
     }
   }
 }

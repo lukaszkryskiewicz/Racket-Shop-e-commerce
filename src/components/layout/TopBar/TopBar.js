@@ -2,12 +2,7 @@ import React, { useState, useEffect } from 'react';
 // import PropTypes from 'prop-types';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faCaretDown,
-  faUser,
-  faLock,
-  faDoorOpen,
-} from '@fortawesome/free-solid-svg-icons';
+import { faUser, faLock, faDoorOpen } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import styles from './TopBar.module.scss';
 import Currency from '../../features/Currency/Currency';
