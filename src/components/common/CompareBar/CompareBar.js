@@ -40,18 +40,20 @@ const CompareBar = () => {
         <div className={styles.compareBar}>
           <p className={styles.title}>Products to compare:</p>
           {compare.map(item => (
-            <div key={item.name} className={clsx('col-1')}>
-              <div className={styles.comparedItem} onClick={() => handleClick(item.id)}>
-                <img alt={item.name} src={item.source} />
-                <FontAwesomeIcon className={styles.closeIcon} icon={faWindowClose}>
-                  Add to compare
-                </FontAwesomeIcon>
-              </div>
+            <div
+              key={item.name}
+              className={clsx(styles.comparedItem, 'm-1')}
+              onClick={() => handleClick(item.id)}
+            >
+              <img alt={item.name} src={item.source} />
+              <FontAwesomeIcon className={styles.closeIcon} icon={faWindowClose}>
+                Add to compare
+              </FontAwesomeIcon>
             </div>
           ))}
           <Button
             variant='small'
-            className={styles.button}
+            className={clsx(styles.button, 'm-1')}
             onClick={handleCompareClick}
           >
             Compare

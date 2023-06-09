@@ -15,8 +15,7 @@
     justify-content: flex-start;
 
     .title {
-      margin: auto 20px;
-
+      margin: auto 5px;
     }
 
     .comparedItem {
@@ -56,5 +55,21 @@
       align-items: center;
     }
 
+  }
+}
+
+@media (max-width: 991px) {
+  .root {
+    .compareBar {
+      .dots {
+        position: static;
+
+        ul {
+          transform: translateY(0);
+          padding: 0;
+          margin-bottom: 1rem;
+        }
+      }
+    }
   }
 }
