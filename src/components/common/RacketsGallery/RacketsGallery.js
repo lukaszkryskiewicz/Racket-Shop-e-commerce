@@ -147,7 +147,14 @@ const RacketsGallery = () => {
               </div>
             </div>
           </div>
-          <div className={styles.buttons}>
+          <div
+            className={clsx(
+              styles.buttons,
+              viewportMode !== 'mobile' &&
+                viewportMode !== 'tablet' &&
+                styles.buttonsAnimation
+            )}
+          >
             <ActionButton
               id={displayedProduct.id}
               favourite={displayedProduct.favourite}
