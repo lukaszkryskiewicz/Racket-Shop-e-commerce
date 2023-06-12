@@ -224,6 +224,12 @@
         color: $text-color;
         text-transform: uppercase;
         z-index: 99;
+
+        &:active,
+        &:hover {
+          background-color: $primary;
+          color: #ffffff
+        }
       }
 
       .slider {

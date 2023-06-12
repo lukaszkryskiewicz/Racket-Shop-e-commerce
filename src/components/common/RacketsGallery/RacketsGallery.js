@@ -124,7 +124,7 @@ const RacketsGallery = () => {
           className={clsx(
             'row g-0 align-items-center',
             styles.photo,
-            fadeImage ? styles.fadeIn : styles.fadeOut
+            fadeImage ? 'fadeIn' : 'fadeOut'
           )}
         >
           <NavLink to={'/product/' + displayedProduct.id + '#top'}>
@@ -195,9 +195,7 @@ const RacketsGallery = () => {
             >
               &#60;
             </a>
-            <div
-              className={clsx('col mx-3', fadeSlider ? styles.fadeIn : styles.fadeOut)}
-            >
+            <div className={clsx('col mx-3', fadeSlider ? 'fadeIn' : 'fadeOut')}>
               <div className={clsx('row')}>
                 {productsToDisplay
                   .slice(activePage * columns, (activePage + 1) * columns)

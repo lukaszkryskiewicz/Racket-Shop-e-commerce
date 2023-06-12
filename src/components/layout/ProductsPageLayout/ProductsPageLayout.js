@@ -142,8 +142,11 @@ const ProductsPageLayout = () => {
               </div>
             </div>
             <div
-              className={`row + ${fade ? styles.fadeIn : styles.fadeOut} + ${styles.productContainer
-              }`}
+              className={clsx(
+                'row',
+                fade ? 'fadeIn' : 'fadeOut',
+                styles.productContainer
+              )}
             >
               {displayForm === 'list' && (
                 <ProductList productsToRender={productsToRender} />

@@ -107,11 +107,17 @@ const NewProducts = ({ searchedData, productsOnDesktop }) => {
         <div className='container'>
           <div className={styles.panelBar}>
             <div className='row g-0 align-items-end justify-content-between'>
-              <div className={'col-auto mb-md-0 ' + styles.heading}>
+              <div
+                className={clsx(
+                  'col-auto mb-md-0',
+                  styles.heading,
+                  isSearchPage && 'w-100'
+                )}
+              >
                 <h3>New products</h3>
               </div>
               {!isSearchPage && (
-                <div className={'col ' + styles.menu}>
+                <div className={clsx('col', styles.menu)}>
                   {viewportMode !== 'mobile' && (
                     <ul>
                       {categories.map(item => (
@@ -151,7 +157,7 @@ const NewProducts = ({ searchedData, productsOnDesktop }) => {
               )}
             </div>
           </div>
-          <div className={`row + ${fade ? styles.fadeIn : styles.fadeOut}`}>
+          <div className={clsx('row', fade ? 'fadeIn' : 'fadeOut')}>
             {productsToRender.length > 0 &&
               productsToRender
                 .slice(
