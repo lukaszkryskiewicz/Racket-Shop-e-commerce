@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Button from '../../common/Button/Button';
 import styles from './Cart.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
 import CartTableLine from './CartTableLine/CartTableLine';
 import { checkout, getAll, getCoupons } from '../../../redux/cartRedux';
 import { useDispatch, useSelector } from 'react-redux';
@@ -19,6 +17,13 @@ const Cart = () => {
   const cartProducts = useSelector(getAll);
   const currency = useSelector(state => getCurrency(state));
   const coupons = useSelector(getCoupons);
+  const productsQuantity = () => {
+    let sum = 0;
+    for (const product of cartProducts) {
+      sum = sum + product.quantity;
+    }
+    return sum;
+  };
 
   const handleClick = e => {
     e.preventDefault();
@@ -80,28 +85,13 @@ const Cart = () => {
     <div className={styles.root}>
       <div className={styles.cartBar}>
         <div className='container'>
-          <span className='col-6 d-inline-flex justify-content-start ps-1'>Cart</span>
-          <span className='col-6 d-inline-flex justify-content-end pe-1'>
-            <span className={styles.cartIcon}>
-              <FontAwesomeIcon icon={faHome} className={styles.icon} />
-              &gt; Cart
-            </span>
+          <span className='col-6 d-inline-flex justify-content-start ps-1'>
+            Cart ({productsQuantity()})
           </span>
         </div>
       </div>
       <div className='container'>
         <div className={styles.cartTable}>
-          {/*     <div className={`row ${styles.firstRow}`}>
-            <span className='col-7'>
-              <div className='row'>
-                <span className='col-2'></span>
-                <span className={`col-10 ps-4 ${styles.left}`}>PRODUCT</span>
-              </div>
-            </span>
-            <span className='col-1'>PRICE</span>
-            <span className='col-3'>QUANTITY</span>
-            <span className='col-1'>TOTAL</span>
-          </div> */}
           {cartProducts.map(singleItem => (
             <CartTableLine
               key={singleItem.id}
@@ -140,8 +130,7 @@ const Cart = () => {
         <div className='row mx-0  justify-content-end'>
           <div className='col-auto mb-4'>
             <div className={`row ${styles.cartTotalsTop}`}>
-              <div className='col-5'></div>
-              <div className='col-7'>
+              <div className='col text-center'>
                 <span>Cart totals</span>
               </div>
             </div>
@@ -191,7 +180,7 @@ const Cart = () => {
                   className={styles.proceedButton}
                   onClick={handleClick}
                 >
-                  PROCEED TO CHECKOUT
+                  Proceed to checkout
                 </Button>
               </div>
             </div>

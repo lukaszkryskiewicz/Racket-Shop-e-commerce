@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { getCount } from '../../../redux/cartRedux';
+import { getAll } from '../../../redux/cartRedux';
 // import PropTypes from 'prop-types';
 
 import styles from './CompanyClaim.module.scss';
@@ -10,7 +10,14 @@ import { faMobileAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons
 import { useSelector } from 'react-redux';
 
 const CompanyClaim = () => {
-  const totalCartAmount = useSelector(getCount);
+  const cartProducts = useSelector(getAll);
+  const productsQuantity = () => {
+    let sum = 0;
+    for (const product of cartProducts) {
+      sum = sum + product.quantity;
+    }
+    return sum;
+  };
 
   return (
     <div className={styles.root}>
@@ -36,7 +43,7 @@ const CompanyClaim = () => {
               <div className={styles.cartIcon}>
                 <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />
               </div>
-              <div className={styles.cartCounter}>{totalCartAmount}</div>
+              <div className={styles.cartCounter}>{productsQuantity()}</div>
             </Link>
           </div>
         </div>
