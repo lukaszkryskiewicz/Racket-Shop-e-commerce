@@ -70,7 +70,7 @@ const ActionButton = ({
     if (product.quantity >= quantity) {
       onClickFunction({ status: true, type: 'success' });
       dispatch(addProduct({ id, name, source, price, quantity }));
-      dispatch(updateProductQuantity({ id, quantity, type: 'minus' }));
+      dispatch(updateProductQuantity({ id, quantity: -quantity }));
     } else {
       onClickFunction({ status: true, type: 'error' });
     }

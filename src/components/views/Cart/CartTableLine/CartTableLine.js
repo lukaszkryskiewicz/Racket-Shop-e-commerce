@@ -15,11 +15,15 @@ import clsx from 'clsx';
 const CartTableLine = ({ id, name, price, source, quantity }) => {
   const dispatch = useDispatch();
   const product = useSelector(state => getProductById(state, id));
+  //const [quantityToValidate, setQuantityToValidate] = useState(0)
   const [itemQuantity, setItemQuantity] = useState(quantity);
+  const [previousItemQuantity, setPreviousItemQuantity] = useState(quantity);
   const [alert, setAlert] = useState({ status: false, type: 'error', action: null });
   const currency = useSelector(state => getCurrency(state));
   price = (price * currency.multiplier).toFixed(2);
   const totalForProduct = (price * itemQuantity).toFixed(2);
+  // console.log(itemQuantity, previousItemQuantity)
+
 
   const handleDelete = () => {
     setAlert({ status: true, type: 'delete', action: confirmDelete });
@@ -27,42 +31,35 @@ const CartTableLine = ({ id, name, price, source, quantity }) => {
 
   const confirmDelete = () => {
     dispatch(removeProduct(id));
-    dispatch(updateProductQuantity({ id, quantity: itemQuantity, type: 'plus' }));
+    dispatch(updateProductQuantity({ id, quantity: itemQuantity }));
   };
 
   const handleChange = e => {
-    e.preventDefault();
-    const newQuantity = parseInt(e.target.value);
-    if (!isNaN(newQuantity) && product.quantity + itemQuantity >= newQuantity) {
-      if (newQuantity > itemQuantity) {
-        dispatch(
-          updateProductQuantity({
-            id,
-            quantity: newQuantity - itemQuantity,
-            type: 'minus',
-          })
-        );
-      } else {
-        dispatch(
-          updateProductQuantity({
-            id,
-            quantity: itemQuantity - newQuantity,
-            type: 'plus',
-          })
-        );
-      }
-      setItemQuantity(newQuantity);
-      dispatch(updateProduct({ id, quantity: newQuantity }));
+    const newValue = parseInt(e.target.value);
+    if (!isNaN(newValue)) {
+      setItemQuantity(newValue);
+    }
+  };
+
+  const handleBlur = (e) => {
+    const newValue = parseInt(e.target.value);
+    if (!isNaN(newValue) && newValue !== 0 && product.quantity + previousItemQuantity >= newValue) {
+      dispatch(updateProduct({ id, quantity: newValue }));
+      dispatch(updateProductQuantity({ id, quantity: previousItemQuantity - newValue }));
+      setPreviousItemQuantity(newValue);
     } else {
       setAlert({ status: true, type: 'error' });
+      setItemQuantity(previousItemQuantity);
     }
   };
 
   const incrementQuantity = () => {
     if (product.quantity >= 1) {
-      setItemQuantity(itemQuantity + 1);
+      const newValue = itemQuantity + 1;
+      setPreviousItemQuantity(newValue);
+      setItemQuantity(newValue);
       dispatch(updateProduct({ id, quantity: itemQuantity + 1 }));
-      dispatch(updateProductQuantity({ id, quantity: 1, type: 'minus' }));
+      dispatch(updateProductQuantity({ id, quantity: -1 }));
     } else {
       setAlert({ status: true, type: 'error' });
     }
@@ -70,9 +67,11 @@ const CartTableLine = ({ id, name, price, source, quantity }) => {
 
   const decrementQuantity = () => {
     if (itemQuantity > 1) {
-      setItemQuantity(itemQuantity - 1);
+      const newValue = itemQuantity - 1;
+      setPreviousItemQuantity(newValue);
+      setItemQuantity(newValue);
       dispatch(updateProduct({ id, quantity: itemQuantity - 1 }));
-      dispatch(updateProductQuantity({ id, quantity: 1, type: 'plus' }));
+      dispatch(updateProductQuantity({ id, quantity: 1 }));
     }
   };
 
@@ -119,12 +118,16 @@ const CartTableLine = ({ id, name, price, source, quantity }) => {
             </Button>
             <input
               className={styles.amountInput}
-              onChange={e => handleChange(e)}
+              onBlur={handleBlur}
               value={itemQuantity}
+              onChange={handleChange}
+
             />
             <Button className={styles.amountControls} onClick={incrementQuantity}>
               +
             </Button>
+            {product.quantity > 0 && <p className={styles.quantityInfo}>Only {product.quantity} more left!</p>}
+            {product.quantity === 0 && <p className={styles.quantityInfo}>No more products left!</p>}
           </div>
           <div className={`col-md-6 col-auto text-center ${styles.price}`}>
             {currency.sign} {totalForProduct}
