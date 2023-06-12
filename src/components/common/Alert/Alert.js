@@ -47,6 +47,14 @@ const Alert = ({ type, id, quantity = 1, closeAlert, action }) => {
             <li className={styles.productAmount}>Please add at least one more Product to comparison</li>
           </>,
         };
+      case 'checkout':
+        return {
+          title: 'Thank you!',
+          content: <>
+            <li className={styles.productAmount}>Your products have been ordered</li>
+          </>,
+          text: 'Please check your email and follow the steps',
+        };
       default:
         return null;
     }
@@ -96,9 +104,9 @@ const Alert = ({ type, id, quantity = 1, closeAlert, action }) => {
                   <div className={clsx('row', styles.buttonsContainer)}>
                     <div className={clsx('col-12', styles.buttons)}>
                       {(type === 'success' || type === 'delete') && <Button link='/cart' variant='small' className={styles.button}>go to cart</Button>}
-                      {type !== 'delete' && <Button link='#' onClick={handleClick} variant='small' className={styles.button}>continue shopping</Button>}
+                      {type !== 'delete' && type !== 'checkout' && <Button link='#' onClick={handleClick} variant='small' className={styles.button}>continue shopping</Button>}
                       {type === 'delete' && <Button link='/cart' variant='small' className={styles.button} onClick={handleDelete}>delete product</Button>}
-                      {/*                       {type === 'compareError' && <Button variant='small' className={styles.button} onClick={handleClick}>close alert</Button>} */}
+                      {type === 'checkout' && <Button link='/' variant='small' className={styles.button}>go to the main page</Button>}
                     </div>
                   </div>
                 </div>
