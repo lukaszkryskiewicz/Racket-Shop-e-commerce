@@ -35,10 +35,23 @@ const CartTableLine = ({ id, name, price, source, quantity }) => {
     const newQuantity = parseInt(e.target.value);
     if (!isNaN(newQuantity) && product.quantity + itemQuantity >= newQuantity) {
       if (newQuantity > itemQuantity) {
-        dispatch(updateProductQuantity({ id, quantity: newQuantity - itemQuantity, type: 'minus' }));
+        dispatch(
+          updateProductQuantity({
+            id,
+            quantity: newQuantity - itemQuantity,
+            type: 'minus',
+          })
+        );
       } else {
-        dispatch(updateProductQuantity({ id, quantity: itemQuantity - newQuantity, type: 'plus' }));
-      } setItemQuantity(newQuantity);
+        dispatch(
+          updateProductQuantity({
+            id,
+            quantity: itemQuantity - newQuantity,
+            type: 'plus',
+          })
+        );
+      }
+      setItemQuantity(newQuantity);
       dispatch(updateProduct({ id, quantity: newQuantity }));
     } else {
       setAlert({ status: true, type: 'error' });
@@ -65,42 +78,57 @@ const CartTableLine = ({ id, name, price, source, quantity }) => {
 
   return (
     <div className={styles.root}>
-      <div className={`row ${styles.nextRows}`}>
-        {alert.status && <Alert closeAlert={setAlert} id={id} type={alert.type} action={alert.action} />}
-        <div className='col-8 h-100'>
-          <div className={`row w-100 ${styles.vertCenter}`}>
-            <Button
-              className={clsx('col-1 text-center', styles.button)}
-              onClick={(e) => handleDelete(e)}
-            >
-              <AiOutlineCloseCircle className={styles.tableIcon} />
-            </Button>
-            <div className={`col-3 text-center ${styles.vertCenter}`}>
-              <div className={styles.productImage}>
-                <img alt={name} src={source} />
+      <div className={clsx('row', styles.nextRows)}>
+        {alert.status && (
+          <Alert
+            closeAlert={setAlert}
+            id={id}
+            type={alert.type}
+            action={alert.action}
+          />
+        )}
+        <div className='col-md-7 col-6 px-1'>
+          <div className={clsx('row w-100', styles.vertCenter)}>
+            <div className={clsx('col-12 col-sm-6 d-flex align-items-center')}>
+              <Button
+                className={clsx('col-auto', styles.button)}
+                onClick={e => handleDelete(e)}
+              >
+                <AiOutlineCloseCircle className={styles.tableIcon} />
+              </Button>
+              <div className={clsx('col-10 col-sm-5', styles.vertCenter)}>
+                <div className={styles.productImage}>
+                  <img alt={name} src={source} />
+                </div>
               </div>
             </div>
-            <div className={`col-8  ps-4 ${styles.vertCenter}`}>{name}</div>
+            <div
+              className={clsx('col-12 col-sm-6 d-flex flex-column ps-3 text-center')}
+            >
+              <p className={clsx('my-auto', styles.title)}>{name}</p>
+              <p className={clsx('my-auto', styles.price)}>
+                {currency.sign} {price}
+              </p>
+            </div>
           </div>
         </div>
-        <div className={`col-1 text-center ${styles.price}`}>
-          {currency.sign} {price}
-        </div>
-        <div className='col-2 text-center'>
-          <Button className={styles.amountControls} onClick={decrementQuantity}>
-            -
-          </Button>
-          <input
-            className={styles.amountInput}
-            onChange={e => handleChange(e)}
-            value={itemQuantity}
-          />
-          <Button className={styles.amountControls} onClick={incrementQuantity}>
-            +
-          </Button>
-        </div>
-        <div className={`col-1 text-center ${styles.price}`}>
-          {currency.sign} {totalForProduct}
+        <div className={clsx('col-md-5 col-6 p-0', styles.rightColumn)}>
+          <div className='col-md-6 col-auto text-center'>
+            <Button className={styles.amountControls} onClick={decrementQuantity}>
+              -
+            </Button>
+            <input
+              className={styles.amountInput}
+              onChange={e => handleChange(e)}
+              value={itemQuantity}
+            />
+            <Button className={styles.amountControls} onClick={incrementQuantity}>
+              +
+            </Button>
+          </div>
+          <div className={`col-md-6 col-auto text-center ${styles.price}`}>
+            {currency.sign} {totalForProduct}
+          </div>
         </div>
       </div>
     </div>

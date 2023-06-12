@@ -91,17 +91,17 @@ const Cart = () => {
       </div>
       <div className='container'>
         <div className={styles.cartTable}>
-          <div className={`row ${styles.firstRow}`}>
-            <span className='col-8'>
+          {/*     <div className={`row ${styles.firstRow}`}>
+            <span className='col-7'>
               <div className='row'>
                 <span className='col-2'></span>
                 <span className={`col-10 ps-4 ${styles.left}`}>PRODUCT</span>
               </div>
             </span>
             <span className='col-1'>PRICE</span>
-            <span className='col-2'>QUANTITY</span>
+            <span className='col-3'>QUANTITY</span>
             <span className='col-1'>TOTAL</span>
-          </div>
+          </div> */}
           {cartProducts.map(singleItem => (
             <CartTableLine
               key={singleItem.id}
@@ -113,7 +113,7 @@ const Cart = () => {
             ></CartTableLine>
           ))}
           <div className={`row ${styles.lastRow}`}>
-            <span className='col-6 justify-content-start d-flex'>
+            <span className='col-auto justify-content-start d-flex'>
               <input
                 className='me-2'
                 onChange={handleCouponCodeChange}
@@ -125,10 +125,10 @@ const Cart = () => {
                 type='submit'
                 className={styles.cartButton}
               >
-                APPLY COUPON
+                apply coupon
               </Button>
             </span>
-            <span className='col-6 d-flex justify-content-end'>
+            <span className='col-auto d-flex justify-content-end'>
               {couponMessage === 'null' && null}
               {couponMessage === 'error' &&
                 'It looks like code ' + couponCode + ' is not working'}
@@ -137,9 +137,8 @@ const Cart = () => {
             </span>
           </div>
         </div>
-        <div className='row mx-0'>
-          <div className='col-6'></div>
-          <div className='col-6 mb-4'>
+        <div className='row mx-0  justify-content-end'>
+          <div className='col-auto mb-4'>
             <div className={`row ${styles.cartTotalsTop}`}>
               <div className='col-5'></div>
               <div className='col-7'>
