@@ -6,9 +6,11 @@ import { checkout, getAll, getCoupons } from '../../../redux/cartRedux';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getCurrency } from '../../../redux/currencyRedux';
+import Alert from '../../common/Alert/Alert';
 
 const Cart = () => {
   const dispatch = useDispatch();
+  const [alert, setAlert] = useState({ status: false, type: 'checkout' });
   const [totalPrice, setTotalPrice] = useState(0);
   const [subTotalPrice, setSubTotalPrice] = useState(0);
   const [couponCode, setCouponCode] = useState(null);
@@ -28,6 +30,7 @@ const Cart = () => {
   const handleClick = e => {
     e.preventDefault();
     dispatch(checkout());
+    setAlert({ status: true, type: 'checkout' });
   };
 
   const calculateCart = () => {
@@ -83,6 +86,13 @@ const Cart = () => {
   }, [cartProducts, currency, isCouponActive]);
   return (
     <div className={styles.root}>
+      {alert.status && (
+        <Alert
+          closeAlert={setAlert}
+          type={alert.type}
+          action={alert.action}
+        />
+      )}
       <div className={styles.cartBar}>
         <div className='container'>
           <span className='col-6 d-inline-flex justify-content-start ps-1'>

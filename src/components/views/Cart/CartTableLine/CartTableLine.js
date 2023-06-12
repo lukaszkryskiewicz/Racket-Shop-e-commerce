@@ -15,14 +15,12 @@ import clsx from 'clsx';
 const CartTableLine = ({ id, name, price, source, quantity }) => {
   const dispatch = useDispatch();
   const product = useSelector(state => getProductById(state, id));
-  //const [quantityToValidate, setQuantityToValidate] = useState(0)
   const [itemQuantity, setItemQuantity] = useState(quantity);
   const [previousItemQuantity, setPreviousItemQuantity] = useState(quantity);
   const [alert, setAlert] = useState({ status: false, type: 'error', action: null });
   const currency = useSelector(state => getCurrency(state));
   price = (price * currency.multiplier).toFixed(2);
   const totalForProduct = (price * itemQuantity).toFixed(2);
-  // console.log(itemQuantity, previousItemQuantity)
 
 
   const handleDelete = () => {
