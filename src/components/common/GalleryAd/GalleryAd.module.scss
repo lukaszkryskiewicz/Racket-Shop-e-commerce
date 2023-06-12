@@ -51,6 +51,12 @@
     background-color: #79ae30;
     padding: 15px 36px;
     text-transform: uppercase;
+
+    &:active {
+      color: #ffffff;
+      background-color: $primary;
+      text-decoration: none;
+    }
   }
 }
 

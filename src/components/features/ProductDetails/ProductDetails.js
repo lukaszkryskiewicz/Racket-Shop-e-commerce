@@ -87,7 +87,7 @@ const ProductDetails = ({ productData }) => {
               className={clsx(
                 'row g-0 align-items-center',
                 styles.photo,
-                fadeImage ? styles.fadeIn : styles.fadeOut
+                fadeImage ? 'fadeIn' : 'fadeOut'
               )}
             >
               {' '}

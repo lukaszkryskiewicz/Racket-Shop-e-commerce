@@ -42,6 +42,16 @@
     p {
       text-align: start;
       word-spacing: 10px;
+
+      a {
+        color: #ffffff;
+        text-decoration: none;
+
+        &:hover,
+        &:active {
+          color: $primary;
+        }
+      }
     }
   }
 }

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import styles from './PromoTimer.module.scss';
-import clsx from 'clsx';
 
 const PromoTimer = () => {
   const [countdown, setCountdown] = useState(0);
@@ -52,7 +51,7 @@ const PromoTimer = () => {
           0
         )
       );
-      if (currentTime.getUTCHours >= 15) {
+      if (currentTime.getUTCHours() >= 15) {
         nextDeadline.setUTCDate(currentTime.getUTCDate() + 1);
       }
       return Math.round((nextDeadline.getTime() - currentTime.getTime()) / 1000);

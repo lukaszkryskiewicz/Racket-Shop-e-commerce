@@ -5,7 +5,6 @@ import { Link, useParams } from 'react-router-dom';
 const Banner = () => {
   const { categoryId } = useParams();
 
-
   return (
     <div className={styles.root}>
       <div className='container'>
@@ -17,8 +16,13 @@ const Banner = () => {
         </div>
         <div className={styles.menu}>
           <p>
-            <Link to='/'>Home</Link> &gt;
-            {categoryId && <Link to={'/shop/' + categoryId}> {categoryId}</Link>}
+            <Link to='/'>Home</Link>
+            {categoryId && (
+              <>
+                {' > '}
+                <Link to={'/shop/' + categoryId}>{categoryId}</Link>
+              </>
+            )}
           </p>
         </div>
       </div>

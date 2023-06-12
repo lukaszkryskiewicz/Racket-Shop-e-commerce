@@ -41,6 +41,15 @@ const NewProducts = ({ searchedData, productsOnDesktop }) => {
     }, 600);
   };
 
+  const handleCategoryChangeMobile = e => {
+    setFade(false);
+    setTimeout(() => {
+      setActiveCategory(e.target.value);
+      setActivePage(0);
+      setFade(true);
+    }, 600);
+  };
+
   const isSearchPage = location.pathname.includes('/search');
 
   let productsToDisplay;
@@ -59,21 +68,7 @@ const NewProducts = ({ searchedData, productsOnDesktop }) => {
       productsToDisplay = isSearchPage ? 18 : productsOnDesktop;
       break;
   }
-  /*  const productsToDisplay = isSearchPage
-     ? viewportMode === 'mobile'
-       ? 6
-       : viewportMode === 'tablet'
-         ? 12
-         : viewportMode === 'desktop'
-           ? 15
-           : productsOnDesktop
-     : viewportMode === 'mobile'
-       ? 3
-       : viewportMode === 'tablet'
-         ? 6
-         : viewportMode === 'desktop'
-           ? 9
-           : productsOnDesktop; */
+
   useEffect(() => handlePageChange(0), [viewportMode, searchedData]);
 
   const leftAction = () => {
@@ -111,24 +106,46 @@ const NewProducts = ({ searchedData, productsOnDesktop }) => {
       <Swipeable leftAction={leftAction} rightAction={rightAction}>
         <div className='container'>
           <div className={styles.panelBar}>
-            <div className='row g-0 align-items-end'>
-              <div className={'col-md-auto col-12 mb-3 mb-md-0 ' + styles.heading}>
+            <div className='row g-0 align-items-end justify-content-between'>
+              <div
+                className={clsx(
+                  'col-auto mb-md-0',
+                  styles.heading,
+                  isSearchPage && 'w-100'
+                )}
+              >
                 <h3>New products</h3>
               </div>
               {!isSearchPage && (
-                <div className={'col-md col-12 ' + styles.menu}>
-                  <ul>
-                    {categories.map(item => (
-                      <li key={item.id}>
-                        <a
-                          className={clsx(item.id === activeCategory && styles.active)}
-                          onClick={() => handleCategoryChange(item.id)}
-                        >
+                <div className={clsx('col', styles.menu)}>
+                  {viewportMode !== 'mobile' && (
+                    <ul>
+                      {categories.map(item => (
+                        <li key={item.id}>
+                          <a
+                            className={clsx(
+                              item.id === activeCategory && styles.active
+                            )}
+                            onClick={() => handleCategoryChange(item.id)}
+                          >
+                            {item.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {viewportMode === 'mobile' && (
+                    <select
+                      onChange={() => handleCategoryChangeMobile}
+                      value={activeCategory}
+                    >
+                      {categories.map(item => (
+                        <option key={item.id} value={item.name}>
                           {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
+                        </option>
+                      ))}
+                    </select>
+                  )}
                 </div>
               )}
               {pagesCount > 0 && (
@@ -140,7 +157,7 @@ const NewProducts = ({ searchedData, productsOnDesktop }) => {
               )}
             </div>
           </div>
-          <div className={`row + ${fade ? styles.fadeIn : styles.fadeOut}`}>
+          <div className={clsx('row', fade ? 'fadeIn' : 'fadeOut')}>
             {productsToRender.length > 0 &&
               productsToRender
                 .slice(

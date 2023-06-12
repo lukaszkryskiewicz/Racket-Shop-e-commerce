@@ -10,11 +10,13 @@ import { useSelector } from 'react-redux';
 import { getCurrency } from '../../../redux/currencyRedux';
 import Alert from '../Alert/Alert';
 import { HashLink as NavLink } from 'react-router-hash-link';
+import { getViewportMode } from '../../../redux/viewportModeRedux';
 
 const ProductBox = props => {
   const [modal, setModal] = useState(false);
   const [alert, setAlert] = useState({ status: false, type: 'success' });
   const currency = useSelector(state => getCurrency(state));
+  const viewportMode = useSelector(getViewportMode);
   const { id, name, price, promo, oldPrice, favourite, compare, source } = props;
   const productLink = '/product/' + id + '/#top';
 
@@ -29,28 +31,30 @@ const ProductBox = props => {
             <img alt={name} src={source} />
           </div>
         </NavLink>
-        <div className={styles.buttons}>
-          <ActionButton
-            id={id}
-            buttonType={'quickView'}
-            buttonVariant='small'
-            onClickFunction={setModal}
-            productData={props}
-          >
-            Quick view
-          </ActionButton>
-          <ActionButton
-            id={id}
-            buttonType={'addToCart'}
-            name={name}
-            price={price}
-            source={source}
-            buttonVariant='small'
-            onClickFunction={setAlert}
-          >
-            Add To Cart
-          </ActionButton>
-        </div>
+        {!(viewportMode === 'tablet' || viewportMode === 'mobile') && (
+          <div className={styles.buttons}>
+            <ActionButton
+              id={id}
+              buttonType={'quickView'}
+              buttonVariant='small'
+              onClickFunction={setModal}
+              productData={props}
+            >
+              Quick view
+            </ActionButton>
+            <ActionButton
+              id={id}
+              buttonType={'addToCart'}
+              name={name}
+              price={price}
+              source={source}
+              buttonVariant='small'
+              onClickFunction={setAlert}
+            >
+              Add To Cart
+            </ActionButton>
+          </div>
+        )}
       </div>
       <div className={styles.content}>
         <StarsReview {...props} />
@@ -60,6 +64,16 @@ const ProductBox = props => {
         <div className={styles.outlines}>
           <ActionButton {...{ id, favourite }} buttonType={'favourite'} />
           <ActionButton {...{ id, compare }} buttonType={'compare'} />
+          {(viewportMode === 'tablet' || viewportMode === 'mobile') && (
+            <ActionButton
+              id={id}
+              buttonType={'addToCart'}
+              name={name}
+              price={price}
+              source={source}
+              onClickFunction={setAlert}
+            />
+          )}
         </div>
         {oldPrice && (
           <div className={styles.oldPrice}>
