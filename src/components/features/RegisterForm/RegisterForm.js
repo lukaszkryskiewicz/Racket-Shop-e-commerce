@@ -3,7 +3,7 @@ import styles from './RegisterForm.module.scss';
 import Button from '../../common/Button/Button';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import UserAlert from '../../common/UserAlert/UserAlert';
+import Alert from '../../common/Alert/Alert';
 
 const RegisterForm = () => {
   const {
@@ -68,7 +68,7 @@ const RegisterForm = () => {
   return (
     <>
       <div className={styles.root}>
-        {infoAlert && <UserAlert closeAlert={setInfoAlert} type={alertType} />}
+        {infoAlert && <Alert closeAlert={setInfoAlert} type={alertType} />}
         <div className='container'>
           <div className='row justify-content-center my-5'>
             <form className='col-12 col-md-8 col-lg-4' onSubmit={validate(handleSubmit)}>

@@ -38,12 +38,12 @@ const CompareModalBase = ({ closeModal }) => {
   return (
     <div className={styles.root}>
       <div className='container'>
+        <div className={styles.closeButton}>
+          <Button onClick={handleClick}>
+            <FontAwesomeIcon className={styles.icon} icon={faTimesCircle} />
+          </Button>
+        </div>
         <div className={styles.compareModalContainer}>
-          <div className={styles.closeButton}>
-            <Button onClick={handleClick}>
-              <FontAwesomeIcon className={styles.icon} icon={faTimesCircle} />
-            </Button>
-          </div>
           {modalArray.map(product => (
             <CompareModalProduct product={product} key={product.name} />
           ))}

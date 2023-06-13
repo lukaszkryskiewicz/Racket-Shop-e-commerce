@@ -3,10 +3,10 @@ import styles from './LoginForm.module.scss';
 import Button from '../../common/Button/Button';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import UserAlert from '../../common/UserAlert/UserAlert';
 import { Form, Modal } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { logIn } from '../../../redux/loggedUserRedux';
+import Alert from '../../common/Alert/Alert';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -46,7 +46,7 @@ const LoginForm = () => {
 
   return (
     <div className={styles.root}>
-      {infoAlert && <UserAlert type={alertType} closeAlert={setInfoAlert} />}
+      {infoAlert && <Alert type={alertType} closeAlert={setInfoAlert} />}
       <div className='container'>
         <div className='row justify-content-center my-5'>
           <form className='col-12 col-md-8 col-lg-4' onSubmit={validate(handleSubmit)}>

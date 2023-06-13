@@ -25,9 +25,10 @@
 
   .closeButton {
     font-size: 25px;
-    position: sticky;
-    top: 0px;
-    width: 0px;
+    position: fixed;
+    top: 8%;
+    left: 12%;
+    z-index: 1;
 
 
     .icon {

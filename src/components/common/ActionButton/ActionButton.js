@@ -21,7 +21,7 @@ import {
 } from '../../../redux/productsRedux';
 import { addProduct } from '../../../redux/cartRedux';
 import { getProductById } from '../../../redux/productsRedux';
-import Modal from '../Modal/Modal';
+import QuestionModal from '../QuestionModal/QuestionModal';
 
 const ActionButton = ({
   id,
@@ -120,7 +120,7 @@ const ActionButton = ({
   const buttonProps = getButtonProps(buttonType);
   return (
     <div className={styles.root}>
-      {modal && <Modal closeModal={setModal} id={id} />}
+      {modal && <QuestionModal closeModal={setModal} id={id} />}
       <Button
         variant={buttonVariant || 'outline'}
         className={clsx(buttonStyle === 'primary' ? styles.primaryButtonStyle : null, buttonProps.active, 'm-1')}
