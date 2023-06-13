@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './Modal.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faXmark,
+  faTimesCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import clsx from 'clsx';
 import { useSelector } from 'react-redux';
@@ -36,11 +36,14 @@ const Modal = ({ closeModal, id }) => {
         <div className={styles.modalContainer}>
           <div className={styles.closeButton}>
             <Button onClick={handleClick}>
-              <FontAwesomeIcon icon={faXmark} />
+              <FontAwesomeIcon className={styles.icon} icon={faTimesCircle} />
             </Button>
           </div>
           <form onSubmit={validate(handleSubmit)}>
-            <h3 className={styles.modalHeader}>Please write your question below</h3>
+            <h3 className={styles.modalHeader}>
+              {messageSent ?
+                'Success!' :
+                'Please write your question below'}</h3>
             <div className={clsx('row', styles.modalInfoContainer)}>
               <div className={clsx('col-5', styles.imageContainer)}>
                 <img src={product.source} alt={product.name} />

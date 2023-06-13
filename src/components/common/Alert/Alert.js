@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Alert.module.scss';
 import Button from '../Button/Button';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
 import { useSelector } from 'react-redux';
@@ -26,7 +26,7 @@ const Alert = ({ type, id, quantity = 1, closeAlert, action }) => {
         };
       case 'error':
         return {
-          title: 'Unfortunatelly we don\' have enough products',
+          title: 'Unfortunatelly we don\'t have enough products',
           content: <>
             <li className={styles.productAmount}>Avalibale: {product.quantity} {product.quantity > 1 ? 'pieces' : 'piece'}</li>
           </>,
@@ -81,21 +81,21 @@ const Alert = ({ type, id, quantity = 1, closeAlert, action }) => {
         <div className={styles.alertContainer}>
           <div className={styles.closeButton}>
             <Button onClick={handleClick}>
-              <FontAwesomeIcon icon={faXmark} />
+              <FontAwesomeIcon className={styles.icon} icon={faTimesCircle} />
             </Button>
           </div>
           <div className={styles.alertContent}>
             <h3 className={styles.alertHeader}>{alertMessage.title}</h3>
-            <div className={clsx('row', styles.alertInfoContainer)}>
+            <div className={clsx('row justify-content-around align-items-center', styles.alertInfoContainer)}>
               {product?.source &&
-                <div className={clsx('col-4')}>
+                <div className={clsx('col-4', styles.alertImage)}>
                   <div className={styles.imageContainer}>
                     <img src={product.source} alt={product.name} />
                   </div>
                 </div>
               }
-              <div className={clsx(product ? 'col-8' : 'col-12', styles.rightContent)}>
-                <div className={styles.textContainer}>
+              <div className={clsx(product ? 'col-auto' : 'col-12', styles.rightContent)}>
+                <div className={clsx('col-12', styles.textContainer)}>
                   {product?.name && <h3 className={styles.productName}>{product.name}</h3>}
                   <ul className={styles.productInfoList}>
                     {alertMessage.content}
