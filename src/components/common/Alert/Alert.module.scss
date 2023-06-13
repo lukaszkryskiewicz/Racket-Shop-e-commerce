@@ -8,14 +8,13 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.25);
   z-index: 999;
 
 
   .alertContainer {
     padding: 1rem 1rem 1rem 1rem;
-    width: 70vh;
-    // height: 30vh;
+    width: 40%;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -29,6 +28,10 @@
       position: absolute;
       top: 0;
       left: 7px;
+
+      .icon {
+        color: $primary;
+      }
     }
 
     .alertContent {
@@ -42,7 +45,6 @@
       }
 
       .alertInfoContainer {
-        padding: 20px;
 
         .imageContainer {
           width: 100%;
@@ -70,19 +72,64 @@
 
       .buttonsContainer {
 
-
         .buttons {
-          margin: 10px;
-          text-align: center;
+          display: flex;
+          gap: 10px;
+          justify-content: center;
+
 
           .button {
-            margin: 10px;
+            // margin: 10px;
             padding: 10px;
             font-size: 14px;
             text-transform: uppercase;
           }
         }
       }
+    }
+  }
+}
+
+@media (max-width: 769px) {
+  .root {
+    .alertContainer {
+      width: 60%;
+
+      .alertContent {
+        .alertHeader {
+          font-size: 20px;
+        }
+
+        .alertInfoContainer {
+          .alertImage {
+            display: none;
+          }
+        }
+
+        .rightContent {
+          .textContainer {
+            .productName {
+              font-size: 18px;
+            }
+
+            .productInfoList {
+              font-size: 15px;
+            }
+
+            .buttonsContainer {
+              .buttons {
+                flex-direction: column;
+
+                .button {
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+
     }
   }
 }

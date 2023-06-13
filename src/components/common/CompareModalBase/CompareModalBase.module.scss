@@ -11,7 +11,7 @@
   z-index: 999;
 
   .compareModalContainer {
-    max-height: 100%;
+    max-height: 90%;
     width: 80%;
     position: fixed;
     top: 50%;
@@ -19,16 +19,22 @@
     transform: translate(-50%, -50%);
     background-color: #ffffff;
     display: flex;
-    overflow: scroll;
+    overflow: auto;
     padding: 40px;
   }
 
   .closeButton {
     font-size: 25px;
-    position: absolute;
-    top: 5px;
-    left: 9px;
+    position: sticky;
+    top: 0px;
+    width: 0px;
+
+
+    .icon {
+      color: $primary;
+    }
   }
+
 }
 
 
