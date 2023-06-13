@@ -9,6 +9,7 @@
 
   .category {
     border: 1px solid $form-border-color;
+    border-radius: 10px 0 0 10px;
     display: flex;
     justify-content: center;
     position: relative;
@@ -52,6 +53,7 @@
   }
 
   .searchField {
+    border-radius: 0 10px 10px 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,10 +88,12 @@
     flex-direction: column;
 
     .category {
+      border-radius: 10px;
       height: 30px;
     }
 
     .searchField {
+      border-radius: 10px;
       height: 30px;
       border-top: none;
     }

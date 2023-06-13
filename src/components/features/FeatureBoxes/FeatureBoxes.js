@@ -11,46 +11,32 @@ import {
 import styles from './FeatureBoxes.module.scss';
 import FeatureBox from '../../common/FeatureBox/FeatureBox';
 
-const FeatureBoxes = () => (
-  <div className={styles.root}>
-    <div className='container'>
-      <div className='row'>
-        <div className='col-6 col-lg-3'>
-          <a href='#'>
-            <FeatureBox icon={faTruck}>
-              <h5>Free shipping</h5>
-              <p>All orders</p>
-            </FeatureBox>
-          </a>
-        </div>
-        <div className='col-6 col-lg-3'>
-          <a href='#'>
-            <FeatureBox icon={faHeadphones}>
-              <h5>24/7 customer</h5>
-              <p>support</p>
-            </FeatureBox>
-          </a>
-        </div>
-        <div className='col-6 col-lg-3'>
-          <a href='#'>
-            <FeatureBox icon={faReplyAll}>
-              <h5>Money back</h5>
-              <p>guarantee</p>
-            </FeatureBox>
-          </a>
-        </div>
-        <div className='col-6 col-lg-3'>
-          <a href='#'>
-            <FeatureBox icon={faBullhorn}>
-              <h5>Member discount</h5>
-              <p>First order</p>
-            </FeatureBox>
-          </a>
+const FeatureBoxes = () => {
+
+  const boxes = [
+    { id: 1, icon: faTruck, title: 'Free shipping', text: 'All orders' },
+    { id: 2, icon: faHeadphones, title: '24/7 customer', text: 'support' },
+    { id: 3, icon: faReplyAll, title: 'money back', text: 'guarantee' },
+    { id: 4, icon: faBullhorn, title: 'member discount', text: 'first order' },
+  ]
+
+  return (
+    <div className={styles.root}>
+      <div className='container'>
+        <div className='row'>
+          {boxes.map(box =>
+            <div key={box.id} className='col-6 col-lg-3'>
+              <FeatureBox icon={box.icon}>
+                <h5>{box.title}</h5>
+                <p>{box.text}</p>
+              </FeatureBox>
+            </div>
+          )}
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 FeatureBoxes.propTypes = {
   children: PropTypes.node,

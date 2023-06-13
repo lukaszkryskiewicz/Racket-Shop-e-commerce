@@ -157,12 +157,13 @@ const Featured = () => {
                             compare={hotDeal.compare}
                             buttonType={'compare'}
                           />
-                          <ActionButton
-                            id={hotDeal.id}
-                            buttonType={'quickView'}
-                            productData={hotDeal}
-                            onClickFunction={setModal}
-                          />
+                          {!(viewportMode === 'tablet' || viewportMode === 'mobile') &&
+                            <ActionButton
+                              id={hotDeal.id}
+                              buttonType={'quickView'}
+                              productData={hotDeal}
+                              onClickFunction={setModal}
+                            />}
                           {(viewportMode === 'tablet' || viewportMode === 'mobile') && (
                             <ActionButton
                               id={hotDeal.id}

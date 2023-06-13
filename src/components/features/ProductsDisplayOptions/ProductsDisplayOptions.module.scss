@@ -80,12 +80,24 @@
 
 @media (max-width: 992px) {
   .menu {
+    justify-content: center;
+
     .productsToDisplay {
       display: none;
     }
 
     .displayForm {
       display: none;
+    }
+  }
+}
+
+@media (max-width: 300px) {
+  .menu {
+    .sortBy {
+      .sortByTitle {
+        display: none;
+      }
     }
   }
 }

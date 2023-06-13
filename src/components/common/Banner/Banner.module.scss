@@ -4,7 +4,7 @@
 
   .banner {
     background-color: $banner-background;
-    padding: 50px 0;
+    padding: 40px 0;
     color: white;
   }
 
@@ -21,16 +21,15 @@
   }
 
   .subtitle {
-    padding-left: 8px;
+    padding: 0 8px;
     line-height: 30px;
     font-size: 30px;
-    letter-spacing: 11px;
-    word-spacing: 12px;
+    letter-spacing: 7px;
+    word-spacing: 5px;
     text-transform: uppercase;
 
     span {
       color: $banner-orange-text;
-      letter-spacing: 0;
     }
   }
 
@@ -51,6 +50,40 @@
         &:active {
           color: $primary;
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 769px) {
+  .root {
+
+    .banner {
+      padding: 30px 0;
+
+      .title {
+        font-size: 50px;
+      }
+
+      .subtitle {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .root {
+
+    .banner {
+      padding: 20px 0;
+
+      .title {
+        font-size: 40px;
+      }
+
+      .subtitle {
+        font-size: 15px;
       }
     }
   }

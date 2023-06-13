@@ -123,7 +123,7 @@ const ProductsPageLayout = () => {
               <div className={clsx('col-md-auto col-5 mb-3 mb-md-0', styles.heading)}>
                 <h3>{categoryId}</h3>
               </div>
-              <div className={clsx('col-md-auto col-7', styles.menu)}>
+              <div className={clsx('col-md-auto col-12', styles.menu)}>
                 <ProductsDisplayOptions
                   productsToDisplay={productsToDisplay}
                   displayForm={displayForm}
