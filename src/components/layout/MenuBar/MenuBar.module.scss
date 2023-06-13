@@ -139,8 +139,9 @@
   .root.mobileMenu {
 
     .menuBarContainer {
+      flex-direction: column;
       justify-content: space-between;
-      padding-right: 25px;
+
 
       .bars {
         margin: 0 auto;
@@ -149,8 +150,10 @@
       .desktopMenu {
 
         &.menuMobile {
-
-
+          top: 30px;
+          width: 100%;
+          left: 0;
+          transform: none;
 
           ul {
             width: 100%;
