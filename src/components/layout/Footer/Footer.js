@@ -99,12 +99,11 @@ const Footer = ({ children }) => (
     </div>
     <div className={styles.bottomBar}>
       <div className='container'>
-        <div className='row align-items-center'>
-          <div className='col-lg-4 col-md-12'></div>
-          <div className={'col text-center ' + styles.copyright}>
+        <div className='row align-items-center justify-content-center'>
+          <div className={'col-md-auto col-12 text-center ' + styles.copyright}>
             <p>©Copyright 2023 LukKry | All Rights Reserved</p>
           </div>
-          <div className={'col text-right ' + styles.socialMedia}>
+          <div className={'col-md-auto col-12 text-center ' + styles.socialMedia}>
             <ul>
               <li>
                 <a href='#'>

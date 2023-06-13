@@ -15,7 +15,7 @@ export const getSaleOffProducts = ({ products }) =>
 export const getTopSellerProducts = ({ products }) =>
   products.filter(item => item.topSeller === true);
 export const getTopRatedProducts = ({ products }) =>
-  products.slice(0, 15).sort((a, b) => b.stars - a.stars);
+  products.sort((a, b) => b.stars - a.stars);
 export const getProductById = ({ products }, id) => products.find(
   product => product.id === id);
 export const getSortedProducts = ({ products }, sort) => {

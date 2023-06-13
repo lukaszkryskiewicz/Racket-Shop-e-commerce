@@ -20,9 +20,11 @@ import Dots from '../../common/Dots/Dots';
 import CompareBar from '../../common/CompareBar/CompareBar';
 import ProductsDisplayOptions from '../../features/ProductsDisplayOptions/ProductsDisplayOptions';
 import { getViewportMode } from '../../../redux/viewportModeRedux';
+import { getCategoryById } from '../../../redux/categoriesRedux';
 
 const ProductsPageLayout = () => {
   const { categoryId } = useParams();
+  const category = useSelector(state => getCategoryById(state, categoryId));
   const dispatch = useDispatch();
   const viewportMode = useSelector(getViewportMode);
   const [fade, setFade] = useState('false');
@@ -121,9 +123,9 @@ const ProductsPageLayout = () => {
           <div className={clsx('col-lg-9 col-md-8 col-12', styles.productList)}>
             <div className={clsx('row g-0 align-items-center', styles.headRow)}>
               <div className={clsx('col-md-auto col-5 mb-3 mb-md-0', styles.heading)}>
-                <h3>{categoryId}</h3>
+                <h3>{category.name}</h3>
               </div>
-              <div className={clsx('col-md-auto col-7', styles.menu)}>
+              <div className={clsx('col-md-auto col-12', styles.menu)}>
                 <ProductsDisplayOptions
                   productsToDisplay={productsToDisplay}
                   displayForm={displayForm}

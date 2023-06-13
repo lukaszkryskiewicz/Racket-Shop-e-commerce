@@ -33,13 +33,13 @@ const RacketsGallery = () => {
   const productsToDisplay = useSelector(state => {
     switch (activeHeadline) {
       case 'Featured':
-        return getFeaturedProducts(state);
+        return getFeaturedProducts(state).slice(0, 18);
       case 'Sale Off':
-        return getSaleOffProducts(state);
+        return getSaleOffProducts(state).slice(0, 18);
       case 'Top Seller':
-        return getTopSellerProducts(state);
+        return getTopSellerProducts(state).slice(0, 18);
       case 'Top Rated':
-        return getTopRatedProducts(state);
+        return getTopRatedProducts(state).slice(0, 18);
       default:
         return [];
     }
@@ -151,8 +151,8 @@ const RacketsGallery = () => {
             className={clsx(
               styles.buttons,
               viewportMode !== 'mobile' &&
-                viewportMode !== 'tablet' &&
-                styles.buttonsAnimation
+              viewportMode !== 'tablet' &&
+              styles.buttonsAnimation
             )}
           >
             <ActionButton

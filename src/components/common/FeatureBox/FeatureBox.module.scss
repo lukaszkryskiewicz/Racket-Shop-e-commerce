@@ -6,6 +6,7 @@
   margin-top: 40px;
   margin-bottom: 10px;
   height: 150px;
+
   .iconWrapper {
     height: 60px;
     transform: translateY(-50%);
@@ -72,6 +73,22 @@
 
     .content {
       color: $primary;
+    }
+  }
+}
+
+
+@media (max-width: 576px) {
+  .root {
+
+    .content {
+      h5 {
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 15px;
+      }
     }
   }
 }

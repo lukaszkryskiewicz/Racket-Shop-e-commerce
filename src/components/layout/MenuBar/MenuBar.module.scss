@@ -10,11 +10,12 @@
 
   .menuBarContainer {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: inherit;
 
     .search {
       text-align: center;
-      margin: auto 0;
+      align-self: center;
     }
 
     .bars {
@@ -86,7 +87,7 @@
           display: flex;
           position: absolute;
           top: 100px;
-          left: 50%;
+          left: 0;
           transform: translateX(-50%);
           background-color: #ffffff;
           z-index: 100;
@@ -101,7 +102,10 @@
               display: inline;
               width: 100%;
 
-
+              a {
+                justify-content: center;
+                text-align: center;
+              }
             }
           }
         }
@@ -136,6 +140,8 @@
 
     .menuBarContainer {
       flex-direction: column;
+      justify-content: space-between;
+
 
       .bars {
         margin: 0 auto;
@@ -146,16 +152,14 @@
         &.menuMobile {
           top: 30px;
           width: 100%;
+          left: 0;
+          transform: none;
 
           ul {
             width: 100%;
 
 
-            li {
-              a {
-                justify-content: center;
-              }
-            }
+
           }
         }
       }
