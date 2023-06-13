@@ -21,7 +21,7 @@ import {
 import Alert from '../../common/Alert/Alert';
 import StarsReviewBasic from '../../common/StarsReviewBasic/StarsReviewBasic';
 
-const ProductDetails = ({ productData }) => {
+const ProductDetails = ({ productData, modalView }) => {
   const { productId } = useParams();
   const productOnSite = useSelector(state => getProductById(state, productId));
   const [fadeImage, setFadeImage] = useState(true);
@@ -82,7 +82,13 @@ const ProductDetails = ({ productData }) => {
       )}
       <div className={clsx('container', styles.productDetails)}>
         <div className={clsx('row', styles.mainRow)}>
-          <div className={clsx('col-lg-5 col-md-12', styles.photoSection)}>
+          <div
+            className={clsx(
+              'col-12',
+              modalView ? 'col-xl-6' : 'col-lg-5',
+              styles.photoSection
+            )}
+          >
             <div
               className={clsx(
                 'row g-0 align-items-center',
@@ -134,7 +140,13 @@ const ProductDetails = ({ productData }) => {
               </a>
             </div>
           </div>
-          <div className={clsx('col-lg-7 col-md-12', styles.infoSection)}>
+          <div
+            className={clsx(
+              'col-12',
+              modalView ? 'col-xl-6' : 'col-lg-7',
+              styles.infoSection
+            )}
+          >
             <div className={clsx('row', styles.headerRow)}>
               <div className={styles.title}>
                 <h1>{product.name}</h1>
@@ -177,11 +189,12 @@ const ProductDetails = ({ productData }) => {
                   name={product.name}
                   price={product.price}
                   source={product.source}
-                  buttonStyle='primary'
+                  buttonStyle={!modalView ? 'primary' : ''}
                   quantity={productQuantity}
                   onClickFunction={setAlert}
+                  disabled={product.quantity === 0}
                 >
-                  Add To Cart
+                  {!modalView ? 'Add To Cart' : ''}
                 </ActionButton>
                 <ActionButton
                   id={product.id}
@@ -219,7 +232,7 @@ const ProductDetails = ({ productData }) => {
               </div>
             </div>
             <div className={clsx('row', styles.overviewRow)}>
-              <p className={styles.overviewTitle}>Quick Overview</p>
+              <p className={styles.overviewTitle}>Overview</p>
               <div>{product.overview}</div>
             </div>
             <div className={clsx('row', styles.infoRow)}>
@@ -238,25 +251,27 @@ const ProductDetails = ({ productData }) => {
                 </p>
               </div>
             </div>
-            <div className={clsx('row d-none d-lg-block', styles.socialRow)}>
-              <div className={styles.social}>
-                {socialMedia.map(socialMedium => (
-                  <Link
-                    key={socialMedium.name}
-                    className={`${styles.media} ${styles.outline}`}
-                    to='/'
-                    onClick={e => {
-                      e.preventDefault();
-                      window.open('https://www.' + socialMedium.name + '.com/');
-                    }}
-                  >
-                    <Button variant='outline' className={styles.media}>
-                      <FontAwesomeIcon icon={socialMedium.icon} /> {socialMedium.name}
-                    </Button>
-                  </Link>
-                ))}
+            {!modalView && (
+              <div className={clsx('row d-none d-lg-block', styles.socialRow)}>
+                <div className={styles.social}>
+                  {socialMedia.map(socialMedium => (
+                    <Link
+                      key={socialMedium.name}
+                      className={`${styles.media} ${styles.outline}`}
+                      to='/'
+                      onClick={e => {
+                        e.preventDefault();
+                        window.open('https://www.' + socialMedium.name + '.com/');
+                      }}
+                    >
+                      <Button variant='outline' className={styles.media}>
+                        <FontAwesomeIcon icon={socialMedium.icon} /> {socialMedium.name}
+                      </Button>
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
@@ -267,6 +282,6 @@ const ProductDetails = ({ productData }) => {
 export default ProductDetails;
 
 ProductDetails.propTypes = {
-  closeModal: PropTypes.bool,
   productData: PropTypes.object,
+  modalView: PropTypes.bool,
 };

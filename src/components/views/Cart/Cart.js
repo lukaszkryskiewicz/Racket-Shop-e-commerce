@@ -29,8 +29,10 @@ const Cart = () => {
 
   const handleClick = e => {
     e.preventDefault();
-    dispatch(checkout());
-    setAlert({ status: true, type: 'checkout' });
+    if (cartProducts.length > 0) {
+      dispatch(checkout());
+      setAlert({ status: true, type: 'checkout' });
+    }
   };
 
   const calculateCart = () => {
@@ -87,11 +89,7 @@ const Cart = () => {
   return (
     <div className={styles.root}>
       {alert.status && (
-        <Alert
-          closeAlert={setAlert}
-          type={alert.type}
-          action={alert.action}
-        />
+        <Alert closeAlert={setAlert} type={alert.type} action={alert.action} />
       )}
       <div className={styles.cartBar}>
         <div className='container'>
@@ -100,103 +98,115 @@ const Cart = () => {
           </span>
         </div>
       </div>
-      <div className='container'>
-        <div className={styles.cartTable}>
-          {cartProducts.map(singleItem => (
-            <CartTableLine
-              key={singleItem.id}
-              id={singleItem.id}
-              quantity={singleItem.quantity}
-              name={singleItem.name}
-              price={singleItem.price}
-              source={singleItem.source}
-            ></CartTableLine>
-          ))}
-          <div className={`row ${styles.lastRow}`}>
-            <span className='col-auto justify-content-start d-flex'>
-              <input
-                className='me-2'
-                onChange={handleCouponCodeChange}
-                placeholder='Coupon code'
-              />
-              <Button
-                variant='main'
-                onClick={handleApplyCoupon}
-                type='submit'
-                className={styles.cartButton}
-              >
-                apply coupon
-              </Button>
-            </span>
-            <span className='col-auto d-flex justify-content-end'>
-              {couponMessage === 'null' && null}
-              {couponMessage === 'error' &&
-                'It looks like code ' + couponCode + ' is not working'}
-              {couponMessage === 'success' &&
-                'Great! Your code ' + couponCode + ' works!'}
-            </span>
-          </div>
+      {cartProducts.length === 0 && (
+        <div className='m-5 text-center'>
+          <p>Cart is empty!</p>
+          <Button variant='small' link='/'>
+            Go to main page
+          </Button>
         </div>
-        <div className='row mx-0  justify-content-end'>
-          <div className='col-auto mb-4'>
-            <div className={`row ${styles.cartTotalsTop}`}>
-              <div className='col text-center'>
-                <span>Cart totals</span>
-              </div>
+      )}
+      {cartProducts.length > 0 && (
+        <div className='container'>
+          <div className={styles.cartTable}>
+            {cartProducts.map(singleItem => (
+              <CartTableLine
+                key={singleItem.id}
+                id={singleItem.id}
+                quantity={singleItem.quantity}
+                name={singleItem.name}
+                price={singleItem.price}
+                source={singleItem.source}
+              ></CartTableLine>
+            ))}
+            <div className={`row ${styles.lastRow}`}>
+              <span className='col-auto justify-content-start d-flex'>
+                <input
+                  className='me-2'
+                  onChange={handleCouponCodeChange}
+                  placeholder='Coupon code'
+                />
+                <Button
+                  variant='main'
+                  onClick={handleApplyCoupon}
+                  type='submit'
+                  className={styles.cartButton}
+                >
+                  apply coupon
+                </Button>
+              </span>
+              <span className='col-auto d-flex justify-content-end'>
+                {couponMessage === 'null' && null}
+                {couponMessage === 'error' &&
+                  'It looks like code ' + couponCode + ' is not working'}
+                {couponMessage === 'success' &&
+                  'Great! Your code ' + couponCode + ' works!'}
+              </span>
             </div>
-            {isCouponActive && (
+          </div>
+          <div className='row mx-0  justify-content-end'>
+            <div className='col-auto mb-4'>
+              <div className={`row ${styles.cartTotalsTop}`}>
+                <div className='col text-center'>
+                  <span>Cart totals</span>
+                </div>
+              </div>
+              {isCouponActive && (
+                <div className={`row ${styles.cartTotalsRows}`}>
+                  <div className='col-5'>Discount</div>
+                  <div className={`col-7 ${styles.borderLeft} ${styles.price}`}>
+                    <span>
+                      {coupons.map(coupon => {
+                        if (coupon.id === couponCode) {
+                          switch (coupon.type) {
+                            case 'discount':
+                              return (
+                                'You got ' + (1 - coupon.value) * 100 + '% Discount'
+                              );
+                            case 'freeDelivery':
+                              return 'You got free delivery!';
+                            default:
+                              return 'No cupon';
+                          }
+                        }
+                        return null;
+                      })}
+                    </span>
+                  </div>
+                </div>
+              )}
               <div className={`row ${styles.cartTotalsRows}`}>
-                <div className='col-5'>Discount</div>
+                <div className='col-5'>Subtotal</div>
                 <div className={`col-7 ${styles.borderLeft} ${styles.price}`}>
                   <span>
-                    {coupons.map(coupon => {
-                      if (coupon.id === couponCode) {
-                        switch (coupon.type) {
-                          case 'discount':
-                            return 'You got ' + (1 - coupon.value) * 100 + '% Discount';
-                          case 'freeDelivery':
-                            return 'You got free delivery!';
-                          default:
-                            return 'No cupon';
-                        }
-                      }
-                      return null;
-                    })}
+                    {currency.sign} {subTotalPrice}
                   </span>
                 </div>
               </div>
-            )}
-            <div className={`row ${styles.cartTotalsRows}`}>
-              <div className='col-5'>Subtotal</div>
-              <div className={`col-7 ${styles.borderLeft} ${styles.price}`}>
-                <span>
-                  {currency.sign} {subTotalPrice}
-                </span>
+              <div className={`row ${styles.cartTotalsRows}`}>
+                <div className='col-5'>Total</div>
+                <div className={`col-7 ${styles.borderLeft} ${styles.price}`}>
+                  <span>
+                    {currency.sign} {totalPrice}
+                  </span>
+                </div>
               </div>
-            </div>
-            <div className={`row ${styles.cartTotalsRows}`}>
-              <div className='col-5'>Total</div>
-              <div className={`col-7 ${styles.borderLeft} ${styles.price}`}>
-                <span>
-                  {currency.sign} {totalPrice}
-                </span>
-              </div>
-            </div>
-            <div className={`row ${styles.cartTotalsBottom}`}>
-              <div className='col-12'>
-                <Button
-                  variant='main'
-                  type='submit'
-                  className={styles.proceedButton}
-                  onClick={handleClick}
-                >
-                  Proceed to checkout
-                </Button>
+              <div className={`row ${styles.cartTotalsBottom}`}>
+                <div className='col-12'>
+                  <Button
+                    variant='main'
+                    type='submit'
+                    className={styles.proceedButton}
+                    onClick={handleClick}
+                  >
+                    Proceed to checkout
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

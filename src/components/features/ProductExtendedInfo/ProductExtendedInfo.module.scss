@@ -1,47 +1,48 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  .container {
+
+  .box {
     border: 1px solid $chat-textarea-bakground;
     margin-bottom: 20px;
-  }
+    margin-top: 20px;
 
-  .menu {
-    text-transform: uppercase;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 10px;
+    .menu {
+      text-transform: uppercase;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 10px;
 
-    .menuText {
-      border-inline: 1px solid $chat-textarea-bakground;
-      border-bottom: 1px solid $chat-textarea-bakground;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 10px;
-      cursor: pointer;
+      .menuText {
+        border-inline: 1px solid $chat-textarea-bakground;
+        border-bottom: 1px solid $chat-textarea-bakground;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        cursor: pointer;
 
-      &:hover {
+        &:hover {
+          color: $primary;
+          border-bottom: none;
+        }
+
+        p {
+          margin: 0;
+          padding: 11px;
+        }
+
+      }
+
+      .active {
         color: $primary;
-        border-bottom: none;
-      }
+        background-color: lightgray;
 
-      p {
-        margin: 0;
-        padding: 11px;
       }
-
     }
 
-    .active {
-      color: $primary;
-      background-color: lightgray;
-
+    .tabsContent {
+      min-height: 600px;
     }
   }
-
-  .tabsContent {
-    min-height: 600px;
-  }
-
 }

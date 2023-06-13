@@ -3,7 +3,6 @@
 .root {
   .productDetails {
     border: 1px solid $chat-textarea-bakground;
-    margin-bottom: 20px;
 
     .mainRow {
       padding-top: 10px;
@@ -169,7 +168,7 @@
           display: flex;
 
           .quantity {
-            padding-top: 20px;
+            padding-top: 10px;
 
             .amountInput {
               width: 55px;

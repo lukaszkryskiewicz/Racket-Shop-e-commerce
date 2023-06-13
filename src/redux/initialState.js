@@ -27,7 +27,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tennis/tennis-racket-1.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 2,
       reviews: [
         {
@@ -68,7 +68,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tennis/tennis-racket-2.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -91,7 +91,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tennis/tennis-racket-3.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 5,
     },
     {
@@ -114,7 +114,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tennis/tennis-racket-4.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 2,
     },
     {
@@ -137,7 +137,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tennis/tennis-racket-5.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 7,
     },
     {
@@ -160,7 +160,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tennis/tennis-racket-6.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 10,
     },
     {
@@ -183,7 +183,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/tennis/tennis-racket-7.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 2,
     },
     {
@@ -206,7 +206,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tennis/tennis-racket-8.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 8,
     },
     {
@@ -229,7 +229,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tennis/tennis-racket-9.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -252,7 +252,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/tennis/tennis-racket-10.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -275,7 +275,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tennis/tennis-racket-11.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -298,7 +298,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tennis/tennis-racket-12.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -321,7 +321,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/tennis/tennis-racket-13.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -344,7 +344,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tennis/tennis-racket-14.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -367,7 +367,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/tennis/tennis-racket-15.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -390,7 +390,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/tennis/tennis-racket-16.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -413,7 +413,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tennis/tennis-racket-17.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -436,7 +436,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tennis/tennis-racket-18.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -459,7 +459,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tennis/tennis-racket-19.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -482,7 +482,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tennis/tennis-racket-20.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -505,7 +505,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tennis/tennis-racket-21.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -528,7 +528,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/tennis/tennis-racket-22.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -551,7 +551,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tennis/tennis-racket-23.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -574,7 +574,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tennis/tennis-racket-24.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -597,7 +597,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tennis/tennis-racket-25.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -620,7 +620,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/squash/squash-racket-1.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -643,7 +643,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/squash/squash-racket-2.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -666,7 +666,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/squash/squash-racket-3.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -689,7 +689,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/squash/squash-racket-4.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -712,7 +712,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/squash/squash-racket-5.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -735,7 +735,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/squash/squash-racket-6.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -758,7 +758,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/squash/squash-racket-7.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -781,7 +781,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/squash/squash-racket-8.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -804,7 +804,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/squash/squash-racket-9.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -827,7 +827,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/squash/squash-racket-10.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -850,7 +850,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/squash/squash-racket-11.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -873,7 +873,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/squash/squash-racket-12.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -896,7 +896,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/squash/squash-racket-13.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -919,7 +919,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/squash/squash-racket-14.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -942,7 +942,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/squash/squash-racket-15.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -965,7 +965,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/squash/squash-racket-16.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -988,7 +988,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/squash/squash-racket-17.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1011,7 +1011,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/squash/squash-racket-18.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1034,7 +1034,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/squash/squash-racket-19.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1057,7 +1057,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/squash/squash-racket-20.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1080,7 +1080,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/squash/squash-racket-21.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1103,7 +1103,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/squash/squash-racket-22.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1126,7 +1126,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/squash/squash-racket-23.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1149,7 +1149,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/squash/squash-racket-24.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1172,7 +1172,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/squash/squash-racket-25.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1195,7 +1195,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/padel/padel-racket-1.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1218,7 +1218,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/padel/padel-racket-2.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1241,7 +1241,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/padel/padel-racket-3.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1264,7 +1264,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/padel/padel-racket-4.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1287,7 +1287,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/padel/padel-racket-5.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1310,7 +1310,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/padel/padel-racket-6.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1333,7 +1333,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/padel/padel-racket-7.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1356,7 +1356,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/padel/padel-racket-8.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1379,7 +1379,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/padel/padel-racket-9.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1402,7 +1402,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/padel/padel-racket-10.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1425,7 +1425,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/padel/padel-racket-11.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1448,7 +1448,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/padel/padel-racket-12.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1471,7 +1471,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/padel/padel-racket-13.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1494,7 +1494,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/padel/padel-racket-14.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1517,7 +1517,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/padel/padel-racket-15.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1540,7 +1540,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/padel/padel-racket-16.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1563,7 +1563,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/padel/padel-racket-17.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1586,7 +1586,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/padel/padel-racket-18.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1609,7 +1609,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/padel/padel-racket-19.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1632,7 +1632,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/padel/padel-racket-20.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1655,7 +1655,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/padel/padel-racket-21.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1678,7 +1678,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/padel/padel-racket-22.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1701,7 +1701,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/padel/padel-racket-23.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1724,7 +1724,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/padel/padel-racket-24.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1747,7 +1747,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/padel/padel-racket-25.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1770,7 +1770,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-1.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1793,7 +1793,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-2.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1816,7 +1816,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-3.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1839,7 +1839,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-4.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1862,7 +1862,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-5.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1885,7 +1885,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/badminton/badminton-racket-6.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1908,7 +1908,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-7.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1931,7 +1931,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/badminton/badminton-racket-8.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1954,7 +1954,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-9.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -1977,7 +1977,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/badminton/badminton-racket-10.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2000,7 +2000,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-11.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2023,7 +2023,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/badminton/badminton-racket-12.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2046,7 +2046,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-13.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2069,7 +2069,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-14.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2092,7 +2092,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-15.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2115,7 +2115,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-16.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2138,7 +2138,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-17.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2161,7 +2161,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/badminton/badminton-racket-18.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2184,7 +2184,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-19.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2207,7 +2207,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-20.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2230,7 +2230,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-21.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2253,7 +2253,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/badminton/badminton-racket-22.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2276,7 +2276,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-23.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2299,7 +2299,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-24.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2322,7 +2322,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/badminton/badminton-racket-25.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2345,7 +2345,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/tableTennis/tableTennis-racket-1.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2368,7 +2368,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tableTennis/tableTennis-racket-2.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2391,7 +2391,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/tableTennis/tableTennis-racket-3.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2414,7 +2414,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/tableTennis/tableTennis-racket-4.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2437,7 +2437,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tableTennis/tableTennis-racket-5.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2460,7 +2460,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tableTennis/tableTennis-racket-6.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2483,7 +2483,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tableTennis/tableTennis-racket-7.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2506,7 +2506,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tableTennis/tableTennis-racket-8.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2529,7 +2529,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/tableTennis/tableTennis-racket-9.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2552,7 +2552,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tableTennis/tableTennis-racket-10.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2575,7 +2575,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tableTennis/tableTennis-racket-11.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2598,7 +2598,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tableTennis/tableTennis-racket-12.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2621,7 +2621,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/tableTennis/tableTennis-racket-13.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2644,7 +2644,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tableTennis/tableTennis-racket-14.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2667,7 +2667,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tableTennis/tableTennis-racket-15.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2690,7 +2690,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/tableTennis/tableTennis-racket-16.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2713,7 +2713,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tableTennis/tableTennis-racket-17.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2736,7 +2736,7 @@ const initialState = {
       saleOff: true,
       source: '/images/racket/tableTennis/tableTennis-racket-18.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2759,7 +2759,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tableTennis/tableTennis-racket-19.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2782,7 +2782,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tableTennis/tableTennis-racket-20.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2805,7 +2805,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tableTennis/tableTennis-racket-21.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2828,7 +2828,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tableTennis/tableTennis-racket-22.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2851,7 +2851,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tableTennis/tableTennis-racket-23.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2874,7 +2874,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tableTennis/tableTennis-racket-24.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
     {
@@ -2897,7 +2897,7 @@ const initialState = {
       saleOff: false,
       source: '/images/racket/tableTennis/tableTennis-racket-25.webp',
       overview:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
       quantity: 3,
     },
   ],
@@ -2909,7 +2909,7 @@ const initialState = {
         price: 1038,
         source: '/images/racket/tennis/tennis-racket-1.webp',
         overview:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc semper ultrices dolor, quis commodo sem porttitor in.',
         quantity: 1,
       },
     ],
