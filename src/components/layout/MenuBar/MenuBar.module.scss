@@ -10,11 +10,12 @@
 
   .menuBarContainer {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: inherit;
 
     .search {
       text-align: center;
-      margin: auto 0;
+      align-self: center;
     }
 
     .bars {
@@ -136,6 +137,7 @@
 
     .menuBarContainer {
       flex-direction: column;
+      justify-content: space-around;
 
       .bars {
         margin: 0 auto;

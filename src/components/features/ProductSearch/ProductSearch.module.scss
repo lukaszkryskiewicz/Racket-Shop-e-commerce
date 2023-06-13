@@ -1,15 +1,16 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  border: 1px solid $form-border-color;
-  display: inline-flex;
-  height: 45px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
   color: $text-color;
 
+
   .category {
-    border-right: 1px solid $form-border-color;
+    border: 1px solid $form-border-color;
     display: flex;
-    align-items: center;
+    justify-content: center;
     position: relative;
 
     .selectCategoryList {
@@ -20,10 +21,6 @@
       border: none;
 
 
-      li {
-        border-bottom: 0;
-      }
-
       &:hover {
         .categoriesList {
           display: block;
@@ -31,7 +28,7 @@
 
       }
 
-      .categoriesList {
+      /*    .categoriesList {
         display: none;
         list-style: none;
         position: absolute;
@@ -49,17 +46,20 @@
             background-color: $primary;
           }
         }
-      }
+      } */
 
     }
   }
 
   .searchField {
     display: flex;
+    justify-content: center;
     align-items: center;
     position: relative;
+    border: 1px solid $form-border-color;
 
     input {
+      text-align: center;
       border: 0;
       padding-left: 10px;
       font-size: 14px;
@@ -74,10 +74,25 @@
       border: 0;
       background-color: transparent;
       outline: none;
-
-      &:hover {
-        color: $primary;
-      }
+      margin: 0;
+      padding: 0;
+      color: $primary;
     }
+  }
+}
+
+@media (max-width: 420px) {
+  .root {
+    flex-direction: column;
+
+    .category {
+      height: 30px;
+    }
+
+    .searchField {
+      height: 30px;
+      border-top: none;
+    }
+
   }
 }

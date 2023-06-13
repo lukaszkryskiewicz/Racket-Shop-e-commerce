@@ -9,6 +9,7 @@ import styles from './ProductSearch.module.scss';
 import { getAllCategories } from '../../../redux/categoriesRedux';
 import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import clsx from 'clsx';
 
 const ProductSearch = () => {
   const history = useHistory();
@@ -30,8 +31,8 @@ const ProductSearch = () => {
   };
 
   return (
-    <form className={styles.root} onSubmit={validate(handleSubmit)}>
-      <div className={styles.category}>
+    <form className={clsx('row', styles.root)} onSubmit={validate(handleSubmit)}>
+      <div className={clsx('col-auto', styles.category)}>
         <select
           className={styles.selectCategoryList}
           value={selectedCategory}
@@ -45,7 +46,7 @@ const ProductSearch = () => {
           ))}
         </select>
       </div>
-      <div className={styles.searchField}>
+      <div className={clsx('col-auto', styles.searchField)}>
         <input
           {...register('search', {
             required: true,
