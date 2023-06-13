@@ -56,7 +56,7 @@ const ProductSearch = () => {
           value={searchText}
           onChange={e => setSearchText(e.target.value)}
         />
-        <button type='submit' className='m-1'>
+        <button type='submit'>
           <FontAwesomeIcon className={styles.icon} icon={faSearch} />
         </button>
       </div>

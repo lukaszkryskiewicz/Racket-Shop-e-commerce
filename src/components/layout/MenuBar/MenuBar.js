@@ -23,10 +23,10 @@ const MenuBar = () => {
     <div className={clsx(styles.root, viewportMode === 'mobile' && styles.mobileMenu)}>
       <div className='container'>
         <div className={clsx('row', styles.menuBarContainer)}>
-          <div className={clsx('col-auto', styles.search)}>
+          <div className={clsx('col-sm-auto col-8', styles.search)}>
             <ProductSearch />
           </div>
-          <div className={clsx('col-auto', styles.menu)}>
+          <div className={clsx('col-sm-auto col-2', styles.menu)}>
             <button onClick={toggleMobileMenu} className={clsx(styles.bars)}>
               <FontAwesomeIcon icon={faBars} />
             </button>

@@ -83,16 +83,18 @@
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 576px) {
   .root {
     flex-direction: column;
 
     .category {
+      padding: 1px;
       border-radius: 10px;
       height: 30px;
     }
 
     .searchField {
+      padding: 1px;
       border-radius: 10px;
       height: 30px;
       border-top: none;
