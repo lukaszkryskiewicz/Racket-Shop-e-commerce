@@ -47,7 +47,7 @@ const TopBar = () => {
                   <Dropdown.Menu className={styles.languageMenu}>
                     <Dropdown.Item
                       className={clsx(styles.menuItem, 'dropdown-item')}
-                      href='#'
+                      as={'button'}
                     >
                       English
                     </Dropdown.Item>

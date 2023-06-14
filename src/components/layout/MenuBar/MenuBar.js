@@ -1,23 +1,36 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import ProductSearch from '../../features/ProductSearch/ProductSearch';
 import styles from './MenuBar.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { getAllCategories } from '../../../redux/categoriesRedux';
 import clsx from 'clsx';
 import { getViewportMode } from '../../../redux/viewportModeRedux';
 
 const MenuBar = () => {
+  const location = useLocation();
   const [mobileMenu, setMobileMenu] = useState(false);
+  const mobileMenuRef = useRef(null);
   const categories = useSelector(getAllCategories);
   const viewportMode = useSelector(getViewportMode);
   const toggleMobileMenu = () => {
     setMobileMenu(!mobileMenu);
   };
+
+  useEffect(() => {
+    const handleOutsideClick = e => {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(e.target)) {
+        setMobileMenu(false);
+      }
+    };
+    document.addEventListener('click', handleOutsideClick);
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, []);
 
   return (
     <div className={clsx(styles.root, viewportMode === 'mobile' && styles.mobileMenu)}>
@@ -26,7 +39,10 @@ const MenuBar = () => {
           <div className={clsx('col-auto', styles.search)}>
             <ProductSearch />
           </div>
-          <div className={clsx('col-auto', styles.menu)}>
+          <div
+            className={clsx('col-auto', styles.menu)}
+            ref={viewportMode === 'mobile' ? mobileMenuRef : null}
+          >
             <button onClick={toggleMobileMenu} className={clsx(styles.bars)}>
               <FontAwesomeIcon icon={faBars} />
             </button>
@@ -61,7 +77,11 @@ const MenuBar = () => {
                   <NavLink
                     exact
                     to='/blog'
-                    className={isActive => (isActive ? styles.active : undefined)}
+                    className={isActive =>
+                      isActive || location.pathname.startsWith('/blog/')
+                        ? styles.active
+                        : undefined
+                    }
                   >
                     blog
                   </NavLink>

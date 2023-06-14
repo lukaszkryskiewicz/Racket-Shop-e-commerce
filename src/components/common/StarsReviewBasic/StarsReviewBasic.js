@@ -58,7 +58,7 @@ const StarsReviewBasic = ({ id, stars, myStars, noAction, getStars }) => {
   return (
     <div className={styles.basicStars}>
       {[1, 2, 3, 4, 5].map(i => (
-        <a key={i} href='#'>
+        <button key={i} href='#'>
           <FontAwesomeIcon
             key={i}
             className={drawStarStyle(i)}
@@ -69,7 +69,7 @@ const StarsReviewBasic = ({ id, stars, myStars, noAction, getStars }) => {
           >
             {i} stars
           </FontAwesomeIcon>
-        </a>
+        </button>
       ))}
     </div>
   );

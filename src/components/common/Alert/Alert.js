@@ -55,6 +55,26 @@ const Alert = ({ type, id, quantity = 1, closeAlert, action }) => {
           </>,
           text: 'Please check your email and follow the steps',
         };
+      case 'register':
+        return {
+          title: 'Registration completed!',
+          text: 'You can now log in',
+        };
+      case 'registerError':
+        return {
+          title: 'Register Error',
+          text: 'it seems that you already have the account',
+        };
+      case 'loginError':
+        return {
+          title: 'User or password incorrect',
+          text: "Please try again or click 'Forgot password?'!",
+        };
+      case 'login':
+        return {
+          title: 'You are now logged in!',
+          text: 'Enjoy!',
+        };
       default:
         return null;
     }

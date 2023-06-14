@@ -52,7 +52,7 @@ const Currency = () => {
           <Dropdown.Item
             key={currency}
             className={clsx(styles.menuItem, 'dropdown-item')}
-            href='#'
+            as='button'
             onClick={e => handleClick(e, currency)}
           >
             {currency}

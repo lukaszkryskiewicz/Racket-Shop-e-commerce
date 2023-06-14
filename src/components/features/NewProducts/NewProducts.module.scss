@@ -17,7 +17,7 @@
         color: $primary;
         text-transform: uppercase;
         font-size: 20px;
-        line-height: 38px;
+        line-height: 37px;
         margin: 0;
         letter-spacing: 1px;
       }
@@ -27,7 +27,7 @@
         position: absolute;
         bottom: -3px;
         left: 0;
-        width: 45px;
+        width: 50px;
         border-bottom: 4px solid $primary;
       }
     }
@@ -53,14 +53,15 @@
 
         li {
           display: inline-block;
-          margin: 0 0.5rem;
-          font-weight: 600;
+          margin: 0 0.25rem;
 
-          a {
+
+          button {
             color: rgb(42, 42, 42);
             position: relative;
             text-decoration: none;
             display: block;
+            font-weight: 600;
 
             &.active,
             &:hover {
@@ -78,6 +79,23 @@
       }
     }
   }
+}
 
+@media (max-width: 350px) {
+  .root {
+    .panelBar {
+      .heading {
+        h3 {
+          font-size: 15px;
+        }
+      }
 
+      .menu {
+        select {
+          font-size: 15px;
+
+        }
+      }
+    }
+  }
 }

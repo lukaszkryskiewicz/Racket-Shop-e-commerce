@@ -19,7 +19,7 @@ const BlogLayout = () => {
           </div>
           <div className='d-none d-md-block col-3 mt-3'>
             <BlogRecentPosts />
-            <BlogCategories />
+            {!blogPostId && <BlogCategories />}
           </div>
         </div>
       </div>

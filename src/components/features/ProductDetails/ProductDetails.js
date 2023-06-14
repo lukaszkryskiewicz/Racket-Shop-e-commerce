@@ -101,7 +101,7 @@ const ProductDetails = ({ productData, modalView }) => {
               <img alt={product.name} src={product.source} />
             </div>
             <div className={clsx('row g-0 m-2 justify-content-between', styles.slider)}>
-              <a
+              <button
                 className={'col-1 ' + styles.arrowButton}
                 onClick={() =>
                   handlePhotoChange(
@@ -110,7 +110,7 @@ const ProductDetails = ({ productData, modalView }) => {
                 }
               >
                 &#60;
-              </a>
+              </button>
               <div className={clsx('col mx-3')}>
                 <div className={clsx('row', styles.thumbnailsContainer)}>
                   {[...Array(pictureNumber)].map((item, i) => (
@@ -128,7 +128,7 @@ const ProductDetails = ({ productData, modalView }) => {
                   ))}
                 </div>
               </div>
-              <a
+              <button
                 className={clsx('col-1', styles.arrowButton)}
                 onClick={() =>
                   handlePhotoChange(
@@ -137,7 +137,7 @@ const ProductDetails = ({ productData, modalView }) => {
                 }
               >
                 <span>&#62;</span>
-              </a>
+              </button>
             </div>
           </div>
           <div

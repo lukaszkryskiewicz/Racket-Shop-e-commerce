@@ -37,18 +37,6 @@ const BlogCategories = () => {
     }
   };
 
-  /*   {Object.keys(brands).map(brand => (
-      <li
-        key={brand}
-        className={`d-flex align-items-center + ${activeBrand ===
-          brand && styles.active}`}
-        onClick={() => handleClick(brand)}
-      >
-        <FontAwesomeIcon icon={faAngleRight} />
-        <h4>{brand}</h4>
-        <span className={styles.number}>{brands[brand]}</span>
-      </li>
-    ))} */
   return (
     <div className={styles.blogCategoriesContainer}>
       <h5 className={styles.blogCategoriesTitle}>Categories</h5>

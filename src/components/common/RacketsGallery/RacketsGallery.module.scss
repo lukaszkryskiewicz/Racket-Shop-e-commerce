@@ -47,12 +47,14 @@
     border-top: 2px solid #e1e1e1;
     cursor: pointer;
 
-    a {
+    .headlineButton {
+      border-radius: 0px;
+      font-weight: 600;
       color: rgb(42, 42, 42);
       text-decoration: none;
       font-size: 18px;
       padding: 10px 0;
-      display: block;
+      width: 100%;
       text-transform: uppercase;
       box-shadow: 1px 0 0 #e1e1e1;
 
@@ -124,7 +126,7 @@
         top: 45%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 20px;
+        font-size: 18px;
       }
 
       .oldPrice {
@@ -222,8 +224,33 @@
 @media (max-width: 430px) {
   .root {
     .menu {
-      a {
-        font-size: 12px;
+
+      .headlineButton {
+        font-size: 11px;
+      }
+    }
+
+    .productInfo {
+      .price {
+        .newPrice {
+          font-size: 15px;
+        }
+
+        .oldPrice {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .root {
+    .panelBar {
+      .heading {
+        h3 {
+          font-size: 15px;
+        }
       }
     }
   }

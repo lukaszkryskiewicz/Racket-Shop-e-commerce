@@ -1,0 +1,91 @@
+@import "../../../../styles/settings.scss";
+
+.root {
+  padding: $base-padding 0;
+
+  .title {
+    margin: 5px;
+    position: relative;
+    text-transform: uppercase;
+    text-align: left;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: 0;
+      width: 100%;
+      border-bottom: 2px solid $text-color;
+    }
+
+    h5 {
+      font-size: 16px;
+    }
+  }
+
+
+  h4 {
+    font-size: 15px;
+    margin: 5px;
+
+    &::first-letter {
+      text-transform: uppercase
+    }
+  }
+
+  .colorList {
+    padding: 5px 15px;
+    list-style: none;
+
+    li {
+      font-size: 20px;
+      padding: 2px 0;
+    }
+
+    h4 {
+      margin-left: 10px;
+    }
+
+    .red {
+      width: 10px;
+      height: 10px;
+      background-color: red;
+    }
+
+    .black {
+      width: 10px;
+      height: 10px;
+      background-color: black;
+    }
+
+    .yellow {
+      width: 10px;
+      height: 10px;
+      background-color: yellow;
+    }
+
+    .blue {
+      width: 10px;
+      height: 10px;
+      background-color: blue;
+    }
+
+    .white {
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      border: 1px solid
+    }
+
+    .green {
+      width: 10px;
+      height: 10px;
+      background-color: green;
+    }
+
+    .active {
+      color: $orange;
+      padding: 0 0 0 15px;
+    }
+  }
+}

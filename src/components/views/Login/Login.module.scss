@@ -2,7 +2,8 @@
 
 .root {
   padding: $base-padding 0;
-  a {
-    text-decoration: none;
+
+  .logged {
+    text-align: center;
   }
 }

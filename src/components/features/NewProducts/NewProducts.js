@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './NewProducts.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
-import CompareBar from '../../common/CompareBar/CompareBar';
+import CompareBar from '../CompareBarComponents/CompareBar/CompareBar';
 import Swipeable from '../../common/Swipeable/Swipeable';
 import { useParams } from 'react-router';
 import { useLocation } from 'react-router';
@@ -42,9 +42,10 @@ const NewProducts = ({ searchedData, productsOnDesktop }) => {
   };
 
   const handleCategoryChangeMobile = e => {
+    const newCategory = e.target.value;
     setFade(false);
     setTimeout(() => {
-      setActiveCategory(e.target.value);
+      setActiveCategory(newCategory);
       setActivePage(0);
       setFade(true);
     }, 600);
@@ -122,25 +123,25 @@ const NewProducts = ({ searchedData, productsOnDesktop }) => {
                     <ul>
                       {categories.map(item => (
                         <li key={item.id}>
-                          <a
+                          <button
                             className={clsx(
                               item.id === activeCategory && styles.active
                             )}
                             onClick={() => handleCategoryChange(item.id)}
                           >
                             {item.name}
-                          </a>
+                          </button>
                         </li>
                       ))}
                     </ul>
                   )}
                   {viewportMode === 'mobile' && (
                     <select
-                      onChange={() => handleCategoryChangeMobile}
+                      onChange={e => handleCategoryChangeMobile(e)}
                       value={activeCategory}
                     >
                       {categories.map(item => (
-                        <option key={item.id} value={item.name}>
+                        <option key={item.id} value={item.id}>
                           {item.name}
                         </option>
                       ))}
@@ -207,10 +208,5 @@ NewProducts.propTypes = {
     sign: PropTypes.string,
   }),
 };
-/* 
-NewProducts.defaultProps = {
-  categories: [],
-  products: [],
-}; */
 
 export default NewProducts;
