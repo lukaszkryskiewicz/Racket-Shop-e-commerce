@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './NewProducts.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
-import CompareBar from '../../common/CompareBar/CompareBar';
+import CompareBar from '../CompareBarComponents/CompareBar/CompareBar';
 import Swipeable from '../../common/Swipeable/Swipeable';
 import { useParams } from 'react-router';
 import { useLocation } from 'react-router';

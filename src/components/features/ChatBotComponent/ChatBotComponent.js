@@ -59,7 +59,7 @@ const ChatBotComponent = () => {
     {
       id: '8',
       message:
-        "Unfortunately, I don't know the answer to this question. Please contact the hotline at +34 333 222 333",
+        'Unfortunately, I don\'t know the answer to this question. Please contact the hotline at +34 333 222 333',
       end: true,
     },
   ];

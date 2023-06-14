@@ -1,18 +1,18 @@
 import React from 'react';
 import { useState } from 'react';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
-import styles from './CartTableLine.module.scss';
+import styles from './CartProduct.module.scss';
 import PropTypes from 'prop-types';
-import Button from '../../../common/Button/Button';
+import Button from '../../common/Button/Button';
 import { useDispatch, useSelector } from 'react-redux';
-import { removeProduct, updateProduct } from '../../../../redux/cartRedux';
-import { getCurrency } from '../../../../redux/currencyRedux';
-import { getProductById } from '../../../../redux/productsRedux';
-import { updateProductQuantity } from '../../../../redux/productsRedux';
-import Alert from '../../../common/Alert/Alert';
+import { removeProduct, updateProduct } from '../../../redux/cartRedux';
+import { getCurrency } from '../../../redux/currencyRedux';
+import { getProductById } from '../../../redux/productsRedux';
+import { updateProductQuantity } from '../../../redux/productsRedux';
+import Alert from '../../common/Alert/Alert';
 import clsx from 'clsx';
 
-const CartTableLine = ({ id, name, price, source, quantity }) => {
+const CartProduct = ({ id, name, price, source, quantity }) => {
   const dispatch = useDispatch();
   const product = useSelector(state => getProductById(state, id));
   const [itemQuantity, setItemQuantity] = useState(quantity);
@@ -29,7 +29,7 @@ const CartTableLine = ({ id, name, price, source, quantity }) => {
 
   const confirmDelete = () => {
     dispatch(removeProduct(id));
-    dispatch(updateProductQuantity({ id, quantity: itemQuantity }));
+    dispatch(updateProductQuantity({ id, quantity: (itemQuantity > 0 ? itemQuantity : previousItemQuantity) }));
   };
 
   const handleChange = e => {
@@ -45,7 +45,10 @@ const CartTableLine = ({ id, name, price, source, quantity }) => {
       dispatch(updateProduct({ id, quantity: newValue }));
       dispatch(updateProductQuantity({ id, quantity: previousItemQuantity - newValue }));
       setPreviousItemQuantity(newValue);
-    } else {
+    } else if (newValue < 1) {
+      handleDelete();
+    }
+    else {
       setAlert({ status: true, type: 'error' });
       setItemQuantity(previousItemQuantity);
     }
@@ -136,7 +139,7 @@ const CartTableLine = ({ id, name, price, source, quantity }) => {
   );
 };
 
-CartTableLine.propTypes = {
+CartProduct.propTypes = {
   id: PropTypes.string,
   name: PropTypes.string,
   price: PropTypes.number,
@@ -145,4 +148,4 @@ CartTableLine.propTypes = {
   countSubTotal: PropTypes.func,
   totalForProduct: PropTypes.func,
 };
-export default CartTableLine;
+export default CartProduct;

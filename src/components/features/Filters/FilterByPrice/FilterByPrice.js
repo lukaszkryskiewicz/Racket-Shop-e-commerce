@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './FilterByPrice.module.scss';
 import ReactSlider from 'react-slider';
-import Button from '../Button/Button';
+import Button from '../../../common/Button/Button';
 import clsx from 'clsx';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllFilters, updateFilter } from '../../../redux/filterRedux';
-import { getAllProducts } from '../../../redux/productsRedux';
-import { getCurrency } from '../../../redux/currencyRedux';
+import { getAllFilters, updateFilter } from '../../../../redux/filterRedux';
+import { getAllProducts } from '../../../../redux/productsRedux';
+import { getCurrency } from '../../../../redux/currencyRedux';
 
 const FilterByPrice = ({ categoryId, clearFilters }) => {
   const dispatch = useDispatch();

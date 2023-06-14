@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import ProductSearch from '../../features/ProductSearch/ProductSearch';
 import styles from './MenuBar.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,6 +12,7 @@ import clsx from 'clsx';
 import { getViewportMode } from '../../../redux/viewportModeRedux';
 
 const MenuBar = () => {
+  const location = useLocation();
   const [mobileMenu, setMobileMenu] = useState(false);
   const categories = useSelector(getAllCategories);
   const viewportMode = useSelector(getViewportMode);
@@ -61,7 +62,7 @@ const MenuBar = () => {
                   <NavLink
                     exact
                     to='/blog'
-                    className={isActive => (isActive ? styles.active : undefined)}
+                    className={isActive => ((isActive || location.pathname.startsWith('/blog/')) ? styles.active : undefined)}
                   >
                     blog
                   </NavLink>

@@ -2,10 +2,10 @@ import React from 'react';
 import styles from './CompareModalProduct.module.scss';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import StarsReviewBasic from '../StarsReviewBasic/StarsReviewBasic';
-import Button from '../Button/Button';
+import StarsReviewBasic from '../../../common/StarsReviewBasic/StarsReviewBasic';
+import Button from '../../../common/Button/Button';
 import { useDispatch } from 'react-redux';
-import { toggleProductCompare } from '../../../redux/productsRedux';
+import { toggleProductCompare } from '../../../../redux/productsRedux';
 
 const CompareModalProduct = ({ product }) => {
   const dispatch = useDispatch();

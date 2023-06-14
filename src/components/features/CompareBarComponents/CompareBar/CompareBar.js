@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import styles from './CompareBar.module.scss';
-import Button from '../../common/Button/Button';
+import Button from '../../../common/Button/Button';
 import { useSelector } from 'react-redux';
-import { getProductsToCompare } from '../../../redux/productsRedux';
+import { getProductsToCompare } from '../../../../redux/productsRedux';
 import { faWindowClose } from '@fortawesome/free-regular-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { toggleProductCompare } from '../../../redux/productsRedux';
+import { toggleProductCompare } from '../../../../redux/productsRedux';
 import { useDispatch } from 'react-redux';
 import clsx from 'clsx';
 import CompareModalBase from '../CompareModalBase/CompareModalBase';
-import Alert from '../Alert/Alert';
+import Alert from '../../../common/Alert/Alert';
 
 const CompareBar = () => {
   const dispatch = useDispatch();

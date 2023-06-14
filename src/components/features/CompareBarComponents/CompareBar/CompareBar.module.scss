@@ -1,4 +1,4 @@
-@import "../../../styles/settings.scss";
+@import "../../../../styles/settings.scss";
 
 .root {
   position: fixed;
@@ -12,7 +12,7 @@
 
   .compareBar {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
 
     .title {
       margin: auto 5px;
@@ -58,17 +58,11 @@
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 769px) {
   .root {
     .compareBar {
-      .dots {
-        position: static;
-
-        ul {
-          transform: translateY(0);
-          padding: 0;
-          margin-bottom: 1rem;
-        }
+      .title {
+        display: none;
       }
     }
   }

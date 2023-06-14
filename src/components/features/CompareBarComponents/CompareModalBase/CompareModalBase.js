@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import Button from '../Button/Button';
+import Button from '../../../common/Button/Button';
 import PropTypes from 'prop-types';
 import styles from './CompareModalBase.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from 'react-redux';
-import { getProductsToCompare } from '../../../redux/productsRedux';
+import { getProductsToCompare } from '../../../../redux/productsRedux';
 import CompareModalProduct from '../CompareModalProduct/CompareModalProduct';
 
 const CompareModalBase = ({ closeModal }) => {
@@ -26,7 +26,7 @@ const CompareModalBase = ({ closeModal }) => {
     if (productsToCompare.length < 2) {
       closeModal(false);
     }
-  }, [productsToCompare]);
+  }, [closeModal, productsToCompare]);
 
   const modalArray = titleCol.concat(productsToCompare);
 

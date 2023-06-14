@@ -7,7 +7,7 @@ import FeatureBoxes from '../../features/FeatureBoxes/FeatureBoxes';
 import NewProducts from '../../features/NewProducts/NewProducts';
 import Feedback from '../../features/Feedback/Feedback';
 import BlogBox from '../../features/BlogBox/BlogBox';
-import Gallery from '../../features/Gallery/Gallery';
+import Gallery from '../../layout/Gallery/Gallery';
 import Banner from '../../common/Banner/Banner';
 import Featured from '../../features/Featured/Featured';
 import PromotionBox from '../../layout/PromotionBox/PromotionBox';

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styles from './FilterByColor.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllFilters, removeFilter, updateFilter } from '../../../redux/filterRedux';
-import Button from '../Button/Button';
+import { getAllFilters, removeFilter, updateFilter } from '../../../../redux/filterRedux';
+import Button from '../../../common/Button/Button';
 
 
 const FilterByColor = () => {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './FilterByRating.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllFilters, removeFilter, updateFilter } from '../../../redux/filterRedux';
+import { getAllFilters, removeFilter, updateFilter } from '../../../../redux/filterRedux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';

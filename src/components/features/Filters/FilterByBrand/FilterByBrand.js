@@ -4,8 +4,8 @@ import styles from './FilterByBrand.module.scss';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useDispatch } from 'react-redux';
-import { getAllFilters, removeFilter, updateFilter } from '../../../redux/filterRedux';
-import { getAllProducts } from '../../../redux/productsRedux';
+import { getAllFilters, removeFilter, updateFilter } from '../../../../redux/filterRedux';
+import { getAllProducts } from '../../../../redux/productsRedux';
 import { useSelector } from 'react-redux';
 
 const FilterByBrand = ({ categoryId }) => {
