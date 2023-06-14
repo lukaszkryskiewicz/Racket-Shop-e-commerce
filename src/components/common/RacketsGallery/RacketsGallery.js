@@ -111,12 +111,15 @@ const RacketsGallery = () => {
         <ul className={clsx('row g-0', styles.menu)}>
           {headlines.map(headline => (
             <li className={clsx('col')} key={headline}>
-              <a
-                className={clsx(headline === activeHeadline && styles.active)}
+              <button
+                className={clsx(
+                  styles.headlineButton,
+                  headline === activeHeadline && styles.active
+                )}
                 onClick={() => handleHeadlineChange(headline)}
               >
                 {headline}
-              </a>
+              </button>
             </li>
           ))}
         </ul>
@@ -137,10 +140,12 @@ const RacketsGallery = () => {
                   {currency.sign}
                   {(displayedProduct.price * currency.multiplier).toFixed(2)}
                 </p>
-                <p className={styles.oldPrice}>
-                  {currency.sign}
-                  {(displayedProduct.oldPrice * currency.multiplier).toFixed(2)}
-                </p>
+                {displayedProduct.oldPrice && (
+                  <p className={styles.oldPrice}>
+                    {currency.sign}
+                    {(displayedProduct.oldPrice * currency.multiplier).toFixed(2)}
+                  </p>
+                )}
               </div>
               <div className={styles.content}>
                 <StarsReview {...displayedProduct} />
@@ -151,8 +156,8 @@ const RacketsGallery = () => {
             className={clsx(
               styles.buttons,
               viewportMode !== 'mobile' &&
-              viewportMode !== 'tablet' &&
-              styles.buttonsAnimation
+                viewportMode !== 'tablet' &&
+                styles.buttonsAnimation
             )}
           >
             <ActionButton
@@ -187,14 +192,14 @@ const RacketsGallery = () => {
         </div>
         <Swipeable leftAction={leftAction} rightAction={rightAction}>
           <div className={clsx('row g-0 m-2 justify-content-between', styles.slider)}>
-            <a
+            <button
               className={clsx('col-1', styles.arrowButton)}
               onClick={() =>
                 handlePageChange(activePage === 0 ? pagesCount - 1 : activePage - 1)
               }
             >
               &#60;
-            </a>
+            </button>
             <div className={clsx('col mx-3', fadeSlider ? 'fadeIn' : 'fadeOut')}>
               <div className={clsx('row')}>
                 {productsToDisplay
@@ -216,14 +221,14 @@ const RacketsGallery = () => {
                   ))}
               </div>
             </div>
-            <a
+            <button
               className={clsx('col-1', styles.arrowButton)}
               onClick={() =>
                 handlePageChange(activePage + 1 >= pagesCount ? 0 : activePage + 1)
               }
             >
               <span>&#62;</span>
-            </a>
+            </button>
           </div>
         </Swipeable>
       </div>

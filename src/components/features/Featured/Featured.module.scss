@@ -112,7 +112,7 @@
 
         .prices {
           display: flex;
-          justify-content: end;
+          justify-content: flex-end;
           align-items: center;
         }
 
@@ -239,6 +239,7 @@
         .arrow {
           background-color: $footer-bg;
           border: none;
+          border-radius: 0px;
 
           &:hover:enabled {
             background-color: $primary;

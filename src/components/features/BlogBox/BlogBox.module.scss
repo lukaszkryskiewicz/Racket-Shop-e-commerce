@@ -33,52 +33,17 @@
       }
     }
 
-    .dots {
-      position: absolute;
-      right: 0;
-      top: 0;
-      border: none;
 
-      ul {
-        margin: 0;
-        padding: 0 0 0 1rem;
-        list-style: none;
-        background-color: #ffffff;
-        transform: translateY(15px);
-
-        li {
-          display: inline-block;
-          margin-left: 0.5rem;
-
-          a {
-            display: block;
-            width: 13px;
-            height: 13px;
-            border-radius: 6px;
-            background-color: #e1e1e1;
-            font-size: 0;
-
-            &.active,
-            &:hover {
-              background-color: $primary;
-            }
-          }
-        }
-      }
-    }
   }
 }
 
-@media (max-width: 991px) {
+
+@media (max-width: 350px) {
   .root {
     .panelBar {
-      .dots {
-        position: static;
-
-        ul {
-          transform: translateY(0);
-          padding: 0;
-          margin-bottom: 1rem;
+      .heading {
+        h3 {
+          font-size: 15px;
         }
       }
     }

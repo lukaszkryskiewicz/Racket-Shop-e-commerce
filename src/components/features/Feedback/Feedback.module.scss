@@ -26,7 +26,7 @@
         position: absolute;
         bottom: -3px;
         left: 0;
-        width: 45px;
+        width: 50px;
         border-bottom: 4px solid $primary;
       }
     }
@@ -36,7 +36,7 @@
 
   .photo {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 
   }
 
@@ -60,5 +60,18 @@
 
   .author {
     text-align: left;
+  }
+}
+
+
+@media (max-width: 350px) {
+  .root {
+    .panelBar {
+      .heading {
+        h3 {
+          font-size: 15px;
+        }
+      }
+    }
   }
 }

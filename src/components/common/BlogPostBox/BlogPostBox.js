@@ -27,9 +27,7 @@ const BlogPostBox = ({ id, date, text, title }) => {
                 {id === 1 ? ' Comment' : ' Comments'}
               </div>
             </div>
-            <a href='#' className={'row mb-3 ' + styles.title}>
-              {title}
-            </a>
+            <div className={'row mb-3 ' + styles.title}>{title}</div>
             <p className={'row ' + styles.text}>
               {text
                 .split(' ')
