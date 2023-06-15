@@ -6,11 +6,16 @@ import StarsReviewBasic from '../../../common/StarsReviewBasic/StarsReviewBasic'
 import Button from '../../../common/Button/Button';
 import { useDispatch } from 'react-redux';
 import { toggleProductCompare } from '../../../../redux/productsRedux';
+import { HashLink as Link } from 'react-router-hash-link';
 
-const CompareModalProduct = ({ product }) => {
+const CompareModalProduct = ({ product, closeModal }) => {
   const dispatch = useDispatch();
   const handleClick = () => {
     dispatch(toggleProductCompare(product.id));
+  };
+
+  const handleMovingToProductPage = () => {
+    closeModal(false);
   };
 
   return (
@@ -55,7 +60,12 @@ const CompareModalProduct = ({ product }) => {
             {product.id === 'title-col' ? (
               <p>Link</p>
             ) : (
-              <a href={'/product/' + product.id}>{product.name}</a>
+              <Link
+                to={'/product/' + product.id + '#'}
+                onClick={handleMovingToProductPage}
+              >
+                {product.name}
+              </Link>
             )}
           </div>
         </div>
@@ -77,6 +87,7 @@ const CompareModalProduct = ({ product }) => {
 
 CompareModalProduct.propTypes = {
   product: PropTypes.object,
+  closeModal: PropTypes.func,
 };
 
 export default CompareModalProduct;

@@ -15,11 +15,11 @@ const Login = () => {
 
   return (
     <div className={styles.root}>
-      {!isLogged && <LoginForm />}
-      {isLogged &&
+      <LoginForm />
+      {/* {isLogged &&
         <div className={styles.logged}>
           <h2 >You are already logged!</h2>
-        </div>}
+        </div>} */}
     </div>
   );
 };
