@@ -21,21 +21,21 @@
 
     .productImageRow {
       display: flex;
+      padding: 0 5px;
       align-items: center;
       justify-content: center;
-      min-width: 200px;
       height: 200px;
       margin-bottom: 10px;
 
       .productPhoto {
-        height: 80%;
-        width: 80%;
-
+        height: 100%;
+        width: 90%;
 
         img {
           height: 100%;
           width: 100%;
-          object-fit: cover;
+          object-fit: contain;
+
         }
       }
     }
@@ -54,6 +54,7 @@
       .deleteCompare {
         text-transform: capitalize;
         margin: auto;
+        padding: 0 5px;
 
         p {
           margin: 0;
@@ -62,5 +63,46 @@
     }
 
 
+  }
+}
+
+@media (max-width: 1200px) {
+  .root {
+    .productColumn {
+      .productImageRow {
+
+        height: 150px;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .root {
+    font-size: 13px;
+
+    .productColumn {
+
+      .productTitleRow {
+
+
+        .productTitle {
+          font-size: 13px;
+
+        }
+      }
+
+
+      .productImageRow {
+
+        height: 120px;
+      }
+
+      .infoSection {
+        .button {
+          font-size: 13px;
+        }
+      }
+    }
   }
 }

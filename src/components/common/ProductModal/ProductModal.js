@@ -7,12 +7,21 @@ import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import ProductDetails from '../../features/ProductDetails/ProductDetails';
 import clsx from 'clsx';
 import useOutsideClick from '../../../utils/useOutsideClickHook';
+import { useSelector } from 'react-redux';
+import { getViewportMode } from '../../../redux/viewportModeRedux';
 
 const ProductModal = ({ closeModal, productData }) => {
+  const viewportMode = useSelector(getViewportMode);
   const handleClick = e => {
     e.preventDefault();
     closeModal(false);
   };
+
+  useEffect(() => {
+    if (viewportMode === 'tablet' || viewportMode === 'mobile') {
+      closeModal(false);
+    }
+  }, [closeModal, viewportMode]);
 
   const ref = useRef();
   useOutsideClick(ref, closeModal);

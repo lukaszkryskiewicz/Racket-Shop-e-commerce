@@ -19,7 +19,7 @@ const CompareModalProduct = ({ product, closeModal }) => {
   };
 
   return (
-    <div className={clsx('col', styles.root)}>
+    <div className={clsx(product.id === 'title-col' ? 'col-auto' : 'col', styles.root)}>
       <div className={clsx(styles.productColumn)} key={product.id}>
         <div className={clsx(styles.productTitleRow)}>
           <h3 className={clsx(styles.productTitle)}>{product.name}</h3>
@@ -74,7 +74,7 @@ const CompareModalProduct = ({ product, closeModal }) => {
             {product.id === 'title-col' ? (
               <p>Delete product</p>
             ) : (
-              <Button onClick={handleClick} variant='main'>
+              <Button onClick={handleClick} variant='main' className={styles.button}>
                 Delete
               </Button>
             )}

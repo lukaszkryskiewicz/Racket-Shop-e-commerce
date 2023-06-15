@@ -10,7 +10,7 @@ import { getProductById } from '../../../redux/productsRedux';
 import { useForm } from 'react-hook-form';
 import useOutsideClick from '../../../utils/useOutsideClickHook';
 
-const Modal = ({ closeModal, id }) => {
+const QuestionModal = ({ closeModal, id }) => {
   const product = useSelector(state => getProductById(state, id));
   const [question, setQuestion] = useState('');
   const [email, setEmail] = useState('');
@@ -113,9 +113,9 @@ const Modal = ({ closeModal, id }) => {
   );
 };
 
-Modal.propTypes = {
+QuestionModal.propTypes = {
   closeModal: PropTypes.func,
   id: PropTypes.string,
 };
 
-export default Modal;
+export default QuestionModal;

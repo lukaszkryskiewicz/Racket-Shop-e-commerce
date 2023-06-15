@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import styles from './LoginForm.module.scss';
 import Button from '../../common/Button/Button';
 import { Link } from 'react-router-dom';
@@ -8,7 +9,7 @@ import { useDispatch } from 'react-redux';
 import { logIn } from '../../../redux/loggedUserRedux';
 import Alert from '../../common/Alert/Alert';
 
-const LoginForm = () => {
+const LoginForm = ({ loginSuccess }) => {
   const dispatch = useDispatch();
   const [inputType, setInputType] = useState('password');
   const [email, setEmail] = useState('');
@@ -38,6 +39,7 @@ const LoginForm = () => {
     if (userIndex !== -1 && usersDB[userIndex].userPassword === password) {
       setAlertType('login');
       dispatch(logIn({ userName: usersDB[userIndex].userEmail }));
+      loginSuccess(true);
     } else {
       setAlertType('loginError');
     }
@@ -145,3 +147,7 @@ const LoginForm = () => {
   );
 };
 export default LoginForm;
+
+LoginForm.propTypes = {
+  loginSuccess: PropTypes.func,
+};

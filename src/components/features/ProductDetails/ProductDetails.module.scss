@@ -12,11 +12,11 @@
         padding: 20px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
 
         .photo {
           position: relative;
-          min-height: 500px;
+          height: auto;
           overflow: hidden;
 
           .photoOverlay {
@@ -32,7 +32,7 @@
           img {
             height: 100%;
             width: 100%;
-            object-fit: cover;
+            object-fit: contain;
           }
 
           .buttonZoom {
@@ -51,7 +51,7 @@
         }
 
         .slider {
-          height: 104px;
+          height: 100px;
           margin: 0;
 
           .arrowButton {
@@ -81,8 +81,8 @@
               img {
                 height: 100%;
                 width: 100%;
-                object-fit: cover;
                 opacity: 0.5;
+                object-fit: cover;
 
                 &.active {
                   opacity: 1;
