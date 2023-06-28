@@ -46,9 +46,7 @@ const CompareBar = () => {
               onClick={() => handleClick(item.id)}
             >
               <img alt={item.name} src={item.source} />
-              <FontAwesomeIcon className={styles.closeIcon} icon={faWindowClose}>
-                Add to compare
-              </FontAwesomeIcon>
+              <FontAwesomeIcon className={styles.closeIcon} icon={faWindowClose} />
             </div>
           ))}
           <Button
