@@ -13,6 +13,7 @@ const CartLayout = () => {
   const [alert, setAlert] = useState({ status: false, type: 'checkout' });
   const [totalPrice, setTotalPrice] = useState(0);
   const [subTotalPrice, setSubTotalPrice] = useState(0);
+  const [actualDeliveryFee, setActualDeliveryFee] = useState(20);
   const [couponCode, setCouponCode] = useState(null);
   const [isCouponActive, setIsCouponActive] = useState(false);
   const [couponMessage, setCouponMessage] = useState(null);
@@ -57,7 +58,7 @@ const CartLayout = () => {
       });
     }
     let total = subTotal + deliveryFee;
-    return { subTotal, total };
+    return { subTotal, total, deliveryFee };
   };
 
   const handleCouponCodeChange = e => {
@@ -68,15 +69,17 @@ const CartLayout = () => {
 
   const handleApplyCoupon = e => {
     e.preventDefault();
-    const { subTotal, total } = calculateCart();
+    const { subTotal, total, deliveryFee } = calculateCart();
     setSubTotalPrice(subTotal.toFixed(2));
     setTotalPrice(total.toFixed(2));
+    setActualDeliveryFee(deliveryFee.toFixed(2));
   };
 
   useEffect(() => {
-    const { subTotal, total } = calculateCart();
+    const { subTotal, total, deliveryFee } = calculateCart();
     setSubTotalPrice(subTotal.toFixed(2));
     setTotalPrice(total.toFixed(2));
+    setActualDeliveryFee(deliveryFee.toFixed(2));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cartProducts, currency, isCouponActive]);
   return (
@@ -166,6 +169,14 @@ const CartLayout = () => {
                 <div className={`col-7 ${styles.borderLeft} ${styles.price}`}>
                   <span>
                     {currency.sign} {subTotalPrice}
+                  </span>
+                </div>
+              </div>
+              <div className={`row ${styles.cartTotalsRows}`}>
+                <div className='col-5'>Delivery</div>
+                <div className={`col-7 ${styles.borderLeft} ${styles.price}`}>
+                  <span>
+                    {currency.sign} {actualDeliveryFee}
                   </span>
                 </div>
               </div>
