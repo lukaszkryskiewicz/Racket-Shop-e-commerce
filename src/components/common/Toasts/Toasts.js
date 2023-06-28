@@ -11,14 +11,14 @@ const Toasts = () => {
     <div>
       <ToastContainer
         position='bottom-left'
-        autoClose={5000}
+        autoClose={2000}
         hideProgressBar={false}
         newestOnTop
         closeOnClick
+        closeButton={false}
         rtl={false}
         pauseOnFocusLoss={false}
         draggable
-        pauseOnHover
         theme='colored'
         limit={viewportMode === 'mobile' || viewportMode === 'tablet' ? 3 : 10}
       />

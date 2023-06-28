@@ -22,6 +22,7 @@ import {
 import { addProduct } from '../../../redux/cartRedux';
 import { getProductById } from '../../../redux/productsRedux';
 import QuestionModal from '../QuestionModal/QuestionModal';
+import { toast } from 'react-toastify';
 
 const ActionButton = ({
   id,
@@ -46,7 +47,11 @@ const ActionButton = ({
   const handleFavouriteClick = e => {
     e.preventDefault();
     dispatch(toggleProductFavourite(id));
-
+    if (!favourite) {
+      toast.success('Product added to favourites');
+    } else {
+      toast.info('Product removed from favourites');
+    }
   };
 
   const compareList = useSelector(state => getProductsToCompare(state));
@@ -56,9 +61,15 @@ const ActionButton = ({
     if (compareList.length < 4 || !!checkIfItemIsCompared) {
       //!!checkIfItemIsCompared --> converts result to boolean -> true if item was already selected, and false otherwise
       dispatch(toggleProductCompare(id));
+      if (!compare) {
+        toast.success('Product added to compare');
+      } else {
+        toast.info('Product removed from compare');
+      }
+    } else {
+      toast.error('You cannot compare more than 4 products');
     }
   };
-
 
   const handleQuickViewClick = e => {
     e.preventDefault();
@@ -79,7 +90,6 @@ const ActionButton = ({
   const handleMail = e => {
     e.preventDefault();
     setModal(true);
-
   };
 
   const getButtonProps = buttonType => {
@@ -123,7 +133,11 @@ const ActionButton = ({
       {modal && <QuestionModal closeModal={setModal} id={id} />}
       <Button
         variant={buttonVariant || 'outline'}
-        className={clsx(buttonStyle === 'primary' ? styles.primaryButtonStyle : null, buttonProps.active, 'm-1')}
+        className={clsx(
+          buttonStyle === 'primary' ? styles.primaryButtonStyle : null,
+          buttonProps.active,
+          'm-1'
+        )}
         onClick={buttonProps.function}
         data-tooltip={dataTooltip}
       >
