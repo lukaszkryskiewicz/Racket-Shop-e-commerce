@@ -31,7 +31,7 @@ const ProductReviews = product => {
         )}
       </ul>
       <div className={styles.review}>
-        <AddProductReview id={product.id} />
+        <AddProductReview id={product.id} key={product.id} />
       </div>
     </div>
   );

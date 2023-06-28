@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './AddProductReview.module.scss';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
@@ -16,6 +16,16 @@ const AddProductReview = ({ id }) => {
   const [stars, setStars] = useState(0);
   const [starsError, setStarsError] = useState(false);
   const [reviewDone, setReviewDone] = useState(false);
+
+  useEffect(() => {
+    let checkOpinions = JSON.parse(localStorage.getItem('userReviews')) || [];
+    if (checkOpinions.indexOf(id) !== -1) {
+      setReviewDone(true);
+    } else {
+      setReviewDone(false);
+      setStars(0);
+    }
+  }, [id]);
 
   const schema = yup.object({
     author: yup
@@ -57,6 +67,9 @@ const AddProductReview = ({ id }) => {
         id: shortid(),
       };
       dispatch(addReview({ productId: id, review: reviewData }));
+      let checkOpinions = JSON.parse(localStorage.getItem('userReviews')) || [];
+      checkOpinions.push(id);
+      localStorage.setItem('userReviews', JSON.stringify(checkOpinions));
       setReviewDone(true);
     }
   };
@@ -74,7 +87,11 @@ const AddProductReview = ({ id }) => {
               <h4>Your rating</h4>
               <div className={clsx('row', styles.ratingBox)}>
                 <div className={clsx('col', styles.rateStars)}>
-                  <StarsReviewBasic id={id} getStars={stars === 0 ? setStars : null} />
+                  <StarsReviewBasic
+                    id={id}
+                    noAction={stars === 0 ? false : true}
+                    getStars={stars === 0 ? setStars : null}
+                  />
                   {starsError && <p>Please add rating!</p>}
                 </div>
               </div>
