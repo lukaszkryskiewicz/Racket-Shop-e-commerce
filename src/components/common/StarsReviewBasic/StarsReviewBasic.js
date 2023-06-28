@@ -1,16 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
-import { addMyStars } from '../../../redux/productsRedux';
+import { useDispatch, useSelector } from 'react-redux';
+import { addMyStars, getProductById } from '../../../redux/productsRedux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import styles from './StarsReviewBasic.module.scss';
+import { useLocation } from 'react-router-dom';
+import clsx from 'clsx';
 
-const StarsReviewBasic = ({ id, stars, myStars, noAction, getStars }) => {
-  const [myStarsState, setMyStarsState] = useState(myStars ? myStars : 0);
+const StarsReviewBasic = ({ id, stars, noAction, getStars }) => {
+  const centralStars = useSelector(state => getProductById(state, id)).myStars;
+  const starsToDisplay = getStars ? 0 : stars ? stars : centralStars;
+  const [myStarsState, setMyStarsState] = useState(starsToDisplay ? starsToDisplay : 0);
   const [hoverStars, setHoverStars] = useState(undefined);
   const dispatch = useDispatch();
+  const location = useLocation();
+  if (location.pathname.includes('/shop')) {
+    noAction = true;
+  }
+
+  useEffect(() => {
+    if (!getStars && !noAction) {
+      setMyStarsState(centralStars ? centralStars : 0);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [centralStars]);
 
   const handleClick = (e, clickedStars) => {
     e.preventDefault();
@@ -26,8 +41,10 @@ const StarsReviewBasic = ({ id, stars, myStars, noAction, getStars }) => {
   };
 
   const handleMouseOver = i => {
-    if (myStarsState === 0 && !noAction) {
-      setHoverStars(i);
+    if (!noAction) {
+      if (myStarsState === 0) {
+        setHoverStars(i);
+      }
     }
   };
 
@@ -36,7 +53,7 @@ const StarsReviewBasic = ({ id, stars, myStars, noAction, getStars }) => {
   };
 
   const drawProperStar = i => {
-    if (myStarsState !== 0) {
+    if (myStarsState !== 0 && !location.pathname.includes('/shop')) {
       return myStarsState < i ? farStar : faStar;
     } else if (hoverStars) {
       return hoverStars < i ? farStar : faStar;
@@ -46,7 +63,7 @@ const StarsReviewBasic = ({ id, stars, myStars, noAction, getStars }) => {
   };
 
   const drawStarStyle = i => {
-    if (myStarsState !== 0) {
+    if (myStarsState !== 0 && !location.pathname.includes('/shop') && !noAction) {
       return styles.hoverStars;
     } else if (hoverStars) {
       return hoverStars < i ? styles.stars : styles.hoverStars;
@@ -58,7 +75,7 @@ const StarsReviewBasic = ({ id, stars, myStars, noAction, getStars }) => {
   return (
     <div className={styles.basicStars}>
       {[1, 2, 3, 4, 5].map(i => (
-        <button key={i} href='#'>
+        <button key={i} href='#' className={clsx(noAction && styles.noPointer)}>
           <FontAwesomeIcon
             key={i}
             className={drawStarStyle(i)}
