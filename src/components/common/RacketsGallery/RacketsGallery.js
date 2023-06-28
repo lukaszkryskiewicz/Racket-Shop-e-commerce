@@ -5,7 +5,7 @@ import {
   getFeaturedProducts,
   getProductById,
   getSaleOffProducts,
-  getTopRatedProducts,
+  getSortedProducts,
   getTopSellerProducts,
 } from '../../../redux/productsRedux';
 import { useSelector } from 'react-redux';
@@ -13,7 +13,6 @@ import StarsReview from '../StarsReview/StarsReview';
 import ActionButton from '../ActionButton/ActionButton';
 import { useEffect } from 'react';
 import { getViewportMode } from '../../../redux/viewportModeRedux';
-import Swipeable from '../Swipeable/Swipeable';
 import { getCurrency } from '../../../redux/currencyRedux';
 import ProductModal from '../ProductModal/ProductModal';
 import Alert from '../Alert/Alert';
@@ -39,20 +38,21 @@ const RacketsGallery = () => {
       case 'Top Seller':
         return getTopSellerProducts(state).slice(0, 18);
       case 'Top Rated':
-        return getTopRatedProducts(state).slice(0, 18);
+        return getSortedProducts(state, 'recommended').slice(0, 18);
       default:
         return [];
     }
   });
+
   const [activeProduct, setActiveProduct] = useState(productsToDisplay[0]);
   const [activeThumbnail, setActiveThumbnail] = useState(productsToDisplay[0]);
+
   const handleHeadlineChange = headline => {
     setFadeImage(false);
     setFadeSlider(false);
     setTimeout(() => {
       handlePageChange(0);
       setActiveHeadline(headline);
-      setActiveProduct(productsToDisplay[0]);
       setFadeImage(true);
       setFadeSlider(true);
     }, 400);
@@ -81,10 +81,43 @@ const RacketsGallery = () => {
   };
 
   const leftAction = () => {
-    handlePageChange(activePage === 0 ? pagesCount - 1 : activePage - 1);
+    const currentIndex = productsToDisplay.findIndex(
+      product => product.id === activeProduct.id
+    );
+    const newIndex =
+      currentIndex === 0 ? productsToDisplay.length - 1 : currentIndex - 1;
+    const newProduct = productsToDisplay[newIndex];
+    if (currentIndex === columns) {
+      handlePageChange(activePage - 1);
+    } else if (currentIndex === 0) {
+      handlePageChange(pagesCount - 1);
+    }
+    setFadeImage(false);
+    setActiveThumbnail(newProduct);
+    setTimeout(() => {
+      setFadeImage(true);
+      setActiveProduct(newProduct);
+    }, 400);
   };
+
   const rightAction = () => {
-    handlePageChange(activePage + 1 >= pagesCount ? 0 : activePage + 1);
+    const currentIndex = productsToDisplay.findIndex(
+      product => product.id === activeProduct.id
+    );
+    const newIndex =
+      currentIndex === productsToDisplay.length - 1 ? 0 : currentIndex + 1;
+    const newProduct = productsToDisplay[newIndex];
+    if (newIndex === columns) {
+      handlePageChange(activePage + 1);
+    } else if (newIndex === 0) {
+      handlePageChange(0);
+    }
+    setFadeImage(false);
+    setActiveThumbnail(newProduct);
+    setTimeout(() => {
+      setFadeImage(true);
+      setActiveProduct(newProduct);
+    }, 400);
   };
 
   useEffect(() => handlePageChange(0), [viewportMode]);
@@ -148,7 +181,7 @@ const RacketsGallery = () => {
                 )}
               </div>
               <div className={styles.content}>
-                <StarsReview {...displayedProduct} />
+                <StarsReview key={activeProduct.id} {...displayedProduct} />
               </div>
             </div>
           </div>
@@ -192,47 +225,41 @@ const RacketsGallery = () => {
             />
           </div>
         </div>
-        <Swipeable leftAction={leftAction} rightAction={rightAction}>
-          <div className={clsx('row g-0 m-2 justify-content-between', styles.slider)}>
-            <button
-              className={clsx('col-1', styles.arrowButton)}
-              onClick={() =>
-                handlePageChange(activePage === 0 ? pagesCount - 1 : activePage - 1)
-              }
-            >
-              &#60;
-            </button>
-            <div className={clsx('col mx-3', fadeSlider ? 'fadeIn' : 'fadeOut')}>
-              <div className={clsx('row')}>
-                {productsToDisplay
-                  .slice(activePage * columns, (activePage + 1) * columns)
-                  .map(product => (
-                    <div
-                      key={product.name}
-                      className={clsx('col-md-2 col-3 px-1', styles.thumbnail)}
-                      onClick={() => handleProductChange(product)}
-                    >
-                      <img
-                        alt={product.name}
-                        src={product.source}
-                        className={clsx(
-                          product.id === activeThumbnail.id && styles.active
-                        )}
-                      />
-                    </div>
-                  ))}
-              </div>
+        <div className={clsx('row g-0 m-2 justify-content-between', styles.slider)}>
+          <button
+            className={clsx('col-1', styles.arrowButton)}
+            onClick={() => leftAction()}
+          >
+            &#60;
+          </button>
+          <div className={clsx('col mx-3', fadeSlider ? 'fadeIn' : 'fadeOut')}>
+            <div className={clsx('row')}>
+              {productsToDisplay
+                .slice(activePage * columns, (activePage + 1) * columns)
+                .map(product => (
+                  <div
+                    key={product.name}
+                    className={clsx('col-md-2 col-3 px-1', styles.thumbnail)}
+                    onClick={() => handleProductChange(product)}
+                  >
+                    <img
+                      alt={product.name}
+                      src={product.source}
+                      className={clsx(
+                        product.id === activeThumbnail.id && styles.active
+                      )}
+                    />
+                  </div>
+                ))}
             </div>
-            <button
-              className={clsx('col-1', styles.arrowButton)}
-              onClick={() =>
-                handlePageChange(activePage + 1 >= pagesCount ? 0 : activePage + 1)
-              }
-            >
-              <span>&#62;</span>
-            </button>
           </div>
-        </Swipeable>
+          <button
+            className={clsx('col-1', styles.arrowButton)}
+            onClick={() => rightAction()}
+          >
+            <span>&#62;</span>
+          </button>
+        </div>
       </div>
     </div>
   );
