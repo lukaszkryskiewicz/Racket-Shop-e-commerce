@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './Banner.module.scss';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 
 const Banner = () => {
+  const location = useLocation();
   const { categoryId } = useParams();
 
   return (
@@ -14,13 +15,13 @@ const Banner = () => {
             always <span>25%</span> off or more
           </p>
         </div>
-        <div className={styles.menu}>
+        <div className={styles.breadcrumbs}>
           <p>
-            <Link to='/'>Home</Link>
+            {location.pathname !== '/' && <Link to='/'>Home</Link>}
             {categoryId && (
               <>
                 {' > '}
-                <Link to={'/shop/' + categoryId}>{categoryId}</Link>
+                {categoryId}
               </>
             )}
           </p>
