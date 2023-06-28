@@ -106,7 +106,7 @@ const Featured = () => {
                 activeIndex={hotDealIndex}
                 onSelect={handleSelect}
                 interval={!(modal || alert.status) ? slideInterval : null}
-                pause={false}
+                pause='hover'
                 controls={false}
                 fade={true}
                 indicators={false}
@@ -157,13 +157,16 @@ const Featured = () => {
                             compare={hotDeal.compare}
                             buttonType={'compare'}
                           />
-                          {!(viewportMode === 'tablet' || viewportMode === 'mobile') &&
+                          {!(
+                            viewportMode === 'tablet' || viewportMode === 'mobile'
+                          ) && (
                             <ActionButton
                               id={hotDeal.id}
                               buttonType={'quickView'}
                               productData={hotDeal}
                               onClickFunction={setModal}
-                            />}
+                            />
+                          )}
                           {(viewportMode === 'tablet' || viewportMode === 'mobile') && (
                             <ActionButton
                               id={hotDeal.id}
@@ -182,7 +185,7 @@ const Featured = () => {
                             </div>
                           )}
                           <div className={styles.price}>
-                            <Button variant='small'>
+                            <Button noHover variant='small'>
                               {currency.sign}{' '}
                               {(hotDeal.price * currency.multiplier).toFixed(2)}
                             </Button>

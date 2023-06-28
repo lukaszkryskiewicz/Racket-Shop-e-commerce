@@ -67,7 +67,11 @@ const MenuBar = () => {
                     <NavLink
                       exact
                       to={'/shop/' + category.id}
-                      className={isActive => (isActive ? styles.active : undefined)}
+                      className={isActive =>
+                        isActive || location.pathname.includes('/' + category.id + '-')
+                          ? styles.active
+                          : undefined
+                      }
                     >
                       {category.name}
                     </NavLink>

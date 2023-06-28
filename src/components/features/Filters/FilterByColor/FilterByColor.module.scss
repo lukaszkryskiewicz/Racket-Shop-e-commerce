@@ -37,55 +37,65 @@
     padding: 5px 15px;
     list-style: none;
 
+
     li {
       font-size: 20px;
       padding: 2px 0;
-    }
+      transition: 1s;
 
-    h4 {
-      margin-left: 10px;
-    }
 
-    .red {
-      width: 10px;
-      height: 10px;
-      background-color: red;
-    }
+      button {
+        transition: 1s;
 
-    .black {
-      width: 10px;
-      height: 10px;
-      background-color: black;
-    }
+        h4 {
+          margin-left: 10px;
+        }
 
-    .yellow {
-      width: 10px;
-      height: 10px;
-      background-color: yellow;
-    }
+        .red {
+          width: 10px;
+          height: 10px;
+          background-color: red;
+        }
 
-    .blue {
-      width: 10px;
-      height: 10px;
-      background-color: blue;
-    }
+        .black {
+          width: 10px;
+          height: 10px;
+          background-color: black;
+        }
 
-    .white {
-      width: 10px;
-      height: 10px;
-      background-color: #fff;
-      border: 1px solid
-    }
+        .yellow {
+          width: 10px;
+          height: 10px;
+          background-color: yellow;
+        }
 
-    .green {
-      width: 10px;
-      height: 10px;
-      background-color: green;
-    }
+        .blue {
+          width: 10px;
+          height: 10px;
+          background-color: blue;
+        }
 
-    .active {
-      color: $orange;
-      padding: 0 0 0 15px;
+        .white {
+          width: 10px;
+          height: 10px;
+          background-color: #fff;
+          border: 1px solid
+        }
+
+        .green {
+          width: 10px;
+          height: 10px;
+          background-color: green;
+          transition: 1s;
+        }
+
+        &.active {
+          color: $orange;
+          padding: 0 0 0 15px;
+        }
+
+
+      }
     }
   }
 }

@@ -120,6 +120,10 @@
           margin-inline-start: 10px;
         }
 
+        button {
+          cursor: auto;
+        }
+
         .active {
           color: $primary;
         }
@@ -132,13 +136,6 @@
           h5 {
             color: $primary
           }
-        }
-      }
-
-      .price {
-        .button {
-          background-color: $primary;
-          cursor: default;
         }
       }
     }

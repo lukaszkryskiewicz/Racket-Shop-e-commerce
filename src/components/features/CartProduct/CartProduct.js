@@ -59,8 +59,11 @@ const CartProduct = ({ id, name, price, source, quantity }) => {
     } else if (newValue < 1) {
       handleDelete();
     } else {
-      setAlert({ status: true, type: 'error' });
       setItemQuantity(previousItemQuantity);
+
+      setTimeout(() => {
+        setAlert({ status: true, type: 'error' });
+      }, 300);
     }
   };
 
@@ -99,14 +102,18 @@ const CartProduct = ({ id, name, price, source, quantity }) => {
         )}
         <div className='col-md-7 col-6 px-1'>
           <div className={clsx('row w-100', styles.vertCenter)}>
-            <div className={clsx('col-12 col-sm-6 d-flex align-items-center')}>
+            <div
+              className={clsx(
+                'col-12 col-sm-6 d-flex justify-content-start align-items-center'
+              )}
+            >
               <Button
-                className={clsx('col-auto', styles.button)}
+                className={clsx('col-1 col-sm-2', styles.button)}
                 onClick={e => handleDelete(e)}
               >
                 <AiOutlineCloseCircle className={styles.tableIcon} />
               </Button>
-              <div className={clsx('col-10 col-sm-5', styles.vertCenter)}>
+              <div className={clsx('col-10 col-sm-8 col-md-6', styles.vertCenter)}>
                 <div className={styles.productImage}>
                   <Link to={'/product/' + id + '#'}>
                     <img alt={name} src={source} />

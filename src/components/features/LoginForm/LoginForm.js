@@ -52,7 +52,7 @@ const LoginForm = ({ loginSuccess }) => {
       <div className='container'>
         <div className='row justify-content-center my-5'>
           <form className='col-12 col-md-8 col-lg-4' onSubmit={validate(handleSubmit)}>
-            <h3 className='text-center'>Sign in to Bazar</h3>
+            <h3 className='text-center'>Sign in to RacketShop</h3>
             <input
               {...register('email', {
                 required: true,

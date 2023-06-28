@@ -158,7 +158,7 @@ const ProductsPageLayout = () => {
               )}
             </div>
           </div>
-          <div className={`col-lg-3 col-md-4 d-sm-none d-md-block ${styles.filters}`}>
+          <div className={`col-lg-3 col-md-4 d-none d-md-block ${styles.filters}`}>
             <FilterByBrand categoryId={categoryId} />
             <FilterByPrice categoryId={categoryId} clearFilters={handleClick} />
             <FilterByRating />

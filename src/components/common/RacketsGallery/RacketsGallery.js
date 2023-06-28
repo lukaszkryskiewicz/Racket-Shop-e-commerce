@@ -172,13 +172,15 @@ const RacketsGallery = () => {
               buttonType={'compare'}
               dataTooltip='Compare'
             />
-            <ActionButton
-              id={displayedProduct.id}
-              buttonType={'quickView'}
-              dataTooltip='Quick View'
-              productData={displayedProduct}
-              onClickFunction={setModal}
-            />
+            {!(viewportMode === 'tablet' || viewportMode === 'mobile') && (
+              <ActionButton
+                id={displayedProduct.id}
+                buttonType={'quickView'}
+                dataTooltip='Quick View'
+                productData={displayedProduct}
+                onClickFunction={setModal}
+              />
+            )}
             <ActionButton
               id={displayedProduct.id}
               buttonType={'addToCart'}

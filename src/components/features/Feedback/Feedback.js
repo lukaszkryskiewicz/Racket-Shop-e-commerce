@@ -10,9 +10,14 @@ import Dots from '../../common/Dots/Dots';
 
 const Feedback = () => {
   const [activePage, setActivePage] = useState(0);
+  const [fade, setFade] = useState(true);
   const feedbacks = useSelector(state => getAllFeedbacks(state));
   const handlePageChange = newPage => {
-    setActivePage(newPage);
+    setFade(false);
+    setTimeout(() => {
+      setActivePage(newPage);
+      setFade(true);
+    }, 600);
   };
 
   const leftAction = () => {
@@ -50,7 +55,10 @@ const Feedback = () => {
               {feedbacks.slice(activePage, activePage + 1).map(feedback => (
                 <div
                   key={feedback.id}
-                  className={clsx('row justify-content-center text-center')}
+                  className={clsx(
+                    'row justify-content-center text-center',
+                    fade ? 'fadeIn' : 'fadeOut'
+                  )}
                 >
                   <div className={clsx('row justify-content-center', styles.header)}>
                     &rdquo;
