@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { getHotDeals } from '../../../redux/productsRedux';
 import styles from './Featured.module.scss';
@@ -28,17 +28,25 @@ const Featured = () => {
   const [alert, setAlert] = useState({ status: false, type: 'success' });
   const currency = useSelector(getCurrency);
   const viewportMode = useSelector(getViewportMode);
+  const sliderTimeoutRef = useRef(null);
 
   const handleSelect = selectedIndex => {
     setHotDealIndex(selectedIndex);
     setCurrentHotDeal(hotDeals[selectedIndex]);
   };
 
+  useEffect(() => {
+    return () => {
+      clearTimeout(sliderTimeoutRef.current);
+    };
+  }, []);
+
   const onClickHandlerHotDeals = index => {
     setHotDealIndex(index);
     setCurrentHotDeal(hotDeals[index]);
     setSlideInterval(7000);
-    setTimeout(() => {
+    clearTimeout(sliderTimeoutRef.current);
+    sliderTimeoutRef.current = setTimeout(() => {
       setSlideInterval(3000);
     }, 7000);
   };

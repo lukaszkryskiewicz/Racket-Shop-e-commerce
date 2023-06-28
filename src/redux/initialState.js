@@ -13,7 +13,7 @@ const initialState = {
       category: 'tennis',
       manufacturer: 'babolat',
       price: 1038,
-      oldPrice: null,
+      oldPrice: 1402,
       age: 'adult',
       color: ['white', 'green'],
       stars: 3,

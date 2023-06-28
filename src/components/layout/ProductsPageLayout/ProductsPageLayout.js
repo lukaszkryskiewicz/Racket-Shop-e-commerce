@@ -113,7 +113,7 @@ const ProductsPageLayout = () => {
       setActivePage(0);
       setFade(true);
     }, 400);
-  }, [productsToDisplay, sortBy, displayForm]);
+  }, [productsToDisplay, sortBy, displayForm, filters]);
 
   return (
     <div className={styles.root}>
@@ -156,6 +156,13 @@ const ProductsPageLayout = () => {
               {displayForm === 'grid' && (
                 <ProductGrid productsToRender={productsToRender} />
               )}
+              <div className={styles.dotsDownPagination}>
+                <Dots
+                  pagesCount={pagesCount}
+                  handlePageChange={handlePageChange}
+                  activePage={activePage}
+                />
+              </div>
             </div>
           </div>
           <div className={`col-lg-3 col-md-4 d-none d-md-block ${styles.filters}`}>

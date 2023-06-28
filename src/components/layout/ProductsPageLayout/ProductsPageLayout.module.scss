@@ -53,6 +53,13 @@
 
   .productContainer {
     margin: 10px 0 0 0;
+
+    .dotsDownPagination {
+      position: relative;
+      bottom: 50px;
+      transform: translate(-47%);
+
+    }
   }
 }
 
@@ -79,6 +86,10 @@
 
     .productContainer {
       margin: 30px 0 0 0;
+
+      .dotsDownPagination {
+        transform: none;
+      }
     }
   }
 }
