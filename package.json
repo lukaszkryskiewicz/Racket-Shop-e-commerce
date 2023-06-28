@@ -74,6 +74,7 @@
     "react-slider": "^2.0.4",
     "react-swipeable": "^7.0.0",
     "react-test-renderer": "^16.9.0",
+    "react-toastify": "9.0.3",
     "react-tooltip": "^5.10.0",
     "redux": "^4.0.4",
     "redux-persist": "^6.0.0",
