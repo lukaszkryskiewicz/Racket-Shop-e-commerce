@@ -30,21 +30,25 @@ const ChatBotComponent = () => {
         { value: 3, label: 'Shop contact', trigger: '5' },
         { value: 4, label: 'Other', trigger: '6' },
       ],
+      hideInput: true,
     },
     {
       id: '3',
       message: 'We work from monday to friday 9.00 AM - 4.00 PM',
       trigger: '1',
+      hideInput: true,
     },
     {
       id: '4',
       message: 'We offer free delivery!',
       trigger: '1',
+      hideInput: true,
     },
     {
       id: '5',
       message: 'You can contact us using our chat or call +34 333 222 333',
       trigger: '1',
+      hideInput: true,
     },
     {
       id: '6',
@@ -59,8 +63,8 @@ const ChatBotComponent = () => {
     {
       id: '8',
       message:
-        'Unfortunately, I don\'t know the answer to this question. Please contact the hotline at +34 333 222 333',
-      end: true,
+        "Unfortunately, I don't know the answer to this question. Please contact the hotline at +34 333 222 333",
+      trigger: '1',
     },
   ];
   return (

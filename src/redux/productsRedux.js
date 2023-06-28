@@ -14,14 +14,13 @@ export const getSaleOffProducts = ({ products }) =>
   products.filter(item => item.saleOff === true);
 export const getTopSellerProducts = ({ products }) =>
   products.filter(item => item.topSeller === true);
-export const getTopRatedProducts = ({ products }) =>
-  products.sort((a, b) => b.stars - a.stars);
-export const getProductById = ({ products }, id) => products.find(
-  product => product.id === id);
+export const getProductById = ({ products }, id) =>
+  products.find(product => product.id === id);
 export const getSortedProducts = ({ products }, sort) => {
   const sortedProducts = [...products];
   switch (sort) {
     case 'recommended':
+      sortedProducts.sort((a, b) => b.stars - a.stars);
       return sortedProducts;
     case 'priceLow':
       sortedProducts.sort((a, b) => a.price - b.price);
@@ -71,7 +70,6 @@ export const addReview = payload => ({
   payload,
 });
 
-
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
@@ -79,9 +77,9 @@ export default function reducer(statePart = [], action = {}) {
       return statePart.map(product =>
         product.id === action.payload
           ? {
-            ...product,
-            favourite: !product.favourite,
-          }
+              ...product,
+              favourite: !product.favourite,
+            }
           : product
       );
     case TOGGLE_PRODUCT_COMPARE:
@@ -98,8 +96,8 @@ export default function reducer(statePart = [], action = {}) {
       );
     case UPDATE_PRODUCT_QUANTITY:
       return statePart.map(product =>
-        product.id === action.payload.id ?
-          { ...product, quantity: product.quantity + action.payload.quantity }
+        product.id === action.payload.id
+          ? { ...product, quantity: product.quantity + action.payload.quantity }
           : product
       );
     case ADD_REVIEW:
