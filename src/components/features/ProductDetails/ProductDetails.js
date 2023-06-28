@@ -23,13 +23,14 @@ import StarsReviewBasic from '../../common/StarsReviewBasic/StarsReviewBasic';
 
 const ProductDetails = ({ productData, modalView }) => {
   const { productId } = useParams();
-  const productOnSite = useSelector(state => getProductById(state, productId));
+  const product = useSelector(state =>
+    getProductById(state, productId ? productId : productData.id)
+  );
   const [fadeImage, setFadeImage] = useState(true);
   const [activeImage, setActiveImage] = useState(0);
   const [productQuantity, setProductQuantity] = useState(1);
   const [alert, setAlert] = useState({ status: false, type: 'success' });
   const currency = useSelector(getCurrency);
-  const product = productData || productOnSite;
 
   const pictureNumber = 4;
   const handlePhotoChange = number => {
@@ -217,7 +218,9 @@ const ProductDetails = ({ productData, modalView }) => {
                   compare={product.compare}
                   buttonType={'compare'}
                 />
-                <ActionButton buttonType={'mail'} id={product.id}></ActionButton>
+                {!modalView && (
+                  <ActionButton buttonType={'mail'} id={product.id}></ActionButton>
+                )}
               </div>
               <div className={styles.quantity}>
                 <span>Quantity: </span>

@@ -116,6 +116,12 @@
   cursor: pointer;
 }
 
+.price {
+  button {
+    cursor: auto;
+  }
+}
+
 @media (max-width: 768px) {
   .root {
     .photo {

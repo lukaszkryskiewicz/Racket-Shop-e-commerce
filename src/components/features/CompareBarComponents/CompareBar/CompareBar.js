@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux';
 import clsx from 'clsx';
 import CompareModalBase from '../CompareModalBase/CompareModalBase';
 import Alert from '../../../common/Alert/Alert';
+import { toast } from 'react-toastify';
 
 const CompareBar = () => {
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ const CompareBar = () => {
 
   const handleClick = id => {
     dispatch(toggleProductCompare(id));
+    toast.info('Product removed from compare');
   };
 
   const handleCompareClick = e => {

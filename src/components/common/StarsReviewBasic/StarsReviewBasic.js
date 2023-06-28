@@ -8,6 +8,7 @@ import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import styles from './StarsReviewBasic.module.scss';
 import { useLocation } from 'react-router-dom';
 import clsx from 'clsx';
+import { toast } from 'react-toastify';
 
 const StarsReviewBasic = ({ id, stars, noAction, getStars }) => {
   const centralStars = useSelector(state => getProductById(state, id)).myStars;
@@ -33,6 +34,7 @@ const StarsReviewBasic = ({ id, stars, noAction, getStars }) => {
       setMyStarsState(clickedStars);
       if (!getStars) {
         dispatch(addMyStars({ id, clickedStars }));
+        toast.success('Thank you for the rating!');
       }
     }
     if (getStars) {

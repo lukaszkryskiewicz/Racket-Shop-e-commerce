@@ -6,6 +6,7 @@ import ChatBotComponent from '../../features/ChatBotComponent/ChatBotComponent';
 import { useEffect } from 'react';
 import { toggleViewportMode } from '../../../redux/viewportModeRedux';
 import { useDispatch } from 'react-redux';
+import Toasts from '../../common/Toasts/Toasts';
 
 const MainLayout = ({ children }) => {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ const MainLayout = ({ children }) => {
       <Header />
       {children}
       <ChatBotComponent />
+      <Toasts />
       <Footer />
     </div>
   );

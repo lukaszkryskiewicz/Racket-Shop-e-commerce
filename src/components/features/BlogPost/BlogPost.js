@@ -6,7 +6,7 @@ import { getBlogPostById } from '../../../redux/blogRedux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar, faFolder, faUser } from '@fortawesome/free-solid-svg-icons';
 import clsx from 'clsx';
-import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 
 const BlogPost = ({ blogPostId }) => {
   const post = useSelector(state => getBlogPostById(state, parseInt(blogPostId)));
@@ -41,7 +41,7 @@ const BlogPost = ({ blogPostId }) => {
           </ul>
         </div>
         <div className={`col-auto ${styles.backToBlog}`}>
-          <Link className={styles.link} to={'/blog'}>
+          <Link className={styles.link} to={'/blog#'}>
             Go back to Blog
           </Link>
         </div>
