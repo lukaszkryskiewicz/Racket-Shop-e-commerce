@@ -1,8 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Button.module.scss';
+import { HashLink as Link } from 'react-router-hash-link';
 
-const Button = ({ children, variant, noHover, link, className: propClassName, ...props }) => {
+const Button = ({
+  children,
+  variant,
+  noHover,
+  link,
+  className: propClassName,
+  ...props
+}) => {
   const classes = [];
 
   if (propClassName) classes.push(propClassName);
@@ -16,9 +24,9 @@ const Button = ({ children, variant, noHover, link, className: propClassName, ..
 
   if (link) {
     return (
-      <a href={link} {...props} className={classes.join(' ')}>
+      <Link to={link + '#top'} {...props} className={classes.join(' ')}>
         {children}
-      </a>
+      </Link>
     );
   }
 

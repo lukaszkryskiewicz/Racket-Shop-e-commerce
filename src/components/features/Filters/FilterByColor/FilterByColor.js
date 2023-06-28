@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import styles from './FilterByColor.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllFilters, removeFilter, updateFilter } from '../../../../redux/filterRedux';
+import {
+  getAllFilters,
+  removeFilter,
+  updateFilter,
+} from '../../../../redux/filterRedux';
 import Button from '../../../common/Button/Button';
-
+import clsx from 'clsx';
 
 const FilterByColor = () => {
   const dispatch = useDispatch();
@@ -37,8 +41,6 @@ const FilterByColor = () => {
     }
   };
 
-
-
   return (
     <>
       <div className='container'>
@@ -50,9 +52,14 @@ const FilterByColor = () => {
             <ul className={styles.colorList}>
               {colorsArray.map(color => (
                 <li key={color}>
-                  <Button className={`d-flex align-items-center + ${activeColor.includes(color) &&
-                    styles.active}`}
-                  onClick={() => handleClick(color)}>
+                  <Button
+                    className={clsx(
+                      'd-flex align-items-center',
+                      styles.button,
+                      activeColor.includes(color) && styles.active
+                    )}
+                    onClick={() => handleClick(color)}
+                  >
                     <span className={styles[color]}></span>
                     <h4>{color}</h4>
                   </Button>

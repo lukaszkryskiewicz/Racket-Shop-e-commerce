@@ -18,6 +18,7 @@ const ProductExtendedInfo = () => {
         <div className={'row ' + styles.menu}>
           {tabs.map(tab => (
             <div
+              onClick={() => setActiveTab(tab)}
               className={clsx(
                 'col-md-3',
                 styles.menuText,
@@ -26,7 +27,7 @@ const ProductExtendedInfo = () => {
               id={tab}
               key={tab}
             >
-              <div onClick={() => setActiveTab(tab)}>
+              <div>
                 {tab}{' '}
                 {tab === 'reviews' &&
                   product.reviews &&

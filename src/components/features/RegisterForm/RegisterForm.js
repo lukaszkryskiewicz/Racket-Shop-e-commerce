@@ -71,7 +71,10 @@ const RegisterForm = () => {
         {infoAlert && <Alert closeAlert={setInfoAlert} type={alertType} />}
         <div className='container'>
           <div className='row justify-content-center my-5'>
-            <form className='col-12 col-md-8 col-lg-4' onSubmit={validate(handleSubmit)}>
+            <form
+              className='col-12 col-md-8 col-lg-4'
+              onSubmit={validate(handleSubmit)}
+            >
               <h3 className='text-center'>Create an account</h3>
               <input
                 {...register('email', {
@@ -138,13 +141,14 @@ const RegisterForm = () => {
               </div>
               <div className='form-check'>
                 <input
+                  required={true}
                   className='form-check-input'
                   type='checkbox'
                   checked={checkTermConditions}
                   onChange={handleTermConditions}
                 ></input>
                 <label className='form-check-label'>
-                  I accept the <a href='#'>Terms & Conditions</a>
+                  I accept the <a href='#'>Terms & Conditions</a>*
                 </label>
               </div>
               <div className='form-check'>

@@ -23,7 +23,7 @@ const ProductSearch = () => {
   const handleSubmit = () => {
     if (searchText.length > 0) {
       const category = selectedCategory ? selectedCategory.toLowerCase() : undefined;
-      dispatch(changeSearch({ searchText, category }));
+      dispatch(changeSearch({ searchText: searchText.toLowerCase(), category }));
       setSearchText('');
       setSelectedCategory('');
       history.push('/search');

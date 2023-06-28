@@ -155,15 +155,26 @@ const ProductDetails = ({ productData, modalView }) => {
                 <div>
                   <StarsReviewBasic {...product} />
                   <p className={clsx(styles.reviewsNumber)}>
-                    ({product.reviews ? product.reviews.length : 0} reviews)
+                    ({product.reviews ? product.reviews.length : 0}{' '}
+                    {product.reviews?.length === 1 ? 'review' : 'reviews'})
                   </p>
                 </div>
-                <Link
-                  className={clsx(styles.reviewCallButton)}
-                  to={`/product/${product.id}#reviews`}
-                >
-                  Add your review
-                </Link>
+                {!modalView && (
+                  <Link
+                    className={clsx(styles.headerLink)}
+                    to={`/product/${product.id}#reviews`}
+                  >
+                    Add your review
+                  </Link>
+                )}
+                {modalView && (
+                  <Link
+                    className={clsx(styles.headerLink)}
+                    to={'/product/' + product.id}
+                  >
+                    Go to product
+                  </Link>
+                )}
               </div>
             </div>
             <div className={clsx('row', styles.priceRow)}>
@@ -175,7 +186,7 @@ const ProductDetails = ({ productData, modalView }) => {
                   </div>
                 )}
                 <div className={clsx(styles.price)}>
-                  <Button className={styles.button} variant='small'>
+                  <Button noHover className={styles.button} variant='small'>
                     {currency.sign} {(product.price * currency.multiplier).toFixed(2)}
                   </Button>
                 </div>

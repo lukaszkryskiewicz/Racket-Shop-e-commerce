@@ -66,12 +66,9 @@ const TopBar = () => {
                   </Link>
                 )}
                 {isLogged && (
-                  <Link to='/'>
+                  <Link to='/' onClick={handleLogout}>
                     <FontAwesomeIcon className={styles.icon} icon={faDoorOpen} />
-                    <span className={styles.iconLabel} onClick={handleLogout}>
-                      {' '}
-                      Logout
-                    </span>
+                    <span className={styles.iconLabel}> Logout</span>
                   </Link>
                 )}
               </li>

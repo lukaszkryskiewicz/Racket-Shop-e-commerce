@@ -11,6 +11,7 @@ import { getProductById } from '../../../redux/productsRedux';
 import { updateProductQuantity } from '../../../redux/productsRedux';
 import Alert from '../../common/Alert/Alert';
 import clsx from 'clsx';
+import { HashLink as Link } from 'react-router-hash-link';
 
 const CartProduct = ({ id, name, price, source, quantity }) => {
   const dispatch = useDispatch();
@@ -22,14 +23,18 @@ const CartProduct = ({ id, name, price, source, quantity }) => {
   price = (price * currency.multiplier).toFixed(2);
   const totalForProduct = (price * itemQuantity).toFixed(2);
 
-
   const handleDelete = () => {
     setAlert({ status: true, type: 'delete', action: confirmDelete });
   };
 
   const confirmDelete = () => {
     dispatch(removeProduct(id));
-    dispatch(updateProductQuantity({ id, quantity: (itemQuantity > 0 ? itemQuantity : previousItemQuantity) }));
+    dispatch(
+      updateProductQuantity({
+        id,
+        quantity: itemQuantity > 0 ? itemQuantity : previousItemQuantity,
+      })
+    );
   };
 
   const handleChange = e => {
@@ -39,18 +44,26 @@ const CartProduct = ({ id, name, price, source, quantity }) => {
     }
   };
 
-  const handleBlur = (e) => {
+  const handleBlur = e => {
     const newValue = parseInt(e.target.value);
-    if (!isNaN(newValue) && newValue !== 0 && product.quantity + previousItemQuantity >= newValue) {
+    if (
+      !isNaN(newValue) &&
+      newValue !== 0 &&
+      product.quantity + previousItemQuantity >= newValue
+    ) {
       dispatch(updateProduct({ id, quantity: newValue }));
-      dispatch(updateProductQuantity({ id, quantity: previousItemQuantity - newValue }));
+      dispatch(
+        updateProductQuantity({ id, quantity: previousItemQuantity - newValue })
+      );
       setPreviousItemQuantity(newValue);
     } else if (newValue < 1) {
       handleDelete();
-    }
-    else {
-      setAlert({ status: true, type: 'error' });
+    } else {
       setItemQuantity(previousItemQuantity);
+
+      setTimeout(() => {
+        setAlert({ status: true, type: 'error' });
+      }, 300);
     }
   };
 
@@ -89,23 +102,31 @@ const CartProduct = ({ id, name, price, source, quantity }) => {
         )}
         <div className='col-md-7 col-6 px-1'>
           <div className={clsx('row w-100', styles.vertCenter)}>
-            <div className={clsx('col-12 col-sm-6 d-flex align-items-center')}>
+            <div
+              className={clsx(
+                'col-12 col-sm-6 d-flex justify-content-start align-items-center'
+              )}
+            >
               <Button
-                className={clsx('col-auto', styles.button)}
+                className={clsx('col-1 col-sm-2', styles.button)}
                 onClick={e => handleDelete(e)}
               >
                 <AiOutlineCloseCircle className={styles.tableIcon} />
               </Button>
-              <div className={clsx('col-10 col-sm-5', styles.vertCenter)}>
+              <div className={clsx('col-10 col-sm-8 col-md-6', styles.vertCenter)}>
                 <div className={styles.productImage}>
-                  <img alt={name} src={source} />
+                  <Link to={'/product/' + id + '#'}>
+                    <img alt={name} src={source} />
+                  </Link>
                 </div>
               </div>
             </div>
             <div
               className={clsx('col-12 col-sm-6 d-flex flex-column ps-3 text-center')}
             >
-              <p className={clsx('my-auto', styles.title)}>{name}</p>
+              <p className={clsx('my-auto', styles.title)}>
+                <Link to={'/product/' + id + '#'}>{name}</Link>
+              </p>
               <p className={clsx('my-auto', styles.price)}>
                 {currency.sign} {price}
               </p>
@@ -122,13 +143,16 @@ const CartProduct = ({ id, name, price, source, quantity }) => {
               onBlur={handleBlur}
               value={itemQuantity}
               onChange={handleChange}
-
             />
             <Button className={styles.amountControls} onClick={incrementQuantity}>
               +
             </Button>
-            {product.quantity > 0 && <p className={styles.quantityInfo}>Only {product.quantity} more left!</p>}
-            {product.quantity === 0 && <p className={styles.quantityInfo}>No more products left!</p>}
+            {product.quantity > 0 && (
+              <p className={styles.quantityInfo}>Only {product.quantity} more left!</p>
+            )}
+            {product.quantity === 0 && (
+              <p className={styles.quantityInfo}>No more products left!</p>
+            )}
           </div>
           <div className={`col-md-6 col-auto text-center ${styles.price}`}>
             {currency.sign} {totalForProduct}

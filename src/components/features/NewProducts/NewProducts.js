@@ -66,7 +66,7 @@ const NewProducts = ({ searchedData, productsOnDesktop }) => {
       productsToDisplay = isSearchPage ? 12 : 9;
       break;
     default:
-      productsToDisplay = isSearchPage ? 18 : productsOnDesktop;
+      productsToDisplay = isSearchPage ? 20 : productsOnDesktop;
       break;
   }
 
@@ -89,7 +89,7 @@ const NewProducts = ({ searchedData, productsOnDesktop }) => {
   if (searchedData) {
     productsToRender = products.filter(
       product =>
-        product.name.includes(searchedData.searchText) &&
+        product.name.toLowerCase().includes(searchedData.searchText) &&
         (!searchedData.category || product.category === searchedData.category)
     );
     pagesCount = Math.ceil(productsToRender.length / productsToDisplay);

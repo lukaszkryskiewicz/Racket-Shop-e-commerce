@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import styles from './LoginForm.module.scss';
 import Button from '../../common/Button/Button';
 import { Link } from 'react-router-dom';
@@ -8,7 +9,7 @@ import { useDispatch } from 'react-redux';
 import { logIn } from '../../../redux/loggedUserRedux';
 import Alert from '../../common/Alert/Alert';
 
-const LoginForm = () => {
+const LoginForm = ({ loginSuccess }) => {
   const dispatch = useDispatch();
   const [inputType, setInputType] = useState('password');
   const [email, setEmail] = useState('');
@@ -38,6 +39,7 @@ const LoginForm = () => {
     if (userIndex !== -1 && usersDB[userIndex].userPassword === password) {
       setAlertType('login');
       dispatch(logIn({ userName: usersDB[userIndex].userEmail }));
+      loginSuccess(true);
     } else {
       setAlertType('loginError');
     }
@@ -50,7 +52,7 @@ const LoginForm = () => {
       <div className='container'>
         <div className='row justify-content-center my-5'>
           <form className='col-12 col-md-8 col-lg-4' onSubmit={validate(handleSubmit)}>
-            <h3 className='text-center'>Sign in to Bazar</h3>
+            <h3 className='text-center'>Sign in to RacketShop</h3>
             <input
               {...register('email', {
                 required: true,
@@ -145,3 +147,7 @@ const LoginForm = () => {
   );
 };
 export default LoginForm;
+
+LoginForm.propTypes = {
+  loginSuccess: PropTypes.func,
+};

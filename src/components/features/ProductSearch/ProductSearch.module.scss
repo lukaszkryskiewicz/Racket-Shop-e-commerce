@@ -21,6 +21,9 @@
       font-size: 14px;
       border: none;
 
+      &:focus-visible {
+        outline: none;
+      }
 
       &:hover {
         .categoriesList {
@@ -28,26 +31,6 @@
         }
 
       }
-
-      /*    .categoriesList {
-        display: none;
-        list-style: none;
-        position: absolute;
-        padding: 11px 0 0 0;
-        z-index: 3;
-        color: $text-color;
-        font-size: 14px;
-
-        li {
-          background-color: rgb(255, 255, 255);
-          padding: 8px 25px;
-          border: 1px solid black;
-
-          &:hover {
-            background-color: $primary;
-          }
-        }
-      } */
 
     }
   }
@@ -61,11 +44,13 @@
     border: 1px solid $form-border-color;
 
     input {
+      width: 170px;
       text-align: center;
       border: 0;
       padding-left: 10px;
       font-size: 14px;
       outline: none;
+      font-family: 'Poppins';
 
       &::placeholder {
         color: $text-color;

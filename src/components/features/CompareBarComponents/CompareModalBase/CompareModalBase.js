@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Button from '../../../common/Button/Button';
 import PropTypes from 'prop-types';
 import styles from './CompareModalBase.module.scss';
@@ -7,6 +7,7 @@ import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { useSelector } from 'react-redux';
 import { getProductsToCompare } from '../../../../redux/productsRedux';
 import CompareModalProduct from '../CompareModalProduct/CompareModalProduct';
+import useOutsideClick from '../../../../utils/useOutsideClickHook';
 
 const CompareModalBase = ({ closeModal }) => {
   const productsToCompare = useSelector(getProductsToCompare);
@@ -21,6 +22,8 @@ const CompareModalBase = ({ closeModal }) => {
       price: 'price',
     },
   ];
+  const ref = useRef();
+  useOutsideClick(ref, closeModal);
 
   useEffect(() => {
     if (productsToCompare.length < 2) {
@@ -43,9 +46,13 @@ const CompareModalBase = ({ closeModal }) => {
             <FontAwesomeIcon className={styles.icon} icon={faTimesCircle} />
           </Button>
         </div>
-        <div className={styles.compareModalContainer}>
+        <div className={styles.compareModalContainer} ref={ref}>
           {modalArray.map(product => (
-            <CompareModalProduct product={product} key={product.name} />
+            <CompareModalProduct
+              product={product}
+              key={product.name}
+              closeModal={closeModal}
+            />
           ))}
         </div>
       </div>
