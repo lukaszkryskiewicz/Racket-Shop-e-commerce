@@ -25,7 +25,7 @@ const ProductBox = props => {
       {modal && <ProductModal closeModal={setModal} productData={props} />}
       {alert.status && <Alert closeAlert={setAlert} id={id} type={alert.type} />}
       <div className={styles.photo}>
-        {promo && <div className={styles.sale}>{promo}</div>}
+        {oldPrice && <div className={styles.sale}>{promo}</div>}
         <NavLink to={productLink}>
           <div className={styles.image}>
             <img alt={name} src={source} />
@@ -81,7 +81,7 @@ const ProductBox = props => {
           </div>
         )}
         <div className={styles.price}>
-          <Button className={styles.button} variant='small'>
+          <Button noHover className={styles.button} variant='small'>
             {currency.sign} {(price * currency.multiplier).toFixed(2)}
           </Button>
         </div>

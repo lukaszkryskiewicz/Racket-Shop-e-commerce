@@ -31,7 +31,7 @@ const ProductRow = product => {
         <div className={clsx('col-4')}>
           {alert.status && <Alert closeAlert={setAlert} id={id} type={alert.type} />}
           <div className={styles.productPhoto}>
-            {promo && <div className={styles.sale}>{promo}</div>}
+            {oldPrice && <div className={styles.sale}>{promo}</div>}
             <NavLink to={'/product/' + id}>
               <img src={source} alt={name} />
             </NavLink>
@@ -55,12 +55,11 @@ const ProductRow = product => {
             <div className={clsx(styles.priceValue)}>
               {oldPrice && (
                 <div className={clsx(styles.oldPrice)}>
-                  {currency.sign}{' '}
-                  {(oldPrice * currency.multiplier).toFixed(2)}
+                  {currency.sign} {(oldPrice * currency.multiplier).toFixed(2)}
                 </div>
               )}
               <div className={clsx(styles.price)}>
-                <Button className={styles.button} variant='small'>
+                <Button noHover className={styles.button} variant='small'>
                   {currency.sign} {(price * currency.multiplier).toFixed(2)}
                 </Button>
               </div>
@@ -71,21 +70,9 @@ const ProductRow = product => {
           </div>
           <div className={clsx('row', styles.buttonsRow)}>
             <div className={styles.outlines}>
-              <ActionButton
-                id={id}
-                favourite={favourite}
-                buttonType={'favourite'}
-              />
-              <ActionButton
-                id={id}
-                compare={compare}
-                buttonType={'compare'}
-              />
-              <ActionButton
-                buttonType={'mail'}
-                id={product.id}
-              >
-              </ActionButton>
+              <ActionButton id={id} favourite={favourite} buttonType={'favourite'} />
+              <ActionButton id={id} compare={compare} buttonType={'compare'} />
+              <ActionButton buttonType={'mail'} id={product.id}></ActionButton>
               <ActionButton
                 id={id}
                 buttonType={'addToCart'}
@@ -118,6 +105,5 @@ ProductRow.propTypes = {
   compare: PropTypes.bool,
   source: PropTypes.string,
 };
-
 
 export default ProductRow;
