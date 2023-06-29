@@ -38,7 +38,7 @@ const ProductModal = ({ closeModal, productData }) => {
               <FontAwesomeIcon className={styles.icon} icon={faTimesCircle} />
             </Button>
           </div>
-          <ProductDetails productData={productData} modalView />
+          <ProductDetails productData={productData} modalView closeModal={closeModal} />
         </div>
       </div>
     </div>

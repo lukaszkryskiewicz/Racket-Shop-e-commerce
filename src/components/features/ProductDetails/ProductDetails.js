@@ -21,10 +21,10 @@ import {
 import Alert from '../../common/Alert/Alert';
 import StarsReviewBasic from '../../common/StarsReviewBasic/StarsReviewBasic';
 
-const ProductDetails = ({ productData, modalView }) => {
+const ProductDetails = ({ productData, modalView, closeModal }) => {
   const { productId } = useParams();
   const product = useSelector(state =>
-    getProductById(state, productId ? productId : productData.id)
+    getProductById(state, productData?.id ? productData.id : productId)
   );
   const [fadeImage, setFadeImage] = useState(true);
   const [activeImage, setActiveImage] = useState(0);
@@ -171,7 +171,8 @@ const ProductDetails = ({ productData, modalView }) => {
                 {modalView && (
                   <Link
                     className={clsx(styles.headerLink)}
-                    to={'/product/' + product.id}
+                    to={'/product/' + product.id + '#'}
+                    onClick={() => closeModal(false)}
                   >
                     Go to product
                   </Link>
@@ -298,4 +299,5 @@ export default ProductDetails;
 ProductDetails.propTypes = {
   productData: PropTypes.object,
   modalView: PropTypes.bool,
+  closeModal: PropTypes.func,
 };
