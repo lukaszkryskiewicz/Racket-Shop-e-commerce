@@ -84,12 +84,12 @@ const Alert = ({ type, id, quantity = 1, closeAlert, action }) => {
       case 'register':
         return {
           title: 'Registration completed!',
-          text: 'You can now log in',
+          text: 'You can now sign in',
         };
       case 'registerError':
         return {
           title: 'Register Error',
-          text: 'it seems that you already have the account',
+          text: 'it seems that you already have the account, please sign in',
         };
       case 'loginError':
         return {
@@ -160,16 +160,19 @@ const Alert = ({ type, id, quantity = 1, closeAlert, action }) => {
                           go to cart
                         </Button>
                       )}
-                      {type !== 'delete' && type !== 'checkout' && (
-                        <Button
-                          link='#'
-                          onClick={handleClick}
-                          variant='small'
-                          className={styles.button}
-                        >
-                          continue shopping
-                        </Button>
-                      )}
+                      {type !== 'delete' &&
+                        type !== 'checkout' &&
+                        type !== 'register' &&
+                        type !== 'registerError' && (
+                          <Button
+                            link='#'
+                            onClick={handleClick}
+                            variant='small'
+                            className={styles.button}
+                          >
+                            continue shopping
+                          </Button>
+                        )}
                       {type === 'delete' && (
                         <Button
                           link='/cart'
@@ -183,6 +186,11 @@ const Alert = ({ type, id, quantity = 1, closeAlert, action }) => {
                       {type === 'checkout' && (
                         <Button link='/' variant='small' className={styles.button}>
                           go to the main page
+                        </Button>
+                      )}
+                      {(type === 'register' || type === 'registerError') && (
+                        <Button link='/login' variant='small' className={styles.button}>
+                          Sing in
                         </Button>
                       )}
                     </div>
