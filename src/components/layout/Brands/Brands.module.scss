@@ -29,12 +29,11 @@
       height: 100%;
       left: 0;
       z-index: 10;
-      //transform: translateX(-70%);
     }
 
 
     button:last-child {
-      max-width: 25px;
+      //max-width: 25px;
       left: 100%;
       transform: translateX(-100%);
     }
@@ -97,6 +96,11 @@
 
   .root {
     .carouselContainer {
+
+      button {
+        min-width: 43px;
+      }
+
       .brandContainer {
         .brandImage {
           max-width: 70px;

@@ -20,9 +20,15 @@ const Brands = () => {
       slidesToSlide: 3,
     },
     mobile: {
-      breakpoint: { max: 425, min: 0 },
-      items: 3,
-      slidesToSlide: 3,
+      breakpoint: { max: 425, min: 330 },
+      items: 2,
+      slidesToSlide: 2,
+    },
+
+    xs: {
+      breakpoint: { max: 330, min: 0 },
+      items: 1,
+      slidesToSlide: 1,
     },
   };
 
