@@ -3,7 +3,7 @@
 Complex frontend project built in React with state maintained in
 Redux. Initially developed in team of seven developers, and later continued as individual project.
 
-## [Live Demo](https://racket-shop.lukaszkryskiewi.repl.co)
+## [Live Demo](https://racket-shop-e-commerce.vercel.app)
 
 ## Technologies
 
